@@ -102,9 +102,7 @@ D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.pdb
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.genruntimeconfig.cache
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\ref\Project_FLEXTrainer.dll
-D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Bunifu.Licensing.dll
-D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Bunifu.UI.WinForms.dll
-D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
-D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\RestSharp.dll
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\System.Management.dll
-D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
+D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Guna.Charts.WinForms.dll
+D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Guna.UI2.dll
+D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             searchBar = new TextBox();
             btnCreateWP = new Button();
             topPanel = new Panel();
@@ -36,8 +41,10 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
-            WorkOut = new DataGridView();
+            Panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            WorkOut = new Guna.UI2.WinForms.Guna2DataGridView();
             topPanel.SuspendLayout();
+            Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)WorkOut).BeginInit();
             SuspendLayout();
             // 
@@ -123,14 +130,64 @@
             button1.TabIndex = 11;
             button1.UseVisualStyleBackColor = false;
             // 
+            // Panel
+            // 
+            Panel.Controls.Add(WorkOut);
+            Panel.CustomizableEdges = customizableEdges1;
+            Panel.Location = new Point(0, 60);
+            Panel.Name = "Panel";
+            Panel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Panel.Size = new Size(800, 378);
+            Panel.TabIndex = 1;
+            // 
             // WorkOut
             // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            WorkOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            WorkOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             WorkOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            WorkOut.Location = new Point(12, 79);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            WorkOut.DefaultCellStyle = dataGridViewCellStyle3;
+            WorkOut.GridColor = Color.FromArgb(231, 229, 255);
+            WorkOut.Location = new Point(12, 16);
             WorkOut.Name = "WorkOut";
-            WorkOut.Size = new Size(776, 359);
-            WorkOut.TabIndex = 1;
-            WorkOut.CellContentClick += WorkOut_CellContentClick;
+            WorkOut.RowHeadersVisible = false;
+            WorkOut.Size = new Size(776, 344);
+            WorkOut.TabIndex = 0;
+            WorkOut.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            WorkOut.ThemeStyle.AlternatingRowsStyle.Font = null;
+            WorkOut.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            WorkOut.ThemeStyle.BackColor = Color.White;
+            WorkOut.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            WorkOut.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            WorkOut.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            WorkOut.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            WorkOut.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            WorkOut.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            WorkOut.ThemeStyle.HeaderStyle.Height = 4;
+            WorkOut.ThemeStyle.ReadOnly = false;
+            WorkOut.ThemeStyle.RowsStyle.BackColor = Color.White;
+            WorkOut.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            WorkOut.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            WorkOut.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            WorkOut.ThemeStyle.RowsStyle.Height = 25;
+            WorkOut.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            WorkOut.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // workoutPlans
             // 
@@ -138,12 +195,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(196, 210, 245);
             ClientSize = new Size(800, 450);
-            Controls.Add(WorkOut);
+            Controls.Add(Panel);
             Controls.Add(topPanel);
             Name = "workoutPlans";
             Text = "Workout Plans";
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
+            Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)WorkOut).EndInit();
             ResumeLayout(false);
         }
@@ -157,6 +215,7 @@
         private ComboBox comboBox1;
         private ComboBox comboBox3;
         private ComboBox comboBox2;
-        private DataGridView WorkOut;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel Panel;
+        private Guna.UI2.WinForms.Guna2DataGridView WorkOut;
     }
 }
