@@ -32,11 +32,13 @@
             searchBar = new TextBox();
             btnCreateWP = new Button();
             topPanel = new Panel();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            WorkOut = new DataGridView();
             topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)WorkOut).BeginInit();
             SuspendLayout();
             // 
             // searchBar
@@ -78,6 +80,26 @@
             topPanel.Size = new Size(800, 54);
             topPanel.TabIndex = 0;
             // 
+            // comboBox3
+            // 
+            comboBox3.Anchor = AnchorStyles.Right;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(213, 16);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(121, 23);
+            comboBox3.TabIndex = 14;
+            comboBox3.Text = "Goal";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Right;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(340, 16);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 13;
+            comboBox2.Text = "Schedule";
+            // 
             // comboBox1
             // 
             comboBox1.Anchor = AnchorStyles.Right;
@@ -101,37 +123,28 @@
             button1.TabIndex = 11;
             button1.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
+            // WorkOut
             // 
-            comboBox2.Anchor = AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(340, 16);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 13;
-            comboBox2.Text = "Schedule";
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Right;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(213, 16);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 14;
-            comboBox3.Text = "Goal";
+            WorkOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            WorkOut.Location = new Point(12, 79);
+            WorkOut.Name = "WorkOut";
+            WorkOut.Size = new Size(776, 359);
+            WorkOut.TabIndex = 1;
+            WorkOut.CellContentClick += WorkOut_CellContentClick;
             // 
             // workoutPlans
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Menu;
+            BackColor = Color.FromArgb(196, 210, 245);
             ClientSize = new Size(800, 450);
+            Controls.Add(WorkOut);
             Controls.Add(topPanel);
             Name = "workoutPlans";
             Text = "Workout Plans";
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)WorkOut).EndInit();
             ResumeLayout(false);
         }
 
@@ -144,5 +157,6 @@
         private ComboBox comboBox1;
         private ComboBox comboBox3;
         private ComboBox comboBox2;
+        private DataGridView WorkOut;
     }
 }

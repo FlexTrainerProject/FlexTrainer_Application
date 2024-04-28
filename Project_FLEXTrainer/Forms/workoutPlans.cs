@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Project_FLEXTrainer.Forms
         public workoutPlans()
         {
             InitializeComponent();
+
+            DisplayWorkoutPlan();
         }
 
         private void panelTxt_Click(object sender, EventArgs e)
@@ -29,6 +32,36 @@ namespace Project_FLEXTrainer.Forms
             SubForm.StartPosition = FormStartPosition.CenterScreen;
 
             SubForm.Show(); // Show the form as a separate window
+        }
+
+        private void DisplayWorkoutPlan()
+        {
+            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
+            SqlConnection connection = new SqlConnection(connect);
+            connection.Open();
+            String query = "Select* from workout_plan";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+
+            adapter.Fill(dt);
+
+            WorkOut.DataSource = dt;
+
+
+            connection.Close();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void WorkOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
