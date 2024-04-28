@@ -36,7 +36,8 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayWorkoutPlan()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             SqlConnection connection = new SqlConnection(connect);
             connection.Open();
             String query = "Select* from workout_plan";

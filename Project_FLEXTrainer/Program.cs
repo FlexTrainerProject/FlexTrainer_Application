@@ -11,8 +11,9 @@ namespace Project_FLEXTrainer
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-            //Application.Run(new home());
+            //Application.Run(new Form1());
+            User user = new User("maryana","sssss");
+            Application.Run(new home(user));
         }
     }
 }

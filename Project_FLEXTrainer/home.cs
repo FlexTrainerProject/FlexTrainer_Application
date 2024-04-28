@@ -102,6 +102,7 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
             pgTitle.Text = childForm.Text;
+            //tabPic.Image. = ;
         }
 
 

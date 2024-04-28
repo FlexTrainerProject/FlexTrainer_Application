@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             panel2 = new Panel();
+            tabPic = new PictureBox();
+            UserNamePanel = new Panel();
+            usr_type = new Label();
+            lblUsername = new Label();
+            userIcon = new PictureBox();
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
@@ -40,12 +45,17 @@
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tabPic).BeginInit();
+            UserNamePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userIcon).BeginInit();
             panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(170, 52, 60);
+            panel2.Controls.Add(tabPic);
+            panel2.Controls.Add(UserNamePanel);
             panel2.Controls.Add(pgTitle);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Top;
@@ -54,16 +64,73 @@
             panel2.Size = new Size(1159, 78);
             panel2.TabIndex = 0;
             // 
+            // tabPic
+            // 
+            tabPic.Dock = DockStyle.Left;
+            tabPic.Image = (Image)resources.GetObject("tabPic.Image");
+            tabPic.Location = new Point(0, 0);
+            tabPic.Name = "tabPic";
+            tabPic.Padding = new Padding(10, 10, 0, 0);
+            tabPic.Size = new Size(74, 78);
+            tabPic.TabIndex = 10;
+            tabPic.TabStop = false;
+            // 
+            // UserNamePanel
+            // 
+            UserNamePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            UserNamePanel.BackColor = Color.FromArgb(50, 72, 76);
+            UserNamePanel.Controls.Add(usr_type);
+            UserNamePanel.Controls.Add(lblUsername);
+            UserNamePanel.Controls.Add(userIcon);
+            UserNamePanel.Location = new Point(801, 0);
+            UserNamePanel.Name = "UserNamePanel";
+            UserNamePanel.Size = new Size(238, 89);
+            UserNamePanel.TabIndex = 9;
+            // 
+            // usr_type
+            // 
+            usr_type.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            usr_type.AutoSize = true;
+            usr_type.ForeColor = Color.White;
+            usr_type.Location = new Point(60, 45);
+            usr_type.Name = "usr_type";
+            usr_type.Size = new Size(167, 15);
+            usr_type.TabIndex = 2;
+            usr_type.Text = "usr_type (member/admin/etc)";
+            // 
+            // lblUsername
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.Dock = DockStyle.Left;
+            lblUsername.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsername.ForeColor = Color.White;
+            lblUsername.Location = new Point(54, 0);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Padding = new Padding(0, 15, 0, 0);
+            lblUsername.Size = new Size(123, 45);
+            lblUsername.TabIndex = 1;
+            lblUsername.Text = "USERNAME";
+            // 
+            // userIcon
+            // 
+            userIcon.Dock = DockStyle.Left;
+            userIcon.Image = (Image)resources.GetObject("userIcon.Image");
+            userIcon.Location = new Point(0, 0);
+            userIcon.Name = "userIcon";
+            userIcon.Padding = new Padding(5, 15, 0, 0);
+            userIcon.Size = new Size(54, 89);
+            userIcon.TabIndex = 0;
+            userIcon.TabStop = false;
+            // 
             // pgTitle
             // 
             pgTitle.AutoSize = true;
-            pgTitle.Dock = DockStyle.Left;
             pgTitle.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pgTitle.ForeColor = Color.White;
-            pgTitle.Location = new Point(0, 0);
+            pgTitle.Location = new Point(64, -2);
             pgTitle.Name = "pgTitle";
-            pgTitle.Padding = new Padding(20, 23, 0, 0);
-            pgTitle.Size = new Size(150, 65);
+            pgTitle.Padding = new Padding(10, 20, 0, 0);
+            pgTitle.Size = new Size(140, 62);
             pgTitle.TabIndex = 8;
             pgTitle.Text = "HOME";
             // 
@@ -74,7 +141,7 @@
             label1.BackColor = Color.FromArgb(50, 72, 76);
             label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1048, -6);
+            label1.Location = new Point(1036, -16);
             label1.Name = "label1";
             label1.Padding = new Padding(10, 30, 10, 0);
             label1.Size = new Size(123, 105);
@@ -217,6 +284,10 @@
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tabPic).EndInit();
+            UserNamePanel.ResumeLayout(false);
+            UserNamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userIcon).EndInit();
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -233,5 +304,10 @@
         private Label label1;
         private Label pgTitle;
         private Panel desktopPanel;
+        private Panel UserNamePanel;
+        private PictureBox userIcon;
+        private Label lblUsername;
+        private Label usr_type;
+        private PictureBox tabPic;
     }
 }
