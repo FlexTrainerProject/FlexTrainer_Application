@@ -33,17 +33,18 @@
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mainTxt
             // 
             mainTxt.AutoSize = true;
-            mainTxt.Font = new Font("Herborn", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mainTxt.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainTxt.ForeColor = Color.FromArgb(26, 46, 53);
-            mainTxt.Location = new Point(0, -12);
+            mainTxt.Location = new Point(0, 73);
             mainTxt.Name = "mainTxt";
-            mainTxt.Size = new Size(525, 69);
+            mainTxt.Size = new Size(458, 93);
             mainTxt.TabIndex = 0;
             mainTxt.Text = "\r\n\r\nYour Ultimate Fitness Companion ";
             mainTxt.Click += mainTxt_Click;
@@ -52,22 +53,23 @@
             // 
             label1.AutoSize = true;
             label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Couture", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(26, 46, 53);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(202, 27);
+            label1.Size = new Size(141, 31);
             label1.TabIndex = 1;
-            label1.Text = "Welcome to";
+            label1.Text = "Welcome ";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Couture", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(170, 52, 60);
-            label2.Location = new Point(208, 0);
+            label2.Location = new Point(222, 60);
             label2.Name = "label2";
-            label2.Size = new Size(210, 27);
+            label2.Size = new Size(222, 31);
             label2.TabIndex = 2;
             label2.Text = "FLEX TRAINER";
             // 
@@ -83,11 +85,22 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(104, 60);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 30);
+            label3.TabIndex = 4;
+            label3.Text = "label3";
+            // 
             // mainHomecs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(mainTxt);
@@ -105,5 +118,6 @@
         private Label label1;
         private Label label2;
         private PictureBox pictureBox1;
+        private Label label3;
     }
 }

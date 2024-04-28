@@ -58,12 +58,12 @@
             // 
             pgTitle.AutoSize = true;
             pgTitle.Dock = DockStyle.Left;
-            pgTitle.Font = new Font("Retroica", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            pgTitle.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pgTitle.ForeColor = Color.White;
             pgTitle.Location = new Point(0, 0);
             pgTitle.Name = "pgTitle";
             pgTitle.Padding = new Padding(20, 23, 0, 0);
-            pgTitle.Size = new Size(148, 61);
+            pgTitle.Size = new Size(150, 65);
             pgTitle.TabIndex = 8;
             pgTitle.Text = "HOME";
             // 
@@ -72,12 +72,12 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(50, 72, 76);
-            label1.Font = new Font("Herborn", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(1048, -6);
             label1.Name = "label1";
             label1.Padding = new Padding(10, 30, 10, 0);
-            label1.Size = new Size(111, 84);
+            label1.Size = new Size(123, 105);
             label1.TabIndex = 7;
             label1.Text = "FLEX \r\nTRAINER\r\n\r\n";
             label1.TextAlign = ContentAlignment.MiddleCenter;

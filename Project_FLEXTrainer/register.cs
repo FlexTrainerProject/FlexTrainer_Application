@@ -58,6 +58,22 @@ namespace Project_FLEXTrainer
             }
         }
 
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "Email")
+            {
+                textBox3.Text = "";
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                textBox3.Text = "Email";
+            }
+        }
+
         private void pass_Enter(object sender, EventArgs e)
         {
             if (Pass.Text == "Password")
@@ -102,18 +118,32 @@ namespace Project_FLEXTrainer
                 return;
             }
 
-            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;";
+            if (!textBox3.Text.Contains("@"))
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                return;
+            }
+
+            if (!textBox3.Text.Contains(".com"))
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                return;
+            }
+
+            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
             SqlConnection connection = new SqlConnection(connect);
             connection.Open();
             //query to check if username already exists
             string usercheck = "SELECT 1 FROM dbo.account WHERE Username = '"+textBox1.Text+"'";
             SqlCommand usercheckcmd = new SqlCommand(usercheck, connection);
 
+
+
             int flag = Convert.ToInt32(usercheckcmd.ExecuteScalar());
             if (flag != 1)
             {
                 //query to save record in the table
-                string query = "INSERT INTO dbo.account (dbo.account.Username, dbo.account.Password) VALUES ('"+textBox1.Text+"', '"+Pass.Text+"');";
+                string query = "INSERT INTO account (username,email,account_type, password) VALUES ('" + textBox1.Text + "' ,'" + textBox3.Text + "', '" + LoginAs.SelectedItem.ToString() + "','" + Pass.Text + "');";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

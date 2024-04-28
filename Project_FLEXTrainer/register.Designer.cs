@@ -33,6 +33,7 @@
             label1 = new Label();
             logo = new PictureBox();
             panel1 = new Panel();
+            textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             linkLabel1 = new LinkLabel();
@@ -45,6 +46,7 @@
             panel2 = new Panel();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             back = new Button();
+            LoginAs = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -53,11 +55,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("a Big Deal", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
             label1.Location = new Point(127, 312);
             label1.Name = "label1";
-            label1.Size = new Size(326, 37);
+            label1.Size = new Size(285, 42);
             label1.TabIndex = 17;
             label1.Text = "FLEX TRAINER";
             // 
@@ -76,6 +78,8 @@
             // panel1
             // 
             panel1.BackColor = Color.PaleTurquoise;
+            panel1.Controls.Add(LoginAs);
+            panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(linkLabel1);
@@ -88,10 +92,21 @@
             panel1.Size = new Size(396, 534);
             panel1.TabIndex = 19;
             // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox3.Location = new Point(61, 199);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(239, 29);
+            textBox3.TabIndex = 19;
+            textBox3.Text = "Email";
+            textBox3.Enter += textBox3_Enter;
+            textBox3.Leave += textBox3_Leave;
+            // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(61, 333);
+            textBox2.Location = new Point(61, 294);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(239, 29);
             textBox2.TabIndex = 18;
@@ -102,7 +117,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(61, 238);
+            textBox1.Location = new Point(61, 152);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(239, 29);
             textBox1.TabIndex = 17;
@@ -124,7 +139,7 @@
             // Pass
             // 
             Pass.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Pass.Location = new Point(61, 284);
+            Pass.Location = new Point(61, 248);
             Pass.Name = "Pass";
             Pass.Size = new Size(239, 29);
             Pass.TabIndex = 15;
@@ -135,11 +150,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Retroica", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkSlateGray;
-            label3.Location = new Point(71, 180);
+            label3.Location = new Point(70, 122);
             label3.Name = "label3";
-            label3.Size = new Size(90, 21);
+            label3.Size = new Size(81, 24);
             label3.TabIndex = 1;
             label3.Text = "Member";
             label3.TextAlign = ContentAlignment.TopCenter;
@@ -159,11 +174,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Retroica", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Teal;
-            label2.Location = new Point(61, 131);
+            label2.Location = new Point(61, 67);
             label2.Name = "label2";
-            label2.Size = new Size(253, 49);
+            label2.Size = new Size(269, 55);
             label2.TabIndex = 0;
             label2.Text = "REGISTER";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -188,6 +203,19 @@
             back.Text = "Back";
             back.UseVisualStyleBackColor = false;
             back.Click += back_Click;
+            // 
+            // LoginAs
+            // 
+            LoginAs.AccessibleName = "LoginAs";
+            LoginAs.DisplayMember = "Member";
+            LoginAs.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoginAs.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginAs.FormattingEnabled = true;
+            LoginAs.Items.AddRange(new object[] { "Member", "Trainer" });
+            LoginAs.Location = new Point(61, 344);
+            LoginAs.Name = "LoginAs";
+            LoginAs.Size = new Size(143, 26);
+            LoginAs.TabIndex = 21;
             // 
             // register
             // 
@@ -228,5 +256,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private TextBox textBox2;
         private Button back;
+        private TextBox textBox3;
+        private ComboBox LoginAs;
     }
 }

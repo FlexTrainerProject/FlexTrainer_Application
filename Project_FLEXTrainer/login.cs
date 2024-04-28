@@ -97,7 +97,7 @@ namespace Project_FLEXTrainer
 
         private void button2_click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source = MNK\\SQLEXPRESS; Initial Catalog = Project; Integrated Security = True;");
+            SqlConnection connection = new SqlConnection("Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False");
             connection.Open();
             SqlCommand checkifuser = new SqlCommand("SELECT 1 FROM dbo.account WHERE Username = '" + textBox1.Text + "'", connection);
             int flag = Convert.ToInt32(checkifuser.ExecuteScalar());
@@ -112,6 +112,14 @@ namespace Project_FLEXTrainer
                 if (passw == Pass.Text)
                 {
                     MessageBox.Show("Login Successful");
+
+                    User currentUser = new User(textBox1.Text, passw);
+
+
+                    home home = new home(currentUser);
+                    home.Show();
+
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Incorrect Password");

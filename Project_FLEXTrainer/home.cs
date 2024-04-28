@@ -14,10 +14,10 @@ namespace Project_FLEXTrainer
     {
         private Button activeButton;
         private Form activeForm;
-        public home()
+        public home(User user)
         {
             InitializeComponent();
-            Form childForm = new Forms.mainHomecs();
+            Form childForm = new Forms.mainHomecs(user);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -27,6 +27,7 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
 
+            User currentuser = user;
         }
 
   
