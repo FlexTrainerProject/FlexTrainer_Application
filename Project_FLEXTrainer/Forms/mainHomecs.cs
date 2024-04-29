@@ -16,18 +16,17 @@ namespace Project_FLEXTrainer.Forms
         public mainHomecs(User user)
         {
             InitializeComponent();
+            CenterPictureBoxInPanel(pictureBox1, panel1);
 
-            label3.Text = user.Username + " to";
+            //label3.Text = user.Username + " to";
         }
 
-        private void mainTxt_Click(object sender, EventArgs e)
+        private void CenterPictureBoxInPanel(PictureBox pictureBox, Panel panel)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+            int x = (panel.Width - pictureBox.Width) / 2;
+            int y = (panel.Height - pictureBox.Height) / 2;
+            pictureBox.Location = new Point(x, y);
         }
     }
 }
