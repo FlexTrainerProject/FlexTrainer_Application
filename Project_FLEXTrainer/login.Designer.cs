@@ -52,11 +52,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Teal;
-            label1.Location = new Point(126, 313);
+            label1.Font = new Font("Retroica", 27.7499962F);
+            label1.ForeColor = Color.FromArgb(170, 52, 60);
+            label1.Location = new Point(150, 312);
             label1.Name = "label1";
-            label1.Size = new Size(285, 42);
+            label1.Size = new Size(273, 38);
             label1.TabIndex = 11;
             label1.Text = "FLEX TRAINER";
             // 
@@ -74,8 +74,9 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(0, 192, 192);
+            button2.BackColor = Color.FromArgb(170, 52, 60);
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(61, 366);
             button2.Name = "button2";
             button2.Size = new Size(239, 46);
@@ -86,7 +87,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.PowderBlue;
+            panel2.BackColor = Color.FromArgb(50, 72, 76);
             panel2.Location = new Point(-5, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(72, 534);
@@ -94,7 +95,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.PaleTurquoise;
+            panel1.BackColor = Color.FromArgb(50, 72, 76);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(Pass);
@@ -114,13 +115,13 @@
             textBox1.Size = new Size(239, 29);
             textBox1.TabIndex = 17;
             textBox1.Text = "Username";
-            textBox1.TextChanged += textBox1_TextChanged;
             textBox1.Enter += textBox1_Enter;
             textBox1.Leave += textBox1_Leave;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(81, 425);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(205, 15);
@@ -144,8 +145,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DarkSlateGray;
+            label3.Font = new Font("Microsoft Sans Serif", 14.2499981F);
+            label3.ForeColor = Color.Honeydew;
             label3.Location = new Point(71, 180);
             label3.Name = "label3";
             label3.Size = new Size(81, 24);
@@ -157,11 +158,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Teal;
+            label2.Font = new Font("Retroica", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(61, 131);
             label2.Name = "label2";
-            label2.Size = new Size(173, 55);
+            label2.Size = new Size(176, 49);
             label2.TabIndex = 0;
             label2.Text = "LOGIN";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -169,10 +170,10 @@
             // 
             // back
             // 
-            back.BackColor = Color.Teal;
+            back.BackColor = Color.FromArgb(170, 52, 60);
             back.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             back.ForeColor = SystemColors.ButtonFace;
-            back.Location = new Point(222, 401);
+            back.Location = new Point(216, 401);
             back.Name = "back";
             back.Size = new Size(131, 39);
             back.TabIndex = 20;

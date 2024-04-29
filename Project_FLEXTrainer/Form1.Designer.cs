@@ -55,8 +55,11 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(0, 192, 192);
+            button1.BackColor = Color.FromArgb(170, 52, 60);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(61, 228);
             button1.Name = "button1";
             button1.Size = new Size(239, 46);
@@ -67,8 +70,11 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(0, 192, 192);
+            button2.BackColor = Color.FromArgb(170, 52, 60);
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(61, 280);
             button2.Name = "button2";
             button2.Size = new Size(239, 46);
@@ -119,7 +125,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.Gainsboro;
             ClientSize = new Size(906, 532);
             Controls.Add(panel2);
             Controls.Add(label1);
