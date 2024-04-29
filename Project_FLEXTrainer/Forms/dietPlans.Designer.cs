@@ -37,7 +37,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnCreateDP = new Button();
             topPanel = new Panel();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             button1 = new Button();
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
@@ -69,7 +69,7 @@
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
-            topPanel.Controls.Add(guna2TextBox1);
+            topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(button1);
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
@@ -81,31 +81,31 @@
             topPanel.Size = new Size(1137, 54);
             topPanel.TabIndex = 2;
             // 
-            // guna2TextBox1
+            // searchBar
             // 
-            guna2TextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            guna2TextBox1.BorderColor = Color.White;
-            guna2TextBox1.BorderRadius = 12;
-            guna2TextBox1.BorderThickness = 2;
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.IconRight = (Image)resources.GetObject("guna2TextBox1.IconRight");
-            guna2TextBox1.Location = new Point(12, 12);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "Search";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(177, 28);
-            guna2TextBox1.TabIndex = 9;
-            guna2TextBox1.TextChanged += guna2TextBox1_TextChanged;
+            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            searchBar.BorderColor = Color.White;
+            searchBar.BorderRadius = 12;
+            searchBar.BorderThickness = 2;
+            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.DefaultText = "";
+            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.Font = new Font("Segoe UI", 9F);
+            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
+            searchBar.Location = new Point(12, 12);
+            searchBar.Name = "searchBar";
+            searchBar.PasswordChar = '\0';
+            searchBar.PlaceholderText = "Search";
+            searchBar.SelectedText = "";
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.Size = new Size(177, 28);
+            searchBar.TabIndex = 9;
+            searchBar.TextChanged += guna2TextBox1_TextChanged;
             // 
             // button1
             // 
@@ -256,5 +256,6 @@
         private ImageList imageList1;
         private DataGridViewImageColumn Icon;
         private DataGridViewButtonColumn AddButoon;
+        private Guna.UI2.WinForms.Guna2TextBox searchBar;
     }
 }
