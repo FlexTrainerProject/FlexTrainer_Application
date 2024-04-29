@@ -33,6 +33,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             UserNamePanel = new Panel();
+            btnpfp = new Guna.UI2.WinForms.Guna2Button();
             usr_type = new Label();
             lblUsername = new Label();
             pgTitle = new Label();
@@ -44,7 +45,6 @@
             btnDietPlans = new Button();
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
-            btnpfp = new Guna.UI2.WinForms.Guna2Button();
             panel2.SuspendLayout();
             UserNamePanel.SuspendLayout();
             panelMenu.SuspendLayout();
@@ -73,6 +73,27 @@
             UserNamePanel.Name = "UserNamePanel";
             UserNamePanel.Size = new Size(279, 89);
             UserNamePanel.TabIndex = 9;
+            // 
+            // btnpfp
+            // 
+            btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnpfp.CustomizableEdges = customizableEdges1;
+            btnpfp.DisabledState.BorderColor = Color.DarkGray;
+            btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnpfp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnpfp.FillColor = Color.FromArgb(50, 72, 76);
+            btnpfp.Font = new Font("Segoe UI", 9F);
+            btnpfp.ForeColor = Color.White;
+            btnpfp.Image = (Image)resources.GetObject("btnpfp.Image");
+            btnpfp.ImageSize = new Size(50, 50);
+            btnpfp.Location = new Point(0, 0);
+            btnpfp.Name = "btnpfp";
+            btnpfp.Padding = new Padding(5, 0, 5, 5);
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnpfp.Size = new Size(76, 80);
+            btnpfp.TabIndex = 3;
+            btnpfp.Click += btnpfp_Click;
             // 
             // usr_type
             // 
@@ -246,26 +267,6 @@
             desktopPanel.Name = "desktopPanel";
             desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 2;
-            // 
-            // btnpfp
-            // 
-            btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges1;
-            btnpfp.DisabledState.BorderColor = Color.DarkGray;
-            btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnpfp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnpfp.FillColor = Color.FromArgb(50, 72, 76);
-            btnpfp.Font = new Font("Segoe UI", 9F);
-            btnpfp.ForeColor = Color.White;
-            btnpfp.Image = (Image)resources.GetObject("btnpfp.Image");
-            btnpfp.ImageSize = new Size(50, 50);
-            btnpfp.Location = new Point(0, 0);
-            btnpfp.Name = "btnpfp";
-            btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnpfp.Size = new Size(76, 80);
-            btnpfp.TabIndex = 3;
             // 
             // home
             // 

@@ -14,6 +14,7 @@ namespace Project_FLEXTrainer
     {
         private Button activeButton;
         private Form activeForm;
+        User currentuser;
         public home(User user)
         {
             InitializeComponent();
@@ -27,12 +28,12 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
 
-            User currentuser = user;
+            currentuser = user;
             lblUsername.Text = user.Username;
             usr_type.Text = user.Type;
         }
 
-  
+
 
         private void btnWorkoutPlans_Click(object sender, EventArgs e)
         {
@@ -107,6 +108,26 @@ namespace Project_FLEXTrainer
             //tabPic.Image. = ;
         }
 
+        Forms.SubForms.Profile SubForm; 
+        private void btnpfp_Click(object sender, EventArgs e)
+        {
+            if (SubForm == null || SubForm.IsDisposed)
+            {
+                SubForm = new Forms.SubForms.Profile(currentuser);
+                SubForm.FormBorderStyle = FormBorderStyle.None;
+                SubForm.StartPosition = FormStartPosition.Manual;
+
+                // Calculate the position of the sub form relative to the button
+                Point p = btnpfp.PointToScreen(Point.Empty);
+                SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
+
+                SubForm.Show();
+            }
+            else
+            {
+                SubForm.BringToFront();
+            }
+        }
 
     }
 }

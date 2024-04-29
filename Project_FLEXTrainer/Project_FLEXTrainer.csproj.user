@@ -25,6 +25,12 @@
     <Compile Update="Forms\SubForms\createWorkoutPlan.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\SubForms\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SubForms\Profile_more.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\workoutPlans.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -159,3 +159,5 @@ D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\RestSharp.dll
 D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
+D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.Forms.SubForms.Profile.resources
+D:\repos\yaaa\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.Forms.SubForms.Profile_more.resources

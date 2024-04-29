@@ -18,7 +18,7 @@ namespace Project_FLEXTrainer
         public login()
         {
             InitializeComponent();
-           
+
         }
 
         private void login_Load(object sender, EventArgs e)
@@ -107,13 +107,13 @@ namespace Project_FLEXTrainer
             }
             else
             {
-                SqlCommand returnpass = new SqlCommand("SELECT Password FROM dbo.account WHERE Username = '" + textBox1.Text+"'", connection);
-                string passw = Convert.ToString( returnpass.ExecuteScalar());
+                SqlCommand returnpass = new SqlCommand("SELECT Password FROM dbo.account WHERE Username = '" + textBox1.Text + "'", connection);
+                string passw = Convert.ToString(returnpass.ExecuteScalar());
                 if (passw == Pass.Text)
                 {
                     MessageBox.Show("Login Successful");
 
-                    SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'",connection);
+                    SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'", connection);
                     string acc_t = Convert.ToString(account_type.ExecuteScalar());
 
                     User currentUser = new User(textBox1.Text, acc_t, passw);
@@ -127,6 +127,11 @@ namespace Project_FLEXTrainer
                     MessageBox.Show("Incorrect Password");
             }
             connection.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
