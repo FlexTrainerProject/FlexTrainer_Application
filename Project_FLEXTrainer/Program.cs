@@ -12,7 +12,8 @@ namespace Project_FLEXTrainer
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
-            //Application.Run(new home());
+            //User user = new User("maryana","sssss");
+            //Application.Run(new home(user));
         }
     }
 }

@@ -113,8 +113,10 @@ namespace Project_FLEXTrainer
                 {
                     MessageBox.Show("Login Successful");
 
-                    User currentUser = new User(textBox1.Text, passw);
+                    SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'",connection);
+                    string acc_t = Convert.ToString(account_type.ExecuteScalar());
 
+                    User currentUser = new User(textBox1.Text, acc_t, passw);
 
                     home home = new home(currentUser);
                     home.Show();

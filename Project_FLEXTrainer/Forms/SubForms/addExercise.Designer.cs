@@ -78,12 +78,12 @@
             // 
             txt.AutoSize = true;
             txt.Dock = DockStyle.Left;
-            txt.Font = new Font("Couture", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txt.ForeColor = Color.White;
             txt.Location = new Point(0, 0);
             txt.Name = "txt";
             txt.Padding = new Padding(5, 20, 0, 0);
-            txt.Size = new Size(151, 47);
+            txt.Size = new Size(165, 51);
             txt.TabIndex = 0;
             txt.Text = "EXERCISE";
             // 

@@ -28,6 +28,8 @@ namespace Project_FLEXTrainer
             childForm.Show();
 
             User currentuser = user;
+            lblUsername.Text = user.Username;
+            usr_type.Text = user.Type;
         }
 
   
@@ -102,6 +104,7 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
             pgTitle.Text = childForm.Text;
+            //tabPic.Image. = ;
         }
 
 
