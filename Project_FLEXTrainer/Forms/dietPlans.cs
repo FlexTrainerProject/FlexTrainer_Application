@@ -20,12 +20,7 @@ namespace Project_FLEXTrainer.Forms
         {
             InitializeComponent();
             DisplayDietPlans();
-            for (int i = 0; i < 5; i++)
-            {
-                DietPlansView.Rows.Add(new object[]{
-                    imageList1.Images[0]
-                });
-            }
+            
 
         }
 

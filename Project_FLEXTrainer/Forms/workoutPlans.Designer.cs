@@ -145,7 +145,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             WorkOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            WorkOut.BackgroundColor = Color.FromArgb(76, 126, 122);
+            WorkOut.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -154,7 +154,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             WorkOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            WorkOut.ColumnHeadersHeight = 4;
+            WorkOut.ColumnHeadersHeight = 25;
             WorkOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -176,14 +176,14 @@
             WorkOut.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            WorkOut.ThemeStyle.BackColor = Color.FromArgb(76, 126, 122);
+            WorkOut.ThemeStyle.BackColor = Color.WhiteSmoke;
             WorkOut.ThemeStyle.GridColor = Color.FromArgb(76, 126, 122);
             WorkOut.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             WorkOut.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             WorkOut.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             WorkOut.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             WorkOut.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            WorkOut.ThemeStyle.HeaderStyle.Height = 4;
+            WorkOut.ThemeStyle.HeaderStyle.Height = 25;
             WorkOut.ThemeStyle.ReadOnly = false;
             WorkOut.ThemeStyle.RowsStyle.BackColor = Color.White;
             WorkOut.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
