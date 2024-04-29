@@ -249,6 +249,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Azure;
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
