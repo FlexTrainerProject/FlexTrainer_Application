@@ -2,6 +2,54 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
+      "Bunifu.Licensing/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "RestSharp": "110.2.0",
+          "System.Management": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Bunifu.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Bunifu.Licensing.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Bunifu.UI.WinForms/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Bunifu.Licensing": "6.0.2"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Bunifu.UI.WinForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Bunifu.Utils/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Bunifu.UI.WinForms": "5.0.1"
+        },
+        "compile": {
+          "lib/net45/Bunifu.Utils.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Bunifu.Utils.dll": {}
+        }
+      },
       "Guna.Charts.WinForms/1.0.9": {
         "type": "package",
         "dependencies": {
@@ -72,6 +120,35 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "RestSharp/110.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -107,15 +184,15 @@
           }
         }
       },
-      "System.CodeDom/7.0.0": {
+      "System.CodeDom/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
+          "lib/net8.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
+          "lib/net8.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
@@ -151,18 +228,18 @@
           }
         }
       },
-      "System.Management/7.0.0": {
+      "System.Management/8.0.0": {
         "type": "package",
         "dependencies": {
-          "System.CodeDom": "7.0.0"
+          "System.CodeDom": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/System.Management.dll": {
+          "lib/net8.0/System.Management.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Management.dll": {
+          "lib/net8.0/System.Management.dll": {
             "related": ".xml"
           }
         },
@@ -170,7 +247,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
+          "runtimes/win/lib/net8.0/System.Management.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -221,10 +298,113 @@
             "rid": "win"
           }
         }
+      },
+      "System.Text.Encodings.Web/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/System.Text.Json.targets": {}
+        }
       }
     }
   },
   "libraries": {
+    "Bunifu.Licensing/6.0.2": {
+      "sha512": "riR7300VAWONnWt9dN22C9eYp3aWc6OuL11P0PzV58W3HRdJB/NmHseDtqkXen8LaAyLJ9e6pEV2deDNBIvnWA==",
+      "type": "package",
+      "path": "bunifu.licensing/6.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "LICENSING README.md",
+        "bunifu.licensing.6.0.2.nupkg.sha512",
+        "bunifu.licensing.nuspec",
+        "lib/net462/Bunifu.Licensing.dll",
+        "lib/net472/Bunifu.Licensing.dll",
+        "lib/net48/Bunifu.Licensing.dll",
+        "lib/net5.0-windows7.0/Bunifu.Licensing.dll",
+        "lib/net6.0-windows7.0/Bunifu.Licensing.dll",
+        "lib/net7.0-windows7.0/Bunifu.Licensing.dll",
+        "lib/net8.0-windows7.0/Bunifu.Licensing.dll"
+      ]
+    },
+    "Bunifu.UI.WinForms/7.0.0": {
+      "sha512": "Nrl5TErhGP7vBzMr72se0Y+T04fm0QU32B4RcvSCKQkJeEsgTg/fHi2vZjRpHe2VeNzM5eM+mj1+xTjP2JekOA==",
+      "type": "package",
+      "path": "bunifu.ui.winforms/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "bunifu.ui.winforms.7.0.0.nupkg.sha512",
+        "bunifu.ui.winforms.nuspec",
+        "lib/net462/Bunifu.UI.WinForms.dll",
+        "lib/net462/Bunifu.UI.WinForms.xml",
+        "lib/net472/Bunifu.UI.WinForms.dll",
+        "lib/net472/Bunifu.UI.WinForms.xml",
+        "lib/net48/Bunifu.UI.WinForms.dll",
+        "lib/net48/Bunifu.UI.WinForms.xml",
+        "lib/net5.0-windows7.0/Bunifu.UI.WinForms.dll",
+        "lib/net5.0-windows7.0/Bunifu.UI.WinForms.xml",
+        "lib/net6.0-windows7.0/Bunifu.UI.WinForms.dll",
+        "lib/net6.0-windows7.0/Bunifu.UI.WinForms.xml",
+        "lib/net7.0-windows7.0/Bunifu.UI.WinForms.dll",
+        "lib/net7.0-windows7.0/Bunifu.UI.WinForms.xml",
+        "lib/net8.0-windows7.0/Bunifu.UI.WinForms.dll",
+        "lib/net8.0-windows7.0/Bunifu.UI.WinForms.xml"
+      ]
+    },
+    "Bunifu.Utils/1.0.5": {
+      "sha512": "2TYLfyvLHNsOnN7/5vM1Ms2cW2cUwk+qJpGDg+c/a2wSHjcsIi16AuniKvzBZL5+AMf+8Yu30WrNQUsyue3UQw==",
+      "type": "package",
+      "path": "bunifu.utils/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bunifu.utils.1.0.5.nupkg.sha512",
+        "bunifu.utils.nuspec",
+        "lib/Assets/icon.png",
+        "lib/net45/Bunifu.Utils.dll"
+      ]
+    },
     "Guna.Charts.WinForms/1.0.9": {
       "sha512": "AT6CUHGi+3fh7ut9tKIW6UB8lwFbpqCibjm4ya5qxLvwQPNjKHr1gSeStf4r+B+asekyiuu8ZCKCVlVugL+lVg==",
       "type": "package",
@@ -341,6 +521,56 @@
         "version.txt"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "RestSharp/110.2.0": {
+      "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
+      "type": "package",
+      "path": "restsharp/110.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/RestSharp.dll",
+        "lib/net471/RestSharp.xml",
+        "lib/net6.0/RestSharp.dll",
+        "lib/net6.0/RestSharp.xml",
+        "lib/net7.0/RestSharp.dll",
+        "lib/net7.0/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.110.2.0.nupkg.sha512",
+        "restsharp.nuspec",
+        "restsharp.png"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "sha512": "9kyFSIdN3T0qjDQ2R0HRXYIhS3l5psBzQi6qqhdLz+SzFyEy4sVxNOke+yyYv8Cu8rPER12c3RDjLT8wF3WBYQ==",
       "type": "package",
@@ -404,10 +634,10 @@
         "version.txt"
       ]
     },
-    "System.CodeDom/7.0.0": {
-      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+    "System.CodeDom/8.0.0": {
+      "sha512": "WTlRjL6KWIMr/pAaq3rYqh0TJlzpouaQ/W1eelssHgtlwHAH25jXTkUphTYx9HaIIf7XA6qs/0+YhtLEQRkJ+Q==",
       "type": "package",
-      "path": "system.codedom/7.0.0",
+      "path": "system.codedom/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -424,9 +654,11 @@
         "lib/net6.0/System.CodeDom.xml",
         "lib/net7.0/System.CodeDom.dll",
         "lib/net7.0/System.CodeDom.xml",
+        "lib/net8.0/System.CodeDom.dll",
+        "lib/net8.0/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
         "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.7.0.0.nupkg.sha512",
+        "system.codedom.8.0.0.nupkg.sha512",
         "system.codedom.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -517,15 +749,16 @@
         "version.txt"
       ]
     },
-    "System.Management/7.0.0": {
-      "sha512": "A4jed4QUviDOm7fJNKAJObEAEkEUXmkGL/w0iyCYTzrl1rezTj8LGFHfsVst4Vb9JwFcTpboiDrvdST48avBpw==",
+    "System.Management/8.0.0": {
+      "sha512": "jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
       "type": "package",
-      "path": "system.management/7.0.0",
+      "path": "system.management/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.Management.targets",
@@ -534,13 +767,17 @@
         "lib/net6.0/System.Management.xml",
         "lib/net7.0/System.Management.dll",
         "lib/net7.0/System.Management.xml",
+        "lib/net8.0/System.Management.dll",
+        "lib/net8.0/System.Management.xml",
         "lib/netstandard2.0/System.Management.dll",
         "lib/netstandard2.0/System.Management.xml",
         "runtimes/win/lib/net6.0/System.Management.dll",
         "runtimes/win/lib/net6.0/System.Management.xml",
         "runtimes/win/lib/net7.0/System.Management.dll",
         "runtimes/win/lib/net7.0/System.Management.xml",
-        "system.management.7.0.0.nupkg.sha512",
+        "runtimes/win/lib/net8.0/System.Management.dll",
+        "runtimes/win/lib/net8.0/System.Management.xml",
+        "system.management.8.0.0.nupkg.sha512",
         "system.management.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -644,10 +881,114 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "System.Text.Encodings.Web/7.0.0": {
+      "sha512": "OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
+      "type": "package",
+      "path": "system.text.encodings.web/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net6.0/System.Text.Encodings.Web.dll",
+        "lib/net6.0/System.Text.Encodings.Web.xml",
+        "lib/net7.0/System.Text.Encodings.Web.dll",
+        "lib/net7.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net7.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.7.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/7.0.2": {
+      "sha512": "/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
+      "type": "package",
+      "path": "system.text.json/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net6.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/net7.0/System.Text.Json.dll",
+        "lib/net7.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.7.0.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "Bunifu.UI.WinForms >= 7.0.0",
+      "Bunifu.Utils >= 1.0.5",
       "Guna.Charts.WinForms >= 1.0.9",
       "Guna.UI2.WinForms >= 2.0.4.6",
       "System.Data.SqlClient >= 4.8.6"
@@ -697,6 +1038,14 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "Bunifu.UI.WinForms": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
+          "Bunifu.Utils": {
+            "target": "Package",
+            "version": "[1.0.5, )"
+          },
           "Guna.Charts.WinForms": {
             "target": "Package",
             "version": "[1.0.9, )"
@@ -732,5 +1081,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Bunifu.Utils 1.0.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Bunifu.Utils",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

@@ -68,9 +68,9 @@
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
             UserNamePanel.Controls.Add(userIcon);
-            UserNamePanel.Location = new Point(801, 0);
+            UserNamePanel.Location = new Point(773, 0);
             UserNamePanel.Name = "UserNamePanel";
-            UserNamePanel.Size = new Size(238, 89);
+            UserNamePanel.Size = new Size(266, 89);
             UserNamePanel.TabIndex = 9;
             // 
             // usr_type
@@ -78,7 +78,7 @@
             usr_type.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             usr_type.AutoSize = true;
             usr_type.ForeColor = Color.White;
-            usr_type.Location = new Point(60, 45);
+            usr_type.Location = new Point(69, 45);
             usr_type.Name = "usr_type";
             usr_type.Size = new Size(167, 15);
             usr_type.TabIndex = 2;
@@ -90,7 +90,7 @@
             lblUsername.Dock = DockStyle.Left;
             lblUsername.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(54, 0);
+            lblUsername.Location = new Point(63, 0);
             lblUsername.Name = "lblUsername";
             lblUsername.Padding = new Padding(0, 15, 0, 0);
             lblUsername.Size = new Size(123, 45);
@@ -104,7 +104,7 @@
             userIcon.Location = new Point(0, 0);
             userIcon.Name = "userIcon";
             userIcon.Padding = new Padding(5, 15, 0, 0);
-            userIcon.Size = new Size(54, 89);
+            userIcon.Size = new Size(63, 89);
             userIcon.TabIndex = 0;
             userIcon.TabStop = false;
             // 
@@ -179,7 +179,7 @@
             btnMyPlans.ForeColor = Color.Gainsboro;
             btnMyPlans.Image = (Image)resources.GetObject("btnMyPlans.Image");
             btnMyPlans.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMyPlans.Location = new Point(0, 150);
+            btnMyPlans.Location = new Point(0, 210);
             btnMyPlans.Name = "btnMyPlans";
             btnMyPlans.Padding = new Padding(15, 0, 0, 0);
             btnMyPlans.Size = new Size(253, 50);
@@ -199,10 +199,10 @@
             btnBookSessions.ForeColor = Color.Gainsboro;
             btnBookSessions.Image = (Image)resources.GetObject("btnBookSessions.Image");
             btnBookSessions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBookSessions.Location = new Point(0, 100);
+            btnBookSessions.Location = new Point(0, 140);
             btnBookSessions.Name = "btnBookSessions";
             btnBookSessions.Padding = new Padding(12, 0, 0, 0);
-            btnBookSessions.Size = new Size(253, 50);
+            btnBookSessions.Size = new Size(253, 70);
             btnBookSessions.TabIndex = 10;
             btnBookSessions.Text = "  Book Session";
             btnBookSessions.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -219,10 +219,10 @@
             btnDietPlans.ForeColor = Color.Gainsboro;
             btnDietPlans.Image = (Image)resources.GetObject("btnDietPlans.Image");
             btnDietPlans.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDietPlans.Location = new Point(0, 50);
+            btnDietPlans.Location = new Point(0, 70);
             btnDietPlans.Name = "btnDietPlans";
             btnDietPlans.Padding = new Padding(15, 0, 0, 0);
-            btnDietPlans.Size = new Size(253, 50);
+            btnDietPlans.Size = new Size(253, 70);
             btnDietPlans.TabIndex = 9;
             btnDietPlans.Text = "   Diet Plans";
             btnDietPlans.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -242,7 +242,7 @@
             btnWorkoutPlans.Location = new Point(0, 0);
             btnWorkoutPlans.Name = "btnWorkoutPlans";
             btnWorkoutPlans.Padding = new Padding(15, 0, 0, 0);
-            btnWorkoutPlans.Size = new Size(253, 50);
+            btnWorkoutPlans.Size = new Size(253, 70);
             btnWorkoutPlans.TabIndex = 8;
             btnWorkoutPlans.Text = "  Workout Plans";
             btnWorkoutPlans.TextImageRelation = TextImageRelation.ImageBeforeText;

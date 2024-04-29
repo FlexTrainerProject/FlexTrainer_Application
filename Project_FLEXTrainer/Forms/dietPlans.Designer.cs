@@ -35,7 +35,6 @@
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            searchBar = new TextBox();
             topPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,7 +61,6 @@
             topPanel.Controls.Add(comboBox2);
             topPanel.Controls.Add(comboBox1);
             topPanel.Controls.Add(btnCreateWP);
-            topPanel.Controls.Add(searchBar);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
@@ -112,24 +110,16 @@
             comboBox1.TabIndex = 5;
             comboBox1.Text = "Type";
             // 
-            // searchBar
-            // 
-            searchBar.Location = new Point(12, 17);
-            searchBar.Name = "searchBar";
-            searchBar.Size = new Size(134, 23);
-            searchBar.TabIndex = 3;
-            searchBar.Text = "Search...";
-            // 
             // dietPlans
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gainsboro;
             ClientSize = new Size(800, 450);
             Controls.Add(topPanel);
             Name = "dietPlans";
             Text = "Diet Plans";
             topPanel.ResumeLayout(false);
-            topPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -137,7 +127,6 @@
 
         private Button btnCreateWP;
         private Panel topPanel;
-        private TextBox searchBar;
         private Button button1;
         private ComboBox comboBox3;
         private ComboBox comboBox2;
