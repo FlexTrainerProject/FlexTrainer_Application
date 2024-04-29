@@ -35,7 +35,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            btnCreateWP = new Button();
+            btnCreateDP = new Button();
             topPanel = new Panel();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             button1 = new Button();
@@ -43,27 +43,28 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             DietPlansView = new Guna.UI2.WinForms.Guna2DataGridView();
-            imageList1 = new ImageList(components);
             Icon = new DataGridViewImageColumn();
             AddButoon = new DataGridViewButtonColumn();
+            imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DietPlansView).BeginInit();
             SuspendLayout();
             // 
-            // btnCreateWP
+            // btnCreateDP
             // 
-            btnCreateWP.BackColor = Color.FromArgb(42, 101, 97);
-            btnCreateWP.Dock = DockStyle.Right;
-            btnCreateWP.FlatAppearance.BorderSize = 0;
-            btnCreateWP.FlatStyle = FlatStyle.Flat;
-            btnCreateWP.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCreateWP.ForeColor = Color.White;
-            btnCreateWP.Location = new Point(632, 0);
-            btnCreateWP.Name = "btnCreateWP";
-            btnCreateWP.Size = new Size(168, 54);
-            btnCreateWP.TabIndex = 1;
-            btnCreateWP.Text = "CREATE";
-            btnCreateWP.UseVisualStyleBackColor = false;
+            btnCreateDP.BackColor = Color.FromArgb(42, 101, 97);
+            btnCreateDP.Dock = DockStyle.Right;
+            btnCreateDP.FlatAppearance.BorderSize = 0;
+            btnCreateDP.FlatStyle = FlatStyle.Flat;
+            btnCreateDP.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCreateDP.ForeColor = Color.White;
+            btnCreateDP.Location = new Point(969, 0);
+            btnCreateDP.Name = "btnCreateDP";
+            btnCreateDP.Size = new Size(168, 54);
+            btnCreateDP.TabIndex = 1;
+            btnCreateDP.Text = "CREATE";
+            btnCreateDP.UseVisualStyleBackColor = false;
+            btnCreateDP.Click += btnCreateDP_Click;
             // 
             // topPanel
             // 
@@ -73,11 +74,11 @@
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
             topPanel.Controls.Add(comboBox1);
-            topPanel.Controls.Add(btnCreateWP);
+            topPanel.Controls.Add(btnCreateDP);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(800, 54);
+            topPanel.Size = new Size(1137, 54);
             topPanel.TabIndex = 2;
             // 
             // guna2TextBox1
@@ -113,7 +114,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(602, 0);
+            button1.Location = new Point(939, 0);
             button1.Name = "button1";
             button1.Size = new Size(30, 54);
             button1.TabIndex = 8;
@@ -123,7 +124,7 @@
             // 
             comboBox3.Anchor = AnchorStyles.Right;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(497, 17);
+            comboBox3.Location = new Point(834, 17);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(99, 23);
             comboBox3.TabIndex = 7;
@@ -133,7 +134,7 @@
             // 
             comboBox2.Anchor = AnchorStyles.Right;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(388, 17);
+            comboBox2.Location = new Point(725, 17);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(103, 23);
             comboBox2.TabIndex = 6;
@@ -143,7 +144,7 @@
             // 
             comboBox1.Anchor = AnchorStyles.Right;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(281, 17);
+            comboBox1.Location = new Point(618, 17);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(101, 23);
             comboBox1.TabIndex = 5;
@@ -158,8 +159,8 @@
             dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(192, 0, 0);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DietPlansView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DietPlansView.ColumnHeadersHeight = 25;
@@ -167,7 +168,7 @@
             DietPlansView.Columns.AddRange(new DataGridViewColumn[] { Icon, AddButoon });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -178,7 +179,8 @@
             DietPlansView.Location = new Point(0, 54);
             DietPlansView.Name = "DietPlansView";
             DietPlansView.RowHeadersVisible = false;
-            DietPlansView.Size = new Size(800, 396);
+            DietPlansView.RowTemplate.Height = 60;
+            DietPlansView.Size = new Size(1137, 534);
             DietPlansView.TabIndex = 3;
             DietPlansView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             DietPlansView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -198,16 +200,9 @@
             DietPlansView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             DietPlansView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
             DietPlansView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            DietPlansView.ThemeStyle.RowsStyle.Height = 25;
+            DietPlansView.ThemeStyle.RowsStyle.Height = 60;
             DietPlansView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             DietPlansView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "add2.png");
             // 
             // Icon
             // 
@@ -226,12 +221,19 @@
             AddButoon.Name = "AddButoon";
             AddButoon.Width = 50;
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "add2.png");
+            // 
             // dietPlans
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1137, 588);
             Controls.Add(DietPlansView);
             Controls.Add(topPanel);
             Name = "dietPlans";
@@ -243,7 +245,7 @@
 
         #endregion
 
-        private Button btnCreateWP;
+        private Button btnCreateDP;
         private Panel topPanel;
         private Button button1;
         private ComboBox comboBox3;

@@ -26,5 +26,10 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
             this.Close();
         }
+
+        private void addExercise_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

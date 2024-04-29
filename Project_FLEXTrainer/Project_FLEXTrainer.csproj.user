@@ -16,6 +16,9 @@
     <Compile Update="Forms\SubForms\addExercise.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\SubForms\addMeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\SubForms\createDietPlancs.cs">
       <SubType>Form</SubType>
     </Compile>

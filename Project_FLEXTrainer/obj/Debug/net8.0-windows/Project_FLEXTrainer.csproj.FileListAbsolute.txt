@@ -150,3 +150,5 @@ C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_
 C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.pdb
 C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.genruntimeconfig.cache
 C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\ref\Project_FLEXTrainer.dll
+C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.Forms.SubForms.addMeal.resources
+C:\Users\lenovo\Source\Repos\FlexTrainerProject\FlexTrainer_Application\Project_FLEXTrainer\obj\Debug\net8.0-windows\Project_FLEXTrainer.Forms.SubForms.createDietPlancs.resources

@@ -20,7 +20,7 @@ namespace Project_FLEXTrainer.Forms
         {
             InitializeComponent();
             DisplayDietPlans();
-            
+
 
         }
 
@@ -38,9 +38,9 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayDietPlans()
         {
-            
 
-            
+
+
 
             string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             SqlConnection connection = new SqlConnection(connect);
@@ -58,6 +58,15 @@ namespace Project_FLEXTrainer.Forms
 
             connection.Close();
 
+        }
+
+        private void btnCreateDP_Click(object sender, EventArgs e)
+        {
+            Forms.SubForms.createDietPlancs SubForm = new Forms.SubForms.createDietPlancs();
+            SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
+            SubForm.StartPosition = FormStartPosition.CenterScreen;
+
+            SubForm.Show(); // Show the form as a separate window
         }
     }
 }

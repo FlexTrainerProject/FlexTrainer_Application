@@ -21,5 +21,19 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
 
         }
+
+        private void btnAddMeal_Click(object sender, EventArgs e)
+        {
+            Forms.SubForms.addMeal SubForm = new Forms.SubForms.addMeal();
+            SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
+            SubForm.StartPosition = FormStartPosition.CenterScreen;
+
+            SubForm.Show(); // Show the form as a separate window
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
