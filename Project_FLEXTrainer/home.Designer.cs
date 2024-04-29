@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             panel2 = new Panel();
-            tabPic = new PictureBox();
             UserNamePanel = new Panel();
             usr_type = new Label();
             lblUsername = new Label();
@@ -45,7 +44,6 @@
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tabPic).BeginInit();
             UserNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userIcon).BeginInit();
             panelMenu.SuspendLayout();
@@ -54,7 +52,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(170, 52, 60);
-            panel2.Controls.Add(tabPic);
             panel2.Controls.Add(UserNamePanel);
             panel2.Controls.Add(pgTitle);
             panel2.Controls.Add(label1);
@@ -63,17 +60,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1159, 78);
             panel2.TabIndex = 0;
-            // 
-            // tabPic
-            // 
-            tabPic.Dock = DockStyle.Left;
-            tabPic.Image = (Image)resources.GetObject("tabPic.Image");
-            tabPic.Location = new Point(0, 0);
-            tabPic.Name = "tabPic";
-            tabPic.Padding = new Padding(10, 10, 0, 0);
-            tabPic.Size = new Size(74, 78);
-            tabPic.TabIndex = 10;
-            tabPic.TabStop = false;
             // 
             // UserNamePanel
             // 
@@ -127,7 +113,7 @@
             pgTitle.AutoSize = true;
             pgTitle.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pgTitle.ForeColor = Color.White;
-            pgTitle.Location = new Point(64, -2);
+            pgTitle.Location = new Point(0, -2);
             pgTitle.Name = "pgTitle";
             pgTitle.Padding = new Padding(10, 20, 0, 0);
             pgTitle.Size = new Size(140, 62);
@@ -284,7 +270,6 @@
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tabPic).EndInit();
             UserNamePanel.ResumeLayout(false);
             UserNamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userIcon).EndInit();
@@ -308,6 +293,5 @@
         private PictureBox userIcon;
         private Label lblUsername;
         private Label usr_type;
-        private PictureBox tabPic;
     }
 }
