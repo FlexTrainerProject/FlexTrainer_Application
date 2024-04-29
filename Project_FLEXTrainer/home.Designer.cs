@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
-            tabPic = new PictureBox();
             UserNamePanel = new Panel();
             usr_type = new Label();
             lblUsername = new Label();
-            userIcon = new PictureBox();
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
@@ -44,17 +44,15 @@
             btnDietPlans = new Button();
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
+            btnpfp = new Guna.UI2.WinForms.Guna2Button();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tabPic).BeginInit();
             UserNamePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)userIcon).BeginInit();
             panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(170, 52, 60);
-            panel2.Controls.Add(tabPic);
             panel2.Controls.Add(UserNamePanel);
             panel2.Controls.Add(pgTitle);
             panel2.Controls.Add(label1);
@@ -64,27 +62,16 @@
             panel2.Size = new Size(1159, 78);
             panel2.TabIndex = 0;
             // 
-            // tabPic
-            // 
-            tabPic.Dock = DockStyle.Left;
-            tabPic.Image = (Image)resources.GetObject("tabPic.Image");
-            tabPic.Location = new Point(0, 0);
-            tabPic.Name = "tabPic";
-            tabPic.Padding = new Padding(10, 10, 0, 0);
-            tabPic.Size = new Size(74, 78);
-            tabPic.TabIndex = 10;
-            tabPic.TabStop = false;
-            // 
             // UserNamePanel
             // 
             UserNamePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             UserNamePanel.BackColor = Color.FromArgb(50, 72, 76);
+            UserNamePanel.Controls.Add(btnpfp);
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
-            UserNamePanel.Controls.Add(userIcon);
-            UserNamePanel.Location = new Point(801, 0);
+            UserNamePanel.Location = new Point(760, 0);
             UserNamePanel.Name = "UserNamePanel";
-            UserNamePanel.Size = new Size(238, 89);
+            UserNamePanel.Size = new Size(279, 89);
             UserNamePanel.TabIndex = 9;
             // 
             // usr_type
@@ -92,7 +79,7 @@
             usr_type.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             usr_type.AutoSize = true;
             usr_type.ForeColor = Color.White;
-            usr_type.Location = new Point(60, 45);
+            usr_type.Location = new Point(82, 45);
             usr_type.Name = "usr_type";
             usr_type.Size = new Size(167, 15);
             usr_type.TabIndex = 2;
@@ -100,34 +87,23 @@
             // 
             // lblUsername
             // 
+            lblUsername.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             lblUsername.AutoSize = true;
-            lblUsername.Dock = DockStyle.Left;
             lblUsername.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = Color.White;
-            lblUsername.Location = new Point(54, 0);
+            lblUsername.Location = new Point(76, 0);
             lblUsername.Name = "lblUsername";
             lblUsername.Padding = new Padding(0, 15, 0, 0);
             lblUsername.Size = new Size(123, 45);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "USERNAME";
             // 
-            // userIcon
-            // 
-            userIcon.Dock = DockStyle.Left;
-            userIcon.Image = (Image)resources.GetObject("userIcon.Image");
-            userIcon.Location = new Point(0, 0);
-            userIcon.Name = "userIcon";
-            userIcon.Padding = new Padding(5, 15, 0, 0);
-            userIcon.Size = new Size(54, 89);
-            userIcon.TabIndex = 0;
-            userIcon.TabStop = false;
-            // 
             // pgTitle
             // 
             pgTitle.AutoSize = true;
             pgTitle.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pgTitle.ForeColor = Color.White;
-            pgTitle.Location = new Point(64, -2);
+            pgTitle.Location = new Point(0, -2);
             pgTitle.Name = "pgTitle";
             pgTitle.Padding = new Padding(10, 20, 0, 0);
             pgTitle.Size = new Size(140, 62);
@@ -173,10 +149,10 @@
             btnSettings.ForeColor = Color.Gainsboro;
             btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 498);
+            btnSettings.Location = new Point(0, 478);
             btnSettings.Name = "btnSettings";
             btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 50);
+            btnSettings.Size = new Size(253, 70);
             btnSettings.TabIndex = 12;
             btnSettings.Text = "  Settings";
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -193,10 +169,10 @@
             btnMyPlans.ForeColor = Color.Gainsboro;
             btnMyPlans.Image = (Image)resources.GetObject("btnMyPlans.Image");
             btnMyPlans.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMyPlans.Location = new Point(0, 150);
+            btnMyPlans.Location = new Point(0, 210);
             btnMyPlans.Name = "btnMyPlans";
             btnMyPlans.Padding = new Padding(15, 0, 0, 0);
-            btnMyPlans.Size = new Size(253, 50);
+            btnMyPlans.Size = new Size(253, 70);
             btnMyPlans.TabIndex = 11;
             btnMyPlans.Text = "  My Plans";
             btnMyPlans.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -213,10 +189,10 @@
             btnBookSessions.ForeColor = Color.Gainsboro;
             btnBookSessions.Image = (Image)resources.GetObject("btnBookSessions.Image");
             btnBookSessions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBookSessions.Location = new Point(0, 100);
+            btnBookSessions.Location = new Point(0, 140);
             btnBookSessions.Name = "btnBookSessions";
             btnBookSessions.Padding = new Padding(12, 0, 0, 0);
-            btnBookSessions.Size = new Size(253, 50);
+            btnBookSessions.Size = new Size(253, 70);
             btnBookSessions.TabIndex = 10;
             btnBookSessions.Text = "  Book Session";
             btnBookSessions.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -233,10 +209,10 @@
             btnDietPlans.ForeColor = Color.Gainsboro;
             btnDietPlans.Image = (Image)resources.GetObject("btnDietPlans.Image");
             btnDietPlans.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDietPlans.Location = new Point(0, 50);
+            btnDietPlans.Location = new Point(0, 70);
             btnDietPlans.Name = "btnDietPlans";
             btnDietPlans.Padding = new Padding(15, 0, 0, 0);
-            btnDietPlans.Size = new Size(253, 50);
+            btnDietPlans.Size = new Size(253, 70);
             btnDietPlans.TabIndex = 9;
             btnDietPlans.Text = "   Diet Plans";
             btnDietPlans.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -256,7 +232,7 @@
             btnWorkoutPlans.Location = new Point(0, 0);
             btnWorkoutPlans.Name = "btnWorkoutPlans";
             btnWorkoutPlans.Padding = new Padding(15, 0, 0, 0);
-            btnWorkoutPlans.Size = new Size(253, 50);
+            btnWorkoutPlans.Size = new Size(253, 70);
             btnWorkoutPlans.TabIndex = 8;
             btnWorkoutPlans.Text = "  Workout Plans";
             btnWorkoutPlans.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -271,6 +247,26 @@
             desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 2;
             // 
+            // btnpfp
+            // 
+            btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnpfp.CustomizableEdges = customizableEdges1;
+            btnpfp.DisabledState.BorderColor = Color.DarkGray;
+            btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnpfp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnpfp.FillColor = Color.FromArgb(50, 72, 76);
+            btnpfp.Font = new Font("Segoe UI", 9F);
+            btnpfp.ForeColor = Color.White;
+            btnpfp.Image = (Image)resources.GetObject("btnpfp.Image");
+            btnpfp.ImageSize = new Size(50, 50);
+            btnpfp.Location = new Point(0, 0);
+            btnpfp.Name = "btnpfp";
+            btnpfp.Padding = new Padding(5, 0, 5, 5);
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnpfp.Size = new Size(76, 80);
+            btnpfp.TabIndex = 3;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -284,10 +280,8 @@
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tabPic).EndInit();
             UserNamePanel.ResumeLayout(false);
             UserNamePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)userIcon).EndInit();
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -305,9 +299,8 @@
         private Label pgTitle;
         private Panel desktopPanel;
         private Panel UserNamePanel;
-        private PictureBox userIcon;
         private Label lblUsername;
         private Label usr_type;
-        private PictureBox tabPic;
+        private Guna.UI2.WinForms.Guna2Button btnpfp;
     }
 }

@@ -229,6 +229,7 @@
             Controls.Add(mainPanel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "addExercise";
+            Load += addExercise_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
             panel1.ResumeLayout(false);

@@ -118,25 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabPic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAs5JREFUaEPt
-        mL9rFEEUxy8kEQvBH6AoYmGhaGGnndhYpBDtbJQI2sXGv0CwsLVTsBC0UBBBSR9IGUEtBBFB1CqFgiAG
-        BVHx/My8N+sy2bndubudnch94At3b7/vzftyeyS3vbbo9/vH0Cfk+I4u6OWNAQtfsqtXc09tecOifojf
-        6Ie8LMg7DAv6IZ6iKb12w1b+kWcYFlsXQi8VUMs7DAvVhnBwLc8wLNI4hANPXmFYIDqEA28eYTh46BAO
-        eroNw4F+iBW9FA293YThoLGFcDAjbRgOGPl2CsGsNGEYPPZPwoeZ7YZhYOshHMxuJwyDkoVwcMZ4wzCg
-        te9EHZw1njA0Jv8kfDhztDA0dB7CwdnDhcGYTQgHO8SFwdDZd6IOdmkWhgvZhnCw0+AwFLK7nUKwW3UY
-        XuyX9wXZhnCwox9m3hTN72pHdrdTCHYth/lmCuUnHLPq2xCwb7G7eWMenDm2qid72HUKmUdNFlN4LC8t
-        a+gymlcd0b7OYZc9pb0uorfI8dEYtqA/9m01B3VWZ7DDrKwS5KgzHkL+00DHKWvqEHbYLqusw3wAZ9Um
-        UDD33HF0FT1HjtyCfEHX0Bk0o5ZqMNxCjtyCfNByPZiHDoJ/H7qDXqE3nl6jJ0ju6YbgTxsE7yNpaYQJ
-        Na2tA8GXLgi+B2KP4p22DwRfmiB4doq14Dbai3Z52o2uoDJN5icLcl2slvtaDoLnnFgtL7UcBE+yIEti
-        tdT+N4Bnk1gtX7UcBE+yIMtitRzWchA85b/Ua1oOgmcSZBIEJkFC4JkE+W+C3JQey2ktB8HTdpAdYrW8
-        13I9mBekx/JQy0HwtB3kvFgtS1quB/M26SkwwaaR+fFVpZGCoKqZTidQ+af4SR3TDBoWpS+a2CAxrOqI
-        OGh8Jv1RHND2IHhmxBrFZ7RZR8RD8xwyv+7Mw4lfNXqhbbXgvev1VuknWkUL2hag1/sLXJQ3N4Jy9CcA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="userIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnpfp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA8lJREFUaEPt
         mjtsTXEcx1ukiqSJYvKeu9VC0nTxqGChVQlTVWqhAwNCQmKRdKhRIiEhniGR6GJRDKJhEE1Ew9BFbKRR
