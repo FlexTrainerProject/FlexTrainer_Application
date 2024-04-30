@@ -43,6 +43,7 @@ namespace Project_FLEXTrainer.Forms
 
 
             string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
             SqlConnection connection = new SqlConnection(connect);
             connection.Open();
             String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type' FROM diet_plan";

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,10 @@ namespace Project_FLEXTrainer
 {
     public partial class home : Form
     {
+        private bool pfpShow = false;
         private Button activeButton;
         private Form activeForm;
+        User currentuser;
         public home(User user)
         {
             InitializeComponent();
@@ -27,10 +30,12 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
 
-            User currentuser = user;
+            currentuser = user;
+            lblUsername.Text = user.Username;
+            usr_type.Text = user.Type;
         }
 
-  
+
 
         private void btnWorkoutPlans_Click(object sender, EventArgs e)
         {
@@ -50,7 +55,7 @@ namespace Project_FLEXTrainer
 
         private void btnMyPlans_Click(object sender, EventArgs e)
         {
-            activateBtn(sender);
+            OpenChildForm(new Forms.MyPlans(), sender);
         }
         private void settings_Click(object sender, EventArgs e)
         {
@@ -104,7 +109,45 @@ namespace Project_FLEXTrainer
             pgTitle.Text = childForm.Text;
             //tabPic.Image. = ;
         }
+        private void SubForm_Deactivate(object sender, EventArgs e)
+        {
+            if (!SubForm.ClientRectangle.Contains(SubForm.PointToClient(Control.MousePosition)))
+            {
+                // If the mouse is not within the bounds of the sub form, close it
+                SubForm.Close();
+                pfpShow = false;
+            }
+        }
+        Forms.SubForms.Profile SubForm;
+        private void btnpfp_Click(object sender, EventArgs e)
+        {
+            if (!pfpShow)
+            {
+                if (SubForm == null || SubForm.IsDisposed)
+                {
+                    SubForm = new Forms.SubForms.Profile(currentuser);
+                    SubForm.FormBorderStyle = FormBorderStyle.None;
+                    SubForm.StartPosition = FormStartPosition.Manual;
 
+                    // Calculate the position of the sub form relative to the button
+                    Point p = btnpfp.PointToScreen(Point.Empty);
+                    SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
+                    //SubForm.Deactivate += SubForm_Deactivate;
+                    /// SubForm.MouseDown.
+                    SubForm.Show();
+                }
+                else
+                {
+                    SubForm.BringToFront();
+                }
+                pfpShow = true;
+            }
+            else
+            {
+                SubForm.Close();
+                pfpShow = false;
+            }
 
+        }
     }
 }

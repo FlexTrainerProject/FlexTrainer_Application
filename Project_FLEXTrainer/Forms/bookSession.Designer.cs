@@ -123,7 +123,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(140, 147, 148);
+            panel1.BackColor = Color.FromArgb(42, 101, 97);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(84, 81);
