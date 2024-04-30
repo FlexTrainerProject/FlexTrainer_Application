@@ -262,6 +262,7 @@
             // 
             // desktopPanel
             // 
+            desktopPanel.BackColor = Color.Gainsboro;
             desktopPanel.Dock = DockStyle.Fill;
             desktopPanel.Location = new Point(253, 78);
             desktopPanel.Name = "desktopPanel";
