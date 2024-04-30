@@ -34,7 +34,7 @@ namespace Project_FLEXTrainer.Forms
                     activeButton = (Button)sender;
                     activeButton.BackColor = color;
                     activeButton.ForeColor = Color.White;
-                    activeButton.Font = new Font("Ebrima", 13.25F, FontStyle.Bold);
+                    activeButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
 
 
                 }
@@ -49,7 +49,7 @@ namespace Project_FLEXTrainer.Forms
                 {
                     prevbtn.BackColor = Color.FromArgb(25, 42, 40);
                     prevbtn.ForeColor = Color.Gainsboro;
-                    prevbtn.Font = new Font("Ebrima", 12.25F);
+                    prevbtn.Font = new Font("Segoe UI", 14.25F);
                 }
             }
         }
@@ -63,6 +63,11 @@ namespace Project_FLEXTrainer.Forms
         {
             activateBtn(sender);
             //
+        }
+
+        private void allplans_Click(object sender, EventArgs e)
+        {
+            activateBtn(sender);
         }
     }
 }

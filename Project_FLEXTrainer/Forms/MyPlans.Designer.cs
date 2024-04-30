@@ -31,6 +31,7 @@
             navPanel = new Panel();
             createdbyothers = new Button();
             createdbyme = new Button();
+            allplans = new Button();
             navPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
             navPanel.Controls.Add(createdbyothers);
             navPanel.Controls.Add(createdbyme);
+            navPanel.Controls.Add(allplans);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
@@ -50,12 +52,12 @@
             createdbyothers.Dock = DockStyle.Left;
             createdbyothers.FlatAppearance.BorderSize = 0;
             createdbyothers.FlatStyle = FlatStyle.Flat;
-            createdbyothers.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createdbyothers.Font = new Font("Segoe UI", 14.25F);
             createdbyothers.ForeColor = Color.White;
-            createdbyothers.Location = new Point(217, 0);
+            createdbyothers.Location = new Point(434, 0);
             createdbyothers.Name = "createdbyothers";
             createdbyothers.Size = new Size(217, 52);
-            createdbyothers.TabIndex = 1;
+            createdbyothers.TabIndex = 2;
             createdbyothers.Text = "CREATED BY OTHERS";
             createdbyothers.UseVisualStyleBackColor = true;
             createdbyothers.Click += createdbyothers_Click_1;
@@ -65,15 +67,31 @@
             createdbyme.Dock = DockStyle.Left;
             createdbyme.FlatAppearance.BorderSize = 0;
             createdbyme.FlatStyle = FlatStyle.Flat;
-            createdbyme.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createdbyme.Font = new Font("Segoe UI", 14.25F);
             createdbyme.ForeColor = Color.White;
-            createdbyme.Location = new Point(0, 0);
+            createdbyme.Location = new Point(217, 0);
             createdbyme.Name = "createdbyme";
             createdbyme.Size = new Size(217, 52);
-            createdbyme.TabIndex = 0;
+            createdbyme.TabIndex = 1;
             createdbyme.Text = "CREATED BY ME";
             createdbyme.UseVisualStyleBackColor = true;
             createdbyme.Click += createdbyme_Click;
+            // 
+            // allplans
+            // 
+            allplans.BackColor = Color.FromArgb(76, 126, 122);
+            allplans.Dock = DockStyle.Left;
+            allplans.FlatAppearance.BorderSize = 0;
+            allplans.FlatStyle = FlatStyle.Flat;
+            allplans.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            allplans.ForeColor = Color.White;
+            allplans.Location = new Point(0, 0);
+            allplans.Name = "allplans";
+            allplans.Size = new Size(217, 52);
+            allplans.TabIndex = 0;
+            allplans.Text = "ALL PLANS";
+            allplans.UseVisualStyleBackColor = false;
+            allplans.Click += allplans_Click;
             // 
             // MyPlans
             // 
@@ -91,6 +109,7 @@
         #endregion
 
         private Panel navPanel;
+        private Button allplans;
         private Button createdbyme;
         private Button createdbyothers;
     }
