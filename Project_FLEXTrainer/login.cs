@@ -97,7 +97,7 @@ namespace Project_FLEXTrainer
 
         private void button2_click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False");
+            SqlConnection connection = new SqlConnection("Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False");
             connection.Open();
             SqlCommand checkifuser = new SqlCommand("SELECT 1 FROM dbo.account WHERE Username = '" + textBox1.Text + "'", connection);
             int flag = Convert.ToInt32(checkifuser.ExecuteScalar());
@@ -118,8 +118,20 @@ namespace Project_FLEXTrainer
 
                     User currentUser = new User(textBox1.Text, acc_t, passw);
 
-                    home home = new home(currentUser);
-                    home.Show();
+                    if (currentUser.Type == "member")
+                    {
+                        home home = new home(currentUser);
+                        home.Show();
+                    }
+
+                    else if (currentUser.Type == "owner")
+                    {
+                        Owner.home_owner own = new Owner.home_owner(currentUser);
+                        own.Show();
+                    }
+
+
+
 
                     this.Close();
                 }

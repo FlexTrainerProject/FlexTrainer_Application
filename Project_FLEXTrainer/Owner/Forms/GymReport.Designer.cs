@@ -37,6 +37,8 @@
             label = new Label();
             totalTrainers = new Panel();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             GymInfoPanel.SuspendLayout();
             totalMembers.SuspendLayout();
             totalTrainers.SuspendLayout();
@@ -49,6 +51,8 @@
             GymInfoPanel.BackColor = Color.FromArgb(26, 46, 53);
             GymInfoPanel.BorderRadius = 148;
             GymInfoPanel.BorderThickness = 5;
+            GymInfoPanel.Controls.Add(label3);
+            GymInfoPanel.Controls.Add(label2);
             GymInfoPanel.Controls.Add(txtGymLoc);
             GymInfoPanel.Controls.Add(txtGymName);
             GymInfoPanel.CustomizableEdges = customizableEdges1;
@@ -120,6 +124,28 @@
             label1.TabIndex = 2;
             label1.Text = "TOTAL \r\nTRAINERS:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(230, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 30);
+            label2.TabIndex = 2;
+            label2.Text = "yayay";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(230, 124);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 30);
+            label3.TabIndex = 3;
+            label3.Text = "nunu";
+            // 
             // GymReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,5 +175,7 @@
         private Panel totalTrainers;
         private Label label;
         private Label label1;
+        private Label label3;
+        private Label label2;
     }
 }

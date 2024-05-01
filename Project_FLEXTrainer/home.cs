@@ -164,5 +164,7 @@ namespace Project_FLEXTrainer
             childForm.BringToFront();
             childForm.Show();
         }
+
+        
     }
 }
