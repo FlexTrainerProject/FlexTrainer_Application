@@ -19,7 +19,7 @@ namespace Project_FLEXTrainer
         public register()
         {
             InitializeComponent();
-           
+
         }
 
         private void register_Load(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace Project_FLEXTrainer
 
         private void button2_click(object sender, EventArgs e)
         {
-            if(Pass.Text != textBox2.Text)
+            if (Pass.Text != textBox2.Text)
             {
                 MessageBox.Show("Passwords do not match!");
                 return;
@@ -134,7 +134,7 @@ namespace Project_FLEXTrainer
             SqlConnection connection = new SqlConnection(connect);
             connection.Open();
             //query to check if username already exists
-            string usercheck = "SELECT 1 FROM dbo.account WHERE Username = '"+textBox1.Text+"'";
+            string usercheck = "SELECT 1 FROM dbo.account WHERE Username = '" + textBox1.Text + "'";
             SqlCommand usercheckcmd = new SqlCommand(usercheck, connection);
 
 
@@ -153,6 +153,11 @@ namespace Project_FLEXTrainer
             {
                 MessageBox.Show("This username is taken!");
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

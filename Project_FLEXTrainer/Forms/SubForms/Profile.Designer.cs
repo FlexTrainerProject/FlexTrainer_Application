@@ -32,17 +32,21 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pfpuser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pfptype = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            guna2GradientTileButton2 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            pfpMain = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            ((System.ComponentModel.ISupportInitialize)pfpMain).BeginInit();
             SuspendLayout();
             // 
             // pfpuser
             // 
             pfpuser.BackColor = Color.Transparent;
             pfpuser.Font = new Font("Bahnschrift SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pfpuser.Location = new Point(120, 164);
+            pfpuser.Location = new Point(120, 257);
             pfpuser.Name = "pfpuser";
             pfpuser.Size = new Size(100, 27);
             pfpuser.TabIndex = 1;
@@ -53,7 +57,7 @@
             // 
             pfptype.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             pfptype.BackColor = Color.Transparent;
-            pfptype.Location = new Point(129, 197);
+            pfptype.Location = new Point(120, 290);
             pfptype.Name = "pfptype";
             pfptype.Size = new Size(26, 17);
             pfptype.TabIndex = 2;
@@ -71,7 +75,7 @@
             guna2GradientTileButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2GradientTileButton1.FillColor = Color.FromArgb(192, 0, 0);
             guna2GradientTileButton1.FillColor2 = Color.Teal;
-            guna2GradientTileButton1.Font = new Font("Constantia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2GradientTileButton1.Font = new Font("Couture", 20.7499981F, FontStyle.Bold);
             guna2GradientTileButton1.ForeColor = Color.White;
             guna2GradientTileButton1.Location = new Point(12, 12);
             guna2GradientTileButton1.Name = "guna2GradientTileButton1";
@@ -81,35 +85,47 @@
             guna2GradientTileButton1.Text = "PROFILE";
             guna2GradientTileButton1.Click += guna2GradientTileButton1_Click;
             // 
-            // guna2GradientTileButton2
+            // guna2GradientButton1
             // 
-            guna2GradientTileButton2.BackColor = Color.FromArgb(255, 128, 128);
-            guna2GradientTileButton2.CustomizableEdges = customizableEdges3;
-            guna2GradientTileButton2.DialogResult = DialogResult.Abort;
-            guna2GradientTileButton2.DisabledState.BorderColor = Color.DarkGray;
-            guna2GradientTileButton2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2GradientTileButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2GradientTileButton2.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            guna2GradientTileButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2GradientTileButton2.FillColor = Color.Brown;
-            guna2GradientTileButton2.FillColor2 = Color.LightSeaGreen;
-            guna2GradientTileButton2.Font = new Font("Segoe UI", 9F);
-            guna2GradientTileButton2.ForeColor = Color.White;
-            guna2GradientTileButton2.Location = new Point(129, 304);
-            guna2GradientTileButton2.Name = "guna2GradientTileButton2";
-            guna2GradientTileButton2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GradientTileButton2.Size = new Size(79, 26);
-            guna2GradientTileButton2.TabIndex = 4;
-            guna2GradientTileButton2.Text = "More";
-            guna2GradientTileButton2.Click += guna2GradientTileButton2_Click_1;
+            guna2GradientButton1.BorderRadius = 15;
+            guna2GradientButton1.CustomizableEdges = customizableEdges3;
+            guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray;
+            guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2GradientButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2GradientButton1.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            guna2GradientButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2GradientButton1.FillColor = Color.FromArgb(42, 101, 97);
+            guna2GradientButton1.FillColor2 = Color.Teal;
+            guna2GradientButton1.Font = new Font("Segoe UI", 9F);
+            guna2GradientButton1.ForeColor = Color.White;
+            guna2GradientButton1.Location = new Point(120, 367);
+            guna2GradientButton1.Name = "guna2GradientButton1";
+            guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GradientButton1.Size = new Size(95, 32);
+            guna2GradientButton1.TabIndex = 4;
+            guna2GradientButton1.Text = "MORE";
+            // 
+            // pfpMain
+            // 
+            pfpMain.Image = (Image)resources.GetObject("pfpMain.Image");
+            pfpMain.ImageRotate = 0F;
+            pfpMain.Location = new Point(120, 153);
+            pfpMain.Name = "pfpMain";
+            pfpMain.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            pfpMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            pfpMain.Size = new Size(100, 98);
+            pfpMain.SizeMode = PictureBoxSizeMode.StretchImage;
+            pfpMain.TabIndex = 5;
+            pfpMain.TabStop = false;
             // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(340, 435);
-            Controls.Add(guna2GradientTileButton2);
+            Controls.Add(pfpMain);
+            Controls.Add(guna2GradientButton1);
             Controls.Add(guna2GradientTileButton1);
             Controls.Add(pfptype);
             Controls.Add(pfpuser);
@@ -118,6 +134,7 @@
             Margin = new Padding(4);
             Name = "Profile";
             Text = "Profile";
+            ((System.ComponentModel.ISupportInitialize)pfpMain).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,6 +143,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel pfpuser;
         private Guna.UI2.WinForms.Guna2HtmlLabel pfptype;
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
-        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pfpMain;
     }
 }

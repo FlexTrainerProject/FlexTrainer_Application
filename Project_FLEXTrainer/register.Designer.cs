@@ -33,6 +33,7 @@
             label1 = new Label();
             logo = new PictureBox();
             panel1 = new Panel();
+            LoginAs = new ComboBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -46,7 +47,6 @@
             panel2 = new Panel();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             back = new Button();
-            LoginAs = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -55,13 +55,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Teal;
-            label1.Location = new Point(127, 312);
+            label1.Font = new Font("Retroica", 27.7499962F);
+            label1.ForeColor = Color.FromArgb(170, 52, 60);
+            label1.Location = new Point(155, 311);
             label1.Name = "label1";
-            label1.Size = new Size(285, 42);
+            label1.Size = new Size(273, 38);
             label1.TabIndex = 17;
             label1.Text = "FLEX TRAINER";
+            label1.Click += label1_Click;
             // 
             // logo
             // 
@@ -77,7 +78,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.PaleTurquoise;
+            panel1.BackColor = Color.FromArgb(50, 72, 76);
             panel1.Controls.Add(LoginAs);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
@@ -91,6 +92,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(396, 534);
             panel1.TabIndex = 19;
+            // 
+            // LoginAs
+            // 
+            LoginAs.AccessibleName = "LoginAs";
+            LoginAs.DisplayMember = "Member";
+            LoginAs.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoginAs.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginAs.FormattingEnabled = true;
+            LoginAs.Items.AddRange(new object[] { "Member", "Trainer" });
+            LoginAs.Location = new Point(61, 344);
+            LoginAs.Name = "LoginAs";
+            LoginAs.Size = new Size(143, 26);
+            LoginAs.TabIndex = 21;
             // 
             // textBox3
             // 
@@ -128,6 +142,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(81, 445);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(204, 15);
@@ -151,8 +166,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DarkSlateGray;
-            label3.Location = new Point(70, 122);
+            label3.ForeColor = Color.Honeydew;
+            label3.Location = new Point(71, 113);
             label3.Name = "label3";
             label3.Size = new Size(81, 24);
             label3.TabIndex = 1;
@@ -161,7 +176,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(0, 192, 192);
+            button2.BackColor = Color.FromArgb(170, 52, 60);
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button2.Location = new Point(61, 386);
             button2.Name = "button2";
@@ -174,18 +189,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Teal;
-            label2.Location = new Point(61, 67);
+            label2.Font = new Font("Retroica", 36F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(61, 73);
             label2.Name = "label2";
-            label2.Size = new Size(269, 55);
+            label2.Size = new Size(253, 49);
             label2.TabIndex = 0;
             label2.Text = "REGISTER";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.PowderBlue;
+            panel2.BackColor = Color.FromArgb(50, 72, 76);
             panel2.Location = new Point(-4, -1);
             panel2.Name = "panel2";
             panel2.Size = new Size(72, 534);
@@ -193,7 +208,7 @@
             // 
             // back
             // 
-            back.BackColor = Color.Teal;
+            back.BackColor = Color.FromArgb(170, 52, 60);
             back.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             back.ForeColor = SystemColors.ButtonFace;
             back.Location = new Point(222, 403);
@@ -203,19 +218,6 @@
             back.Text = "Back";
             back.UseVisualStyleBackColor = false;
             back.Click += back_Click;
-            // 
-            // LoginAs
-            // 
-            LoginAs.AccessibleName = "LoginAs";
-            LoginAs.DisplayMember = "Member";
-            LoginAs.DropDownStyle = ComboBoxStyle.DropDownList;
-            LoginAs.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginAs.FormattingEnabled = true;
-            LoginAs.Items.AddRange(new object[] { "Member", "Trainer" });
-            LoginAs.Location = new Point(61, 344);
-            LoginAs.Name = "LoginAs";
-            LoginAs.Size = new Size(143, 26);
-            LoginAs.TabIndex = 21;
             // 
             // register
             // 
