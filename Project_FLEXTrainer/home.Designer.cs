@@ -56,7 +56,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(170, 52, 60);
-            panel2.Controls.Add(btnhome);
             panel2.Controls.Add(UserNamePanel);
             panel2.Controls.Add(pgTitle);
             panel2.Controls.Add(label1);
@@ -78,8 +77,8 @@
             btnhome.Font = new Font("Segoe UI", 9F);
             btnhome.ForeColor = Color.White;
             btnhome.Image = (Image)resources.GetObject("btnhome.Image");
-            btnhome.ImageSize = new Size(50, 50);
-            btnhome.Location = new Point(692, 0);
+            btnhome.ImageSize = new Size(40, 40);
+            btnhome.Location = new Point(205, 0);
             btnhome.Name = "btnhome";
             btnhome.Padding = new Padding(5, 0, 5, 5);
             btnhome.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -91,6 +90,7 @@
             // 
             UserNamePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             UserNamePanel.BackColor = Color.FromArgb(50, 72, 76);
+            UserNamePanel.Controls.Add(btnhome);
             UserNamePanel.Controls.Add(btnpfp);
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
@@ -127,9 +127,9 @@
             usr_type.ForeColor = Color.White;
             usr_type.Location = new Point(82, 45);
             usr_type.Name = "usr_type";
-            usr_type.Size = new Size(167, 15);
+            usr_type.Size = new Size(51, 15);
             usr_type.TabIndex = 2;
-            usr_type.Text = "usr_type (member/admin/etc)";
+            usr_type.Text = "usr_type";
             // 
             // lblUsername
             // 
@@ -143,7 +143,6 @@
             lblUsername.Size = new Size(123, 45);
             lblUsername.TabIndex = 1;
             lblUsername.Text = "USERNAME";
-         
             // 
             // pgTitle
             // 
