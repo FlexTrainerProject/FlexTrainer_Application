@@ -83,7 +83,44 @@ namespace Project_FLEXTrainer.Owner
             }
         }
         Project_FLEXTrainer.Forms.SubForms.Profile SubForm;
-        private void btnpfp_Click(object sender, EventArgs e)
+       
+        private void btnGymReports_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.GymReport(currentuser), sender);
+        }
+
+        private void btnMemberReports_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.MemberReports(), sender);
+        }
+
+        private void btnTrainerReports_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.TrainerReports(), sender);
+        }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.Manage(), sender);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                activateBtn(sender);
+        }
+
+        private void btnAddTrainer_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.addTrainer(), sender);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (!pfpShow)
             {
@@ -111,38 +148,6 @@ namespace Project_FLEXTrainer.Owner
                 SubForm.Close();
                 pfpShow = false;
             }
-
-        }
-
-        private void btnGymReports_Click(object sender, EventArgs e)
-        {
-
-            OpenChildForm(new Forms.GymReport(currentuser), sender);
-        }
-
-        private void btnMemberReports_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.MemberReports(), sender);
-        }
-
-        private void btnTrainerReports_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.TrainerReports(), sender);
-        }
-
-        private void btnManage_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.Manage(), sender);
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            activateBtn(sender);
-        }
-
-        private void btnAddTrainer_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.addTrainer(), sender);
         }
     }
 }

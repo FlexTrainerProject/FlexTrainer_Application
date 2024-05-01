@@ -1,3 +1,4 @@
+using Project_FLEXTrainer.Admin;
 using Project_FLEXTrainer.Trainer;
 
 namespace Project_FLEXTrainer
@@ -16,6 +17,7 @@ namespace Project_FLEXTrainer
             //Application.Run(new Form1());
             User user = new User("maryana","member","yaaa");
             Application.Run(new home_trainer(user));
+            //Application.Run(new home_admin(user));
             //Application.Run(new Owner.home_owner());
         }
     }

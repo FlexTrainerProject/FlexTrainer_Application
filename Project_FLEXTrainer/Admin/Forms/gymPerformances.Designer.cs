@@ -1,6 +1,6 @@
-﻿namespace Project_FLEXTrainer.Trainer.Forms
+﻿namespace Project_FLEXTrainer.Admin.Forms
 {
-    partial class ViewPlans
+    partial class gymPerformances
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,36 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPlans));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gymPerformances));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
+            pgTitle = new Label();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            btnDP = new Button();
-            btnWP = new Button();
             navPanel.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
+            navPanel.Controls.Add(pgTitle);
             navPanel.Controls.Add(searchBar);
-            navPanel.Controls.Add(btnDP);
-            navPanel.Controls.Add(btnWP);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1210, 52);
-            navPanel.TabIndex = 4;
+            navPanel.Size = new Size(1312, 52);
+            navPanel.TabIndex = 2;
+            // 
+            // pgTitle
+            // 
+            pgTitle.Font = new Font("Microsoft Sans Serif", 20.75F);
+            pgTitle.ForeColor = Color.White;
+            pgTitle.Location = new Point(0, -9);
+            pgTitle.Name = "pgTitle";
+            pgTitle.Padding = new Padding(10, 20, 0, 0);
+            pgTitle.Size = new Size(389, 61);
+            pgTitle.TabIndex = 13;
+            pgTitle.Text = "Gyms Performance Metrics";
+            pgTitle.Click += pgTitle_Click;
             // 
             // searchBar
             // 
@@ -66,55 +76,25 @@
             searchBar.Font = new Font("Segoe UI", 9F);
             searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(999, 12);
+            searchBar.Location = new Point(1072, 12);
             searchBar.Name = "searchBar";
             searchBar.Padding = new Padding(0, 20, 0, 0);
             searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search Member";
+            searchBar.PlaceholderText = "Search Gym";
             searchBar.SelectedText = "";
             searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(259, 28);
-            searchBar.TabIndex = 11;
+            searchBar.Size = new Size(228, 28);
+            searchBar.TabIndex = 12;
             // 
-            // btnDP
-            // 
-            btnDP.Dock = DockStyle.Left;
-            btnDP.FlatAppearance.BorderSize = 0;
-            btnDP.FlatStyle = FlatStyle.Flat;
-            btnDP.Font = new Font("Segoe UI", 14.25F);
-            btnDP.ForeColor = Color.White;
-            btnDP.Location = new Point(284, 0);
-            btnDP.Name = "btnDP";
-            btnDP.Size = new Size(316, 52);
-            btnDP.TabIndex = 1;
-            btnDP.Text = "Diet Plans";
-            btnDP.UseVisualStyleBackColor = true;
-            btnDP.Click += btnDP_Click;
-            // 
-            // btnWP
-            // 
-            btnWP.BackColor = Color.FromArgb(76, 126, 122);
-            btnWP.Dock = DockStyle.Left;
-            btnWP.FlatAppearance.BorderSize = 0;
-            btnWP.FlatStyle = FlatStyle.Flat;
-            btnWP.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnWP.ForeColor = Color.White;
-            btnWP.Location = new Point(0, 0);
-            btnWP.Name = "btnWP";
-            btnWP.Size = new Size(284, 52);
-            btnWP.TabIndex = 0;
-            btnWP.Text = "Workout Plans";
-            btnWP.UseVisualStyleBackColor = false;
-            btnWP.Click += btnWP_Click;
-            // 
-            // ViewPlans
+            // gymPerformances
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1210, 626);
+            BackColor = Color.Gainsboro;
+            ClientSize = new Size(1312, 661);
             Controls.Add(navPanel);
-            Name = "ViewPlans";
-            Text = "View Plans";
+            Name = "gymPerformances";
+            Text = "Gym Perfomances";
             navPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -123,7 +103,6 @@
 
         private Panel navPanel;
         private Guna.UI2.WinForms.Guna2TextBox searchBar;
-        private Button btnDP;
-        private Button btnWP;
+        private Label pgTitle;
     }
 }

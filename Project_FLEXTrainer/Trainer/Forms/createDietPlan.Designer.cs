@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createDietPlan));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            NutritionTxt = new ComboBox();
+            typeTxt = new ComboBox();
+            goalTxt = new ComboBox();
             btnCreate = new Button();
             clientCombo = new ComboBox();
             label6 = new Label();
@@ -45,16 +48,13 @@
             label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            NutritionValTxt = new Guna.UI2.WinForms.Guna2TextBox();
             AllergensTxt = new Guna.UI2.WinForms.Guna2TextBox();
             txtName = new Guna.UI2.WinForms.Guna2TextBox();
             btnAddMeal = new Button();
             label4 = new Label();
             panelExercise = new Panel();
             addButton = new Button();
-            goalTxt = new ComboBox();
-            typeTxt = new ComboBox();
-            NutritionTxt = new ComboBox();
-            NutritionValTxt = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -79,6 +79,33 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1094, 607);
             panel1.TabIndex = 2;
+            // 
+            // NutritionTxt
+            // 
+            NutritionTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NutritionTxt.FormattingEnabled = true;
+            NutritionTxt.Location = new Point(135, 434);
+            NutritionTxt.Name = "NutritionTxt";
+            NutritionTxt.Size = new Size(262, 33);
+            NutritionTxt.TabIndex = 16;
+            // 
+            // typeTxt
+            // 
+            typeTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            typeTxt.FormattingEnabled = true;
+            typeTxt.Location = new Point(135, 320);
+            typeTxt.Name = "typeTxt";
+            typeTxt.Size = new Size(262, 33);
+            typeTxt.TabIndex = 15;
+            // 
+            // goalTxt
+            // 
+            goalTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            goalTxt.FormattingEnabled = true;
+            goalTxt.Location = new Point(135, 201);
+            goalTxt.Name = "goalTxt";
+            goalTxt.Size = new Size(262, 33);
+            goalTxt.TabIndex = 14;
             // 
             // btnCreate
             // 
@@ -182,6 +209,28 @@
             panel3.Size = new Size(427, 166);
             panel3.TabIndex = 3;
             // 
+            // NutritionValTxt
+            // 
+            NutritionValTxt.BorderRadius = 10;
+            NutritionValTxt.CustomizableEdges = customizableEdges1;
+            NutritionValTxt.DefaultText = "";
+            NutritionValTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            NutritionValTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            NutritionValTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            NutritionValTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            NutritionValTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            NutritionValTxt.Font = new Font("Segoe UI", 9F);
+            NutritionValTxt.ForeColor = Color.DimGray;
+            NutritionValTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            NutritionValTxt.Location = new Point(108, 107);
+            NutritionValTxt.Name = "NutritionValTxt";
+            NutritionValTxt.PasswordChar = '\0';
+            NutritionValTxt.PlaceholderText = "Nutritional Value";
+            NutritionValTxt.SelectedText = "";
+            NutritionValTxt.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            NutritionValTxt.Size = new Size(208, 38);
+            NutritionValTxt.TabIndex = 2;
+            // 
             // AllergensTxt
             // 
             AllergensTxt.BorderRadius = 10;
@@ -271,55 +320,6 @@
             addButton.Text = "ADD TRAINER";
             addButton.UseVisualStyleBackColor = false;
             // 
-            // goalTxt
-            // 
-            goalTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            goalTxt.FormattingEnabled = true;
-            goalTxt.Location = new Point(135, 201);
-            goalTxt.Name = "goalTxt";
-            goalTxt.Size = new Size(262, 33);
-            goalTxt.TabIndex = 14;
-            // 
-            // typeTxt
-            // 
-            typeTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            typeTxt.FormattingEnabled = true;
-            typeTxt.Location = new Point(135, 320);
-            typeTxt.Name = "typeTxt";
-            typeTxt.Size = new Size(262, 33);
-            typeTxt.TabIndex = 15;
-            // 
-            // NutritionTxt
-            // 
-            NutritionTxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NutritionTxt.FormattingEnabled = true;
-            NutritionTxt.Location = new Point(135, 434);
-            NutritionTxt.Name = "NutritionTxt";
-            NutritionTxt.Size = new Size(262, 33);
-            NutritionTxt.TabIndex = 16;
-            // 
-            // NutritionValTxt
-            // 
-            NutritionValTxt.BorderRadius = 10;
-            NutritionValTxt.CustomizableEdges = customizableEdges1;
-            NutritionValTxt.DefaultText = "";
-            NutritionValTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            NutritionValTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            NutritionValTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            NutritionValTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            NutritionValTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            NutritionValTxt.Font = new Font("Segoe UI", 9F);
-            NutritionValTxt.ForeColor = Color.DimGray;
-            NutritionValTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            NutritionValTxt.Location = new Point(108, 107);
-            NutritionValTxt.Name = "NutritionValTxt";
-            NutritionValTxt.PasswordChar = '\0';
-            NutritionValTxt.PlaceholderText = "Nutritional Value";
-            NutritionValTxt.SelectedText = "";
-            NutritionValTxt.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            NutritionValTxt.Size = new Size(208, 38);
-            NutritionValTxt.TabIndex = 2;
-            // 
             // createDietPlan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -327,7 +327,7 @@
             ClientSize = new Size(1128, 631);
             Controls.Add(panel1);
             Name = "createDietPlan";
-            Text = "createDietPlan";
+            Text = "Create Diet Plan";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

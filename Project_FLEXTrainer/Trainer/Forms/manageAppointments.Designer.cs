@@ -114,7 +114,7 @@
             ClientSize = new Size(1284, 674);
             Controls.Add(navPanel);
             Name = "manageAppointments";
-            Text = "manageAppointments";
+            Text = "Manage Appointments";
             navPanel.ResumeLayout(false);
             ResumeLayout(false);
         }

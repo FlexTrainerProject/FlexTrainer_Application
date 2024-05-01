@@ -319,7 +319,7 @@
             Controls.Add(button1);
             Controls.Add(panel1);
             Name = "addTrainer";
-            Text = "addTrainer";
+            Text = "Add Trainer";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

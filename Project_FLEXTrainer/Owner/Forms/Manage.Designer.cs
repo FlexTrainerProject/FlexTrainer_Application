@@ -226,7 +226,7 @@
             Controls.Add(panel1);
             Controls.Add(navPanel);
             Name = "Manage";
-            Text = "Manage";
+            Text = "Gym Management";
             navPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

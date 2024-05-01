@@ -210,7 +210,7 @@
             Controls.Add(panel1);
             Controls.Add(navPanel);
             Name = "TrainerReports";
-            Text = "TrainerReports";
+            Text = "Trainer Reports";
             navPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -1,6 +1,6 @@
-﻿namespace Project_FLEXTrainer.Trainer
+﻿namespace Project_FLEXTrainer.Admin
 {
-    partial class home_trainer
+    partial class home_admin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_trainer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_admin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
             label2 = new Label();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            pfpBtn = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
             label4 = new Label();
             UserNamePanel = new Panel();
@@ -46,11 +46,10 @@
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
+            btnRevoke = new Button();
             btnSettings = new Button();
-            btnViewPlans = new Button();
-            btnCreateDP = new Button();
-            btnCreateWP = new Button();
-            bntAppointments = new Button();
+            btnReq = new Button();
+            btnGymPerf = new Button();
             desktopPanel = new Panel();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -69,17 +68,17 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1262, 78);
+            panel2.Size = new Size(1159, 78);
             panel2.TabIndex = 2;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 72, 76);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(guna2Button1);
+            panel1.Controls.Add(pfpBtn);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(860, 0);
+            panel1.Location = new Point(757, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(279, 78);
             panel1.TabIndex = 11;
@@ -94,25 +93,25 @@
             label2.TabIndex = 2;
             label2.Text = "usr_type (member/admin/etc)";
             // 
-            // guna2Button1
+            // pfpBtn
             // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(50, 72, 76);
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
-            guna2Button1.ImageSize = new Size(50, 50);
-            guna2Button1.Location = new Point(3, -5);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.Padding = new Padding(5, 0, 5, 5);
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(76, 80);
-            guna2Button1.TabIndex = 3;
-            guna2Button1.Click += guna2Button1_Click;
+            pfpBtn.CustomizableEdges = customizableEdges1;
+            pfpBtn.DisabledState.BorderColor = Color.DarkGray;
+            pfpBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            pfpBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            pfpBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            pfpBtn.FillColor = Color.FromArgb(50, 72, 76);
+            pfpBtn.Font = new Font("Segoe UI", 9F);
+            pfpBtn.ForeColor = Color.White;
+            pfpBtn.Image = (Image)resources.GetObject("pfpBtn.Image");
+            pfpBtn.ImageSize = new Size(50, 50);
+            pfpBtn.Location = new Point(3, -5);
+            pfpBtn.Name = "pfpBtn";
+            pfpBtn.Padding = new Padding(5, 0, 5, 5);
+            pfpBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            pfpBtn.Size = new Size(76, 80);
+            pfpBtn.TabIndex = 3;
+            pfpBtn.Click += pfpBtn_Click;
             // 
             // label3
             // 
@@ -133,7 +132,7 @@
             label4.Dock = DockStyle.Right;
             label4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(1139, 0);
+            label4.Location = new Point(1036, 0);
             label4.Name = "label4";
             label4.Padding = new Padding(10, 15, 10, 0);
             label4.Size = new Size(123, 90);
@@ -148,7 +147,7 @@
             UserNamePanel.Controls.Add(btnpfp);
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
-            UserNamePanel.Location = new Point(2781, 0);
+            UserNamePanel.Location = new Point(2678, 0);
             UserNamePanel.Name = "UserNamePanel";
             UserNamePanel.Size = new Size(279, 45);
             UserNamePanel.TabIndex = 9;
@@ -216,7 +215,7 @@
             label1.BackColor = Color.FromArgb(50, 72, 76);
             label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(3057, -16);
+            label1.Location = new Point(2954, -16);
             label1.Name = "label1";
             label1.Padding = new Padding(10, 30, 10, 0);
             label1.Size = new Size(123, 105);
@@ -227,16 +226,35 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
+            panelMenu.Controls.Add(btnRevoke);
             panelMenu.Controls.Add(btnSettings);
-            panelMenu.Controls.Add(btnViewPlans);
-            panelMenu.Controls.Add(btnCreateDP);
-            panelMenu.Controls.Add(btnCreateWP);
-            panelMenu.Controls.Add(bntAppointments);
+            panelMenu.Controls.Add(btnReq);
+            panelMenu.Controls.Add(btnGymPerf);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 78);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(253, 594);
+            panelMenu.Size = new Size(253, 548);
             panelMenu.TabIndex = 3;
+            // 
+            // btnRevoke
+            // 
+            btnRevoke.BackColor = Color.FromArgb(50, 72, 76);
+            btnRevoke.Dock = DockStyle.Top;
+            btnRevoke.FlatAppearance.BorderSize = 0;
+            btnRevoke.FlatStyle = FlatStyle.Flat;
+            btnRevoke.Font = new Font("Ebrima", 12.25F);
+            btnRevoke.ForeColor = Color.Gainsboro;
+            btnRevoke.Image = (Image)resources.GetObject("btnRevoke.Image");
+            btnRevoke.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRevoke.Location = new Point(0, 140);
+            btnRevoke.Name = "btnRevoke";
+            btnRevoke.Padding = new Padding(15, 0, 0, 0);
+            btnRevoke.Size = new Size(253, 70);
+            btnRevoke.TabIndex = 13;
+            btnRevoke.Text = "    Revoke Gym";
+            btnRevoke.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRevoke.UseVisualStyleBackColor = false;
+            btnRevoke.Click += btnRevoke_Click;
             // 
             // btnSettings
             // 
@@ -248,7 +266,7 @@
             btnSettings.ForeColor = Color.Gainsboro;
             btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 524);
+            btnSettings.Location = new Point(0, 478);
             btnSettings.Name = "btnSettings";
             btnSettings.Padding = new Padding(15, 0, 0, 0);
             btnSettings.Size = new Size(253, 70);
@@ -256,90 +274,46 @@
             btnSettings.Text = "  Settings";
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += btnSettings_Click;
             // 
-            // btnViewPlans
+            // btnReq
             // 
-            btnViewPlans.BackColor = Color.FromArgb(50, 72, 76);
-            btnViewPlans.Dock = DockStyle.Top;
-            btnViewPlans.FlatAppearance.BorderSize = 0;
-            btnViewPlans.FlatStyle = FlatStyle.Flat;
-            btnViewPlans.Font = new Font("Ebrima", 12.25F);
-            btnViewPlans.ForeColor = Color.Gainsboro;
-            btnViewPlans.Image = (Image)resources.GetObject("btnViewPlans.Image");
-            btnViewPlans.ImageAlign = ContentAlignment.MiddleLeft;
-            btnViewPlans.Location = new Point(0, 210);
-            btnViewPlans.Name = "btnViewPlans";
-            btnViewPlans.Padding = new Padding(15, 0, 0, 0);
-            btnViewPlans.Size = new Size(253, 70);
-            btnViewPlans.TabIndex = 11;
-            btnViewPlans.Text = "  View Plans";
-            btnViewPlans.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnViewPlans.UseVisualStyleBackColor = false;
-            btnViewPlans.Click += btnViewPlans_Click;
+            btnReq.BackColor = Color.FromArgb(50, 72, 76);
+            btnReq.Dock = DockStyle.Top;
+            btnReq.FlatAppearance.BorderSize = 0;
+            btnReq.FlatStyle = FlatStyle.Flat;
+            btnReq.Font = new Font("Ebrima", 12.25F);
+            btnReq.ForeColor = Color.Gainsboro;
+            btnReq.Image = (Image)resources.GetObject("btnReq.Image");
+            btnReq.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReq.Location = new Point(0, 70);
+            btnReq.Name = "btnReq";
+            btnReq.Padding = new Padding(15, 0, 0, 0);
+            btnReq.Size = new Size(253, 70);
+            btnReq.TabIndex = 11;
+            btnReq.Text = "  Requests";
+            btnReq.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReq.UseVisualStyleBackColor = false;
+            btnReq.Click += btnReq_Click;
             // 
-            // btnCreateDP
+            // btnGymPerf
             // 
-            btnCreateDP.BackColor = Color.FromArgb(50, 72, 76);
-            btnCreateDP.Dock = DockStyle.Top;
-            btnCreateDP.FlatAppearance.BorderSize = 0;
-            btnCreateDP.FlatStyle = FlatStyle.Flat;
-            btnCreateDP.Font = new Font("Ebrima", 12.25F);
-            btnCreateDP.ForeColor = Color.Gainsboro;
-            btnCreateDP.Image = (Image)resources.GetObject("btnCreateDP.Image");
-            btnCreateDP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreateDP.Location = new Point(0, 140);
-            btnCreateDP.Name = "btnCreateDP";
-            btnCreateDP.Padding = new Padding(12, 0, 0, 0);
-            btnCreateDP.Size = new Size(253, 70);
-            btnCreateDP.TabIndex = 10;
-            btnCreateDP.Text = "  Create  \r\n  Diet Plans\r\n";
-            btnCreateDP.TextAlign = ContentAlignment.MiddleLeft;
-            btnCreateDP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCreateDP.UseVisualStyleBackColor = false;
-            btnCreateDP.Click += btnCreateDP_Click;
-            // 
-            // btnCreateWP
-            // 
-            btnCreateWP.BackColor = Color.FromArgb(50, 72, 76);
-            btnCreateWP.Dock = DockStyle.Top;
-            btnCreateWP.FlatAppearance.BorderSize = 0;
-            btnCreateWP.FlatStyle = FlatStyle.Flat;
-            btnCreateWP.Font = new Font("Ebrima", 12.25F);
-            btnCreateWP.ForeColor = Color.Gainsboro;
-            btnCreateWP.Image = (Image)resources.GetObject("btnCreateWP.Image");
-            btnCreateWP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreateWP.Location = new Point(0, 70);
-            btnCreateWP.Name = "btnCreateWP";
-            btnCreateWP.Padding = new Padding(15, 0, 0, 0);
-            btnCreateWP.Size = new Size(253, 70);
-            btnCreateWP.TabIndex = 9;
-            btnCreateWP.Text = "  Create \r\n  Workout Plan";
-            btnCreateWP.TextAlign = ContentAlignment.MiddleLeft;
-            btnCreateWP.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCreateWP.UseVisualStyleBackColor = false;
-            btnCreateWP.Click += btnCreateWP_Click;
-            // 
-            // bntAppointments
-            // 
-            bntAppointments.BackColor = Color.FromArgb(50, 72, 76);
-            bntAppointments.Dock = DockStyle.Top;
-            bntAppointments.FlatAppearance.BorderSize = 0;
-            bntAppointments.FlatStyle = FlatStyle.Flat;
-            bntAppointments.Font = new Font("Ebrima", 12.25F);
-            bntAppointments.ForeColor = Color.Gainsboro;
-            bntAppointments.Image = (Image)resources.GetObject("bntAppointments.Image");
-            bntAppointments.ImageAlign = ContentAlignment.MiddleLeft;
-            bntAppointments.Location = new Point(0, 0);
-            bntAppointments.Name = "bntAppointments";
-            bntAppointments.Padding = new Padding(15, 0, 0, 0);
-            bntAppointments.Size = new Size(253, 70);
-            bntAppointments.TabIndex = 8;
-            bntAppointments.Text = "  Manage\r\n  Appointments";
-            bntAppointments.TextAlign = ContentAlignment.MiddleLeft;
-            bntAppointments.TextImageRelation = TextImageRelation.ImageBeforeText;
-            bntAppointments.UseVisualStyleBackColor = false;
-            bntAppointments.Click += bntAppointments_Click;
+            btnGymPerf.BackColor = Color.FromArgb(50, 72, 76);
+            btnGymPerf.Dock = DockStyle.Top;
+            btnGymPerf.FlatAppearance.BorderSize = 0;
+            btnGymPerf.FlatStyle = FlatStyle.Flat;
+            btnGymPerf.Font = new Font("Ebrima", 12.25F);
+            btnGymPerf.ForeColor = Color.Gainsboro;
+            btnGymPerf.Image = (Image)resources.GetObject("btnGymPerf.Image");
+            btnGymPerf.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGymPerf.Location = new Point(0, 0);
+            btnGymPerf.Name = "btnGymPerf";
+            btnGymPerf.Padding = new Padding(15, 0, 0, 0);
+            btnGymPerf.Size = new Size(253, 70);
+            btnGymPerf.TabIndex = 8;
+            btnGymPerf.Text = "  Gym Performances";
+            btnGymPerf.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGymPerf.UseVisualStyleBackColor = false;
+            btnGymPerf.Click += btnGymPerf_Click;
             // 
             // desktopPanel
             // 
@@ -347,18 +321,18 @@
             desktopPanel.Dock = DockStyle.Fill;
             desktopPanel.Location = new Point(253, 78);
             desktopPanel.Name = "desktopPanel";
-            desktopPanel.Size = new Size(1009, 594);
+            desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 4;
             // 
-            // home_trainer
+            // home_admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 672);
+            ClientSize = new Size(1159, 626);
             Controls.Add(desktopPanel);
             Controls.Add(panelMenu);
             Controls.Add(panel2);
-            Name = "home_trainer";
+            Name = "home_admin";
             Text = "Home";
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
@@ -376,7 +350,7 @@
         private Panel panel2;
         private Panel panel1;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button pfpBtn;
         private Label label3;
         private Label label4;
         private Panel UserNamePanel;
@@ -386,12 +360,10 @@
         private Label pgTitle;
         private Label label1;
         private Panel panelMenu;
-        private Button btnDP;
+        private Button btnRevoke;
         private Button btnSettings;
-        private Button btnViewPlans;
-        private Button btnCreateDP;
-        private Button btnCreateWP;
-        private Button bntAppointments;
+        private Button btnReq;
+        private Button btnGymPerf;
         private Panel desktopPanel;
     }
 }

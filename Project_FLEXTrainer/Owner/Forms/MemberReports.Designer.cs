@@ -134,7 +134,7 @@
             ClientSize = new Size(1093, 623);
             Controls.Add(navPanel);
             Name = "MemberReports";
-            Text = "MemberReports";
+            Text = "Member Reports";
             navPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
