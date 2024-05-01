@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             UserNamePanel = new Panel();
             btnpfp = new Guna.UI2.WinForms.Guna2Button();
@@ -45,6 +47,7 @@
             btnDietPlans = new Button();
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
+            btnhome = new Guna.UI2.WinForms.Guna2Button();
             panel2.SuspendLayout();
             UserNamePanel.SuspendLayout();
             panelMenu.SuspendLayout();
@@ -53,6 +56,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(170, 52, 60);
+            panel2.Controls.Add(btnhome);
             panel2.Controls.Add(UserNamePanel);
             panel2.Controls.Add(pgTitle);
             panel2.Controls.Add(label1);
@@ -77,7 +81,7 @@
             // btnpfp
             // 
             btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges1;
+            btnpfp.CustomizableEdges = customizableEdges5;
             btnpfp.DisabledState.BorderColor = Color.DarkGray;
             btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -87,11 +91,11 @@
             btnpfp.ForeColor = Color.White;
             btnpfp.Image = (Image)resources.GetObject("btnpfp.Image");
             btnpfp.ImageSize = new Size(50, 50);
-            btnpfp.Location = new Point(0, 0);
+            btnpfp.Location = new Point(3, 0);
             btnpfp.Name = "btnpfp";
             btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnpfp.Size = new Size(76, 80);
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnpfp.Size = new Size(73, 80);
             btnpfp.TabIndex = 3;
             btnpfp.Click += btnpfp_Click;
             // 
@@ -269,6 +273,27 @@
             desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 2;
             // 
+            // btnhome
+            // 
+            btnhome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnhome.CustomizableEdges = customizableEdges7;
+            btnhome.DisabledState.BorderColor = Color.DarkGray;
+            btnhome.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnhome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnhome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnhome.FillColor = Color.Empty;
+            btnhome.Font = new Font("Segoe UI", 9F);
+            btnhome.ForeColor = Color.White;
+            btnhome.Image = (Image)resources.GetObject("btnhome.Image");
+            btnhome.ImageSize = new Size(50, 50);
+            btnhome.Location = new Point(692, 0);
+            btnhome.Name = "btnhome";
+            btnhome.Padding = new Padding(5, 0, 5, 5);
+            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnhome.Size = new Size(75, 80);
+            btnhome.TabIndex = 4;
+            btnhome.Click += btnhome_Click;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -304,5 +329,6 @@
         private Label lblUsername;
         private Label usr_type;
         private Guna.UI2.WinForms.Guna2Button btnpfp;
+        private Guna.UI2.WinForms.Guna2Button btnhome;
     }
 }
