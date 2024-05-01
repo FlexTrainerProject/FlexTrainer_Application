@@ -113,6 +113,7 @@
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(76, 80);
             guna2Button1.TabIndex = 3;
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // label3
             // 
@@ -377,7 +378,7 @@
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home_owner";
-            Text = "home_owner";
+            Text = "Home";
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

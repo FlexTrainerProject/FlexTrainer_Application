@@ -40,27 +40,32 @@ namespace Project_FLEXTrainer
 
         private void btnWorkoutPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.workoutPlans(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.workoutPlans(), sender);
 
         }
 
         private void btnDietPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.dietPlans(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.dietPlans(), sender);
         }
 
         private void btnBookSession_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.bookSession(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.bookSession(), sender);
         }
 
         private void btnMyPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.MyPlans(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.MyPlans(), sender);
         }
         private void settings_Click(object sender, EventArgs e)
         {
-            activateBtn(sender);
+            if ((Button)sender != (Button)activeButton)
+                activateBtn(sender);
         }
 
         private void activateBtn(object sender)

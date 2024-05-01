@@ -1,27 +1,26 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_FLEXTrainer.Trainer
+namespace Project_FLEXTrainer.Admin
 {
-    public partial class home_trainer : Form
+    public partial class home_admin : Form
     {
+
         private bool pfpShow = false;
         private Button activeButton;
         private Form activeForm;
         User currentuser;
-        public home_trainer(User user)
+        public home_admin(User user)
         {
             InitializeComponent();
-            currentuser = user;
-
             currentuser = user;
             label3.Text = user.Username;
             label2.Text = user.Type;
@@ -84,7 +83,9 @@ namespace Project_FLEXTrainer.Trainer
             }
         }
         Project_FLEXTrainer.Forms.SubForms.Profile SubForm;
-        private void guna2Button1_Click(object sender, EventArgs e)
+
+
+        private void pfpBtn_Click(object sender, EventArgs e)
         {
             if (!pfpShow)
             {
@@ -93,7 +94,7 @@ namespace Project_FLEXTrainer.Trainer
                     SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
-
+                    //SubForm.BringToFront();
                     // Calculate the position of the sub form relative to the button
                     Point p = btnpfp.PointToScreen(Point.Empty);
                     SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
@@ -112,36 +113,24 @@ namespace Project_FLEXTrainer.Trainer
                 SubForm.Close();
                 pfpShow = false;
             }
-
         }
 
-        private void bntAppointments_Click(object sender, EventArgs e)
-        {
-            if((Button )sender != (Button) activeButton)
-            OpenChildForm(new Forms.manageAppointments(), sender);
-        }
-
-        private void btnCreateWP_Click(object sender, EventArgs e)
+        private void btnGymPerf_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.createWorkoutPlan(), sender);
+                OpenChildForm(new Forms.gymPerformances(), sender);
         }
 
-        private void btnCreateDP_Click(object sender, EventArgs e)
+        private void btnReq_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.createDietPlan(), sender);
+                OpenChildForm(new Forms.Requests(), sender);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnRevoke_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                activateBtn(sender);
-        }
-
-        private void btnViewPlans_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.ViewPlans(), sender);
+                OpenChildForm(new Forms.revokeGym(), sender);
         }
     }
 }
