@@ -17,9 +17,12 @@ namespace Project_FLEXTrainer.Owner
         private Form activeForm;
         User currentuser;
 
-        public home_owner()
+        public home_owner(User user)
         {
             InitializeComponent();
+            currentuser = user;
+            label3.Text = user.Username;
+            label2.Text = user.Type;
         }
 
 
@@ -114,7 +117,7 @@ namespace Project_FLEXTrainer.Owner
         private void btnGymReports_Click(object sender, EventArgs e)
         {
 
-            OpenChildForm(new Forms.GymReport(), sender);
+            OpenChildForm(new Forms.GymReport(currentuser), sender);
         }
 
         private void btnMemberReports_Click(object sender, EventArgs e)

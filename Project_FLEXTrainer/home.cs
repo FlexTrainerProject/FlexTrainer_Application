@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -149,5 +150,21 @@ namespace Project_FLEXTrainer
             }
 
         }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            activeForm.Close();
+            Form childForm = new Forms.mainHomecs(currentuser);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.desktopPanel.Controls.Add(childForm);
+            this.desktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        
     }
 }
