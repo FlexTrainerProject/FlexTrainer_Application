@@ -68,6 +68,12 @@ namespace Project_FLEXTrainer
                 activateBtn(sender);
         }
 
+        private void btnMembership_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.Membership(), sender);
+        }
+
         private void activateBtn(object sender)
         {
             if (sender != null)
@@ -170,6 +176,6 @@ namespace Project_FLEXTrainer
             childForm.Show();
         }
 
-        
+       
     }
 }

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
-            btnhome = new Guna.UI2.WinForms.Guna2Button();
             UserNamePanel = new Panel();
+            btnhome = new Guna.UI2.WinForms.Guna2Button();
             btnpfp = new Guna.UI2.WinForms.Guna2Button();
             usr_type = new Label();
             lblUsername = new Label();
@@ -48,6 +48,7 @@
             btnDietPlans = new Button();
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
+            btnMembership = new Button();
             panel2.SuspendLayout();
             UserNamePanel.SuspendLayout();
             panelMenu.SuspendLayout();
@@ -65,27 +66,6 @@
             panel2.Size = new Size(1159, 78);
             panel2.TabIndex = 0;
             // 
-            // btnhome
-            // 
-            btnhome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnhome.CustomizableEdges = customizableEdges1;
-            btnhome.DisabledState.BorderColor = Color.DarkGray;
-            btnhome.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnhome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnhome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnhome.FillColor = Color.Empty;
-            btnhome.Font = new Font("Segoe UI", 9F);
-            btnhome.ForeColor = Color.White;
-            btnhome.Image = (Image)resources.GetObject("btnhome.Image");
-            btnhome.ImageSize = new Size(40, 40);
-            btnhome.Location = new Point(205, 0);
-            btnhome.Name = "btnhome";
-            btnhome.Padding = new Padding(5, 0, 5, 5);
-            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnhome.Size = new Size(75, 80);
-            btnhome.TabIndex = 4;
-            btnhome.Click += btnhome_Click;
-            // 
             // UserNamePanel
             // 
             UserNamePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
@@ -99,10 +79,31 @@
             UserNamePanel.Size = new Size(279, 89);
             UserNamePanel.TabIndex = 9;
             // 
+            // btnhome
+            // 
+            btnhome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnhome.CustomizableEdges = customizableEdges9;
+            btnhome.DisabledState.BorderColor = Color.DarkGray;
+            btnhome.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnhome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnhome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnhome.FillColor = Color.Empty;
+            btnhome.Font = new Font("Segoe UI", 9F);
+            btnhome.ForeColor = Color.White;
+            btnhome.Image = (Image)resources.GetObject("btnhome.Image");
+            btnhome.ImageSize = new Size(40, 40);
+            btnhome.Location = new Point(205, 0);
+            btnhome.Name = "btnhome";
+            btnhome.Padding = new Padding(5, 0, 5, 5);
+            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnhome.Size = new Size(75, 80);
+            btnhome.TabIndex = 4;
+            btnhome.Click += btnhome_Click;
+            // 
             // btnpfp
             // 
             btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges3;
+            btnpfp.CustomizableEdges = customizableEdges11;
             btnpfp.DisabledState.BorderColor = Color.DarkGray;
             btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -115,7 +116,7 @@
             btnpfp.Location = new Point(3, 0);
             btnpfp.Name = "btnpfp";
             btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnpfp.Size = new Size(73, 80);
             btnpfp.TabIndex = 3;
             btnpfp.Click += btnpfp_Click;
@@ -174,6 +175,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
+            panelMenu.Controls.Add(btnMembership);
             panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnMyPlans);
             panelMenu.Controls.Add(btnBookSessions);
@@ -294,6 +296,26 @@
             desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 2;
             // 
+            // btnMembership
+            // 
+            btnMembership.BackColor = Color.FromArgb(50, 72, 76);
+            btnMembership.Dock = DockStyle.Bottom;
+            btnMembership.FlatAppearance.BorderSize = 0;
+            btnMembership.FlatStyle = FlatStyle.Flat;
+            btnMembership.Font = new Font("Ebrima", 12.25F);
+            btnMembership.ForeColor = Color.Gainsboro;
+            btnMembership.Image = (Image)resources.GetObject("btnMembership.Image");
+            btnMembership.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMembership.Location = new Point(0, 408);
+            btnMembership.Name = "btnMembership";
+            btnMembership.Padding = new Padding(15, 0, 0, 0);
+            btnMembership.Size = new Size(253, 70);
+            btnMembership.TabIndex = 13;
+            btnMembership.Text = "  Membership";
+            btnMembership.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMembership.UseVisualStyleBackColor = false;
+            btnMembership.Click += btnMembership_Click;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -303,7 +325,7 @@
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home";
-            Text = "mainHome";
+            Text = "+";
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -330,5 +352,6 @@
         private Label usr_type;
         private Guna.UI2.WinForms.Guna2Button btnpfp;
         private Guna.UI2.WinForms.Guna2Button btnhome;
+        private Button btnMembership;
     }
 }
