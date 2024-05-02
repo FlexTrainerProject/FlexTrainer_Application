@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_FLEXTrainer.Forms
+namespace Project_FLEXTrainer.Forms.SubForms
 {
-    public partial class Membership : Form
+    public partial class TrainerInfo : Form
     {
-        public Membership()
+        public TrainerInfo()
         {
             InitializeComponent();
         }
 
+        private void TimingCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void closeError_Click(object sender, EventArgs e)
         {
-            noMemberPanel.Visible=false;
+            this.Close();
         }
     }
 }

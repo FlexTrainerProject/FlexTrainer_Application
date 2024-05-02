@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            label1 = new Label();
             logo = new PictureBox();
             button2 = new Button();
             bindingSource1 = new BindingSource(components);
@@ -44,21 +43,11 @@
             label2 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             back = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("a Big Deal", 27.7499962F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Teal;
-            label1.Location = new Point(126, 313);
-            label1.Name = "label1";
-            label1.Size = new Size(326, 37);
-            label1.TabIndex = 11;
-            label1.Text = "FLEX TRAINER";
             // 
             // logo
             // 
@@ -75,6 +64,8 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(170, 52, 60);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(61, 366);
@@ -146,9 +137,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Retroica", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DarkSlateGray;
-            label3.Location = new Point(71, 180);
+            label3.Font = new Font("Microsoft Sans Serif", 14.2499981F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(61, 180);
             label3.Name = "label3";
             label3.Size = new Size(81, 24);
             label3.TabIndex = 1;
@@ -160,10 +151,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Retroica", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Teal;
-            label2.Location = new Point(61, 131);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(52, 131);
             label2.Name = "label2";
-            label2.Size = new Size(173, 55);
+            label2.Size = new Size(176, 49);
             label2.TabIndex = 0;
             label2.Text = "LOGIN";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -182,13 +173,24 @@
             back.UseVisualStyleBackColor = false;
             back.Click += back_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Retroica", 27.7499962F);
+            label1.ForeColor = Color.FromArgb(170, 52, 60);
+            label1.Location = new Point(150, 312);
+            label1.Name = "label1";
+            label1.Size = new Size(273, 38);
+            label1.TabIndex = 21;
+            label1.Text = "FLEX TRAINER";
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(906, 532);
-            Controls.Add(back);
             Controls.Add(label1);
+            Controls.Add(back);
             Controls.Add(logo);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -205,8 +207,6 @@
         }
 
         #endregion
-
-        private Label label1;
         private PictureBox logo;
         private Button button2;
         private BindingSource bindingSource1;
@@ -220,5 +220,6 @@
         private LinkLabel linkLabel1;
         private TextBox textBox1;
         private Button back;
+        private Label label1;
     }
 }

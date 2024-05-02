@@ -140,6 +140,19 @@ namespace Project_FLEXTrainer.Forms
                     else if (label.Name == "ratingLabel")
                         label.Text = "Rating: " + rating;
                 }
+                else if (control is Button)
+                {
+                    Button button = (Button)control;
+                    button.Click += (sender, e) =>
+                    {
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo();
+                        SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
+                        SubForm.StartPosition = FormStartPosition.CenterScreen;
+
+                        SubForm.Show(); // Show the form as a separate window
+                    };
+                }
+
             }
 
             // Calculate vertical position based on existing panels

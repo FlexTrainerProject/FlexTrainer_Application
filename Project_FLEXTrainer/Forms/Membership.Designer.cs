@@ -75,6 +75,7 @@
             closeError.Size = new Size(37, 43);
             closeError.TabIndex = 1;
             closeError.UseVisualStyleBackColor = true;
+            closeError.Click += closeError_Click;
             // 
             // label1
             // 
