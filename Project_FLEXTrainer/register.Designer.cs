@@ -33,7 +33,6 @@
             label1 = new Label();
             logo = new PictureBox();
             panel1 = new Panel();
-            LoginAs = new ComboBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -79,7 +78,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 72, 76);
-            panel1.Controls.Add(LoginAs);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
@@ -92,19 +90,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(396, 534);
             panel1.TabIndex = 19;
-            // 
-            // LoginAs
-            // 
-            LoginAs.AccessibleName = "LoginAs";
-            LoginAs.DisplayMember = "Member";
-            LoginAs.DropDownStyle = ComboBoxStyle.DropDownList;
-            LoginAs.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginAs.FormattingEnabled = true;
-            LoginAs.Items.AddRange(new object[] { "Member", "Trainer" });
-            LoginAs.Location = new Point(61, 344);
-            LoginAs.Name = "LoginAs";
-            LoginAs.Size = new Size(143, 26);
-            LoginAs.TabIndex = 21;
             // 
             // textBox3
             // 
@@ -167,7 +152,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Honeydew;
-            label3.Location = new Point(71, 113);
+            label3.Location = new Point(57, 113);
             label3.Name = "label3";
             label3.Size = new Size(81, 24);
             label3.TabIndex = 1;
@@ -177,8 +162,11 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(170, 52, 60);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.Location = new Point(61, 386);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(61, 368);
             button2.Name = "button2";
             button2.Size = new Size(239, 46);
             button2.TabIndex = 14;
@@ -191,7 +179,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Retroica", 36F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(61, 73);
+            label2.Location = new Point(47, 73);
             label2.Name = "label2";
             label2.Size = new Size(253, 49);
             label2.TabIndex = 0;
@@ -259,6 +247,5 @@
         private TextBox textBox2;
         private Button back;
         private TextBox textBox3;
-        private ComboBox LoginAs;
     }
 }
