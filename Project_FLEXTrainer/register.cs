@@ -143,7 +143,7 @@ namespace Project_FLEXTrainer
             if (flag != 1)
             {
                 //query to save record in the table
-                string query = "INSERT INTO account (username,email,account_type, password) VALUES ('" + textBox1.Text + "' ,'" + textBox3.Text + "', '" + LoginAs.SelectedItem.ToString() + "','" + Pass.Text + "');";
+                string query = "INSERT INTO account (username,email,account_type, password) VALUES ('" + textBox1.Text + "' ,'" + textBox3.Text + "', 'member','" + Pass.Text + "');";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

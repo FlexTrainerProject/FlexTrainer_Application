@@ -54,11 +54,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Retroica", 27.7499962F);
+            label1.Font = new Font("Microsoft Sans Serif", 27.7499962F);
             label1.ForeColor = Color.FromArgb(170, 52, 60);
             label1.Location = new Point(155, 311);
             label1.Name = "label1";
-            label1.Size = new Size(273, 38);
+            label1.Size = new Size(285, 42);
             label1.TabIndex = 17;
             label1.Text = "FLEX TRAINER";
             label1.Click += label1_Click;
@@ -177,11 +177,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Retroica", 36F);
+            label2.Font = new Font("Microsoft Sans Serif", 36F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(47, 73);
+            label2.Location = new Point(47, 58);
             label2.Name = "label2";
-            label2.Size = new Size(253, 49);
+            label2.Size = new Size(269, 55);
             label2.TabIndex = 0;
             label2.Text = "REGISTER";
             label2.TextAlign = ContentAlignment.TopCenter;

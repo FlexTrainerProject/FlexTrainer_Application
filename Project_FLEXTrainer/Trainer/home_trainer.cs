@@ -90,7 +90,7 @@ namespace Project_FLEXTrainer.Trainer
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser);
+                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser,this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
 
