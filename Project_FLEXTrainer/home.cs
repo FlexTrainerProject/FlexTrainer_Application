@@ -37,7 +37,7 @@ namespace Project_FLEXTrainer
             usr_type.Text = user.Type;
 
             instance = this;
-        
+
         }
 
 
@@ -71,7 +71,7 @@ namespace Project_FLEXTrainer
             if ((Button)sender != (Button)activeButton)
                 OpenChildForm(new Forms.Settings(), sender);
 
-            
+
 
         }
 
@@ -79,6 +79,12 @@ namespace Project_FLEXTrainer
         {
             if ((Button)sender != (Button)activeButton)
                 OpenChildForm(new Forms.Membership(), sender);
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.Appointments(), sender);
         }
 
         private void activateBtn(object sender)
@@ -191,6 +197,6 @@ namespace Project_FLEXTrainer
             }
         }
 
-
+       
     }
 }

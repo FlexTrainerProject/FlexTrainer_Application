@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             panel2 = new Panel();
             label2 = new Label();
             panel1 = new Panel();
@@ -76,11 +77,14 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(96, 254);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(96, 305);
             button2.Name = "button2";
-            button2.Size = new Size(239, 46);
+            button2.Size = new Size(273, 66);
             button2.TabIndex = 23;
-            button2.Text = "Logout";
+            button2.Text = "LOGOUT";
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -91,12 +95,16 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(96, 174);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(96, 218);
             button1.Name = "button1";
-            button1.Size = new Size(239, 46);
+            button1.Size = new Size(273, 66);
             button1.TabIndex = 24;
-            button1.Text = "Manage account";
+            button1.Text = "MANAGE ACCOUNT";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Settings
             // 

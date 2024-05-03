@@ -158,6 +158,32 @@
         /gB0xEv2EX+e2QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnAppointments.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAABNFJREFUaEPt
+        mUuoVWUYhs9FU1TyVoYTxUEkSFADMRwUjgIvKYToIB3UKKPIURA2aZBg1KwgqEFNa9aoQSVIEE0lgkii
+        1JSsDIuMxE7P8+9v/fzrsi+csvam/cIL632/d/3/952z9jprrzMzxRT/MRYWFrbAF+GT8LawB4LcWvhc
+        cG3YA+Ha0D3ca0vY/wxY8CQUn8Fv4U24OcqdoL4Pis+DYl+UO0F9M3Ttb6B7iZNR/ntgoTW99RY2haV3
+        Cl4O2QK1WWhDe8PS2xvebFgtULsMT4VUb4JidViLB4vshldCJqBXujrobAr/DvhnyAw9ayFrcC0oVoaV
+        gL4Cd4dcPFhkP6z99NHLoeg3yAbYb5ANIWtwLSiWh5WA9re0P+Ro4AQX81LyQ1rxMdhvkPWwzFa8B/Yb
+        xFrXOa4lugaxhzJrj92XKIWnodewmzXZb5CubGbEM7oyDYquQbqy9vpMxHrAOBqFB2BtUvQB+G9cWnNQ
+        dA1yIGQC2ivHXu35aNipcB3mO0wJ/IfgtZAJ6NQo7DfIaijmwtKrGu28A+HbnGveGVYC+hf4YMga8L0T
+        Xq9EtcGyZDSAPw+d/FjoJfAsPJ0CfUD9R/g2tEH5Dvwhyp2gfhq69pLQT0H3nk+BBvCrK2NOYaOicxBB
+        7T74B3RR8QXsXLwCdT+UP8HqmvZ44F936vbi2sK93PP+KLdAbZlBMD/SIBXI3AVvDzkSyHs3Wh9yJLiH
+        e4XsCzKLG2TcYM+91qeDjAfsudd6fRDvANUdZlJY3bVqg0wyaoN4u1wxYbRnMf2wjwXsudf6gEHQT8A3
+        Cr4Ot0U5A8/zX4hMxVfhmohk4HkpWCuzntt6SsDbBt2zzD4e5QT04EE4doFf4fsFP4BiY8QS0Ofg17DM
+        fgpvwPxQ6XF41sqs534VsQT0Rijcs8za02sRMzd0kAvwUMgMvItNH+1zVOsZKvz8aOKxXsgMz2366EPw
+        YsiM8C+EVA8dxIYPhszAc8DDIRPQousyGnWQ9HIjZALyMMwNV8A7CPOAHP9/BvE7wZvQTSr6ZuQ3uCti
+        CWiv+0dhmb0bivxGxOOelWpl1nNvRCwBvQu6l3uW2bfg2YiZ82We6P4+wrEftmvQn2rJMxHJwNsDHaaZ
+        fTkiGXqNjPTcPRHJwDtTZCraU/Nmk76EedAaZCLBANNBxgoMMLGD0LO9fwdn+w6C9u2Kd5qKK6LUArWl
+        jWzt3VQJa43s0ii1QM0n3DKbXy8J9NDb7w7oXaKJ72FzsROp0sbHEcnQ65VaOBGRBLQ/RPdqwp52RMzc
+        0EF8fnoeNr+RXYW1F3loX9vcG/WK1Te3/DLO457V+ibquTcjloD2xZt7lTlpT+ciZm76iDJxg5yHR0Jm
+        4F2CtQHRNlx7XyvCXxdSvU4vZIbnNn20DV8KmYF3BJ4PqR46yHFoI74Jr+iHT29VxBLQfoB/h2X2Z3g1
+        Ihl6USuznvtRRBLQq6B7uWeZ1Xs2YuYGDyLQW6H/Uqj4CKz9W6wC/s4iJx+Gtbub0Itamd0Z5Rrwvd26
+        Z5ndGuUE9PBBJgH23GudQcLwVzbw383jCHu295DJeA/6t6N1OYwr7DV6fjesZPrH5kvod4NP4IdjTnu0
+        V3tu/9cMczt8Cb4y5rTH7dH2FFPcOszM/AXieGSwGIOQfwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnMembership.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAwlJREFUWEft

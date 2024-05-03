@@ -46,6 +46,7 @@
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
+            btnFeedbacks = new Button();
             btnSettings = new Button();
             btnViewPlans = new Button();
             btnCreateDP = new Button();
@@ -227,6 +228,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
+            panelMenu.Controls.Add(btnFeedbacks);
             panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnViewPlans);
             panelMenu.Controls.Add(btnCreateDP);
@@ -237,6 +239,26 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(253, 594);
             panelMenu.TabIndex = 3;
+            // 
+            // btnFeedbacks
+            // 
+            btnFeedbacks.BackColor = Color.FromArgb(50, 72, 76);
+            btnFeedbacks.Dock = DockStyle.Top;
+            btnFeedbacks.FlatAppearance.BorderSize = 0;
+            btnFeedbacks.FlatStyle = FlatStyle.Flat;
+            btnFeedbacks.Font = new Font("Ebrima", 12.25F);
+            btnFeedbacks.ForeColor = Color.Gainsboro;
+            btnFeedbacks.Image = (Image)resources.GetObject("btnFeedbacks.Image");
+            btnFeedbacks.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFeedbacks.Location = new Point(0, 280);
+            btnFeedbacks.Name = "btnFeedbacks";
+            btnFeedbacks.Padding = new Padding(15, 0, 0, 0);
+            btnFeedbacks.Size = new Size(253, 70);
+            btnFeedbacks.TabIndex = 13;
+            btnFeedbacks.Text = "  Feedbacks";
+            btnFeedbacks.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFeedbacks.UseVisualStyleBackColor = false;
+            btnFeedbacks.Click += btnFeedbacks_Click;
             // 
             // btnSettings
             // 
@@ -393,5 +415,6 @@
         private Button btnCreateWP;
         private Button bntAppointments;
         private Panel desktopPanel;
+        private Button btnFeedbacks;
     }
 }

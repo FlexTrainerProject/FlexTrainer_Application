@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             UserNamePanel = new Panel();
             btnhome = new Guna.UI2.WinForms.Guna2Button();
@@ -42,13 +42,14 @@
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
+            btnAppointments = new Button();
+            btnMembership = new Button();
             btnSettings = new Button();
             btnMyPlans = new Button();
             btnBookSessions = new Button();
             btnDietPlans = new Button();
             btnWorkoutPlans = new Button();
             desktopPanel = new Panel();
-            btnMembership = new Button();
             panel2.SuspendLayout();
             UserNamePanel.SuspendLayout();
             panelMenu.SuspendLayout();
@@ -82,7 +83,7 @@
             // btnhome
             // 
             btnhome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnhome.CustomizableEdges = customizableEdges9;
+            btnhome.CustomizableEdges = customizableEdges1;
             btnhome.DisabledState.BorderColor = Color.DarkGray;
             btnhome.DisabledState.CustomBorderColor = Color.DarkGray;
             btnhome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -95,7 +96,7 @@
             btnhome.Location = new Point(205, 0);
             btnhome.Name = "btnhome";
             btnhome.Padding = new Padding(5, 0, 5, 5);
-            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnhome.Size = new Size(75, 80);
             btnhome.TabIndex = 4;
             btnhome.Click += btnhome_Click;
@@ -103,7 +104,7 @@
             // btnpfp
             // 
             btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges11;
+            btnpfp.CustomizableEdges = customizableEdges3;
             btnpfp.DisabledState.BorderColor = Color.DarkGray;
             btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -116,7 +117,7 @@
             btnpfp.Location = new Point(3, 0);
             btnpfp.Name = "btnpfp";
             btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnpfp.Size = new Size(73, 80);
             btnpfp.TabIndex = 3;
             btnpfp.Click += btnpfp_Click;
@@ -175,6 +176,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
+            panelMenu.Controls.Add(btnAppointments);
             panelMenu.Controls.Add(btnMembership);
             panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnMyPlans);
@@ -186,6 +188,46 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(253, 548);
             panelMenu.TabIndex = 1;
+            // 
+            // btnAppointments
+            // 
+            btnAppointments.BackColor = Color.FromArgb(50, 72, 76);
+            btnAppointments.Dock = DockStyle.Top;
+            btnAppointments.FlatAppearance.BorderSize = 0;
+            btnAppointments.FlatStyle = FlatStyle.Flat;
+            btnAppointments.Font = new Font("Ebrima", 12.25F);
+            btnAppointments.ForeColor = Color.Gainsboro;
+            btnAppointments.Image = (Image)resources.GetObject("btnAppointments.Image");
+            btnAppointments.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAppointments.Location = new Point(0, 280);
+            btnAppointments.Name = "btnAppointments";
+            btnAppointments.Padding = new Padding(5, 0, 0, 0);
+            btnAppointments.Size = new Size(253, 70);
+            btnAppointments.TabIndex = 14;
+            btnAppointments.Text = "  Appointments";
+            btnAppointments.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAppointments.UseVisualStyleBackColor = false;
+            btnAppointments.Click += btnAppointments_Click;
+            // 
+            // btnMembership
+            // 
+            btnMembership.BackColor = Color.FromArgb(50, 72, 76);
+            btnMembership.Dock = DockStyle.Bottom;
+            btnMembership.FlatAppearance.BorderSize = 0;
+            btnMembership.FlatStyle = FlatStyle.Flat;
+            btnMembership.Font = new Font("Ebrima", 12.25F);
+            btnMembership.ForeColor = Color.Gainsboro;
+            btnMembership.Image = (Image)resources.GetObject("btnMembership.Image");
+            btnMembership.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMembership.Location = new Point(0, 408);
+            btnMembership.Name = "btnMembership";
+            btnMembership.Padding = new Padding(15, 0, 0, 0);
+            btnMembership.Size = new Size(253, 70);
+            btnMembership.TabIndex = 13;
+            btnMembership.Text = "  Membership";
+            btnMembership.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMembership.UseVisualStyleBackColor = false;
+            btnMembership.Click += btnMembership_Click;
             // 
             // btnSettings
             // 
@@ -296,26 +338,6 @@
             desktopPanel.Size = new Size(906, 548);
             desktopPanel.TabIndex = 2;
             // 
-            // btnMembership
-            // 
-            btnMembership.BackColor = Color.FromArgb(50, 72, 76);
-            btnMembership.Dock = DockStyle.Bottom;
-            btnMembership.FlatAppearance.BorderSize = 0;
-            btnMembership.FlatStyle = FlatStyle.Flat;
-            btnMembership.Font = new Font("Ebrima", 12.25F);
-            btnMembership.ForeColor = Color.Gainsboro;
-            btnMembership.Image = (Image)resources.GetObject("btnMembership.Image");
-            btnMembership.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMembership.Location = new Point(0, 408);
-            btnMembership.Name = "btnMembership";
-            btnMembership.Padding = new Padding(15, 0, 0, 0);
-            btnMembership.Size = new Size(253, 70);
-            btnMembership.TabIndex = 13;
-            btnMembership.Text = "  Membership";
-            btnMembership.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMembership.UseVisualStyleBackColor = false;
-            btnMembership.Click += btnMembership_Click;
-            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,5 +375,6 @@
         private Guna.UI2.WinForms.Guna2Button btnpfp;
         private Guna.UI2.WinForms.Guna2Button btnhome;
         private Button btnMembership;
+        private Button btnAppointments;
     }
 }
