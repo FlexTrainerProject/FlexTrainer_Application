@@ -16,6 +16,7 @@ namespace Project_FLEXTrainer.Admin
 
         private bool pfpShow = false;
         private Button activeButton;
+        private static home_admin instance;
         private Form activeForm;
         User currentuser;
         public home_admin(User user)
@@ -57,6 +58,14 @@ namespace Project_FLEXTrainer.Admin
             }
         }
 
+        public static void CloseSelf()
+        {
+            if (instance != null)
+            {
+                instance.Close();
+            }
+        }
+
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
@@ -91,13 +100,13 @@ namespace Project_FLEXTrainer.Admin
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser,this.desktopPanel);
+                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(this, currentuser,this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
                     //SubForm.BringToFront();
                     // Calculate the position of the sub form relative to the button
-                    Point p = btnpfp.PointToScreen(Point.Empty);
-                    SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
+                    Point p = pfpBtn.PointToScreen(Point.Empty);
+                    SubForm.Location = new Point(p.X, p.Y + pfpBtn.Height);
                     //SubForm.Deactivate += SubForm_Deactivate;
                     /// SubForm.MouseDown.
                     SubForm.Show();
@@ -124,7 +133,7 @@ namespace Project_FLEXTrainer.Admin
         private void btnReq_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Requests(), sender);
+                OpenChildForm(new Forms.Requests(this.desktopPanel), sender);
         }
 
         private void btnRevoke_Click(object sender, EventArgs e)

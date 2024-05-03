@@ -39,16 +39,15 @@
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            imageList1 = new ImageList(components);
-            panelContainer = new Panel();
             panelTemplate = new Panel();
             panel1 = new Panel();
             button2 = new Button();
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
+            imageList1 = new ImageList(components);
+            panelContainer = new Panel();
             topPanel.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,6 +76,7 @@
             topPanel.Controls.Add(comboBox2);
             topPanel.Controls.Add(comboBox1);
             topPanel.Controls.Add(btnCreateDP);
+            topPanel.Controls.Add(panelTemplate);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
@@ -151,24 +151,6 @@
             comboBox1.TabIndex = 5;
             comboBox1.Text = "Type";
             // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "add2.png");
-            // 
-            // panelContainer
-            // 
-            panelContainer.AutoScroll = true;
-            panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
-            panelContainer.Dock = DockStyle.Fill;
-            panelContainer.Location = new Point(0, 54);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1137, 534);
-            panelContainer.TabIndex = 5;
-            // 
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
@@ -177,7 +159,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(164, 6);
+            panelTemplate.Location = new Point(195, 17);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(736, 78);
@@ -235,6 +217,23 @@
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "openview.png");
+            // 
+            // panelContainer
+            // 
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 54);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1137, 534);
+            panelContainer.TabIndex = 5;
+            // 
             // dietPlans
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,17 +245,9 @@
             Name = "dietPlans";
             Text = "Diet Plans";
             topPanel.ResumeLayout(false);
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "openview.png");
         }
 
         #endregion

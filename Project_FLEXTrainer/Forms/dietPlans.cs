@@ -15,6 +15,7 @@ using System.Windows.Forms;
 namespace Project_FLEXTrainer.Forms
 {
 
+    public delegate void DisplayEntryDelegate_d(string goal, string experience_lvl, string schedule);
     public partial class dietPlans : Form
     {
         public dietPlans()
@@ -132,7 +133,7 @@ namespace Project_FLEXTrainer.Forms
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    DisplayEntryDelegate displayDelegate = DisplayEntry;
+                    DisplayEntryDelegate_d displayDelegate = DisplayEntry;
 
                     while (reader.Read())
                     {

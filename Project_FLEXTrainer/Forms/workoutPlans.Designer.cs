@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateWP = new Button();
             topPanel = new Panel();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +48,6 @@
             genderLabel = new Label();
             imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +70,7 @@
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
+            topPanel.Controls.Add(panelTemplate);
             topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
@@ -89,7 +89,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges5;
+            searchBar.CustomizableEdges = customizableEdges1;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -104,7 +104,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             searchBar.Size = new Size(177, 28);
             searchBar.TabIndex = 15;
             // 
@@ -155,7 +155,6 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 54);
             panelContainer.Name = "panelContainer";
@@ -170,7 +169,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(161, 60);
+            panelTemplate.Location = new Point(195, 16);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(736, 78);
@@ -246,7 +245,6 @@
             Name = "workoutPlans";
             Text = "Workout Plans";
             topPanel.ResumeLayout(false);
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);

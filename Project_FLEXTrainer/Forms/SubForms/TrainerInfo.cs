@@ -12,9 +12,12 @@ namespace Project_FLEXTrainer.Forms.SubForms
 {
     public partial class TrainerInfo : Form
     {
-        public TrainerInfo()
+        public TrainerInfo(int id, string name, string gender, string experience, string rating)
         {
             InitializeComponent();
+            label1.Text = name;
+            label2.Text = "Experience " + experience;
+            label3.Text = "Rating " + rating;
         }
 
         private void TimingCombo_SelectedIndexChanged(object sender, EventArgs e)

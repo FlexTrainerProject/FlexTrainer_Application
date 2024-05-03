@@ -16,13 +16,15 @@ namespace Project_FLEXTrainer.Forms.SubForms
     {
         User currentuser;
         Panel panel;
-        public Profile(User user, Panel pane)
+        Form ror;
+        public Profile(Form fm, User user, Panel pane)
         {
             InitializeComponent();
             pfpuser.Text = user.Username;
             pfptype.Text = user.Type;
             currentuser = user;
             panel = pane;
+            //ror = fm;
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -58,9 +60,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
         private void btnLogout_Click(object sender, EventArgs e)
         {
             login loginMember = new login();
-            this.Close();
-            home.CloseSelf();
+         
+            //ror.Close();
+
             loginMember.Show();
+            this.Close();
         }
     }
 }

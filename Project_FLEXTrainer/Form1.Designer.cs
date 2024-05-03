@@ -72,11 +72,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Retroica", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(49, 122);
             label2.Name = "label2";
-            label2.Size = new Size(267, 49);
+            label2.Size = new Size(272, 55);
             label2.TabIndex = 7;
             label2.Text = "WELCOME";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -125,7 +125,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1184, 532);
             Controls.Add(pictureBox1);

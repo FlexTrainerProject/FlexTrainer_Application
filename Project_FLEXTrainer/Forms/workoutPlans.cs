@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.Charts.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_FLEXTrainer.Forms.bookSession;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_FLEXTrainer.Forms
 {
 
-    public delegate void DisplayEntryDelegate(string goal, string experience_lvl, string schedule);
+    public delegate void DisplayEntryDelegate_w(int id, string goal, string experience_lvl, string schedule);
     public partial class workoutPlans : Form
     {
         public workoutPlans()
@@ -26,6 +28,7 @@ namespace Project_FLEXTrainer.Forms
         }
 
 
+        
         private void btnCreateWP_Click(object sender, EventArgs e)
         {
             Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan();
@@ -50,9 +53,9 @@ namespace Project_FLEXTrainer.Forms
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if (newControl is Button)
+                if (newControl is System.Windows.Forms.Button)
                 {
-                    Button newButton = (Button)newControl;
+                    System.Windows.Forms.Button newButton = (System.Windows.Forms.Button)newControl;
                     newButton.Image = imageList1.Images[0];
                     newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
@@ -86,7 +89,7 @@ namespace Project_FLEXTrainer.Forms
 
             return newControl;
         }
-        public void DisplayEntry(string goal, string experience_lvl, string schedule)
+        public void DisplayEntry(int id, string goal, string experience_lvl, string schedule)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -107,12 +110,18 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "Experience: " + experience_lvl;
 
                 }
-                else if (control is Button)
+                else if (control is System.Windows.Forms.Button)
                 {
-                    Button button = (Button)control;
+                    System.Windows.Forms.Button button = (System.Windows.Forms.Button)control;
                     button.Click += (sender, e) =>
                     {
-
+                        string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+                        SqlConnection connection = new SqlConnection(connect);
+                        connection.Open();
+                        SqlCommand comm = new SqlCommand("Delete from workout_plan where id = '"+id+"';", connection);
+                        comm.ExecuteNonQuery();
+                        this.Close();
+                        connection.Close();
                     };
                 }
 
@@ -142,18 +151,20 @@ namespace Project_FLEXTrainer.Forms
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    DisplayEntryDelegate displayDelegate = DisplayEntry;
+                    DisplayEntryDelegate_w displayDelegate = DisplayEntry;
 
                     while (reader.Read())
                     {
+                        int id = reader.GetInt32("id");
                         string goal = reader["goal"].ToString();
                         string experience_lvl = reader["experience_lvl"].ToString();
                         string schedule = reader["schedule"].ToString();
 
-                        displayDelegate.Invoke(goal, experience_lvl, schedule);
+                        displayDelegate.Invoke(id, goal, experience_lvl, schedule);
                     }
 
                     reader.Close();
+                    connection.Close();
                 }
                 catch (Exception ex)
                 {
