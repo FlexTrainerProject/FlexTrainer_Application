@@ -32,9 +32,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnCreateDP = new Button();
             topPanel = new Panel();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,12 +39,17 @@
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            DietPlansView = new Guna.UI2.WinForms.Guna2DataGridView();
-            Icon = new DataGridViewImageColumn();
-            AddButoon = new DataGridViewButtonColumn();
             imageList1 = new ImageList(components);
+            panelContainer = new Panel();
+            panelTemplate = new Panel();
+            panel1 = new Panel();
+            button2 = new Button();
+            nameLabel = new Label();
+            experienceLabel = new Label();
+            genderLabel = new Label();
             topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DietPlansView).BeginInit();
+            panelContainer.SuspendLayout();
+            panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // btnCreateDP
@@ -105,7 +107,6 @@
             searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             searchBar.Size = new Size(177, 28);
             searchBar.TabIndex = 9;
-            searchBar.TextChanged += guna2TextBox1_TextChanged;
             // 
             // button1
             // 
@@ -150,77 +151,6 @@
             comboBox1.TabIndex = 5;
             comboBox1.Text = "Type";
             // 
-            // DietPlansView
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            DietPlansView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DietPlansView.BackgroundColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DietPlansView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DietPlansView.ColumnHeadersHeight = 25;
-            DietPlansView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DietPlansView.Columns.AddRange(new DataGridViewColumn[] { Icon, AddButoon });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DietPlansView.DefaultCellStyle = dataGridViewCellStyle3;
-            DietPlansView.Dock = DockStyle.Fill;
-            DietPlansView.GridColor = Color.WhiteSmoke;
-            DietPlansView.Location = new Point(0, 54);
-            DietPlansView.Name = "DietPlansView";
-            DietPlansView.RowHeadersVisible = false;
-            DietPlansView.RowTemplate.Height = 60;
-            DietPlansView.Size = new Size(1137, 534);
-            DietPlansView.TabIndex = 3;
-            DietPlansView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            DietPlansView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            DietPlansView.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            DietPlansView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            DietPlansView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            DietPlansView.ThemeStyle.BackColor = Color.WhiteSmoke;
-            DietPlansView.ThemeStyle.GridColor = Color.WhiteSmoke;
-            DietPlansView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            DietPlansView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            DietPlansView.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            DietPlansView.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            DietPlansView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DietPlansView.ThemeStyle.HeaderStyle.Height = 25;
-            DietPlansView.ThemeStyle.ReadOnly = false;
-            DietPlansView.ThemeStyle.RowsStyle.BackColor = Color.White;
-            DietPlansView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DietPlansView.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            DietPlansView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            DietPlansView.ThemeStyle.RowsStyle.Height = 60;
-            DietPlansView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            DietPlansView.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
-            // Icon
-            // 
-            Icon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Icon.FillWeight = 50.54314F;
-            Icon.HeaderText = "";
-            Icon.Name = "Icon";
-            Icon.ReadOnly = true;
-            Icon.Width = 50;
-            // 
-            // AddButoon
-            // 
-            AddButoon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            AddButoon.FillWeight = 50.45685F;
-            AddButoon.HeaderText = "";
-            AddButoon.Name = "AddButoon";
-            AddButoon.Width = 50;
-            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
@@ -228,19 +158,105 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "add2.png");
             // 
+            // panelContainer
+            // 
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Controls.Add(panelTemplate);
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 54);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1137, 534);
+            panelContainer.TabIndex = 5;
+            // 
+            // panelTemplate
+            // 
+            panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(panel1);
+            panelTemplate.Controls.Add(button2);
+            panelTemplate.Controls.Add(nameLabel);
+            panelTemplate.Controls.Add(experienceLabel);
+            panelTemplate.Controls.Add(genderLabel);
+            panelTemplate.Location = new Point(164, 6);
+            panelTemplate.Name = "panelTemplate";
+            panelTemplate.Padding = new Padding(20, 0, 0, 0);
+            panelTemplate.Size = new Size(736, 78);
+            panelTemplate.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(42, 101, 97);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(84, 81);
+            panel1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(682, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(42, 40);
+            button2.TabIndex = 5;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            nameLabel.ForeColor = Color.White;
+            nameLabel.Location = new Point(124, 11);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(53, 21);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Name";
+            // 
+            // experienceLabel
+            // 
+            experienceLabel.AutoSize = true;
+            experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            experienceLabel.ForeColor = Color.White;
+            experienceLabel.Location = new Point(442, 11);
+            experienceLabel.Name = "experienceLabel";
+            experienceLabel.Size = new Size(90, 21);
+            experienceLabel.TabIndex = 3;
+            experienceLabel.Text = "Experience";
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            genderLabel.ForeColor = Color.White;
+            genderLabel.Location = new Point(124, 39);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(64, 21);
+            genderLabel.TabIndex = 2;
+            genderLabel.Text = "Gender";
+            // 
             // dietPlans
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1137, 588);
-            Controls.Add(DietPlansView);
+            Controls.Add(panelContainer);
             Controls.Add(topPanel);
             Name = "dietPlans";
             Text = "Diet Plans";
             topPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DietPlansView).EndInit();
+            panelContainer.ResumeLayout(false);
+            panelTemplate.ResumeLayout(false);
+            panelTemplate.PerformLayout();
             ResumeLayout(false);
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "openview.png");
         }
 
         #endregion
@@ -252,10 +268,14 @@
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView DietPlansView;
         private ImageList imageList1;
-        private DataGridViewImageColumn Icon;
-        private DataGridViewButtonColumn AddButoon;
         private Guna.UI2.WinForms.Guna2TextBox searchBar;
+        private Panel panelContainer;
+        private Panel panelTemplate;
+        private Panel panel1;
+        private Button button2;
+        private Label nameLabel;
+        private Label experienceLabel;
+        private Label genderLabel;
     }
 }
