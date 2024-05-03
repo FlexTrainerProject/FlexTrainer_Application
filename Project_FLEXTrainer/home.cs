@@ -17,6 +17,7 @@ namespace Project_FLEXTrainer
         private bool pfpShow = false;
         private Button activeButton;
         private Form activeForm;
+        private static home instance;
         User currentuser;
         public home(User user)
         {
@@ -34,6 +35,9 @@ namespace Project_FLEXTrainer
             currentuser = user;
             lblUsername.Text = user.Username;
             usr_type.Text = user.Type;
+
+            instance = this;
+        
         }
 
 
@@ -65,7 +69,10 @@ namespace Project_FLEXTrainer
         private void settings_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                activateBtn(sender);
+                OpenChildForm(new Forms.Settings(), sender);
+
+            
+
         }
 
         private void btnMembership_Click(object sender, EventArgs e)
@@ -137,7 +144,7 @@ namespace Project_FLEXTrainer
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Forms.SubForms.Profile(currentuser);
+                    SubForm = new Forms.SubForms.Profile(currentuser, this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
 
@@ -176,6 +183,14 @@ namespace Project_FLEXTrainer
             childForm.Show();
         }
 
-       
+        public static void CloseSelf()
+        {
+            if (instance != null)
+            {
+                instance.Close();
+            }
+        }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.Charts.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,22 +15,14 @@ namespace Project_FLEXTrainer.Forms.SubForms
     public partial class Profile : Form
     {
         User currentuser;
-        public Profile(User user)
+        Panel panel;
+        public Profile(User user, Panel pane)
         {
             InitializeComponent();
             pfpuser.Text = user.Username;
             pfptype.Text = user.Type;
             currentuser = user;
-        }
-
-        private void panelTxt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pfptype_Click(object sender, EventArgs e)
-        {
-
+            panel = pane;
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -37,19 +30,24 @@ namespace Project_FLEXTrainer.Forms.SubForms
             this.Close();
         }
 
-        
-        private void guna2GradientTileButton2_Click(object sender, EventArgs e)
+
+        private void OpenChildForm(Form childForm, object btnSender)
         {
-           
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
         Forms.SubForms.Profile_more SubForm;
-        private void guna2GradientTileButton2_Click_1(object sender, EventArgs e)
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             this.Close();
             if (SubForm == null || SubForm.IsDisposed)
             {
-                SubForm = new Forms.SubForms.Profile_more(currentuser);
-                SubForm.Show();
+                OpenChildForm(new Forms.SubForms.Profile_Apply(), sender);
             }
             else
             {

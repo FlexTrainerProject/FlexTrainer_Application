@@ -63,7 +63,6 @@
             pfptype.TabIndex = 2;
             pfptype.Text = "type";
             pfptype.TextAlignment = ContentAlignment.MiddleCenter;
-            pfptype.Click += pfptype_Click;
             // 
             // guna2GradientTileButton1
             // 
@@ -75,7 +74,7 @@
             guna2GradientTileButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2GradientTileButton1.FillColor = Color.FromArgb(192, 0, 0);
             guna2GradientTileButton1.FillColor2 = Color.Teal;
-            guna2GradientTileButton1.Font = new Font("Couture", 20.7499981F, FontStyle.Bold);
+            guna2GradientTileButton1.Font = new Font("Microsoft Sans Serif", 20.7499981F, FontStyle.Bold);
             guna2GradientTileButton1.ForeColor = Color.White;
             guna2GradientTileButton1.Location = new Point(12, 12);
             guna2GradientTileButton1.Name = "guna2GradientTileButton1";
@@ -104,6 +103,7 @@
             guna2GradientButton1.Size = new Size(95, 32);
             guna2GradientButton1.TabIndex = 4;
             guna2GradientButton1.Text = "MORE";
+            guna2GradientButton1.Click += guna2GradientButton1_Click;
             // 
             // pfpMain
             // 
