@@ -34,7 +34,7 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; // Set DockStyle.None for the new panel
+            newPanel.Dock = DockStyle.None; 
 
             foreach (Control control in templatePanel.Controls)
             {

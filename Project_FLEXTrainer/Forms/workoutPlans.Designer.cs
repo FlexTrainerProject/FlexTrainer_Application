@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateWP = new Button();
             topPanel = new Panel();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -43,11 +39,17 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             button1 = new Button();
-            Panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            WorkOut = new Guna.UI2.WinForms.Guna2DataGridView();
+            panelContainer = new Panel();
+            panelTemplate = new Panel();
+            panel1 = new Panel();
+            button2 = new Button();
+            nameLabel = new Label();
+            experienceLabel = new Label();
+            genderLabel = new Label();
+            imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
-            Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)WorkOut).BeginInit();
+            panelContainer.SuspendLayout();
+            panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // btnCreateWP
@@ -87,7 +89,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.CustomizableEdges = customizableEdges5;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -102,7 +104,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             searchBar.Size = new Size(177, 28);
             searchBar.TabIndex = 15;
             // 
@@ -149,69 +151,89 @@
             button1.TabIndex = 11;
             button1.UseVisualStyleBackColor = false;
             // 
-            // Panel
+            // panelContainer
             // 
-            Panel.Controls.Add(WorkOut);
-            Panel.CustomizableEdges = customizableEdges3;
-            Panel.Dock = DockStyle.Fill;
-            Panel.Location = new Point(0, 54);
-            Panel.Name = "Panel";
-            Panel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Panel.Size = new Size(1218, 602);
-            Panel.TabIndex = 1;
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Controls.Add(panelTemplate);
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 54);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1218, 602);
+            panelContainer.TabIndex = 5;
             // 
-            // WorkOut
+            // panelTemplate
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            WorkOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            WorkOut.BackgroundColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(192, 0, 0);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            WorkOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            WorkOut.ColumnHeadersHeight = 25;
-            WorkOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            WorkOut.DefaultCellStyle = dataGridViewCellStyle3;
-            WorkOut.Dock = DockStyle.Fill;
-            WorkOut.GridColor = Color.FromArgb(76, 126, 122);
-            WorkOut.Location = new Point(0, 0);
-            WorkOut.Name = "WorkOut";
-            WorkOut.RowHeadersVisible = false;
-            WorkOut.RowTemplate.Height = 60;
-            WorkOut.Size = new Size(1218, 602);
-            WorkOut.TabIndex = 0;
-            WorkOut.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            WorkOut.ThemeStyle.AlternatingRowsStyle.Font = null;
-            WorkOut.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            WorkOut.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            WorkOut.ThemeStyle.BackColor = Color.WhiteSmoke;
-            WorkOut.ThemeStyle.GridColor = Color.FromArgb(76, 126, 122);
-            WorkOut.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            WorkOut.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            WorkOut.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            WorkOut.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            WorkOut.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            WorkOut.ThemeStyle.HeaderStyle.Height = 25;
-            WorkOut.ThemeStyle.ReadOnly = false;
-            WorkOut.ThemeStyle.RowsStyle.BackColor = Color.White;
-            WorkOut.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            WorkOut.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            WorkOut.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            WorkOut.ThemeStyle.RowsStyle.Height = 60;
-            WorkOut.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            WorkOut.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(panel1);
+            panelTemplate.Controls.Add(button2);
+            panelTemplate.Controls.Add(nameLabel);
+            panelTemplate.Controls.Add(experienceLabel);
+            panelTemplate.Controls.Add(genderLabel);
+            panelTemplate.Location = new Point(161, 60);
+            panelTemplate.Name = "panelTemplate";
+            panelTemplate.Padding = new Padding(20, 0, 0, 0);
+            panelTemplate.Size = new Size(736, 78);
+            panelTemplate.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(42, 101, 97);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(84, 81);
+            panel1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(682, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(42, 40);
+            button2.TabIndex = 5;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            nameLabel.ForeColor = Color.White;
+            nameLabel.Location = new Point(124, 11);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(53, 21);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Name";
+            // 
+            // experienceLabel
+            // 
+            experienceLabel.AutoSize = true;
+            experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            experienceLabel.ForeColor = Color.White;
+            experienceLabel.Location = new Point(442, 11);
+            experienceLabel.Name = "experienceLabel";
+            experienceLabel.Size = new Size(90, 21);
+            experienceLabel.TabIndex = 3;
+            experienceLabel.Text = "Experience";
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            genderLabel.ForeColor = Color.White;
+            genderLabel.Location = new Point(124, 39);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(64, 21);
+            genderLabel.TabIndex = 2;
+            genderLabel.Text = "Gender";
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "openview.png");
             // 
             // workoutPlans
             // 
@@ -219,13 +241,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(196, 210, 245);
             ClientSize = new Size(1218, 656);
-            Controls.Add(Panel);
+            Controls.Add(panelContainer);
             Controls.Add(topPanel);
             Name = "workoutPlans";
             Text = "Workout Plans";
             topPanel.ResumeLayout(false);
-            Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)WorkOut).EndInit();
+            panelContainer.ResumeLayout(false);
+            panelTemplate.ResumeLayout(false);
+            panelTemplate.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -236,8 +259,14 @@
         private ComboBox comboBox1;
         private ComboBox comboBox3;
         private ComboBox comboBox2;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel Panel;
-        private Guna.UI2.WinForms.Guna2DataGridView WorkOut;
         private Guna.UI2.WinForms.Guna2TextBox searchBar;
+        private Panel panelContainer;
+        private Panel panelTemplate;
+        private Panel panel1;
+        private Button button2;
+        private Label nameLabel;
+        private Label experienceLabel;
+        private Label genderLabel;
+        private ImageList imageList1;
     }
 }

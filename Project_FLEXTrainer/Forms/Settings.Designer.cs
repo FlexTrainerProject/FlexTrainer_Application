@@ -42,9 +42,9 @@
             panel2.AutoSize = true;
             panel2.BackColor = Color.FromArgb(50, 72, 76);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(0, 1);
+            panel2.Location = new Point(0, -3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1311, 60);
+            panel2.Size = new Size(1311, 64);
             panel2.TabIndex = 21;
             // 
             // label2
