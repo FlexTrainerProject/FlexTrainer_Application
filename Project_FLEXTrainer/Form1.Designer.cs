@@ -29,29 +29,20 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             bindingSource1 = new BindingSource(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel2 = new Panel();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             panel1 = new Panel();
             label2 = new Label();
-            button2 = new Button();
             button1 = new Button();
+            button2 = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Couture", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(170, 52, 60);
-            label1.Location = new Point(107, 248);
-            label1.Name = "label1";
-            label1.Size = new Size(375, 48);
-            label1.TabIndex = 4;
-            label1.Text = "FLEX TRAINER";
             // 
             // backgroundWorker1
             // 
@@ -73,7 +64,7 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(513, 0);
+            panel1.Location = new Point(791, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 532);
             panel1.TabIndex = 9;
@@ -90,29 +81,14 @@
             label2.Text = "WELCOME";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(170, 52, 60);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(61, 291);
-            button2.Name = "button2";
-            button2.Size = new Size(239, 46);
-            button2.TabIndex = 8;
-            button2.Text = "Login";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(170, 52, 60);
+            button1.BackColor = Color.FromArgb(154, 43, 37);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(61, 228);
+            button1.Location = new Point(61, 239);
             button1.Name = "button1";
             button1.Size = new Size(239, 46);
             button1.TabIndex = 7;
@@ -120,15 +96,40 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(154, 43, 37);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(61, 304);
+            button2.Name = "button2";
+            button2.Size = new Size(239, 46);
+            button2.TabIndex = 8;
+            button2.Text = "Login";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(81, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(711, 672);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(906, 532);
+            ClientSize = new Size(1184, 532);
+            Controls.Add(pictureBox1);
             Controls.Add(panel2);
-            Controls.Add(label1);
             Controls.Add(panel1);
             MaximizeBox = false;
             Name = "Form1";
@@ -138,12 +139,11 @@
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label label1;
         private BindingSource bindingSource1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel2;
@@ -152,5 +152,6 @@
         private Label label2;
         private Button button1;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }

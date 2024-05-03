@@ -108,11 +108,6 @@ namespace Project_FLEXTrainer.Owner
                 OpenChildForm(new Forms.Manage(), sender);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if ((Button)sender != (Button)activeButton)
-                activateBtn(sender);
-        }
 
         private void btnAddTrainer_Click(object sender, EventArgs e)
         {

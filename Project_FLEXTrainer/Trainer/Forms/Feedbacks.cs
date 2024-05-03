@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_FLEXTrainer.Forms
+namespace Project_FLEXTrainer.Trainer.Forms
 {
-    public partial class Settings : Form
+    public partial class Feedbacks : Form
     {
-        public Settings()
+        public Feedbacks()
         {
             InitializeComponent();
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

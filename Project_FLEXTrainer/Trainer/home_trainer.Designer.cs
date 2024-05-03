@@ -46,7 +46,7 @@
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
-            btnSettings = new Button();
+            btnFeedbacks = new Button();
             btnViewPlans = new Button();
             btnCreateDP = new Button();
             btnCreateWP = new Button();
@@ -227,7 +227,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
-            panelMenu.Controls.Add(btnSettings);
+            panelMenu.Controls.Add(btnFeedbacks);
             panelMenu.Controls.Add(btnViewPlans);
             panelMenu.Controls.Add(btnCreateDP);
             panelMenu.Controls.Add(btnCreateWP);
@@ -238,25 +238,25 @@
             panelMenu.Size = new Size(253, 594);
             panelMenu.TabIndex = 3;
             // 
-            // btnSettings
+            // btnFeedbacks
             // 
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Myanmar Text", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.ForeColor = Color.Gainsboro;
-            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
-            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 524);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 70);
-            btnSettings.TabIndex = 12;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += btnSettings_Click;
+            btnFeedbacks.BackColor = Color.FromArgb(50, 72, 76);
+            btnFeedbacks.Dock = DockStyle.Top;
+            btnFeedbacks.FlatAppearance.BorderSize = 0;
+            btnFeedbacks.FlatStyle = FlatStyle.Flat;
+            btnFeedbacks.Font = new Font("Ebrima", 12.25F);
+            btnFeedbacks.ForeColor = Color.Gainsboro;
+            btnFeedbacks.Image = (Image)resources.GetObject("btnFeedbacks.Image");
+            btnFeedbacks.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFeedbacks.Location = new Point(0, 280);
+            btnFeedbacks.Name = "btnFeedbacks";
+            btnFeedbacks.Padding = new Padding(15, 0, 0, 0);
+            btnFeedbacks.Size = new Size(253, 70);
+            btnFeedbacks.TabIndex = 13;
+            btnFeedbacks.Text = "  Feedbacks";
+            btnFeedbacks.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFeedbacks.UseVisualStyleBackColor = false;
+            btnFeedbacks.Click += btnFeedbacks_Click;
             // 
             // btnViewPlans
             // 
@@ -387,11 +387,11 @@
         private Label label1;
         private Panel panelMenu;
         private Button btnDP;
-        private Button btnSettings;
         private Button btnViewPlans;
         private Button btnCreateDP;
         private Button btnCreateWP;
         private Button bntAppointments;
         private Panel desktopPanel;
+        private Button btnFeedbacks;
     }
 }

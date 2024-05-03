@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.Charts.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,45 @@ namespace Project_FLEXTrainer.Forms.SubForms
 {
     public partial class Profile_Apply : Form
     {
+        Form activeForm;
         public Profile_Apply()
         {
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
 
+
+
+        private void guna2Button3_Click(object sender, EventArgs e) //btnCompleteProfile
+        {
+            OpenChildForm(new Forms.SubForms.completeProfile(), sender);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnApply_Click(object sender, EventArgs e) //Apply as Trainer
         {
-            
+            OpenChildForm(new Forms.SubForms.ApplyForTrainer(), sender);
         }
+
+        private void btnApplyOwner_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.SubForms.ApplyForOwner(), sender);
+        }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm == (Form)childForm)
+                return;
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.subFormPanel.Controls.Add(childForm);
+            this.subFormPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+    
     }
 }
