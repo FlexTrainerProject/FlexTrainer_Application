@@ -1,4 +1,5 @@
-﻿using Guna.Charts.WinForms;
+﻿
+using Guna.Charts.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,17 +42,17 @@ namespace Project_FLEXTrainer.Forms
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if(newControl is Button)
+                if (newControl is Button)
                 {
                     Button newButton = (Button)newControl;
                     newButton.Image = imageList1.Images[0];
-                    newButton.FlatStyle= FlatStyle.Flat;
+                    newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
                 }
 
                 if (newControl is Label)
                 {
-               
+
                     Label newLabel = (Label)newControl;
                     newLabel.AutoSize = true; // Set AutoSize property to true for labels
                 }
@@ -74,7 +75,7 @@ namespace Project_FLEXTrainer.Forms
             newControl.Dock = templateControl.Dock;
             newControl.Padding = templateControl.Padding;
             newControl.Location = templateControl.Location;
-            
+
             return newControl;
         }
 
@@ -145,7 +146,7 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo();
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(name,experience,rating);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 
@@ -166,6 +167,11 @@ namespace Project_FLEXTrainer.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

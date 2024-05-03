@@ -187,6 +187,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
             panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
@@ -194,6 +195,7 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(1093, 623);
             panelContainer.TabIndex = 4;
+            panelContainer.Paint += panelContainer_Paint;
             // 
             // imageList1
             // 
