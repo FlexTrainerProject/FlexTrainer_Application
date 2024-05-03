@@ -130,7 +130,8 @@ namespace Project_FLEXTrainer
                 return;
             }
 
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
+           // string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=DB-project;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             SqlConnection connection = new SqlConnection(connect);
             connection.Open();
             //query to check if username already exists

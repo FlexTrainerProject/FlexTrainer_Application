@@ -163,6 +163,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Gainsboro;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(81, 0);
             pictureBox1.Name = "pictureBox1";
