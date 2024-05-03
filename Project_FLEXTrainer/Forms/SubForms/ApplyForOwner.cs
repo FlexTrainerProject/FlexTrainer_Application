@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_FLEXTrainer.Forms
+namespace Project_FLEXTrainer.Forms.SubForms
 {
-    public partial class Settings : Form
+    public partial class ApplyForOwner : Form
     {
-        public Settings()
+        public ApplyForOwner()
         {
             InitializeComponent();
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

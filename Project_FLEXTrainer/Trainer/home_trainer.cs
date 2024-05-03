@@ -90,7 +90,7 @@ namespace Project_FLEXTrainer.Trainer
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser,this.desktopPanel);
+                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(currentuser, this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
 
@@ -117,8 +117,8 @@ namespace Project_FLEXTrainer.Trainer
 
         private void bntAppointments_Click(object sender, EventArgs e)
         {
-            if((Button )sender != (Button) activeButton)
-            OpenChildForm(new Forms.manageAppointments(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.manageAppointments(), sender);
         }
 
         private void btnCreateWP_Click(object sender, EventArgs e)
@@ -133,15 +133,14 @@ namespace Project_FLEXTrainer.Trainer
                 OpenChildForm(new Forms.createDietPlan(), sender);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if ((Button)sender != (Button)activeButton)
-                activateBtn(sender);
-        }
-
         private void btnViewPlans_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.ViewPlans(), sender);
+        }
+
+        private void btnFeedbacks_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.Feedbacks(), sender);
         }
     }
 }

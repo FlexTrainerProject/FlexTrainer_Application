@@ -54,5 +54,13 @@ namespace Project_FLEXTrainer.Forms.SubForms
                 SubForm.BringToFront();
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            login loginMember = new login();
+            this.Close();
+            home.CloseSelf();
+            loginMember.Show();
+        }
     }
 }

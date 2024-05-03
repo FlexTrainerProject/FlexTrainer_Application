@@ -49,5 +49,10 @@ namespace Project_FLEXTrainer
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

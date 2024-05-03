@@ -31,14 +31,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pfpuser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pfptype = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientTileButton1 = new Guna.UI2.WinForms.Guna2GradientTileButton();
             guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             pfpMain = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pfpMain).BeginInit();
             SuspendLayout();
             // 
@@ -95,14 +98,16 @@
             guna2GradientButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2GradientButton1.FillColor = Color.FromArgb(42, 101, 97);
             guna2GradientButton1.FillColor2 = Color.Teal;
-            guna2GradientButton1.Font = new Font("Segoe UI", 9F);
+            guna2GradientButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2GradientButton1.ForeColor = Color.White;
-            guna2GradientButton1.Location = new Point(120, 367);
+            guna2GradientButton1.Image = (Image)resources.GetObject("guna2GradientButton1.Image");
+            guna2GradientButton1.ImageAlign = HorizontalAlignment.Left;
+            guna2GradientButton1.Location = new Point(59, 325);
             guna2GradientButton1.Name = "guna2GradientButton1";
             guna2GradientButton1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2GradientButton1.Size = new Size(95, 32);
+            guna2GradientButton1.Size = new Size(223, 43);
             guna2GradientButton1.TabIndex = 4;
-            guna2GradientButton1.Text = "MORE";
+            guna2GradientButton1.Text = "Manage Account";
             guna2GradientButton1.Click += guna2GradientButton1_Click;
             // 
             // pfpMain
@@ -118,12 +123,36 @@
             pfpMain.TabIndex = 5;
             pfpMain.TabStop = false;
             // 
+            // btnLogout
+            // 
+            btnLogout.BorderRadius = 15;
+            btnLogout.CustomizableEdges = customizableEdges6;
+            btnLogout.DisabledState.BorderColor = Color.DarkGray;
+            btnLogout.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogout.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnLogout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogout.FillColor = Color.FromArgb(42, 101, 97);
+            btnLogout.FillColor2 = Color.Teal;
+            btnLogout.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = HorizontalAlignment.Left;
+            btnLogout.Location = new Point(59, 374);
+            btnLogout.Name = "btnLogout";
+            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            btnLogout.Size = new Size(223, 43);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Logout";
+            btnLogout.Click += btnLogout_Click;
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(340, 435);
+            Controls.Add(btnLogout);
             Controls.Add(pfpMain);
             Controls.Add(guna2GradientButton1);
             Controls.Add(guna2GradientTileButton1);
@@ -145,5 +174,6 @@
         private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pfpMain;
+        private Guna.UI2.WinForms.Guna2GradientButton btnLogout;
     }
 }
