@@ -125,7 +125,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1184, 532);
             Controls.Add(pictureBox1);
