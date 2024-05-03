@@ -14,6 +14,7 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Forms
 {
+
     public partial class dietPlans : Form
     {
         public dietPlans()
@@ -21,43 +22,134 @@ namespace Project_FLEXTrainer.Forms
             InitializeComponent();
             DisplayDietPlans();
 
+            panelTemplate.Visible = false;
+        }
 
+        private Panel CreatePanelFromTemplate(Panel templatePanel)
+        {
+            Panel newPanel = new Panel();
+            newPanel.BorderStyle = templatePanel.BorderStyle;
+            newPanel.BackColor = templatePanel.BackColor;
+            newPanel.Width = templatePanel.Width;
+            newPanel.Height = templatePanel.Height;
+            newPanel.Padding = templatePanel.Padding;
+            newPanel.Dock = DockStyle.None;
+
+            foreach (Control control in templatePanel.Controls)
+            {
+                Control newControl = CreateControlFromTemplate(control);
+                newPanel.Controls.Add(newControl);
+
+                if (newControl is Button)
+                {
+                    Button newButton = (Button)newControl;
+                    newButton.Image = imageList1.Images[0];
+                    newButton.FlatStyle = FlatStyle.Flat;
+                    newButton.FlatAppearance.BorderSize = 0;
+                }
+
+                if (newControl is Label)
+                {
+
+                    Label newLabel = (Label)newControl;
+                    newLabel.AutoSize = true; 
+                }
+            }
+
+            return newPanel;
         }
 
 
-
-        private void panelTxt_Click(object sender, EventArgs e)
+        private Control CreateControlFromTemplate(Control templateControl)
         {
+            Control newControl = (Control)Activator.CreateInstance(templateControl.GetType());
+            newControl.Name = templateControl.Name; // Set control name
+            newControl.Location = templateControl.Location;
+            newControl.Size = templateControl.Size;
+            newControl.BackColor = templateControl.BackColor;
+            newControl.ForeColor = templateControl.ForeColor;
+            newControl.Font = templateControl.Font;
+            newControl.Text = templateControl.Text;
+            newControl.Dock = templateControl.Dock;
+            newControl.Padding = templateControl.Padding;
+            newControl.Location = templateControl.Location;
 
+            return newControl;
         }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        public void DisplayEntry(string goal, string nutrition, string type)
         {
+            Panel templatePanel = panelTemplate; 
 
+            Panel entryPanel = CreatePanelFromTemplate(templatePanel);
+
+
+            foreach (Control control in entryPanel.Controls)
+            {
+                if (control is Label)
+                {
+                    Label label = (Label)control;
+
+                    if (label.Name == "nameLabel")
+                        label.Text = "Goal: " + goal;
+                    else if (label.Name == "genderLabel")
+                        label.Text = "Schedule: " + nutrition;
+                    else if (label.Name == "experienceLabel")
+                        label.Text = "Experience: " + type;
+
+                }
+                else if (control is Button)
+                {
+                    Button button = (Button)control;
+                    button.Click += (sender, e) =>
+                    {
+
+                    };
+                }
+
+            }
+
+            // Calculate vertical position based on existing panels
+            int yOffset = panelContainer.Controls.Cast<Control>().Sum(control => control.Height + control.Margin.Vertical);
+
+            entryPanel.Location = new Point(0, yOffset);
+
+            panelContainer.Controls.Add(entryPanel);
         }
 
         private void DisplayDietPlans()
         {
 
-
-
-
-            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            SqlConnection connection = new SqlConnection(connect);
-            connection.Open();
+            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type' FROM diet_plan";
 
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connect))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
 
-            adapter.Fill(dt);
-            DietPlansView.DataSource = dt;
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
 
+                    DisplayEntryDelegate displayDelegate = DisplayEntry;
 
+                    while (reader.Read())
+                    {
+                        string goal = reader["Goal"].ToString();
+                        string experience_lvl = reader["Nutrition"].ToString();
+                        string schedule = reader["Type"].ToString();
 
-            connection.Close();
+                        displayDelegate.Invoke(goal, experience_lvl, schedule);
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
 
         }
 

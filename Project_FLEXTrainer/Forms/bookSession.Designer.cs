@@ -187,6 +187,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
             panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;

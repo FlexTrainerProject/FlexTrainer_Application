@@ -34,7 +34,7 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; // Set DockStyle.None for the new panel
+            newPanel.Dock = DockStyle.None; 
 
             foreach (Control control in templatePanel.Controls)
             {
@@ -80,8 +80,8 @@ namespace Project_FLEXTrainer.Forms
 
         private void LoadData()
         {
-            string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-           // string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
