@@ -44,7 +44,6 @@
             panelMenu = new Panel();
             btnAppointments = new Button();
             btnMembership = new Button();
-            btnSettings = new Button();
             btnMyPlans = new Button();
             btnBookSessions = new Button();
             btnDietPlans = new Button();
@@ -178,7 +177,6 @@
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
             panelMenu.Controls.Add(btnAppointments);
             panelMenu.Controls.Add(btnMembership);
-            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnMyPlans);
             panelMenu.Controls.Add(btnBookSessions);
             panelMenu.Controls.Add(btnDietPlans);
@@ -219,7 +217,7 @@
             btnMembership.ForeColor = Color.Gainsboro;
             btnMembership.Image = (Image)resources.GetObject("btnMembership.Image");
             btnMembership.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMembership.Location = new Point(0, 408);
+            btnMembership.Location = new Point(0, 478);
             btnMembership.Name = "btnMembership";
             btnMembership.Padding = new Padding(15, 0, 0, 0);
             btnMembership.Size = new Size(253, 70);
@@ -228,26 +226,6 @@
             btnMembership.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnMembership.UseVisualStyleBackColor = false;
             btnMembership.Click += btnMembership_Click;
-            // 
-            // btnSettings
-            // 
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Myanmar Text", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.ForeColor = Color.Gainsboro;
-            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
-            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 478);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 70);
-            btnSettings.TabIndex = 12;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += settings_Click;
             // 
             // btnMyPlans
             // 
@@ -365,7 +343,6 @@
         private Button btnBookSessions;
         private Button btnDietPlans;
         private Button btnWorkoutPlans;
-        private Button btnSettings;
         private Label label1;
         private Label pgTitle;
         private Panel desktopPanel;

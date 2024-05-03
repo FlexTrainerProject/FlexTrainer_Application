@@ -47,7 +47,6 @@
             label1 = new Label();
             panelMenu = new Panel();
             btnFeedbacks = new Button();
-            btnSettings = new Button();
             btnViewPlans = new Button();
             btnCreateDP = new Button();
             btnCreateWP = new Button();
@@ -229,7 +228,6 @@
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
             panelMenu.Controls.Add(btnFeedbacks);
-            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnViewPlans);
             panelMenu.Controls.Add(btnCreateDP);
             panelMenu.Controls.Add(btnCreateWP);
@@ -259,26 +257,6 @@
             btnFeedbacks.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFeedbacks.UseVisualStyleBackColor = false;
             btnFeedbacks.Click += btnFeedbacks_Click;
-            // 
-            // btnSettings
-            // 
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Myanmar Text", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.ForeColor = Color.Gainsboro;
-            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
-            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 524);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 70);
-            btnSettings.TabIndex = 12;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += btnSettings_Click;
             // 
             // btnViewPlans
             // 
@@ -409,7 +387,6 @@
         private Label label1;
         private Panel panelMenu;
         private Button btnDP;
-        private Button btnSettings;
         private Button btnViewPlans;
         private Button btnCreateDP;
         private Button btnCreateWP;

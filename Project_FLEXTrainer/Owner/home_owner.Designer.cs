@@ -47,7 +47,6 @@
             label1 = new Label();
             panelMenu = new Panel();
             btnManage = new Button();
-            btnSettings = new Button();
             btnAddTrainer = new Button();
             btnTrainerReports = new Button();
             btnMemberReports = new Button();
@@ -229,7 +228,6 @@
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
             panelMenu.Controls.Add(btnManage);
-            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnAddTrainer);
             panelMenu.Controls.Add(btnTrainerReports);
             panelMenu.Controls.Add(btnMemberReports);
@@ -259,26 +257,6 @@
             btnManage.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnManage.UseVisualStyleBackColor = false;
             btnManage.Click += btnManage_Click;
-            // 
-            // btnSettings
-            // 
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Myanmar Text", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.ForeColor = Color.Gainsboro;
-            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
-            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 478);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 70);
-            btnSettings.TabIndex = 12;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += btnSettings_Click;
             // 
             // btnAddTrainer
             // 
@@ -405,7 +383,6 @@
         private Label label3;
         private Label label4;
         private Panel panelMenu;
-        private Button btnSettings;
         private Button btnAddTrainer;
         private Button btnTrainerReports;
         private Button btnMemberReports;

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Forms.SubForms
 {
-    public partial class completeProfile : Form
+    public partial class ApplyForOwner : Form
     {
-        public completeProfile()
+        public ApplyForOwner()
         {
             InitializeComponent();
-        }
-
-
-        private void doneBtn_Click(object sender, EventArgs e)
-        {
-            //Queries to insert data
         }
     }
 }

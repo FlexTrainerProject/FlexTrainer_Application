@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            logo = new PictureBox();
             button2 = new Button();
             bindingSource1 = new BindingSource(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -43,23 +42,11 @@
             label2 = new Label();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             back = new Button();
-            label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // logo
-            // 
-            logo.BackColor = SystemColors.Control;
-            logo.BackgroundImageLayout = ImageLayout.Center;
-            logo.Image = (Image)resources.GetObject("logo.Image");
-            logo.Location = new Point(173, 152);
-            logo.Margin = new Padding(0);
-            logo.Name = "logo";
-            logo.Size = new Size(227, 198);
-            logo.TabIndex = 12;
-            logo.TabStop = false;
             // 
             // button2
             // 
@@ -93,9 +80,10 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(514, 0);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(788, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(396, 534);
+            panel1.Size = new Size(396, 532);
             panel1.TabIndex = 15;
             // 
             // textBox1
@@ -165,7 +153,7 @@
             back.BackColor = Color.FromArgb(170, 52, 60);
             back.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             back.ForeColor = SystemColors.ButtonFace;
-            back.Location = new Point(216, 401);
+            back.Location = new Point(351, 459);
             back.Name = "back";
             back.Size = new Size(131, 39);
             back.TabIndex = 20;
@@ -173,41 +161,37 @@
             back.UseVisualStyleBackColor = false;
             back.Click += back_Click;
             // 
-            // label1
+            // pictureBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Retroica", 27.7499962F);
-            label1.ForeColor = Color.FromArgb(170, 52, 60);
-            label1.Location = new Point(150, 312);
-            label1.Name = "label1";
-            label1.Size = new Size(273, 38);
-            label1.TabIndex = 21;
-            label1.Text = "FLEX TRAINER";
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(81, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(711, 672);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 22;
+            pictureBox1.TabStop = false;
             // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(906, 532);
-            Controls.Add(label1);
+            ClientSize = new Size(1184, 532);
             Controls.Add(back);
-            Controls.Add(logo);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "login";
             Load += login_Load;
-            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private PictureBox logo;
         private Button button2;
         private BindingSource bindingSource1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -220,6 +204,6 @@
         private LinkLabel linkLabel1;
         private TextBox textBox1;
         private Button back;
-        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

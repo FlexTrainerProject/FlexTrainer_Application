@@ -17,13 +17,7 @@ namespace Project_FLEXTrainer.Forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            login loginMember = new login();
-            this.Close();
-            home.CloseSelf();
-            loginMember.Show();
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

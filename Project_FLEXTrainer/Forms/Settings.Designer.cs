@@ -86,7 +86,6 @@
             button2.Text = "LOGOUT";
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // button1
             // 

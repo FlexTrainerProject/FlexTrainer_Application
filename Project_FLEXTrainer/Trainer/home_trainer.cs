@@ -133,12 +133,6 @@ namespace Project_FLEXTrainer.Trainer
                 OpenChildForm(new Forms.createDietPlan(), sender);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            if ((Button)sender != (Button)activeButton)
-                activateBtn(sender);
-        }
-
         private void btnViewPlans_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.ViewPlans(), sender);

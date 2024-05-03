@@ -47,7 +47,6 @@
             label1 = new Label();
             panelMenu = new Panel();
             btnRevoke = new Button();
-            btnSettings = new Button();
             btnReq = new Button();
             btnGymPerf = new Button();
             desktopPanel = new Panel();
@@ -227,7 +226,6 @@
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
             panelMenu.Controls.Add(btnRevoke);
-            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnReq);
             panelMenu.Controls.Add(btnGymPerf);
             panelMenu.Dock = DockStyle.Left;
@@ -255,25 +253,6 @@
             btnRevoke.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRevoke.UseVisualStyleBackColor = false;
             btnRevoke.Click += btnRevoke_Click;
-            // 
-            // btnSettings
-            // 
-            btnSettings.BackColor = Color.Transparent;
-            btnSettings.Dock = DockStyle.Bottom;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Myanmar Text", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettings.ForeColor = Color.Gainsboro;
-            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
-            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(0, 478);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Padding = new Padding(15, 0, 0, 0);
-            btnSettings.Size = new Size(253, 70);
-            btnSettings.TabIndex = 12;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
             // 
             // btnReq
             // 
@@ -361,7 +340,6 @@
         private Label label1;
         private Panel panelMenu;
         private Button btnRevoke;
-        private Button btnSettings;
         private Button btnReq;
         private Button btnGymPerf;
         private Panel desktopPanel;
