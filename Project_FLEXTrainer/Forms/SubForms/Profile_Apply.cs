@@ -14,9 +14,21 @@ namespace Project_FLEXTrainer.Forms.SubForms
     public partial class Profile_Apply : Form
     {
         Form activeForm;
-        public Profile_Apply()
+        User currUser;
+        public Profile_Apply(User user)
         {
             InitializeComponent();
+            currUser = user;
+            if (currUser.isProfileComplete == true)
+            {
+                profileoptionLabel.Text = "Edit Profle";
+                guna2Button3.Text = "Edit";
+            }
+            else
+            {
+                profileoptionLabel.Text = "Complete Profile";
+                guna2Button3.Text = "Complete";
+            }
         }
 
 
@@ -24,7 +36,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void guna2Button3_Click(object sender, EventArgs e) //btnCompleteProfile
         {
-            OpenChildForm(new Forms.SubForms.completeProfile(), sender);
+            OpenChildForm(new Forms.SubForms.completeProfile(currUser), sender);
         }
 
         private void btnApply_Click(object sender, EventArgs e) //Apply as Trainer

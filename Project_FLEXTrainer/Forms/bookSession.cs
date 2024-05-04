@@ -16,7 +16,7 @@ namespace Project_FLEXTrainer.Forms
 {
     public partial class bookSession : Form
     {
-        public delegate void DisplayEntryDelegate(int id, string name, string gender, string experience, string rating);
+        public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating);
         public bookSession()
         {
             InitializeComponent();
@@ -80,9 +80,9 @@ namespace Project_FLEXTrainer.Forms
 
         private void LoadData()
         {
-            //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "select trainer.id, concat(firstname,' ',lastname) as name, gender, experience, rating from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
+            string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -97,7 +97,6 @@ namespace Project_FLEXTrainer.Forms
 
                     while (reader.Read())
                     {
-                        int id = reader.GetInt32("id");
                         string name = reader["name"].ToString();
                         string gender = reader["gender"].ToString();
                         string experience = reader["experience"].ToString();
@@ -107,7 +106,7 @@ namespace Project_FLEXTrainer.Forms
 
                         //label2.Text = username;
 
-                        displayDelegate.Invoke(id,name, gender, experience, rating);
+                        displayDelegate.Invoke(name, gender, experience, rating);
                     }
 
                     reader.Close();
@@ -119,7 +118,7 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
-        public void DisplayEntry(int id, string name, string gender, string experience, string rating)
+        public void DisplayEntry(string name, string gender, string experience, string rating)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -146,7 +145,7 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id,name,gender,experience,rating);
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo();
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 

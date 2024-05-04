@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
             this.Close();
             if (SubForm == null || SubForm.IsDisposed)
             {
-                OpenChildForm(new Forms.SubForms.Profile_Apply(), sender);
+                OpenChildForm(new Forms.SubForms.Profile_Apply(currentuser), sender);
             }
             else
             {

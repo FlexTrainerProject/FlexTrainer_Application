@@ -1,5 +1,4 @@
-﻿using Guna.Charts.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,32 +9,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_FLEXTrainer.Forms.bookSession;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 
 namespace Project_FLEXTrainer.Forms
 {
 
-    public delegate void DisplayEntryDelegate_w(int id, string goal, string experience_lvl, string schedule);
+    public delegate void DisplayEntryDelegate(string goal, string experience_lvl, string schedule);
     public partial class workoutPlans : Form
     {
-        public workoutPlans()
+        User user;
+        public workoutPlans(User User)
         {
             InitializeComponent();
 
             DisplayWorkoutPlan();
 
             panelTemplate.Visible = false;
+            user = User;
         }
 
 
-        
         private void btnCreateWP_Click(object sender, EventArgs e)
         {
-            Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan();
+            if (user.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition= FormStartPosition.CenterScreen;
+                messageBox.Show();
+                
+                return;
+            }
+            Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan(user);
             SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
             SubForm.StartPosition = FormStartPosition.CenterScreen;
 
-            SubForm.Show(); 
+            SubForm.Show();
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -46,19 +55,21 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; 
+            newPanel.Dock = DockStyle.None;
 
             foreach (Control control in templatePanel.Controls)
             {
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if (newControl is System.Windows.Forms.Button)
+                if (newControl is Button)
                 {
-                    System.Windows.Forms.Button newButton = (System.Windows.Forms.Button)newControl;
+                    Button newButton = (Button)newControl;
                     newButton.Image = imageList1.Images[0];
                     newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
+                    newButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+                    newButton.ImageAlign = ContentAlignment.MiddleLeft;
                 }
 
                 if (newControl is Label)
@@ -89,7 +100,7 @@ namespace Project_FLEXTrainer.Forms
 
             return newControl;
         }
-        public void DisplayEntry(int id, string goal, string experience_lvl, string schedule)
+        public void DisplayEntry(string goal, string experience_lvl, string schedule)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -110,18 +121,12 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "Experience: " + experience_lvl;
 
                 }
-                else if (control is System.Windows.Forms.Button)
+                else if (control is Button)
                 {
-                    System.Windows.Forms.Button button = (System.Windows.Forms.Button)control;
+                    Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-                        SqlConnection connection = new SqlConnection(connect);
-                        connection.Open();
-                        SqlCommand comm = new SqlCommand("Delete from workout_plan where id = '"+id+"';", connection);
-                        comm.ExecuteNonQuery();
-                        this.Close();
-                        connection.Close();
+
                     };
                 }
 
@@ -137,8 +142,8 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayWorkoutPlan()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select* from workout_plan";
 
@@ -151,20 +156,18 @@ namespace Project_FLEXTrainer.Forms
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    DisplayEntryDelegate_w displayDelegate = DisplayEntry;
+                    DisplayEntryDelegate displayDelegate = DisplayEntry;
 
                     while (reader.Read())
                     {
-                        int id = reader.GetInt32("id");
                         string goal = reader["goal"].ToString();
                         string experience_lvl = reader["experience_lvl"].ToString();
                         string schedule = reader["schedule"].ToString();
 
-                        displayDelegate.Invoke(id, goal, experience_lvl, schedule);
+                        displayDelegate.Invoke(goal, experience_lvl, schedule);
                     }
 
                     reader.Close();
-                    connection.Close();
                 }
                 catch (Exception ex)
                 {
@@ -173,6 +176,15 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+           //work for YOU HAMDAN
+            
+        }
     }
 }

@@ -33,8 +33,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
+            btnhome = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
@@ -75,6 +78,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(50, 72, 76);
+            panel1.Controls.Add(btnhome);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(label3);
@@ -84,19 +88,40 @@
             panel1.Size = new Size(279, 78);
             panel1.TabIndex = 11;
             // 
+            // btnhome
+            // 
+            btnhome.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnhome.CustomizableEdges = customizableEdges1;
+            btnhome.DisabledState.BorderColor = Color.DarkGray;
+            btnhome.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnhome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnhome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnhome.FillColor = Color.Empty;
+            btnhome.Font = new Font("Segoe UI", 9F);
+            btnhome.ForeColor = Color.White;
+            btnhome.Image = (Image)resources.GetObject("btnhome.Image");
+            btnhome.ImageSize = new Size(40, 40);
+            btnhome.Location = new Point(214, -2);
+            btnhome.Name = "btnhome";
+            btnhome.Padding = new Padding(5, 0, 5, 5);
+            btnhome.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnhome.Size = new Size(75, 80);
+            btnhome.TabIndex = 5;
+            btnhome.Click += btnhome_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
             label2.Location = new Point(85, 45);
             label2.Name = "label2";
-            label2.Size = new Size(167, 15);
+            label2.Size = new Size(30, 15);
             label2.TabIndex = 2;
-            label2.Text = "usr_type (member/admin/etc)";
+            label2.Text = "type";
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -109,7 +134,7 @@
             guna2Button1.Location = new Point(3, -5);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Padding = new Padding(5, 0, 5, 5);
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(76, 80);
             guna2Button1.TabIndex = 3;
             guna2Button1.Click += guna2Button1_Click;
@@ -156,7 +181,7 @@
             // btnpfp
             // 
             btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges3;
+            btnpfp.CustomizableEdges = customizableEdges5;
             btnpfp.DisabledState.BorderColor = Color.DarkGray;
             btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -169,7 +194,7 @@
             btnpfp.Location = new Point(158, 0);
             btnpfp.Name = "btnpfp";
             btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnpfp.Size = new Size(76, 80);
             btnpfp.TabIndex = 3;
             // 
@@ -393,5 +418,6 @@
         private Button bntAppointments;
         private Panel desktopPanel;
         private Button btnFeedbacks;
+        private Guna.UI2.WinForms.Guna2Button btnhome;
     }
 }
