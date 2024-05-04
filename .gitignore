@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Project_FLEXTrainer/obj/Debug/net8.0-windows/Project_FLEXTrainer.AssemblyInfoInputs.cache
+/.gitignore
+/.gitignore
