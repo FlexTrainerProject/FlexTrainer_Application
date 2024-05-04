@@ -61,7 +61,7 @@
             noMemberPanel.Dock = DockStyle.Top;
             noMemberPanel.Location = new Point(0, 0);
             noMemberPanel.Name = "noMemberPanel";
-            noMemberPanel.Size = new Size(1212, 43);
+            noMemberPanel.Size = new Size(1155, 43);
             noMemberPanel.TabIndex = 0;
             // 
             // closeError
@@ -70,7 +70,7 @@
             closeError.FlatAppearance.BorderSize = 0;
             closeError.FlatStyle = FlatStyle.Flat;
             closeError.Image = (Image)resources.GetObject("closeError.Image");
-            closeError.Location = new Point(1175, 0);
+            closeError.Location = new Point(1118, 0);
             closeError.Name = "closeError";
             closeError.Size = new Size(37, 43);
             closeError.TabIndex = 1;
@@ -102,7 +102,7 @@
             applyMembership.Controls.Add(label2);
             applyMembership.Location = new Point(12, 58);
             applyMembership.Name = "applyMembership";
-            applyMembership.Size = new Size(901, 759);
+            applyMembership.Size = new Size(703, 565);
             applyMembership.TabIndex = 1;
             // 
             // panel2
@@ -110,9 +110,9 @@
             panel2.BackColor = Color.FromArgb(76, 126, 122);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(492, 339);
+            panel2.Location = new Point(382, 218);
             panel2.Name = "panel2";
-            panel2.Size = new Size(294, 367);
+            panel2.Size = new Size(294, 304);
             panel2.TabIndex = 6;
             // 
             // button2
@@ -122,7 +122,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(88, 302);
+            button2.Location = new Point(88, 246);
             button2.Name = "button2";
             button2.Size = new Size(120, 37);
             button2.TabIndex = 6;
@@ -145,9 +145,9 @@
             panel1.BackColor = Color.FromArgb(76, 126, 122);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(97, 339);
+            panel1.Location = new Point(72, 218);
             panel1.Name = "panel1";
-            panel1.Size = new Size(294, 367);
+            panel1.Size = new Size(294, 304);
             panel1.TabIndex = 5;
             // 
             // button1
@@ -157,12 +157,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(79, 302);
+            button1.Location = new Point(79, 246);
             button1.Name = "button1";
             button1.Size = new Size(120, 37);
             button1.TabIndex = 5;
             button1.Text = "APPLY";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label5
             // 
@@ -179,7 +180,7 @@
             // 
             label4.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(72, 256);
+            label4.Location = new Point(72, 171);
             label4.Name = "label4";
             label4.Padding = new Padding(5, 7, 0, 0);
             label4.Size = new Size(154, 55);
@@ -197,7 +198,7 @@
             gunaCombo.Font = new Font("Segoe UI", 10F);
             gunaCombo.ForeColor = Color.FromArgb(68, 88, 112);
             gunaCombo.ItemHeight = 30;
-            gunaCombo.Location = new Point(72, 163);
+            gunaCombo.Location = new Point(72, 132);
             gunaCombo.Name = "gunaCombo";
             gunaCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             gunaCombo.Size = new Size(285, 36);
@@ -207,12 +208,13 @@
             // 
             label3.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(61, 118);
+            label3.Location = new Point(61, 87);
             label3.Name = "label3";
             label3.Padding = new Padding(5, 7, 0, 0);
             label3.Size = new Size(154, 55);
             label3.TabIndex = 2;
             label3.Text = "Select Gym";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -229,19 +231,19 @@
             // 
             panelActiveMS.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelActiveMS.BackColor = Color.FromArgb(76, 126, 122);
-            panelActiveMS.Location = new Point(919, 124);
+            panelActiveMS.Location = new Point(721, 124);
             panelActiveMS.Name = "panelActiveMS";
-            panelActiveMS.Size = new Size(281, 693);
+            panelActiveMS.Size = new Size(422, 499);
             panelActiveMS.TabIndex = 2;
             // 
             // lblActiveMS
             // 
-            lblActiveMS.Font = new Font("Couture", 23.9999962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblActiveMS.Font = new Font("Couture", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblActiveMS.ForeColor = Color.FromArgb(126, 46, 53);
-            lblActiveMS.Location = new Point(919, 66);
+            lblActiveMS.Location = new Point(721, 66);
             lblActiveMS.Name = "lblActiveMS";
             lblActiveMS.Padding = new Padding(5, 7, 0, 0);
-            lblActiveMS.Size = new Size(443, 55);
+            lblActiveMS.Size = new Size(373, 55);
             lblActiveMS.TabIndex = 3;
             lblActiveMS.Text = "ACTIVE MEMBERSHIP";
             // 
@@ -250,7 +252,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(1212, 829);
+            ClientSize = new Size(1155, 635);
             Controls.Add(lblActiveMS);
             Controls.Add(panelActiveMS);
             Controls.Add(applyMembership);

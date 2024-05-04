@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_FLEXTrainer.Essentials;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,32 @@ namespace Project_FLEXTrainer.Forms.SubForms
 {
     public partial class addExercise : Form
     {
-        public addExercise()
+
+        private createWorkoutPlan main;
+        public addExercise(createWorkoutPlan mainForm)
         {
             InitializeComponent();
+            main = mainForm;
+
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
+            {
+                MessageBox.Show("Missing Info");
+                return;
+            }
+            Exercise ex = new Exercise();
+            ex.targetMuscle = textBox1.Text;
+            ex.Routine = textBox2.Text;
+            ex.Sets = textBox4.Text;
+            ex.Reps = textBox5.Text;
+            ex.Machine = textBox3.Text;
 
+            main.AddExercise(ex);
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -28,6 +47,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
         }
 
         private void addExercise_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

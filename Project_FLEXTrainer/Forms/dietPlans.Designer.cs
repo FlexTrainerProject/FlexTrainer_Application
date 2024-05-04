@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateDP = new Button();
             topPanel = new Panel();
+            panelTemplate = new Panel();
+            panel1 = new Panel();
+            button2 = new Button();
+            nameLabel = new Label();
+            experienceLabel = new Label();
+            genderLabel = new Label();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             button1 = new Button();
             comboBox3 = new ComboBox();
@@ -41,14 +47,7 @@
             comboBox1 = new ComboBox();
             imageList1 = new ImageList(components);
             panelContainer = new Panel();
-            panelTemplate = new Panel();
-            panel1 = new Panel();
-            button2 = new Button();
-            nameLabel = new Label();
-            experienceLabel = new Label();
-            genderLabel = new Label();
             topPanel.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,6 +70,7 @@
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
+            topPanel.Controls.Add(panelTemplate);
             topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(button1);
             topPanel.Controls.Add(comboBox3);
@@ -82,6 +82,72 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(1137, 54);
             topPanel.TabIndex = 2;
+            // 
+            // panelTemplate
+            // 
+            panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(panel1);
+            panelTemplate.Controls.Add(button2);
+            panelTemplate.Controls.Add(nameLabel);
+            panelTemplate.Controls.Add(experienceLabel);
+            panelTemplate.Controls.Add(genderLabel);
+            panelTemplate.Location = new Point(168, 31);
+            panelTemplate.Name = "panelTemplate";
+            panelTemplate.Padding = new Padding(20, 0, 0, 0);
+            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(42, 101, 97);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(84, 81);
+            panel1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(759, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(42, 40);
+            button2.TabIndex = 5;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            nameLabel.ForeColor = Color.White;
+            nameLabel.Location = new Point(124, 11);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(53, 21);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Name";
+            // 
+            // experienceLabel
+            // 
+            experienceLabel.AutoSize = true;
+            experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            experienceLabel.ForeColor = Color.White;
+            experienceLabel.Location = new Point(442, 11);
+            experienceLabel.Name = "experienceLabel";
+            experienceLabel.Size = new Size(90, 21);
+            experienceLabel.TabIndex = 3;
+            experienceLabel.Text = "Experience";
+            // 
+            // genderLabel
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            genderLabel.ForeColor = Color.White;
+            genderLabel.Location = new Point(124, 39);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(64, 21);
+            genderLabel.TabIndex = 2;
+            genderLabel.Text = "Gender";
             // 
             // searchBar
             // 
@@ -156,84 +222,17 @@
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "add2.png");
+            imageList1.Images.SetKeyName(0, "add4.png");
             // 
             // panelContainer
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 54);
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(1137, 534);
             panelContainer.TabIndex = 5;
-            // 
-            // panelTemplate
-            // 
-            panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
-            panelTemplate.Controls.Add(panel1);
-            panelTemplate.Controls.Add(button2);
-            panelTemplate.Controls.Add(nameLabel);
-            panelTemplate.Controls.Add(experienceLabel);
-            panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(164, 6);
-            panelTemplate.Name = "panelTemplate";
-            panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(736, 78);
-            panelTemplate.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(42, 101, 97);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(84, 81);
-            panel1.TabIndex = 6;
-            // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(682, 20);
-            button2.Name = "button2";
-            button2.Size = new Size(42, 40);
-            button2.TabIndex = 5;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(124, 11);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(53, 21);
-            nameLabel.TabIndex = 1;
-            nameLabel.Text = "Name";
-            // 
-            // experienceLabel
-            // 
-            experienceLabel.AutoSize = true;
-            experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(442, 11);
-            experienceLabel.Name = "experienceLabel";
-            experienceLabel.Size = new Size(90, 21);
-            experienceLabel.TabIndex = 3;
-            experienceLabel.Text = "Experience";
-            // 
-            // genderLabel
-            // 
-            genderLabel.AutoSize = true;
-            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(124, 39);
-            genderLabel.Name = "genderLabel";
-            genderLabel.Size = new Size(64, 21);
-            genderLabel.TabIndex = 2;
-            genderLabel.Text = "Gender";
             // 
             // dietPlans
             // 
@@ -246,17 +245,9 @@
             Name = "dietPlans";
             Text = "Diet Plans";
             topPanel.ResumeLayout(false);
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "openview.png");
         }
 
         #endregion

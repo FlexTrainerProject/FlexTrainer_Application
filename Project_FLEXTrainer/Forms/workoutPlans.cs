@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_FLEXTrainer.Forms.bookSession;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 
 namespace Project_FLEXTrainer.Forms
 {
@@ -16,23 +17,34 @@ namespace Project_FLEXTrainer.Forms
     public delegate void DisplayEntryDelegate(string goal, string experience_lvl, string schedule);
     public partial class workoutPlans : Form
     {
-        public workoutPlans()
+        User user;
+        public workoutPlans(User User)
         {
             InitializeComponent();
 
             DisplayWorkoutPlan();
 
             panelTemplate.Visible = false;
+            user = User;
         }
 
 
         private void btnCreateWP_Click(object sender, EventArgs e)
         {
-            Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan();
+            if (user.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition= FormStartPosition.CenterScreen;
+                messageBox.Show();
+                
+                return;
+            }
+            Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan(user);
             SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
             SubForm.StartPosition = FormStartPosition.CenterScreen;
 
-            SubForm.Show(); 
+            SubForm.Show();
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -43,7 +55,7 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; 
+            newPanel.Dock = DockStyle.None;
 
             foreach (Control control in templatePanel.Controls)
             {
@@ -56,6 +68,8 @@ namespace Project_FLEXTrainer.Forms
                     newButton.Image = imageList1.Images[0];
                     newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
+                    newButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+                    newButton.ImageAlign = ContentAlignment.MiddleLeft;
                 }
 
                 if (newControl is Label)
@@ -128,8 +142,8 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayWorkoutPlan()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select* from workout_plan";
 
@@ -162,6 +176,15 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+           //work for YOU HAMDAN
+            
+        }
     }
 }

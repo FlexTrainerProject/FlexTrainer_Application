@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_FLEXTrainer.Essentials;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
 {
     public partial class createDietPlancs : Form
     {
+        List<Essentials.Meal> MealsAdded = new List<Essentials.Meal>();
         public createDietPlancs()
         {
             InitializeComponent();
@@ -24,13 +26,19 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void btnAddMeal_Click(object sender, EventArgs e)
         {
-            Forms.SubForms.addMeal SubForm = new Forms.SubForms.addMeal();
+            Forms.SubForms.addMeal SubForm = new Forms.SubForms.addMeal(this);
             SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
-            SubForm.StartPosition = FormStartPosition.CenterScreen;
-
-            SubForm.Show(); // Show the form as a separate window
+            SubForm.Dock = DockStyle.Fill;
+            SubForm.TopLevel = false;
+            this.mealPanel.Controls.Add(SubForm);
+            this.mealPanel.Tag = SubForm;
+            SubForm.BringToFront();
+            SubForm.Show();
         }
-
+        public void AddMeal(Meal meal)
+        {
+            MealsAdded.Add(meal);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

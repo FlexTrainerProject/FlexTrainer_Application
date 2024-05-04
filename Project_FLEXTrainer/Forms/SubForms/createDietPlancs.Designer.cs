@@ -29,25 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createDietPlancs));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnClose = new Button();
             label1 = new Label();
             panel2 = new Panel();
-            panel3 = new Panel();
+            mealPanel = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
+            label6 = new Label();
             label3 = new Label();
             btnCreate = new Button();
             label4 = new Label();
             label2 = new Label();
             panel7 = new Panel();
+            txtPlanName = new TextBox();
             listGoals = new Guna.UI2.WinForms.Guna2ComboBox();
             ListNutrition = new Guna.UI2.WinForms.Guna2ComboBox();
             listType = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -67,7 +69,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(854, 60);
+            panel1.Size = new Size(902, 60);
             panel1.TabIndex = 0;
             // 
             // btnClose
@@ -76,7 +78,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Image = (Image)resources.GetObject("btnClose.Image");
-            btnClose.Location = new Point(824, 3);
+            btnClose.Location = new Point(872, 3);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(27, 23);
             btnClose.TabIndex = 2;
@@ -100,49 +102,62 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(130, 458);
+            panel2.Size = new Size(80, 458);
             panel2.TabIndex = 1;
             // 
-            // panel3
+            // mealPanel
             // 
-            panel3.BackColor = Color.Azure;
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(701, 60);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(153, 458);
-            panel3.TabIndex = 2;
+            mealPanel.BackColor = Color.Azure;
+            mealPanel.Dock = DockStyle.Right;
+            mealPanel.Location = new Point(658, 60);
+            mealPanel.Name = "mealPanel";
+            mealPanel.Size = new Size(244, 458);
+            mealPanel.TabIndex = 2;
             // 
             // panel4
             // 
             panel4.BackColor = Color.Azure;
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(130, 60);
+            panel4.Location = new Point(80, 60);
             panel4.Name = "panel4";
-            panel4.Size = new Size(571, 46);
+            panel4.Size = new Size(578, 46);
             panel4.TabIndex = 3;
             // 
             // panel5
             // 
             panel5.BackColor = Color.Azure;
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(130, 457);
+            panel5.Location = new Point(80, 457);
             panel5.Name = "panel5";
-            panel5.Size = new Size(571, 61);
+            panel5.Size = new Size(578, 61);
             panel5.TabIndex = 4;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(42, 101, 97);
+            panel6.Controls.Add(label6);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(btnCreate);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(panel7);
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(130, 106);
+            panel6.Location = new Point(80, 106);
             panel6.Name = "panel6";
-            panel6.Size = new Size(571, 351);
+            panel6.Size = new Size(578, 351);
             panel6.TabIndex = 5;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(22, 88);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 25);
+            label6.TabIndex = 14;
+            label6.Text = "Plan Name";
             // 
             // label3
             // 
@@ -150,7 +165,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(21, 71);
+            label3.Location = new Point(22, 125);
             label3.Name = "label3";
             label3.Size = new Size(51, 25);
             label3.TabIndex = 12;
@@ -163,9 +178,9 @@
             btnCreate.FlatStyle = FlatStyle.Flat;
             btnCreate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(118, 279);
+            btnCreate.Location = new Point(6, 281);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(133, 42);
+            btnCreate.Size = new Size(185, 42);
             btnCreate.TabIndex = 10;
             btnCreate.Text = "CREATE";
             btnCreate.UseVisualStyleBackColor = false;
@@ -176,7 +191,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(21, 177);
+            label4.Location = new Point(21, 211);
             label4.Name = "label4";
             label4.Size = new Size(99, 25);
             label4.TabIndex = 11;
@@ -189,7 +204,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(21, 125);
+            label2.Location = new Point(21, 166);
             label2.Name = "label2";
             label2.Size = new Size(52, 25);
             label2.TabIndex = 9;
@@ -198,6 +213,7 @@
             // panel7
             // 
             panel7.BackColor = Color.MintCream;
+            panel7.Controls.Add(txtPlanName);
             panel7.Controls.Add(listGoals);
             panel7.Controls.Add(ListNutrition);
             panel7.Controls.Add(listType);
@@ -205,15 +221,22 @@
             panel7.Controls.Add(btnAddMeal);
             panel7.Controls.Add(label5);
             panel7.Dock = DockStyle.Right;
-            panel7.Location = new Point(185, 0);
+            panel7.Location = new Point(197, 0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(386, 351);
+            panel7.Size = new Size(381, 351);
             panel7.TabIndex = 0;
+            // 
+            // txtPlanName
+            // 
+            txtPlanName.Location = new Point(16, 79);
+            txtPlanName.Name = "txtPlanName";
+            txtPlanName.Size = new Size(180, 23);
+            txtPlanName.TabIndex = 13;
             // 
             // listGoals
             // 
             listGoals.BackColor = Color.Transparent;
-            listGoals.CustomizableEdges = customizableEdges1;
+            listGoals.CustomizableEdges = customizableEdges7;
             listGoals.DrawMode = DrawMode.OwnerDrawFixed;
             listGoals.DropDownStyle = ComboBoxStyle.DropDownList;
             listGoals.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -221,16 +244,16 @@
             listGoals.Font = new Font("Segoe UI", 10F);
             listGoals.ForeColor = Color.FromArgb(68, 88, 112);
             listGoals.ItemHeight = 30;
-            listGoals.Location = new Point(16, 60);
+            listGoals.Location = new Point(16, 124);
             listGoals.Name = "listGoals";
-            listGoals.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            listGoals.ShadowDecoration.CustomizableEdges = customizableEdges8;
             listGoals.Size = new Size(180, 36);
             listGoals.TabIndex = 11;
             // 
             // ListNutrition
             // 
             ListNutrition.BackColor = Color.Transparent;
-            ListNutrition.CustomizableEdges = customizableEdges3;
+            ListNutrition.CustomizableEdges = customizableEdges9;
             ListNutrition.DrawMode = DrawMode.OwnerDrawFixed;
             ListNutrition.DropDownStyle = ComboBoxStyle.DropDownList;
             ListNutrition.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -238,16 +261,16 @@
             ListNutrition.Font = new Font("Segoe UI", 10F);
             ListNutrition.ForeColor = Color.FromArgb(68, 88, 112);
             ListNutrition.ItemHeight = 30;
-            ListNutrition.Location = new Point(16, 166);
+            ListNutrition.Location = new Point(16, 211);
             ListNutrition.Name = "ListNutrition";
-            ListNutrition.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            ListNutrition.ShadowDecoration.CustomizableEdges = customizableEdges10;
             ListNutrition.Size = new Size(180, 36);
             ListNutrition.TabIndex = 10;
             // 
             // listType
             // 
             listType.BackColor = Color.Transparent;
-            listType.CustomizableEdges = customizableEdges5;
+            listType.CustomizableEdges = customizableEdges11;
             listType.DrawMode = DrawMode.OwnerDrawFixed;
             listType.DropDownStyle = ComboBoxStyle.DropDownList;
             listType.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -255,9 +278,9 @@
             listType.Font = new Font("Segoe UI", 10F);
             listType.ForeColor = Color.FromArgb(68, 88, 112);
             listType.ItemHeight = 30;
-            listType.Location = new Point(16, 114);
+            listType.Location = new Point(16, 169);
             listType.Name = "listType";
-            listType.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            listType.ShadowDecoration.CustomizableEdges = customizableEdges12;
             listType.Size = new Size(180, 36);
             listType.TabIndex = 9;
             // 
@@ -266,7 +289,7 @@
             panelExercise.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelExercise.BackColor = Color.White;
             panelExercise.BorderStyle = BorderStyle.FixedSingle;
-            panelExercise.Location = new Point(215, 43);
+            panelExercise.Location = new Point(210, 43);
             panelExercise.Name = "panelExercise";
             panelExercise.Padding = new Padding(0, 5, 0, 0);
             panelExercise.Size = new Size(171, 308);
@@ -278,7 +301,7 @@
             btnAddMeal.FlatAppearance.BorderSize = 0;
             btnAddMeal.FlatStyle = FlatStyle.Flat;
             btnAddMeal.Image = (Image)resources.GetObject("btnAddMeal.Image");
-            btnAddMeal.Location = new Point(353, 9);
+            btnAddMeal.Location = new Point(348, 9);
             btnAddMeal.Name = "btnAddMeal";
             btnAddMeal.Size = new Size(27, 28);
             btnAddMeal.TabIndex = 7;
@@ -291,7 +314,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(215, 11);
+            label5.Location = new Point(210, 11);
             label5.Name = "label5";
             label5.Size = new Size(63, 25);
             label5.TabIndex = 6;
@@ -301,11 +324,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(854, 518);
+            ClientSize = new Size(902, 518);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
-            Controls.Add(panel3);
+            Controls.Add(mealPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "createDietPlancs";
@@ -323,7 +346,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
+        private Panel mealPanel;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
@@ -340,5 +363,7 @@
         private Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox listGoals;
         private Button btnClose;
+        private Label label6;
+        private TextBox txtPlanName;
     }
 }

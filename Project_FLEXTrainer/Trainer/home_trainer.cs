@@ -142,5 +142,19 @@ namespace Project_FLEXTrainer.Trainer
         {
             OpenChildForm(new Forms.Feedbacks(), sender);
         }
+
+        private void btnhome_Click(object sender, EventArgs e)
+        {
+            activeForm.Close();
+            Form childForm = new Project_FLEXTrainer.Forms.mainHomecs(currentuser);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.desktopPanel.Controls.Add(childForm);
+            this.desktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
     }
 }
