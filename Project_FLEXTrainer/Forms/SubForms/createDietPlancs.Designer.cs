@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createDietPlancs));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnClose = new Button();
             label1 = new Label();
@@ -49,6 +49,7 @@
             label4 = new Label();
             label2 = new Label();
             panel7 = new Panel();
+            statusCombo = new ComboBox();
             txtPlanName = new TextBox();
             listGoals = new Guna.UI2.WinForms.Guna2ComboBox();
             ListNutrition = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -153,7 +154,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(22, 88);
+            label6.Location = new Point(22, 83);
             label6.Name = "label6";
             label6.Size = new Size(106, 25);
             label6.TabIndex = 14;
@@ -184,6 +185,7 @@
             btnCreate.TabIndex = 10;
             btnCreate.Text = "CREATE";
             btnCreate.UseVisualStyleBackColor = false;
+            btnCreate.Click += btnCreate_Click;
             // 
             // label4
             // 
@@ -213,6 +215,7 @@
             // panel7
             // 
             panel7.BackColor = Color.MintCream;
+            panel7.Controls.Add(statusCombo);
             panel7.Controls.Add(txtPlanName);
             panel7.Controls.Add(listGoals);
             panel7.Controls.Add(ListNutrition);
@@ -226,9 +229,18 @@
             panel7.Size = new Size(381, 351);
             panel7.TabIndex = 0;
             // 
+            // statusCombo
+            // 
+            statusCombo.FormattingEnabled = true;
+            statusCombo.Location = new Point(89, 262);
+            statusCombo.Name = "statusCombo";
+            statusCombo.Size = new Size(107, 23);
+            statusCombo.TabIndex = 14;
+            statusCombo.Text = "Private";
+            // 
             // txtPlanName
             // 
-            txtPlanName.Location = new Point(16, 79);
+            txtPlanName.Location = new Point(16, 88);
             txtPlanName.Name = "txtPlanName";
             txtPlanName.Size = new Size(180, 23);
             txtPlanName.TabIndex = 13;
@@ -236,7 +248,7 @@
             // listGoals
             // 
             listGoals.BackColor = Color.Transparent;
-            listGoals.CustomizableEdges = customizableEdges7;
+            listGoals.CustomizableEdges = customizableEdges1;
             listGoals.DrawMode = DrawMode.OwnerDrawFixed;
             listGoals.DropDownStyle = ComboBoxStyle.DropDownList;
             listGoals.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -246,14 +258,14 @@
             listGoals.ItemHeight = 30;
             listGoals.Location = new Point(16, 124);
             listGoals.Name = "listGoals";
-            listGoals.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            listGoals.ShadowDecoration.CustomizableEdges = customizableEdges2;
             listGoals.Size = new Size(180, 36);
             listGoals.TabIndex = 11;
             // 
             // ListNutrition
             // 
             ListNutrition.BackColor = Color.Transparent;
-            ListNutrition.CustomizableEdges = customizableEdges9;
+            ListNutrition.CustomizableEdges = customizableEdges3;
             ListNutrition.DrawMode = DrawMode.OwnerDrawFixed;
             ListNutrition.DropDownStyle = ComboBoxStyle.DropDownList;
             ListNutrition.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -263,14 +275,14 @@
             ListNutrition.ItemHeight = 30;
             ListNutrition.Location = new Point(16, 211);
             ListNutrition.Name = "ListNutrition";
-            ListNutrition.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            ListNutrition.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ListNutrition.Size = new Size(180, 36);
             ListNutrition.TabIndex = 10;
             // 
             // listType
             // 
             listType.BackColor = Color.Transparent;
-            listType.CustomizableEdges = customizableEdges11;
+            listType.CustomizableEdges = customizableEdges5;
             listType.DrawMode = DrawMode.OwnerDrawFixed;
             listType.DropDownStyle = ComboBoxStyle.DropDownList;
             listType.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -280,7 +292,7 @@
             listType.ItemHeight = 30;
             listType.Location = new Point(16, 169);
             listType.Name = "listType";
-            listType.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            listType.ShadowDecoration.CustomizableEdges = customizableEdges6;
             listType.Size = new Size(180, 36);
             listType.TabIndex = 9;
             // 
@@ -365,5 +377,6 @@
         private Button btnClose;
         private Label label6;
         private TextBox txtPlanName;
+        private ComboBox statusCombo;
     }
 }

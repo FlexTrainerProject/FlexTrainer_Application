@@ -325,6 +325,7 @@
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "+";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

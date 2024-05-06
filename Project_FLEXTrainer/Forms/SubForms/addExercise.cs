@@ -39,6 +39,12 @@ namespace Project_FLEXTrainer.Forms.SubForms
             ex.Machine = textBox3.Text;
 
             main.AddExercise(ex);
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -46,14 +52,5 @@ namespace Project_FLEXTrainer.Forms.SubForms
             this.Close();
         }
 
-        private void addExercise_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

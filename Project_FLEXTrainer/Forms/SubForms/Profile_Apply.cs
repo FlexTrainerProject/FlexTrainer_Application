@@ -1,4 +1,5 @@
 ﻿using Guna.Charts.WinForms;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,12 +42,31 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void btnApply_Click(object sender, EventArgs e) //Apply as Trainer
         {
+            if (currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
             OpenChildForm(new Forms.SubForms.ApplyForTrainer(), sender);
         }
 
         private void btnApplyOwner_Click(object sender, EventArgs e)
+            
         {
-            OpenChildForm(new Forms.SubForms.ApplyForOwner(), sender);
+            if (currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
+            OpenChildForm(new Forms.SubForms.ApplyForOwner(currUser), sender);
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
