@@ -25,7 +25,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
             pfptype.Text = user.Type;
             currentuser = user;
             panel = pane;
-            //ror = fm;
+            ror = fm;
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
             login loginMember = new login();
          
-            //ror.Close();
+            ror.Close();
 
             loginMember.Show();
             this.Close();

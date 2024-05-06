@@ -145,11 +145,11 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo();
+                       /* Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(name,gender,experience,rating);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 
-                        SubForm.Show(); // Show the form as a separate window
+                        SubForm.Show(); // Show the form as a separate window*/
                     };
                 }
 
