@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -142,7 +143,7 @@ namespace Project_FLEXTrainer
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Forms.SubForms.Profile(currentuser, this.desktopPanel);
+                    SubForm = new Forms.SubForms.Profile(this.activeForm,currentuser, this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
 

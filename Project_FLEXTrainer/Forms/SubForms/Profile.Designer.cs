@@ -143,7 +143,7 @@
             btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnLogout.Size = new Size(223, 43);
             btnLogout.TabIndex = 6;
-            btnLogout.Text = "Logout";
+            btnLogout.Text = "i hate mujtabva";
             btnLogout.Click += btnLogout_Click;
             // 
             // Profile

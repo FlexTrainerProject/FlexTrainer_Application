@@ -129,6 +129,10 @@ namespace Project_FLEXTrainer
                     {
                         Owner.home_owner own = new Owner.home_owner(currentUser);
                         own.Show();
+                    }else if(currentUser.Type == "admin" || currentUser.Type == "Admin")
+                    {
+                        Admin.home_admin form = new Admin.home_admin(currentUser);
+                        form.Show();
                     }
 
 
