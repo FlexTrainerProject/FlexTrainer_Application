@@ -16,7 +16,7 @@ namespace Project_FLEXTrainer.Forms
 {
     public partial class bookSession : Form
     {
-        public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating);
+        public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating, string id);
         public bookSession()
         {
             InitializeComponent();
@@ -51,7 +51,10 @@ namespace Project_FLEXTrainer.Forms
 
                 if (newControl is Label)
                 {
-               
+                    if(newControl.Name== "ID_hidden")
+                    {
+                        newControl.Visible = false;
+                    }
                     Label newLabel = (Label)newControl;
                     newLabel.AutoSize = true; // Set AutoSize property to true for labels
                 }
@@ -82,7 +85,7 @@ namespace Project_FLEXTrainer.Forms
         {
             string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
+            string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating, trainer.id from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -101,12 +104,12 @@ namespace Project_FLEXTrainer.Forms
                         string gender = reader["gender"].ToString();
                         string experience = reader["experience"].ToString();
                         string rating = reader["rating"].ToString();
-
+                        string id = reader["id"].ToString();  
                         //string username = "nigga";
 
                         //label2.Text = username;
 
-                        displayDelegate.Invoke(name, gender, experience, rating);
+                        displayDelegate.Invoke(name, gender, experience, rating, id);
                     }
 
                     reader.Close();
@@ -118,7 +121,7 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
-        public void DisplayEntry(string name, string gender, string experience, string rating)
+        public void DisplayEntry(string name, string gender, string experience, string rating, string id)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -139,17 +142,19 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "Experience: " + experience;
                     else if (label.Name == "ratingLabel")
                         label.Text = "Rating: " + rating;
+                    else if (label.Name == "ID_hidden")
+                        label.Text = id;
                 }
                 else if (control is Button)
                 {
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                       /* Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(name,gender,experience,rating);
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id,name,gender,experience,rating);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 
-                        SubForm.Show(); // Show the form as a separate window*/
+                        SubForm.Show(); // Show the form as a separate window
                     };
                 }
 
@@ -163,10 +168,5 @@ namespace Project_FLEXTrainer.Forms
             panelContainer.Controls.Add(entryPanel);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
     }
 }

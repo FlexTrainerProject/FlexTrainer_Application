@@ -384,6 +384,7 @@
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home_trainer";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);

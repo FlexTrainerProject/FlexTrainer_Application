@@ -1,4 +1,5 @@
 ﻿using Project_FLEXTrainer.Essentials;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,8 +77,13 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            if (ExercisesAdded.Count == 0)
+            {
+                MessageBox.Show("Please added at least one Exercise.");
+                return;
+            }
             
-            if(goalCombo.SelectedItem.ToString()=="" || ScheduleCombo.SelectedItem.ToString() == "" || ExpCombo.SelectedItem.ToString() == "")
+            if(txtPlanName.Text=="" ||  goalCombo.SelectedItem.ToString()=="" || ScheduleCombo.SelectedItem.ToString() == "" || ExpCombo.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Missing Info!");
                 return;

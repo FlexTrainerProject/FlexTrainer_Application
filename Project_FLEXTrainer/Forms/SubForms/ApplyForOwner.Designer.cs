@@ -135,6 +135,7 @@
             applyBtn.Size = new Size(173, 48);
             applyBtn.TabIndex = 11;
             applyBtn.Text = "Apply";
+            applyBtn.Click += applyBtn_Click;
             // 
             // txtGymName
             // 

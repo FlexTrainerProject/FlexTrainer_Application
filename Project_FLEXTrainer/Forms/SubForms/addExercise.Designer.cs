@@ -177,7 +177,6 @@
             label2.Size = new Size(67, 21);
             label2.TabIndex = 12;
             label2.Text = "Routine";
-            label2.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -230,7 +229,6 @@
             Controls.Add(mainPanel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "addExercise";
-            Load += addExercise_Load;
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
             panel1.ResumeLayout(false);

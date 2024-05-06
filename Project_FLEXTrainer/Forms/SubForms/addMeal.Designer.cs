@@ -49,7 +49,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(245, 61);
+            panel1.Size = new Size(252, 61);
             panel1.TabIndex = 0;
             // 
             // txt
@@ -70,9 +70,9 @@
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(btnCreate);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 336);
+            panel2.Location = new Point(0, 417);
             panel2.Name = "panel2";
-            panel2.Size = new Size(245, 59);
+            panel2.Size = new Size(252, 59);
             panel2.TabIndex = 8;
             // 
             // btnCreate
@@ -81,7 +81,7 @@
             btnCreate.FlatStyle = FlatStyle.Flat;
             btnCreate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(43, 5);
+            btnCreate.Location = new Point(52, 5);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(133, 42);
             btnCreate.TabIndex = 5;
@@ -91,21 +91,21 @@
             // 
             // txtNutritionalvAl
             // 
-            txtNutritionalvAl.Location = new Point(43, 243);
+            txtNutritionalvAl.Location = new Point(43, 267);
             txtNutritionalvAl.Name = "txtNutritionalvAl";
             txtNutritionalvAl.Size = new Size(162, 23);
             txtNutritionalvAl.TabIndex = 4;
             // 
             // txtAllergens
             // 
-            txtAllergens.Location = new Point(43, 175);
+            txtAllergens.Location = new Point(43, 198);
             txtAllergens.Name = "txtAllergens";
             txtAllergens.Size = new Size(162, 23);
             txtAllergens.TabIndex = 1;
             // 
             // txtName
             // 
-            txtName.Location = new Point(43, 112);
+            txtName.Location = new Point(43, 132);
             txtName.Name = "txtName";
             txtName.Size = new Size(162, 23);
             txtName.TabIndex = 0;
@@ -115,7 +115,7 @@
             label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(43, 219);
+            label3.Location = new Point(43, 243);
             label3.Name = "label3";
             label3.Size = new Size(131, 21);
             label3.TabIndex = 9;
@@ -126,7 +126,7 @@
             label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(43, 151);
+            label2.Location = new Point(43, 174);
             label2.Name = "label2";
             label2.Size = new Size(79, 21);
             label2.TabIndex = 8;
@@ -137,7 +137,7 @@
             label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(43, 88);
+            label1.Location = new Point(43, 108);
             label1.Name = "label1";
             label1.Size = new Size(53, 21);
             label1.TabIndex = 7;
@@ -147,7 +147,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(245, 395);
+            ClientSize = new Size(252, 476);
             Controls.Add(txtNutritionalvAl);
             Controls.Add(txtAllergens);
             Controls.Add(panel2);

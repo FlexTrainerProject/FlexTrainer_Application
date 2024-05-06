@@ -40,6 +40,12 @@ namespace Project_FLEXTrainer.Forms.SubForms
             meal.Nutrition = txtNutritionalvAl.Text;
 
             mainForm.AddMeal(meal);
+
+            MessageBox.Show("Meal Added to Plan");
+            txtName.Text = "";
+            txtAllergens.Text = "";
+            txtNutritionalvAl.Text = "";
+
         }
     }
 }

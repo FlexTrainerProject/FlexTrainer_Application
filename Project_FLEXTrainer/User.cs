@@ -20,6 +20,7 @@ namespace Project_FLEXTrainer
         public string gender;
         public string lastName;
         public bool isProfileComplete;
+       // public bool appliedOwner;
 
         // Constructor
         public User(string username, string type, string password)
@@ -27,6 +28,7 @@ namespace Project_FLEXTrainer
             Username = username;
             Type = type;
             Password = password;
+            //appliedOwner = false;
 
 
 
