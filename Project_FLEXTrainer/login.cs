@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_FLEXTrainer.Essentials.MessageBoxes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,9 +103,13 @@ namespace Project_FLEXTrainer
             connection.Open();
             SqlCommand checkifuser = new SqlCommand("SELECT 1 FROM dbo.account WHERE Username = '" + textBox1.Text + "'", connection);
             int flag = Convert.ToInt32(checkifuser.ExecuteScalar());
+            
             if (flag != 1)
             {
-                MessageBox.Show("Username does not exist!");
+                Form messageBox = new Essentials.MessageBoxes.prompt_dismiss("Username Does Not Exist");
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
             }
             else
             {
@@ -112,34 +117,65 @@ namespace Project_FLEXTrainer
                 string passw = Convert.ToString(returnpass.ExecuteScalar());
                 if (passw == Pass.Text)
                 {
-                    MessageBox.Show("Login Successful");
+                    
+                    Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Login Successful");
+                    messageBox.FormBorderStyle = FormBorderStyle.None;
+                    messageBox.StartPosition = FormStartPosition.CenterScreen;
 
-                    SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'", connection);
-                    string acc_t = Convert.ToString(account_type.ExecuteScalar());
 
-                    User currentUser = new User(textBox1.Text, acc_t, passw);
-
-                    if (currentUser.Type == "member")
+                    messageBox.OKButtonClick += (sender, e) =>
                     {
-                        home home = new home(currentUser);
-                        home.Show();
-                    }
+                        string connectString = Essentials.ConnectionString.GetConnectionString();
+                        SqlConnection Connection = new SqlConnection(connectString);
+                        Connection.Open();
+                        SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'", Connection);
+                        string acc_t = Convert.ToString(account_type.ExecuteScalar());
 
-                    else if (currentUser.Type == "owner")
-                    {
-                        Owner.home_owner own = new Owner.home_owner(currentUser);
-                        own.Show();
-                    }
+                        User currentUser = new User(textBox1.Text, acc_t, passw);
+
+                        if (currentUser.Type == "member")
+                        {
+                            home home = new home(currentUser);
+                            home.Show();
+                        }
+
+                        else if (currentUser.Type == "owner")
+                        {
+                            Owner.home_owner own = new Owner.home_owner(currentUser);
+                            own.Show();
+                        }
+                        else if (currentUser.Type == "admin" || currentUser.Type == "Admin")
+                        {
+                            Admin.home_admin form = new Admin.home_admin(currentUser);
+                            form.Show();
+                        }
+                        else if (currentUser.Type == "Trainer" || currentUser.Type == "trainer")
+                        {
+                            Trainer.home_trainer form = new Trainer.home_trainer(currentUser);
+                            form.Show();
+                        }
 
 
 
 
-                    this.Close();
+                        this.Close();
+                    };
+                    messageBox.Show();
                 }
                 else
-                    MessageBox.Show("Incorrect Password");
+                {
+                    Form messageBox = new Essentials.MessageBoxes.prompt_dismiss("Incorrect Password");
+                    messageBox.FormBorderStyle = FormBorderStyle.None;
+                    messageBox.StartPosition = FormStartPosition.CenterScreen;
+                    messageBox.Show();
+
+
+                    return;
+
+                }
             }
             connection.Close();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

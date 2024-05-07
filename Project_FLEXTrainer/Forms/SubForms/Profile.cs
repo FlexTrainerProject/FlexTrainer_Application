@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
             pfptype.Text = user.Type;
             currentuser = user;
             panel = pane;
-            //ror = fm;
+            ror = fm;
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
             this.Close();
             if (SubForm == null || SubForm.IsDisposed)
             {
-                OpenChildForm(new Forms.SubForms.Profile_Apply(), sender);
+                OpenChildForm(new Forms.SubForms.Profile_Apply(currentuser), sender);
             }
             else
             {
@@ -61,7 +62,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
             login loginMember = new login();
          
-            //ror.Close();
+            ror.Close();
 
             loginMember.Show();
             this.Close();

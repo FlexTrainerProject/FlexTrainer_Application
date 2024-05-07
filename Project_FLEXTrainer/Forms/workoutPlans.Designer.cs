@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
             btnCreateWP = new Button();
             topPanel = new Panel();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            panelContainer = new Panel();
+            btnrefresh = new Button();
             panelTemplate = new Panel();
             panel1 = new Panel();
             button2 = new Button();
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
+            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            button1 = new Button();
+            panelContainer = new Panel();
             imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
             panelTemplate.SuspendLayout();
@@ -61,7 +62,7 @@
             btnCreateWP.ForeColor = Color.White;
             btnCreateWP.Location = new Point(1050, 0);
             btnCreateWP.Name = "btnCreateWP";
-            btnCreateWP.Size = new Size(168, 54);
+            btnCreateWP.Size = new Size(168, 58);
             btnCreateWP.TabIndex = 1;
             btnCreateWP.Text = "CREATE";
             btnCreateWP.UseVisualStyleBackColor = false;
@@ -70,6 +71,7 @@
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
+            topPanel.Controls.Add(btnrefresh);
             topPanel.Controls.Add(panelTemplate);
             topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(comboBox3);
@@ -80,86 +82,20 @@
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(1218, 54);
+            topPanel.Size = new Size(1218, 58);
             topPanel.TabIndex = 0;
             // 
-            // searchBar
+            // btnrefresh
             // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(12, 12);
-            searchBar.Name = "searchBar";
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(177, 28);
-            searchBar.TabIndex = 15;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Right;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(631, 16);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 14;
-            comboBox3.Text = "Goal";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(758, 16);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 13;
-            comboBox2.Text = "Schedule";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(884, 17);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 12;
-            comboBox1.Text = "Experience Level";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(192, 0, 0);
-            button1.Dock = DockStyle.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1020, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(30, 54);
-            button1.TabIndex = 11;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // panelContainer
-            // 
-            panelContainer.AutoScroll = true;
-            panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Dock = DockStyle.Fill;
-            panelContainer.Location = new Point(0, 54);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1218, 602);
-            panelContainer.TabIndex = 5;
+            btnrefresh.FlatAppearance.BorderSize = 0;
+            btnrefresh.FlatStyle = FlatStyle.Flat;
+            btnrefresh.Image = (Image)resources.GetObject("btnrefresh.Image");
+            btnrefresh.Location = new Point(195, 6);
+            btnrefresh.Name = "btnrefresh";
+            btnrefresh.Size = new Size(53, 46);
+            btnrefresh.TabIndex = 16;
+            btnrefresh.UseVisualStyleBackColor = true;
+            btnrefresh.Click += btnrefresh_Click;
             // 
             // panelTemplate
             // 
@@ -169,10 +105,10 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(195, 16);
+            panelTemplate.Location = new Point(164, 45);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(736, 78);
+            panelTemplate.Size = new Size(821, 78);
             panelTemplate.TabIndex = 3;
             // 
             // panel1
@@ -187,12 +123,15 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(682, 20);
+            button2.Location = new Point(757, 20);
             button2.Name = "button2";
-            button2.Size = new Size(42, 40);
+            button2.Size = new Size(64, 40);
             button2.TabIndex = 5;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // nameLabel
             // 
@@ -227,12 +166,90 @@
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
             // 
+            // searchBar
+            // 
+            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            searchBar.BorderColor = Color.White;
+            searchBar.BorderRadius = 12;
+            searchBar.BorderThickness = 2;
+            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.DefaultText = "";
+            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.Font = new Font("Segoe UI", 9F);
+            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
+            searchBar.Location = new Point(12, 12);
+            searchBar.Name = "searchBar";
+            searchBar.PasswordChar = '\0';
+            searchBar.PlaceholderText = "Search";
+            searchBar.SelectedText = "";
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.Size = new Size(177, 32);
+            searchBar.TabIndex = 15;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Anchor = AnchorStyles.Right;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(631, 18);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(121, 23);
+            comboBox3.TabIndex = 14;
+            comboBox3.Text = "Goal";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Right;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(758, 18);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 13;
+            comboBox2.Text = "Schedule";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(884, 19);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 12;
+            comboBox1.Text = "Experience Level";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1020, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 58);
+            button1.TabIndex = 11;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // panelContainer
+            // 
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 58);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1218, 598);
+            panelContainer.TabIndex = 5;
+            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "openview.png");
+            imageList1.Images.SetKeyName(0, "add4.png");
             // 
             // workoutPlans
             // 
@@ -266,5 +283,6 @@
         private Label experienceLabel;
         private Label genderLabel;
         private ImageList imageList1;
+        private Button btnrefresh;
     }
 }

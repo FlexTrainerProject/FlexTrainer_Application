@@ -1,4 +1,5 @@
 ﻿using Guna.Charts.WinForms;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,21 @@ namespace Project_FLEXTrainer.Forms.SubForms
     public partial class Profile_Apply : Form
     {
         Form activeForm;
-        public Profile_Apply()
+        User currUser;
+        public Profile_Apply(User user)
         {
             InitializeComponent();
+            currUser = user;
+            if (currUser.isProfileComplete == true)
+            {
+                profileoptionLabel.Text = "Edit Profle";
+                guna2Button3.Text = "Edit";
+            }
+            else
+            {
+                profileoptionLabel.Text = "Complete Profile";
+                guna2Button3.Text = "Complete";
+            }
         }
 
 
@@ -24,17 +37,36 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void guna2Button3_Click(object sender, EventArgs e) //btnCompleteProfile
         {
-            OpenChildForm(new Forms.SubForms.completeProfile(), sender);
+            OpenChildForm(new Forms.SubForms.completeProfile(currUser), sender);
         }
 
         private void btnApply_Click(object sender, EventArgs e) //Apply as Trainer
         {
+            if (currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
             OpenChildForm(new Forms.SubForms.ApplyForTrainer(), sender);
         }
 
         private void btnApplyOwner_Click(object sender, EventArgs e)
+            
         {
-            OpenChildForm(new Forms.SubForms.ApplyForOwner(), sender);
+            if (currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
+            OpenChildForm(new Forms.SubForms.ApplyForOwner(currUser), sender);
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {

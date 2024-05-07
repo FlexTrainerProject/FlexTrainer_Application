@@ -63,7 +63,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1159, 78);
+            panel2.Size = new Size(1407, 78);
             panel2.TabIndex = 0;
             // 
             // UserNamePanel
@@ -74,7 +74,7 @@
             UserNamePanel.Controls.Add(btnpfp);
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
-            UserNamePanel.Location = new Point(760, 0);
+            UserNamePanel.Location = new Point(1008, 0);
             UserNamePanel.Name = "UserNamePanel";
             UserNamePanel.Size = new Size(279, 89);
             UserNamePanel.TabIndex = 9;
@@ -164,7 +164,7 @@
             label1.BackColor = Color.FromArgb(50, 72, 76);
             label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1036, -16);
+            label1.Location = new Point(1284, -16);
             label1.Name = "label1";
             label1.Padding = new Padding(10, 30, 10, 0);
             label1.Size = new Size(123, 105);
@@ -184,7 +184,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 78);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(253, 548);
+            panelMenu.Size = new Size(253, 697);
             panelMenu.TabIndex = 1;
             // 
             // btnAppointments
@@ -217,7 +217,7 @@
             btnMembership.ForeColor = Color.Gainsboro;
             btnMembership.Image = (Image)resources.GetObject("btnMembership.Image");
             btnMembership.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMembership.Location = new Point(0, 478);
+            btnMembership.Location = new Point(0, 627);
             btnMembership.Name = "btnMembership";
             btnMembership.Padding = new Padding(15, 0, 0, 0);
             btnMembership.Size = new Size(253, 70);
@@ -313,20 +313,20 @@
             desktopPanel.Dock = DockStyle.Fill;
             desktopPanel.Location = new Point(253, 78);
             desktopPanel.Name = "desktopPanel";
-            desktopPanel.Size = new Size(906, 548);
+            desktopPanel.Size = new Size(1154, 697);
             desktopPanel.TabIndex = 2;
             // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1159, 626);
+            ClientSize = new Size(1407, 775);
             Controls.Add(desktopPanel);
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "+";
-            WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             UserNamePanel.ResumeLayout(false);

@@ -129,48 +129,48 @@
             panelTemplate.Location = new Point(149, 31);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(736, 78);
+            panelTemplate.Size = new Size(838, 78);
             panelTemplate.TabIndex = 3;
             // 
             // btnReject
             // 
-            btnReject.BorderRadius = 15;
             btnReject.CustomizableEdges = customizableEdges1;
             btnReject.DisabledState.BorderColor = Color.DarkGray;
             btnReject.DisabledState.CustomBorderColor = Color.DarkGray;
             btnReject.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnReject.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnReject.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnReject.Dock = DockStyle.Right;
             btnReject.FillColor = Color.FromArgb(255, 128, 128);
             btnReject.FillColor2 = Color.Salmon;
             btnReject.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReject.ForeColor = Color.White;
             btnReject.ImageAlign = HorizontalAlignment.Left;
-            btnReject.Location = new Point(621, 11);
+            btnReject.Location = new Point(632, 0);
             btnReject.Name = "btnReject";
             btnReject.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnReject.Size = new Size(103, 49);
+            btnReject.Size = new Size(103, 78);
             btnReject.TabIndex = 8;
             btnReject.Text = "Reject";
             // 
             // btnAccept
             // 
-            btnAccept.BorderRadius = 15;
             btnAccept.CustomizableEdges = customizableEdges3;
             btnAccept.DisabledState.BorderColor = Color.DarkGray;
             btnAccept.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAccept.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAccept.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnAccept.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAccept.Dock = DockStyle.Right;
             btnAccept.FillColor = Color.FromArgb(42, 101, 97);
             btnAccept.FillColor2 = Color.Teal;
             btnAccept.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccept.ForeColor = Color.White;
             btnAccept.ImageAlign = HorizontalAlignment.Left;
-            btnAccept.Location = new Point(512, 11);
+            btnAccept.Location = new Point(735, 0);
             btnAccept.Name = "btnAccept";
             btnAccept.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAccept.Size = new Size(103, 49);
+            btnAccept.Size = new Size(103, 78);
             btnAccept.TabIndex = 7;
             btnAccept.Text = "Accept";
             btnAccept.Click += btnAccept_Click;

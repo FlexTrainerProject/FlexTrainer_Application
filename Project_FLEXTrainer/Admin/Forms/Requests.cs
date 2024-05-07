@@ -89,7 +89,8 @@ namespace Project_FLEXTrainer.Admin.Forms
                     Guna.UI2.WinForms.Guna2GradientButton newButton = (Guna.UI2.WinForms.Guna2GradientButton)newControl;
                     if (newButton.Name == "btnAccept")
                     {
-                        newButton.BorderRadius = 15;
+                        newButton.Dock = DockStyle.Right;
+                        newButton.AutoSize = false;
                         newButton.FillColor = Color.FromArgb(42, 101, 97);
                         newButton.FillColor2 = Color.Teal;
                         newButton.Height = 29;
@@ -97,11 +98,11 @@ namespace Project_FLEXTrainer.Admin.Forms
                     }
                     if (newButton.Name == "btnReject")
                     {
-                        newButton.BorderRadius = 15;
+                        newButton.Dock = DockStyle.Right;
                         newButton.Height = 29;
                         newButton.Width =  83;
-                        newButton.FillColor = Color.FromArgb(255, 128, 128);
-                        newButton.FillColor2 = Color.Salmon;
+                        newButton.FillColor = Color.FromArgb(113, 34, 40);
+                        newButton.FillColor2 = Color.FromArgb(113, 34, 40);
                     }
                 }
 
@@ -146,8 +147,9 @@ namespace Project_FLEXTrainer.Admin.Forms
 
         private void LoadData()
         {
+            string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -217,7 +219,8 @@ namespace Project_FLEXTrainer.Admin.Forms
                     {
                         button.Click += (sender, e) =>
                         {
-                            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+                            string connect = Essentials.ConnectionString.GetConnectionString();
+                            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
                             SqlConnection connection = new SqlConnection(connect);
                             connection.Open();
                             SqlCommand comm = new SqlCommand("Delete from REQUEST where id = '" + id + "';", connection);

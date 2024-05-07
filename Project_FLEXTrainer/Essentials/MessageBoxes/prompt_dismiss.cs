@@ -8,28 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_FLEXTrainer.Forms
+namespace Project_FLEXTrainer.Essentials.MessageBoxes
 {
-    public partial class Membership : Form
+    public partial class prompt_dismiss : Form
     {
-        public Membership()
+        public prompt_dismiss(string promptText)
         {
             InitializeComponent();
+            label6.Text = promptText;
         }
 
-        private void closeError_Click(object sender, EventArgs e)
-        {
-            noMemberPanel.Visible = false;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

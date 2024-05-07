@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointments));
             topPanel = new Panel();
-            panelTxt = new Label();
             btnFeedback = new Button();
+            panelTxt = new Label();
             topPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,19 +45,6 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(1217, 54);
             topPanel.TabIndex = 3;
-            // 
-            // panelTxt
-            // 
-            panelTxt.AutoSize = true;
-            panelTxt.Dock = DockStyle.Left;
-            panelTxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            panelTxt.ForeColor = SystemColors.Control;
-            panelTxt.Location = new Point(0, 0);
-            panelTxt.Name = "panelTxt";
-            panelTxt.Padding = new Padding(5, 10, 0, 0);
-            panelTxt.Size = new Size(232, 35);
-            panelTxt.TabIndex = 0;
-            panelTxt.Text = "Scheduled Appointments";
             // 
             // btnFeedback
             // 
@@ -78,6 +65,19 @@
             btnFeedback.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFeedback.UseVisualStyleBackColor = false;
             btnFeedback.Click += btnFeedback_Click;
+            // 
+            // panelTxt
+            // 
+            panelTxt.AutoSize = true;
+            panelTxt.Dock = DockStyle.Left;
+            panelTxt.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            panelTxt.ForeColor = SystemColors.Control;
+            panelTxt.Location = new Point(0, 0);
+            panelTxt.Name = "panelTxt";
+            panelTxt.Padding = new Padding(5, 10, 0, 0);
+            panelTxt.Size = new Size(232, 35);
+            panelTxt.TabIndex = 0;
+            panelTxt.Text = "Scheduled Appointments";
             // 
             // Appointments
             // 

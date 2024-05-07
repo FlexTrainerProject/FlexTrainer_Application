@@ -12,7 +12,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
 {
     public partial class TrainerInfo : Form
     {
-        public TrainerInfo(int id, string name, string gender, string experience, string rating)
+        public TrainerInfo(string id, string name, string gender, string experience, string rating)
         {
             InitializeComponent();
             label1.Text = name;

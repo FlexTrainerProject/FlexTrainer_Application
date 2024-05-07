@@ -36,6 +36,7 @@
             filterPic = new PictureBox();
             panelTxt = new Label();
             panelTemplate = new Panel();
+            ID_hidden = new Label();
             panel1 = new Panel();
             button1 = new Button();
             ratingLabel = new Label();
@@ -109,17 +110,27 @@
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(ID_hidden);
             panelTemplate.Controls.Add(panel1);
             panelTemplate.Controls.Add(button1);
             panelTemplate.Controls.Add(ratingLabel);
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(162, 60);
+            panelTemplate.Location = new Point(166, 72);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(736, 78);
             panelTemplate.TabIndex = 3;
+            // 
+            // ID_hidden
+            // 
+            ID_hidden.AutoSize = true;
+            ID_hidden.Location = new Point(354, 29);
+            ID_hidden.Name = "ID_hidden";
+            ID_hidden.Size = new Size(56, 15);
+            ID_hidden.TabIndex = 7;
+            ID_hidden.Text = "IdHidden";
             // 
             // panel1
             // 
@@ -139,7 +150,6 @@
             button1.Size = new Size(42, 40);
             button1.TabIndex = 5;
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // ratingLabel
             // 
@@ -238,5 +248,6 @@
         private Label genderLabel;
         private Panel panel1;
         private ImageList imageList1;
+        private Label ID_hidden;
     }
 }

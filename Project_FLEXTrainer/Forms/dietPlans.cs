@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.ApplicationServices;
+using Project_FLEXTrainer.Essentials.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +20,13 @@ namespace Project_FLEXTrainer.Forms
     public delegate void DisplayEntryDelegate_d(string goal, string experience_lvl, string schedule);
     public partial class dietPlans : Form
     {
-        public dietPlans()
+        User user;
+        public dietPlans(User userr)
         {
             InitializeComponent();
             DisplayDietPlans();
 
+            user = userr;
             panelTemplate.Visible = false;
         }
 
@@ -120,8 +124,8 @@ namespace Project_FLEXTrainer.Forms
         private void DisplayDietPlans()
         {
 
-            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type' FROM diet_plan";
 
             using (SqlConnection connection = new SqlConnection(connect))
@@ -151,12 +155,20 @@ namespace Project_FLEXTrainer.Forms
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-
         }
 
         private void btnCreateDP_Click(object sender, EventArgs e)
         {
-            Forms.SubForms.createDietPlancs SubForm = new Forms.SubForms.createDietPlancs();
+            if (user.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
+            Forms.SubForms.createDietPlancs SubForm = new Forms.SubForms.createDietPlancs(user);
             SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
             SubForm.StartPosition = FormStartPosition.CenterScreen;
 

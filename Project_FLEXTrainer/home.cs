@@ -46,14 +46,14 @@ namespace Project_FLEXTrainer
         private void btnWorkoutPlans_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.workoutPlans(), sender);
+                OpenChildForm(new Forms.workoutPlans(currentuser), sender);
 
         }
 
         private void btnDietPlans_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.dietPlans(), sender);
+                OpenChildForm(new Forms.dietPlans(currentuser), sender);
         }
 
         private void btnBookSession_Click(object sender, EventArgs e)
