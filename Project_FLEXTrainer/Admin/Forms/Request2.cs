@@ -1,5 +1,4 @@
-﻿using Guna.UI2.WinForms.Suite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,23 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static Project_FLEXTrainer.Forms.bookSession;
 
 namespace Project_FLEXTrainer.Admin.Forms
 {
-
-    public delegate void DisplayEntryDelegate_r(int id, string name, string gname, string location);
-    public partial class Requests : Form
+    public partial class Request2 : Form
     {
         private Button activeButton;
         private Panel dpanel;
-        public Requests(Panel panel)
+        public Request2(Panel panel)
         {
             InitializeComponent();
-            LoadData();
             panelTemplate.Visible = false;
             dpanel = panel;
+            LoadData();
         }
 
         private void activateBtn(object sender)
@@ -62,13 +57,13 @@ namespace Project_FLEXTrainer.Admin.Forms
         private void btnArchived_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            this.Close();
-            OpenChildForm(new Forms.Request2(dpanel), sender);
         }
 
         private void btnPending_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
+            this.Close();
+            OpenChildForm(new Forms.Requests(dpanel), sender);
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -86,26 +81,14 @@ namespace Project_FLEXTrainer.Admin.Forms
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if (newControl is Guna.UI2.WinForms.Guna2GradientButton)
+                if (newControl is Button)
                 {
-                    Guna.UI2.WinForms.Guna2GradientButton newButton = (Guna.UI2.WinForms.Guna2GradientButton)newControl;
-                    if (newButton.Name == "btnAccept")
-                    {
-                        newButton.Dock = DockStyle.Right;
-                        newButton.AutoSize = false;
-                        newButton.FillColor = Color.FromArgb(42, 101, 97);
-                        newButton.FillColor2 = Color.Teal;
-                        newButton.Height = 29;
-                        newButton.Width = 83;
-                    }
-                    if (newButton.Name == "btnReject")
-                    {
-                        newButton.Dock = DockStyle.Right;
-                        newButton.Height = 29;
-                        newButton.Width =  83;
-                        newButton.FillColor = Color.FromArgb(113, 34, 40);
-                        newButton.FillColor2 = Color.FromArgb(113, 34, 40);
-                    }
+                    Button newButton = (Button)newControl;
+                    newButton.Image = imageList1.Images[0];
+                    newButton.FlatStyle = FlatStyle.Flat;
+                    newButton.FlatAppearance.BorderSize = 0;
+                    newButton.TextImageRelation = TextImageRelation.TextBeforeImage;
+                    newButton.ImageAlign = ContentAlignment.MiddleLeft;
                 }
 
                 if (newControl is Label)
@@ -118,6 +101,7 @@ namespace Project_FLEXTrainer.Admin.Forms
 
             return newPanel;
         }
+
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -152,7 +136,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id where REQUEST.exist = 0";
+            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id where REQUEST.exist = 1";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -204,38 +188,26 @@ namespace Project_FLEXTrainer.Admin.Forms
                         label.Text = "Location: " + location;
 
                 }
-                else if (control is Guna.UI2.WinForms.Guna2GradientButton)
+                else if (control is Button)
                 {
-                    Guna.UI2.WinForms.Guna2GradientButton button = (Guna.UI2.WinForms.Guna2GradientButton)control;
-
-                    if (button.Name == "btnAccept")
+                    Button button = (Button)control;
+                    button.Click += (sender, e) =>
                     {
-                        button.Click += (sender, e) =>
-                        {
-                            
+                        string connect = Essentials.ConnectionString.GetConnectionString();
+                        //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+                        SqlConnection connection = new SqlConnection(connect);
+                        connection.Open();
+                        SqlCommand comm = new SqlCommand("Delete from REQUEST where REQUEST.id = '" + id + "';", connection);
+                        comm.ExecuteNonQuery();
+                        connection.Close();
 
-                        };
-                    }
-                    if (button.Name == "btnReject")
-                    {
-                        button.Click += (sender, e) =>
-                        {
-                            string connect = Essentials.ConnectionString.GetConnectionString();
-                            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-                            SqlConnection connection = new SqlConnection(connect);
-                            connection.Open();
-                            SqlCommand comm = new SqlCommand("UPDATE REQUEST SET exist = 1 WHERE ID = '" + id + "';", connection);
-                            comm.ExecuteNonQuery();
-                            this.Close();
-                            connection.Close();
-
-                            this.Close();
-                            OpenChildForm(new Forms.Requests(dpanel), sender);
-                        };
-                    }
-
+                        this.Close();
+                        OpenChildForm(new Forms.Request2(dpanel), sender);
+                    };
                 }
+
             }
+            
 
 
             // Calculate vertical position based on existing panels
@@ -244,11 +216,6 @@ namespace Project_FLEXTrainer.Admin.Forms
             entryPanel.Location = new Point(0, yOffset);
 
             panelContainer.Controls.Add(entryPanel);
-        }
-
-        private void btnAccept_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

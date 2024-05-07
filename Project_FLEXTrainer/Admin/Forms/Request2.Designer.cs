@@ -1,6 +1,6 @@
 ﻿namespace Project_FLEXTrainer.Admin.Forms
 {
-    partial class revokeGym
+    partial class Request2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revokeGym));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Request2));
             navPanel = new Panel();
-            btnRevoked = new Button();
-            btnAllgyms = new Button();
+            btnArchived = new Button();
+            btnPending = new Button();
             pgTitle = new Label();
             panelContainer = new Panel();
             panelTemplate = new Panel();
@@ -50,45 +50,45 @@
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
-            navPanel.Controls.Add(btnRevoked);
-            navPanel.Controls.Add(btnAllgyms);
+            navPanel.Controls.Add(btnArchived);
+            navPanel.Controls.Add(btnPending);
             navPanel.Controls.Add(pgTitle);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1159, 52);
+            navPanel.Size = new Size(1167, 52);
             navPanel.TabIndex = 4;
             // 
-            // btnRevoked
+            // btnArchived
             // 
-            btnRevoked.Dock = DockStyle.Right;
-            btnRevoked.FlatAppearance.BorderSize = 0;
-            btnRevoked.FlatStyle = FlatStyle.Flat;
-            btnRevoked.Font = new Font("Segoe UI", 14.25F);
-            btnRevoked.ForeColor = Color.White;
-            btnRevoked.Location = new Point(559, 0);
-            btnRevoked.Name = "btnRevoked";
-            btnRevoked.Size = new Size(316, 52);
-            btnRevoked.TabIndex = 14;
-            btnRevoked.Text = "REVOKED GYMS";
-            btnRevoked.UseVisualStyleBackColor = true;
-            btnRevoked.Click += btnRevoked_Click;
+            btnArchived.Dock = DockStyle.Right;
+            btnArchived.FlatAppearance.BorderSize = 0;
+            btnArchived.FlatStyle = FlatStyle.Flat;
+            btnArchived.Font = new Font("Segoe UI", 14.25F);
+            btnArchived.ForeColor = Color.White;
+            btnArchived.Location = new Point(567, 0);
+            btnArchived.Name = "btnArchived";
+            btnArchived.Size = new Size(316, 52);
+            btnArchived.TabIndex = 14;
+            btnArchived.Text = "ARCHIVED";
+            btnArchived.UseVisualStyleBackColor = true;
+            btnArchived.Click += btnArchived_Click;
             // 
-            // btnAllgyms
+            // btnPending
             // 
-            btnAllgyms.BackColor = Color.FromArgb(76, 126, 122);
-            btnAllgyms.Dock = DockStyle.Right;
-            btnAllgyms.FlatAppearance.BorderSize = 0;
-            btnAllgyms.FlatStyle = FlatStyle.Flat;
-            btnAllgyms.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAllgyms.ForeColor = Color.White;
-            btnAllgyms.Location = new Point(875, 0);
-            btnAllgyms.Name = "btnAllgyms";
-            btnAllgyms.Size = new Size(284, 52);
-            btnAllgyms.TabIndex = 13;
-            btnAllgyms.Text = "EXISTING GYMS";
-            btnAllgyms.UseVisualStyleBackColor = false;
-            btnAllgyms.Click += btnAllgyms_Click;
+            btnPending.BackColor = Color.FromArgb(76, 126, 122);
+            btnPending.Dock = DockStyle.Right;
+            btnPending.FlatAppearance.BorderSize = 0;
+            btnPending.FlatStyle = FlatStyle.Flat;
+            btnPending.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPending.ForeColor = Color.White;
+            btnPending.Location = new Point(883, 0);
+            btnPending.Name = "btnPending";
+            btnPending.Size = new Size(284, 52);
+            btnPending.TabIndex = 13;
+            btnPending.Text = "PENDING";
+            btnPending.UseVisualStyleBackColor = false;
+            btnPending.Click += btnPending_Click;
             // 
             // pgTitle
             // 
@@ -97,9 +97,9 @@
             pgTitle.Location = new Point(0, -11);
             pgTitle.Name = "pgTitle";
             pgTitle.Padding = new Padding(10, 20, 0, 0);
-            pgTitle.Size = new Size(431, 63);
+            pgTitle.Size = new Size(318, 63);
             pgTitle.TabIndex = 12;
-            pgTitle.Text = "Revoke Membership of Gyms";
+            pgTitle.Text = "Registration Requests";
             // 
             // panelContainer
             // 
@@ -109,8 +109,8 @@
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1159, 574);
-            panelContainer.TabIndex = 7;
+            panelContainer.Size = new Size(1167, 544);
+            panelContainer.TabIndex = 6;
             // 
             // panelTemplate
             // 
@@ -152,7 +152,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(164, 11);
+            nameLabel.Location = new Point(144, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -163,7 +163,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(482, 11);
+            experienceLabel.Location = new Point(462, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -174,7 +174,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(164, 39);
+            genderLabel.Location = new Point(144, 39);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
@@ -187,16 +187,15 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "close.png");
             // 
-            // revokeGym
+            // Request2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
-            ClientSize = new Size(1159, 626);
+            ClientSize = new Size(1167, 596);
             Controls.Add(panelContainer);
             Controls.Add(navPanel);
-            Name = "revokeGym";
-            Text = "Revoke Gym";
+            Name = "Request2";
+            Text = "Request2";
             navPanel.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
@@ -207,8 +206,8 @@
         #endregion
 
         private Panel navPanel;
-        private Button btnRevoked;
-        private Button btnAllgyms;
+        private Button btnArchived;
+        private Button btnPending;
         private Label pgTitle;
         private Panel panelContainer;
         private Panel panelTemplate;

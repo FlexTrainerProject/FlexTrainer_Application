@@ -1,6 +1,6 @@
 ﻿namespace Project_FLEXTrainer.Admin.Forms
 {
-    partial class revokeGym
+    partial class revokeGym2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revokeGym));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revokeGym2));
             navPanel = new Panel();
             btnRevoked = new Button();
             btnAllgyms = new Button();
@@ -56,8 +56,8 @@
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1159, 52);
-            navPanel.TabIndex = 4;
+            navPanel.Size = new Size(1062, 52);
+            navPanel.TabIndex = 5;
             // 
             // btnRevoked
             // 
@@ -66,7 +66,7 @@
             btnRevoked.FlatStyle = FlatStyle.Flat;
             btnRevoked.Font = new Font("Segoe UI", 14.25F);
             btnRevoked.ForeColor = Color.White;
-            btnRevoked.Location = new Point(559, 0);
+            btnRevoked.Location = new Point(462, 0);
             btnRevoked.Name = "btnRevoked";
             btnRevoked.Size = new Size(316, 52);
             btnRevoked.TabIndex = 14;
@@ -82,7 +82,7 @@
             btnAllgyms.FlatStyle = FlatStyle.Flat;
             btnAllgyms.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAllgyms.ForeColor = Color.White;
-            btnAllgyms.Location = new Point(875, 0);
+            btnAllgyms.Location = new Point(778, 0);
             btnAllgyms.Name = "btnAllgyms";
             btnAllgyms.Size = new Size(284, 52);
             btnAllgyms.TabIndex = 13;
@@ -109,8 +109,8 @@
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1159, 574);
-            panelContainer.TabIndex = 7;
+            panelContainer.Size = new Size(1062, 526);
+            panelContainer.TabIndex = 8;
             // 
             // panelTemplate
             // 
@@ -120,7 +120,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(161, 20);
+            panelTemplate.Location = new Point(119, 17);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -152,7 +152,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(164, 11);
+            nameLabel.Location = new Point(184, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -163,7 +163,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(482, 11);
+            experienceLabel.Location = new Point(502, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -174,7 +174,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(164, 39);
+            genderLabel.Location = new Point(184, 39);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
@@ -187,16 +187,15 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "close.png");
             // 
-            // revokeGym
+            // revokeGym2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
-            ClientSize = new Size(1159, 626);
+            ClientSize = new Size(1062, 578);
             Controls.Add(panelContainer);
             Controls.Add(navPanel);
-            Name = "revokeGym";
-            Text = "Revoke Gym";
+            Name = "revokeGym2";
+            Text = "revokeGym2";
             navPanel.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
