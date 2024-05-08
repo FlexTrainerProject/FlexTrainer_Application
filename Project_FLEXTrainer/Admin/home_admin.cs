@@ -139,7 +139,7 @@ namespace Project_FLEXTrainer.Admin
         private void btnRevoke_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.revokeGym(), sender);
+                OpenChildForm(new Forms.revokeGym(this.desktopPanel), sender);
         }
     }
 }

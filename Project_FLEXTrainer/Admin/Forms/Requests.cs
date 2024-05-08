@@ -64,6 +64,8 @@ namespace Project_FLEXTrainer.Admin.Forms
         private void btnArchived_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
+            this.Close();
+            OpenChildForm(new Forms.Request2(dpanel), sender);
         }
 
         private void btnPending_Click(object sender, EventArgs e)
@@ -200,7 +202,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                     if (label.Name == "nameLabel")
                         label.Text = "Name: " + name;
                     else if (label.Name == "genderLabel")
-                        label.Text = "Gender: " + gname;
+                        label.Text = "Gym Name: " + gname;
                     else if (label.Name == "experienceLabel")
                         label.Text = "Experience: " + location;
                     else if (label.Name == "ratingLabel")
@@ -266,7 +268,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                             //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
                             SqlConnection connection = new SqlConnection(connect);
                             connection.Open();
-                            SqlCommand comm = new SqlCommand("Delete from REQUEST where id = '" + id + "';", connection);
+                            SqlCommand comm = new SqlCommand("UPDATE REQUEST SET exist = 1 WHERE ID = '" + id + "';", connection);
                             comm.ExecuteNonQuery();
                             this.Close();
                             connection.Close();

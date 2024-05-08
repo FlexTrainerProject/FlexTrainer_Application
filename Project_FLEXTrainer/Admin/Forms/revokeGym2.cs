@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Admin.Forms
 {
-    public partial class revokeGym : Form
+    public partial class revokeGym2 : Form
     {
         private Button activeButton;
         private Panel dpanel;
-        public revokeGym(Panel panel)
+        public revokeGym2(Panel panel)
         {
             InitializeComponent();
             panelTemplate.Visible = false;
@@ -57,14 +57,13 @@ namespace Project_FLEXTrainer.Admin.Forms
         private void btnRevoked_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            this.Close();
-            OpenChildForm(new Forms.revokeGym2(dpanel), sender);
         }
 
         private void btnAllgyms_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            
+            this.Close();
+            OpenChildForm(new Forms.revokeGym(dpanel), sender);
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -137,7 +136,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "Select name,location, CONCAT(firstname,' ', lastname) as Oname from gym as owner_n Join owner on owner_id = owner.id Join userr on userr.id = owner.id where exist = 0";
+            string query = "Select name,location, CONCAT(firstname,' ', lastname) as Oname from gym as owner_n Join owner on owner_id = owner.id Join userr on userr.id = owner.id where exist = 1";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -187,7 +186,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                         label.Text = "Owner Name: " + gname;
                     else if (label.Name == "experienceLabel")
                         label.Text = "Location: " + location;
-                    
+
                 }
                 else if (control is Button)
                 {
@@ -197,12 +196,12 @@ namespace Project_FLEXTrainer.Admin.Forms
                         string connect = Essentials.ConnectionString.GetConnectionString();
                         SqlConnection connection = new SqlConnection(connect);
                         connection.Open();
-                        SqlCommand comm = new SqlCommand("UPDATE gym SET exist = 1 WHERE name = '" + name + "';", connection);
+                        SqlCommand comm = new SqlCommand("Delete from gym WHERE name = '" + name + "';", connection);
                         comm.ExecuteNonQuery();
                         connection.Close();
 
                         this.Close();
-                        OpenChildForm(new Forms.revokeGym(dpanel), sender);
+                        OpenChildForm(new Forms.revokeGym2(dpanel), sender);
                     };
                 }
 

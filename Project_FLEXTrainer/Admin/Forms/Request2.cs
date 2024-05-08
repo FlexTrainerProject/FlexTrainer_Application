@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Admin.Forms
 {
-    public partial class revokeGym : Form
+    public partial class Request2 : Form
     {
         private Button activeButton;
         private Panel dpanel;
-        public revokeGym(Panel panel)
+        public Request2(Panel panel)
         {
             InitializeComponent();
             panelTemplate.Visible = false;
@@ -54,17 +54,16 @@ namespace Project_FLEXTrainer.Admin.Forms
             }
         }
 
-        private void btnRevoked_Click(object sender, EventArgs e)
+        private void btnArchived_Click(object sender, EventArgs e)
+        {
+            activateBtn(sender);
+        }
+
+        private void btnPending_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
             this.Close();
-            OpenChildForm(new Forms.revokeGym2(dpanel), sender);
-        }
-
-        private void btnAllgyms_Click(object sender, EventArgs e)
-        {
-            activateBtn(sender);
-            
+            OpenChildForm(new Forms.Requests(dpanel), sender);
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -137,7 +136,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "Select name,location, CONCAT(firstname,' ', lastname) as Oname from gym as owner_n Join owner on owner_id = owner.id Join userr on userr.id = owner.id where exist = 0";
+            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id where REQUEST.exist = 1";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -152,9 +151,9 @@ namespace Project_FLEXTrainer.Admin.Forms
 
                     while (reader.Read())
                     {
-                        int id = 0;
+                        int id = reader.GetInt32("ID");
                         string name = reader["name"].ToString();
-                        string gname = reader["Oname"].ToString();
+                        string gname = reader["GYMname"].ToString();
                         string location = reader["location"].ToString();
 
                         displayDelegate.Invoke(id, name, gname, location);
@@ -164,7 +163,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: aaaaaaaa" + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
@@ -184,10 +183,10 @@ namespace Project_FLEXTrainer.Admin.Forms
                     if (label.Name == "nameLabel")
                         label.Text = "Name: " + name;
                     else if (label.Name == "genderLabel")
-                        label.Text = "Owner Name: " + gname;
+                        label.Text = "Gym Name: " + gname;
                     else if (label.Name == "experienceLabel")
                         label.Text = "Location: " + location;
-                    
+
                 }
                 else if (control is Button)
                 {
@@ -195,19 +194,20 @@ namespace Project_FLEXTrainer.Admin.Forms
                     button.Click += (sender, e) =>
                     {
                         string connect = Essentials.ConnectionString.GetConnectionString();
+                        //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
                         SqlConnection connection = new SqlConnection(connect);
                         connection.Open();
-                        SqlCommand comm = new SqlCommand("UPDATE gym SET exist = 1 WHERE name = '" + name + "';", connection);
+                        SqlCommand comm = new SqlCommand("Delete from REQUEST where REQUEST.id = '" + id + "';", connection);
                         comm.ExecuteNonQuery();
                         connection.Close();
 
                         this.Close();
-                        OpenChildForm(new Forms.revokeGym(dpanel), sender);
+                        OpenChildForm(new Forms.Request2(dpanel), sender);
                     };
                 }
 
             }
-
+            
 
 
             // Calculate vertical position based on existing panels
