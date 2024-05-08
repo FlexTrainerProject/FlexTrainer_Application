@@ -15,17 +15,19 @@ using static Project_FLEXTrainer.Forms.bookSession;
 namespace Project_FLEXTrainer.Admin.Forms
 {
 
-    public delegate void DisplayEntryDelegate_r(int id, string name, string gname, string location);
+    public delegate void DisplayEntryDelegate_r(int id, string name, string gname, string location, string userID);
     public partial class Requests : Form
     {
+        private User user;
         private Button activeButton;
         private Panel dpanel;
-        public Requests(Panel panel)
+        public Requests(Panel panel, User user)
         {
             InitializeComponent();
             LoadData();
             panelTemplate.Visible = false;
             dpanel = panel;
+            this.user = user;   
         }
 
         private void activateBtn(object sender)
@@ -150,7 +152,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id";
+            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location, memberID from REQUEST JOIN userr on REQUEST.memberID = userr.id";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -169,8 +171,9 @@ namespace Project_FLEXTrainer.Admin.Forms
                         string name = reader["name"].ToString();
                         string gname = reader["GYMname"].ToString();
                         string location = reader["location"].ToString();
+                        string memid = reader["memberID"].ToString();
 
-                        displayDelegate.Invoke(id, name, gname, location);
+                        displayDelegate.Invoke(id, name, gname, location, memid);
                     }
 
                     reader.Close();
@@ -182,7 +185,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             }
         }
 
-        public void DisplayEntry(int id, string name, string gname, string location)
+        public void DisplayEntry(int id, string name, string gname, string location, string userID)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -202,6 +205,12 @@ namespace Project_FLEXTrainer.Admin.Forms
                         label.Text = "Experience: " + location;
                     else if (label.Name == "ratingLabel")
                         label.Text = "Rating: ";
+                    else if (label.Name == "hiddenID")
+                    {
+                        label.Text = userID;
+                        label.Visible = false;
+                    }
+             
                 }
                 else if (control is Guna.UI2.WinForms.Guna2GradientButton)
                 {
@@ -211,7 +220,41 @@ namespace Project_FLEXTrainer.Admin.Forms
                     {
                         button.Click += (sender, e) =>
                         {
-                            
+                           // MessageBox.Show("trying to connect");
+                            string connectString = Essentials.ConnectionString.GetConnectionString();
+                            SqlConnection connection = new SqlConnection(connectString);
+                            connection.Open();
+
+                            /*string userIDQuery = "SELECT userr.id FROM userr WHERE username = @Username";
+
+                            SqlCommand command1 = new SqlCommand(userIDQuery, connection);
+                            command1.Parameters.AddWithValue("@Username", user.Username);
+
+                            object result = command1.ExecuteScalar();
+                            string userId;
+                            if (result != null)
+                            {
+                                userId = Convert.ToString(result);
+                            }
+                            else
+                            {
+                                MessageBox.Show("problem inserting :: username");
+                                return;
+                            }*/
+                            MessageBox.Show("" + userID + "");
+                            string query = "update request set isProcessed = 1 where memberID="+userID+"";
+                            SqlCommand commandUpdate = new SqlCommand(query, connection);
+                            commandUpdate.Parameters.AddWithValue("@memberID", userID);
+                            commandUpdate.ExecuteNonQuery();
+
+                            string query1 = "delete request where memberID=" + userID + "";
+                            SqlCommand commandDel = new SqlCommand(query1, connection);
+                            commandDel.ExecuteNonQuery();
+
+                            MessageBox.Show("Accepted");
+
+
+
 
                         };
                     }
@@ -229,7 +272,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                             connection.Close();
 
                             this.Close();
-                            OpenChildForm(new Forms.Requests(dpanel), sender);
+                            OpenChildForm(new Forms.Requests(dpanel, user), sender);
                         };
                     }
 
@@ -247,7 +290,7 @@ namespace Project_FLEXTrainer.Admin.Forms
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

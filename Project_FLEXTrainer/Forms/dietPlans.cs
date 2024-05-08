@@ -8,8 +8,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 
@@ -17,10 +19,11 @@ using System.Windows.Forms;
 namespace Project_FLEXTrainer.Forms
 {
 
-    public delegate void DisplayEntryDelegate_d(string goal, string experience_lvl, string schedule);
+    public delegate void DisplayEntryDelegate_d(string goal, string experience_lvl, string schedule, string planID);
     public partial class dietPlans : Form
     {
         User user;
+        private string stringConnection;
         public dietPlans(User userr)
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace Project_FLEXTrainer.Forms
 
             user = userr;
             panelTemplate.Visible = false;
+            stringConnection = Essentials.ConnectionString.GetConnectionString();
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -57,6 +61,10 @@ namespace Project_FLEXTrainer.Forms
                 {
 
                     Label newLabel = (Label)newControl;
+                    if (newLabel.Name == "hiddenID")
+                    {
+                        newLabel.Visible = false;
+                    }
                     newLabel.AutoSize = true; 
                 }
             }
@@ -81,7 +89,7 @@ namespace Project_FLEXTrainer.Forms
 
             return newControl;
         }
-        public void DisplayEntry(string goal, string nutrition, string type)
+        public void DisplayEntry(string goal, string nutrition, string type, string planID)
         {
             Panel templatePanel = panelTemplate; 
 
@@ -107,7 +115,34 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
+                        SqlConnection connection = new SqlConnection(stringConnection);
+                        connection.Open();
+                        string userIDQuery = "SELECT userr.id FROM userr WHERE username = @Username";
 
+                        SqlCommand command1 = new SqlCommand(userIDQuery, connection);
+                        command1.Parameters.AddWithValue("@Username", user.Username);
+                        //connection.Open();
+                        object result = command1.ExecuteScalar();
+                        string userId;
+                        if (result != null)
+                        {
+                            userId = Convert.ToString(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("problem inserting :: username");
+                            return;
+                        }
+
+                        string queryUserPlan = "INSERT into UserPlans VALUES (" + userId + "," + planID + ");";
+                        SqlCommand command5 = new SqlCommand(queryUserPlan, connection);
+                        command5.ExecuteNonQuery();
+                        //MessageBox.Show("Plan Added");
+                        connection.Close();
+                        Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Plan Added");
+                        messageBox.FormBorderStyle = FormBorderStyle.None;
+                        messageBox.StartPosition = FormStartPosition.CenterScreen;
+                        messageBox.Show();
                     };
                 }
 
@@ -126,7 +161,7 @@ namespace Project_FLEXTrainer.Forms
 
             string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type' FROM diet_plan";
+            String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
 
             using (SqlConnection connection = new SqlConnection(connect))
             {
@@ -144,8 +179,9 @@ namespace Project_FLEXTrainer.Forms
                         string goal = reader["Goal"].ToString();
                         string experience_lvl = reader["Nutrition"].ToString();
                         string schedule = reader["Type"].ToString();
+                        string planId = reader["plan_id"].ToString();
 
-                        displayDelegate.Invoke(goal, experience_lvl, schedule);
+                        displayDelegate.Invoke(goal, experience_lvl, schedule, planId);
                     }
 
                     reader.Close();

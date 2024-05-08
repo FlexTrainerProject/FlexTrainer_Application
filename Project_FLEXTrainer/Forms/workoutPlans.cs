@@ -10,17 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_FLEXTrainer.Forms.bookSession;
 using Project_FLEXTrainer.Essentials.MessageBoxes;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Project_FLEXTrainer.Forms
 {
 
-    public delegate void DisplayEntryDelegate(string goal, string experience_lvl, string schedule);
+    public delegate void DisplayEntryDelegate(string goal, string experience_lvl, string schedule, string planID);
     public partial class workoutPlans : Form
     {
         User user;
+        string stringConnection;
         public workoutPlans(User User)
         {
             InitializeComponent();
+            stringConnection = Essentials.ConnectionString.GetConnectionString();
 
             DisplayWorkoutPlan();
 
@@ -76,6 +79,10 @@ namespace Project_FLEXTrainer.Forms
                 {
 
                     Label newLabel = (Label)newControl;
+                    if(newLabel.Name == "hiddenID")
+                    {
+                        newLabel.Visible = false;
+                    }
                     newLabel.AutoSize = true; // Set AutoSize property to true for labels
                 }
             }
@@ -100,7 +107,7 @@ namespace Project_FLEXTrainer.Forms
 
             return newControl;
         }
-        public void DisplayEntry(string goal, string experience_lvl, string schedule)
+        public void DisplayEntry(string goal, string experience_lvl, string schedule, string planID)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -119,6 +126,8 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "Schedule: " + schedule;
                     else if (label.Name == "experienceLabel")
                         label.Text = "Experience: " + experience_lvl;
+                    else if (label.Name == "hiddenID")
+                        label.Text = "planID";
 
                 }
                 else if (control is Button)
@@ -126,7 +135,34 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
+                        SqlConnection connection = new SqlConnection(stringConnection);
+                        connection.Open();
+                        string userIDQuery = "SELECT userr.id FROM userr WHERE username = @Username";
 
+                        SqlCommand command1 = new SqlCommand(userIDQuery, connection);
+                        command1.Parameters.AddWithValue("@Username", user.Username);
+                        //connection.Open();
+                        object result = command1.ExecuteScalar();
+                        string userId;
+                        if (result != null)
+                        {
+                            userId = Convert.ToString(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show("problem inserting :: username");
+                            return;
+                        }
+
+                        string queryUserPlan = "INSERT into UserPlans VALUES (" + userId + "," + planID + ");";
+                        SqlCommand command5 = new SqlCommand(queryUserPlan, connection);
+                        command5.ExecuteNonQuery();
+                        //MessageBox.Show("Plan Added");
+                        connection.Close();
+                        Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Plan Added");
+                        messageBox.FormBorderStyle = FormBorderStyle.None;
+                        messageBox.StartPosition = FormStartPosition.CenterScreen;
+                        messageBox.Show();
                     };
                 }
 
@@ -163,8 +199,9 @@ namespace Project_FLEXTrainer.Forms
                         string goal = reader["goal"].ToString();
                         string experience_lvl = reader["experience_lvl"].ToString();
                         string schedule = reader["schedule"].ToString();
+                        string planId = reader["plan_id"].ToString();
 
-                        displayDelegate.Invoke(goal, experience_lvl, schedule);
+                        displayDelegate.Invoke(goal, experience_lvl, schedule, planId);
                     }
 
                     reader.Close();
