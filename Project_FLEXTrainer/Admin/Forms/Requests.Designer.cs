@@ -47,6 +47,7 @@
             experienceLabel = new Label();
             genderLabel = new Label();
             imageList1 = new ImageList(components);
+            hiddenID = new Label();
             navPanel.SuspendLayout();
             panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
@@ -120,6 +121,7 @@
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(hiddenID);
             panelTemplate.Controls.Add(btnReject);
             panelTemplate.Controls.Add(btnAccept);
             panelTemplate.Controls.Add(panel1);
@@ -223,6 +225,16 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "openview.png");
             // 
+            // hiddenID
+            // 
+            hiddenID.AutoSize = true;
+            hiddenID.Location = new Point(327, 54);
+            hiddenID.Name = "hiddenID";
+            hiddenID.Size = new Size(55, 15);
+            hiddenID.TabIndex = 9;
+            hiddenID.Text = "hiddenID";
+            hiddenID.Visible = false;
+            // 
             // Requests
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,5 +267,6 @@
         private ImageList imageList1;
         private Guna.UI2.WinForms.Guna2GradientButton btnReject;
         private Guna.UI2.WinForms.Guna2GradientButton btnAccept;
+        private Label hiddenID;
     }
 }
