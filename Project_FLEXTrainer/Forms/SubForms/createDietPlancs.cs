@@ -135,6 +135,10 @@ namespace Project_FLEXTrainer.Forms.SubForms
                                                                              
                     command4.ExecuteNonQuery();
                 }
+
+                string queryUserPlan = "INSERT into UserPlans VALUES ("+userId+","+insertedId+");";
+                SqlCommand command5 = new SqlCommand(queryUserPlan, connection);
+                command5.ExecuteNonQuery();
                 connection.Close();
 
 

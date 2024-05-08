@@ -133,7 +133,7 @@ namespace Project_FLEXTrainer.Admin
         private void btnReq_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Requests(this.desktopPanel), sender);
+                OpenChildForm(new Forms.Requests(this.desktopPanel, currentuser), sender);
         }
 
         private void btnRevoke_Click(object sender, EventArgs e)
