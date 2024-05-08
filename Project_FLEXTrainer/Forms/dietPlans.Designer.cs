@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateDP = new Button();
             topPanel = new Panel();
@@ -49,6 +49,7 @@
             panelContainer = new Panel();
             topPanel.SuspendLayout();
             panelTemplate.SuspendLayout();
+            panelContainer.SuspendLayout();
             SuspendLayout();
             // 
             // btnCreateDP
@@ -70,7 +71,6 @@
             // topPanel
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
-            topPanel.Controls.Add(panelTemplate);
             topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(button1);
             topPanel.Controls.Add(comboBox3);
@@ -91,7 +91,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(168, 31);
+            panelTemplate.Location = new Point(161, 6);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -228,6 +228,7 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 54);
             panelContainer.Name = "panelContainer";
@@ -247,6 +248,7 @@
             topPanel.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
+            panelContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 

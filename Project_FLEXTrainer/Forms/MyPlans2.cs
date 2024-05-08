@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Forms
 {
-    public partial class MyPlans : Form
+    public partial class MyPlans2 : Form
     {
         User user;
         string stringConnection;
         private Button activeButton;
         private Panel panel;
-        public MyPlans(Panel panel)
+        public MyPlans2(Panel panel)
         {
             InitializeComponent();
             stringConnection = Essentials.ConnectionString.GetConnectionString();
@@ -66,7 +65,6 @@ namespace Project_FLEXTrainer.Forms
         private void createdbyme_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
-            OpenChildForm(new Forms.MyPlans2(panel), sender);
 
         }
 
@@ -93,42 +91,6 @@ namespace Project_FLEXTrainer.Forms
             //tabPic.Image. = ;
         }
 
-        private void LoadData()
-        {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-
-            String query = "Select goal,experience_lvl,schedule,plan_id from UserPlans JOIN workout_plan on PLanID = workout_plan.plan_id";
-
-            using (SqlConnection connection = new SqlConnection(connect))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-
-                try
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    DisplayEntryDelegate displayDelegate = DisplayEntry;
-
-                    while (reader.Read())
-                    {
-                        string goal = reader["goal"].ToString();
-                        string experience_lvl = reader["experience_lvl"].ToString();
-                        string schedule = reader["schedule"].ToString();
-                        string planId = reader["plan_id"].ToString();
-
-                        displayDelegate.Invoke(goal, experience_lvl, schedule, planId);
-                    }
-
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
         {
@@ -151,8 +113,6 @@ namespace Project_FLEXTrainer.Forms
                     newButton.Image = imageList1.Images[0];
                     newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
-                    newButton.TextImageRelation = TextImageRelation.TextBeforeImage;
-                    newButton.ImageAlign = ContentAlignment.MiddleLeft;
                 }
 
                 if (newControl is Label)
@@ -163,7 +123,7 @@ namespace Project_FLEXTrainer.Forms
                     {
                         newLabel.Visible = false;
                     }
-                    newLabel.AutoSize = true; // Set AutoSize property to true for labels
+                    newLabel.AutoSize = true;
                 }
             }
 
@@ -171,6 +131,42 @@ namespace Project_FLEXTrainer.Forms
         }
 
 
+        private void LoadData()
+        {
+
+            //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
+            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            String query = "Select goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id from UserPlans JOIN diet_plan on PLanID = diet_plan.plan_id";
+
+            using (SqlConnection connection = new SqlConnection(connect))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    DisplayEntryDelegate_d displayDelegate = DisplayEntry;
+
+                    while (reader.Read())
+                    {
+                        string goal = reader["Goal"].ToString();
+                        string experience_lvl = reader["Nutrition"].ToString();
+                        string schedule = reader["Type"].ToString();
+                        string planId = reader["plan_id"].ToString();
+
+                        displayDelegate.Invoke(goal, experience_lvl, schedule, planId);
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private Control CreateControlFromTemplate(Control templateControl)
         {
             Control newControl = (Control)Activator.CreateInstance(templateControl.GetType());
@@ -187,9 +183,9 @@ namespace Project_FLEXTrainer.Forms
 
             return newControl;
         }
-        public void DisplayEntry(string goal, string experience_lvl, string schedule, string planID)
+        public void DisplayEntry(string goal, string nutrition, string type, string planID)
         {
-            Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
+            Panel templatePanel = panelTemplate;
 
             Panel entryPanel = CreatePanelFromTemplate(templatePanel);
 
@@ -203,11 +199,9 @@ namespace Project_FLEXTrainer.Forms
                     if (label.Name == "nameLabel")
                         label.Text = "Goal: " + goal;
                     else if (label.Name == "genderLabel")
-                        label.Text = "Schedule: " + schedule;
+                        label.Text = "Schedule: " + nutrition;
                     else if (label.Name == "experienceLabel")
-                        label.Text = "Experience: " + experience_lvl;
-                    else if (label.Name == "hiddenID")
-                        label.Text = "planID";
+                        label.Text = "Experience: " + type;
 
                 }
                 else if (control is Button)
@@ -218,12 +212,12 @@ namespace Project_FLEXTrainer.Forms
                         string connectString = Essentials.ConnectionString.GetConnectionString();
                         SqlConnection connection = new SqlConnection(connectString);
                         connection.Open();
-                        string query1 = "Delete from UserPlans where UserPlans.PlanID = " + planID +"";
+                        string query1 = "Delete from UserPlans where UserPlans.PlanID = " + planID + "";
                         SqlCommand com = new SqlCommand(query1, connection);
                         com.ExecuteNonQuery();
                         this.Close();
 
-                        OpenChildForm(new Forms.MyPlans(panel), sender);
+                        OpenChildForm(new Forms.MyPlans2(panel), sender);
                     };
                 }
 
@@ -235,6 +229,12 @@ namespace Project_FLEXTrainer.Forms
             entryPanel.Location = new Point(0, yOffset);
 
             panelContainer.Controls.Add(entryPanel);
+        }
+
+        private void allplans_Click_1(object sender, EventArgs e)
+        {
+            activateBtn(sender);
+            OpenChildForm(new Forms.MyPlans(panel), sender); ;
         }
     }
 }

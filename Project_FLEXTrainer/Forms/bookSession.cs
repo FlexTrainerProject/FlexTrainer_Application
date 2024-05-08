@@ -34,24 +34,24 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; 
+            newPanel.Dock = DockStyle.None;
 
             foreach (Control control in templatePanel.Controls)
             {
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if(newControl is Button)
+                if (newControl is Button)
                 {
                     Button newButton = (Button)newControl;
                     newButton.Image = imageList1.Images[0];
-                    newButton.FlatStyle= FlatStyle.Flat;
+                    newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
                 }
 
                 if (newControl is Label)
                 {
-                    if(newControl.Name== "ID_hidden")
+                    if (newControl.Name == "ID_hidden")
                     {
                         newControl.Visible = false;
                     }
@@ -77,7 +77,7 @@ namespace Project_FLEXTrainer.Forms
             newControl.Dock = templateControl.Dock;
             newControl.Padding = templateControl.Padding;
             newControl.Location = templateControl.Location;
-            
+
             return newControl;
         }
 
@@ -104,7 +104,7 @@ namespace Project_FLEXTrainer.Forms
                         string gender = reader["gender"].ToString();
                         string experience = reader["experience"].ToString();
                         string rating = reader["rating"].ToString();
-                        string id = reader["id"].ToString();  
+                        string id = reader["id"].ToString();
                         //string username = "nigga";
 
                         //label2.Text = username;
@@ -150,7 +150,7 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id,name,gender,experience,rating);
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id, name, gender, experience, rating);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 

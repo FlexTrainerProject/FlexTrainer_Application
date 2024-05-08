@@ -65,7 +65,7 @@ namespace Project_FLEXTrainer
         private void btnMyPlans_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.MyPlans(), sender);
+                OpenChildForm(new Forms.MyPlans(this.desktopPanel), sender);
         }
 
         private void btnMembership_Click(object sender, EventArgs e)
