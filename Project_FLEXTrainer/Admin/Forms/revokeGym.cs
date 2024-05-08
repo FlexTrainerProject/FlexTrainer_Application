@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Admin.Forms
 {
+    public delegate void DisplayEntryDelegate_e(int id, string name, string gname, string location);
     public partial class revokeGym : Form
     {
         private Button activeButton;
@@ -148,7 +149,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    DisplayEntryDelegate_r displayDelegate = DisplayEntry;
+                    DisplayEntryDelegate_e displayDelegate = DisplayEntry;
 
                     while (reader.Read())
                     {
