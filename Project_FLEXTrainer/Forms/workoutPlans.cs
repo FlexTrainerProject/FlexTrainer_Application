@@ -180,12 +180,12 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayWorkoutPlan()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+           // string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select* from workout_plan";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
 

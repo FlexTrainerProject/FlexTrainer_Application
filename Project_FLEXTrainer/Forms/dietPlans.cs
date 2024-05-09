@@ -27,11 +27,11 @@ namespace Project_FLEXTrainer.Forms
         public dietPlans(User userr)
         {
             InitializeComponent();
+            stringConnection = Essentials.ConnectionString.GetConnectionString();
             DisplayDietPlans();
 
             user = userr;
             panelTemplate.Visible = false;
-            stringConnection = Essentials.ConnectionString.GetConnectionString();
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -160,10 +160,10 @@ namespace Project_FLEXTrainer.Forms
         {
 
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
 

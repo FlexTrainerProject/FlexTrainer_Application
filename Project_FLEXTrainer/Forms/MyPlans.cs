@@ -95,12 +95,12 @@ namespace Project_FLEXTrainer.Forms
 
         private void LoadData()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select goal,experience_lvl,schedule,plan_id from UserPlans JOIN workout_plan on PLanID = workout_plan.plan_id";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
 
