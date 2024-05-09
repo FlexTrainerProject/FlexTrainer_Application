@@ -76,6 +76,12 @@ namespace Project_FLEXTrainer.Forms
                         connection.Open();
 
                         command.ExecuteNonQuery();
+
+                        Form messageBox = new Essentials.MessageBoxes.prompt("Applied Successfully");
+                        messageBox.FormBorderStyle = FormBorderStyle.None;
+                        messageBox.StartPosition = FormStartPosition.CenterScreen;
+                        messageBox.Show();
+                        messageBox.BringToFront();
                     }
                     catch (Exception ex)
                     {
@@ -137,6 +143,11 @@ namespace Project_FLEXTrainer.Forms
                         connection.Open();
 
                         command.ExecuteNonQuery();
+                        Form messageBox = new Essentials.MessageBoxes.prompt("Applied Successfully");
+                        messageBox.FormBorderStyle = FormBorderStyle.None;
+                        messageBox.StartPosition = FormStartPosition.CenterScreen;
+                        messageBox.Show();
+                        messageBox.BringToFront();
                     }
                     catch (Exception ex)
                     {
