@@ -31,7 +31,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
             if (txtName.Text=="" || txtAllergens.Text=="" || txtNutritionalvAl.Text=="")
             {
-                MessageBox.Show("Missing Info");
+                Form MessageBox = new Essentials.MessageBoxes.missingInfo();
+                MessageBox.FormBorderStyle = FormBorderStyle.None;
+                MessageBox.StartPosition = FormStartPosition.CenterScreen;
+                MessageBox.Show();
+
                 return;
             }
             Meal meal = new Meal();
@@ -41,7 +45,12 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
             mainForm.AddMeal(meal);
 
-            MessageBox.Show("Meal Added to Plan");
+            Form messageBox = new Essentials.MessageBoxes.prompt("Meal Added to Plan");
+            messageBox.FormBorderStyle = FormBorderStyle.None;
+            messageBox.StartPosition = FormStartPosition.CenterScreen;
+            messageBox.Show();
+
+            return;
             txtName.Text = "";
             txtAllergens.Text = "";
             txtNutritionalvAl.Text = "";

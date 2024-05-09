@@ -106,36 +106,15 @@ namespace Project_FLEXTrainer.Forms.SubForms
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             /*
-            string query1 = "INSERT INTO trainer VALUES (@userid, @specialization, @qualification, 0, @experience)";
-
-            SqlCommand command1 = new SqlCommand(query1, connection);
-            command1.Parameters.AddWithValue("@userid", currentUser.userId);
-            command1.Parameters.AddWithValue("@specialization", txtSpecialization.Text);
-            command1.Parameters.AddWithValue("@qualification", txtQualification.Text);
-            command1.Parameters.AddWithValue("@rating", 0);
-            command1.Parameters.AddWithValue("@experience", txtExp.Text);
-
-            command1.ExecuteNonQuery();
-
-            for (int i = 0; i < gymAdded.Count; i++)
-            {
-                string query2 = "INSERT INTO gym_assign_to_trainer VALUES (@userID, (SELECT id FROM gym, WHERE name = @gymName))";
-                SqlCommand command = new SqlCommand(query2, connection);
-                command.Parameters.AddWithValue("@gymName", gymAdded[i]);
-                command.ExecuteNonQuery();
-            }
-
-            string query3 = "update account set account_type='trainer' where username =@username";
-            SqlCommand command3 = new SqlCommand(query3, connection);
-            command3.Parameters.AddWithValue("@username", currentUser.Username);*/
+           */
 
            
             
             for(int i=0; i<gymAdded.Count; i++)
             {
-                string query = "INSERT INTO TRAINER_REQUEST VALUES (@userID, (SELECT id from gym where name = @gymName), @exp, @spec, @qual)";
+                string query = "INSERT INTO TRAINER_REQUEST VALUES ((SELECT TOP 1 id from userr where username = @username), (SELECT TOP 1 id from gym where name = @gymName), @exp, @spec, @qual)";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@userID", currentUser.userId);
+                command.Parameters.AddWithValue("@username", currentUser.Username);
                 command.Parameters.AddWithValue("@gymName", gymAdded[i]);
                 command.Parameters.AddWithValue("@exp", txtExp.Text);
                 command.Parameters.AddWithValue("@spec", txtSpecialization.Text);
@@ -152,8 +131,9 @@ namespace Project_FLEXTrainer.Forms.SubForms
             messageBox.Show();
             messageBox.BringToFront();
             messageBox.BringToFront();
+            messageBox.BringToFront();
 
-            this.Close();
+
 
 
         }

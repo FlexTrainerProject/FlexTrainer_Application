@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             btnTrainer = new Button();
@@ -66,7 +66,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges3;
+            searchBar.CustomizableEdges = customizableEdges1;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -82,7 +82,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             searchBar.Size = new Size(222, 28);
             searchBar.TabIndex = 11;
             // 
@@ -235,6 +235,7 @@
             btnRequests.Text = "   REQUESTS";
             btnRequests.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRequests.UseVisualStyleBackColor = false;
+            btnRequests.Click += btnRequests_Click;
             // 
             // Manage
             // 

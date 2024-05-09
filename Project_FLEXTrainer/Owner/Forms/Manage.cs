@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.Charts.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,11 @@ namespace Project_FLEXTrainer.Owner.Forms
     public partial class Manage : Form
     {
         private Button activeButton;
-        public Manage()
+        User currUser;
+        public Manage(User user)
         {
             InitializeComponent();
+            currUser = user;
         }
 
         private void activateBtn(object sender)
@@ -57,6 +60,15 @@ namespace Project_FLEXTrainer.Owner.Forms
         private void btnTrainer_Click(object sender, EventArgs e)
         {
             activateBtn(sender);
+        }
+
+        private void btnRequests_Click(object sender, EventArgs e)
+        {
+            SubForm.Requests SubForm = new SubForm.Requests(currUser);
+            SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
+            SubForm.StartPosition = FormStartPosition.CenterScreen;
+
+            SubForm.Show(); // Show the form as a separate window
         }
     }
 }
