@@ -77,7 +77,7 @@ namespace Project_FLEXTrainer
         private void btnAppointments_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Appointments(), sender);
+                OpenChildForm(new Forms.Appointments(currentuser), sender);
         }
 
         private void activateBtn(object sender)

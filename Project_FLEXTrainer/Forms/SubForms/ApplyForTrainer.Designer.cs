@@ -35,16 +35,26 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             mainPanel = new Panel();
             button1 = new Button();
             exit = new Button();
             txt = new Label();
             label2 = new Label();
-            panel1 = new Panel();
-            label1 = new Label();
             gymCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             addGym = new Guna.UI2.WinForms.Guna2Button();
             applyBtn = new Guna.UI2.WinForms.Guna2Button();
+            Exp = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            txtExp = new Guna.UI2.WinForms.Guna2TextBox();
+            txtQualification = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSpecialization = new Guna.UI2.WinForms.Guna2TextBox();
             mainPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,7 +67,7 @@
             mainPanel.Dock = DockStyle.Top;
             mainPanel.Location = new Point(0, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(581, 61);
+            mainPanel.Size = new Size(660, 61);
             mainPanel.TabIndex = 2;
             // 
             // button1
@@ -66,7 +76,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(808, 0);
+            button1.Location = new Point(887, 0);
             button1.Name = "button1";
             button1.Size = new Size(37, 43);
             button1.TabIndex = 5;
@@ -78,7 +88,7 @@
             exit.FlatAppearance.BorderSize = 0;
             exit.FlatStyle = FlatStyle.Flat;
             exit.Image = (Image)resources.GetObject("exit.Image");
-            exit.Location = new Point(1105, 0);
+            exit.Location = new Point(1184, 0);
             exit.Name = "exit";
             exit.Size = new Size(38, 39);
             exit.TabIndex = 1;
@@ -102,29 +112,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(11, 137);
+            label2.Location = new Point(169, 120);
             label2.Name = "label2";
             label2.Size = new Size(81, 41);
             label2.TabIndex = 5;
             label2.Text = "Gym";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Location = new Point(295, 101);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(286, 291);
-            panel1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
-            label1.Location = new Point(295, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(217, 41);
-            label1.TabIndex = 7;
-            label1.Text = "Selected Gyms";
             // 
             // gymCombo
             // 
@@ -137,7 +129,7 @@
             gymCombo.Font = new Font("Segoe UI", 10F);
             gymCombo.ForeColor = Color.FromArgb(68, 88, 112);
             gymCombo.ItemHeight = 30;
-            gymCombo.Location = new Point(98, 142);
+            gymCombo.Location = new Point(285, 125);
             gymCombo.Name = "gymCombo";
             gymCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             gymCombo.Size = new Size(179, 36);
@@ -155,11 +147,12 @@
             addGym.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addGym.ForeColor = Color.White;
             addGym.Image = (Image)resources.GetObject("addGym.Image");
-            addGym.Location = new Point(234, 184);
+            addGym.Location = new Point(516, 126);
             addGym.Name = "addGym";
             addGym.ShadowDecoration.CustomizableEdges = customizableEdges4;
             addGym.Size = new Size(43, 35);
             addGym.TabIndex = 9;
+            addGym.Click += addGym_Click;
             // 
             // applyBtn
             // 
@@ -171,25 +164,123 @@
             applyBtn.FillColor = Color.FromArgb(126, 46, 53);
             applyBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             applyBtn.ForeColor = Color.White;
-            applyBtn.Location = new Point(46, 323);
+            applyBtn.Location = new Point(465, 411);
             applyBtn.Name = "applyBtn";
             applyBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             applyBtn.Size = new Size(173, 48);
             applyBtn.TabIndex = 10;
             applyBtn.Text = "Apply";
+            applyBtn.Click += applyBtn_Click;
+            // 
+            // Exp
+            // 
+            Exp.AutoSize = true;
+            Exp.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
+            Exp.ForeColor = Color.DimGray;
+            Exp.Location = new Point(84, 181);
+            Exp.Name = "Exp";
+            Exp.Size = new Size(166, 41);
+            Exp.TabIndex = 11;
+            Exp.Text = "Experience";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
+            label3.ForeColor = Color.DimGray;
+            label3.Location = new Point(56, 246);
+            label3.Name = "label3";
+            label3.Size = new Size(194, 41);
+            label3.TabIndex = 13;
+            label3.Text = "Qualification";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
+            label4.ForeColor = Color.DimGray;
+            label4.Location = new Point(43, 303);
+            label4.Name = "label4";
+            label4.Size = new Size(207, 41);
+            label4.TabIndex = 14;
+            label4.Text = "Specialization";
+            // 
+            // txtExp
+            // 
+            txtExp.CustomizableEdges = customizableEdges7;
+            txtExp.DefaultText = "";
+            txtExp.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtExp.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtExp.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtExp.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtExp.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtExp.Font = new Font("Segoe UI", 9F);
+            txtExp.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtExp.Location = new Point(285, 186);
+            txtExp.Name = "txtExp";
+            txtExp.PasswordChar = '\0';
+            txtExp.PlaceholderText = "";
+            txtExp.SelectedText = "";
+            txtExp.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtExp.Size = new Size(200, 36);
+            txtExp.TabIndex = 15;
+            // 
+            // txtQualification
+            // 
+            txtQualification.CustomizableEdges = customizableEdges9;
+            txtQualification.DefaultText = "";
+            txtQualification.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtQualification.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtQualification.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtQualification.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtQualification.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtQualification.Font = new Font("Segoe UI", 9F);
+            txtQualification.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtQualification.Location = new Point(285, 246);
+            txtQualification.Name = "txtQualification";
+            txtQualification.PasswordChar = '\0';
+            txtQualification.PlaceholderText = "";
+            txtQualification.SelectedText = "";
+            txtQualification.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtQualification.Size = new Size(200, 36);
+            txtQualification.TabIndex = 17;
+            // 
+            // txtSpecialization
+            // 
+            txtSpecialization.CustomizableEdges = customizableEdges11;
+            txtSpecialization.DefaultText = "";
+            txtSpecialization.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSpecialization.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSpecialization.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSpecialization.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSpecialization.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSpecialization.Font = new Font("Segoe UI", 9F);
+            txtSpecialization.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSpecialization.Location = new Point(285, 303);
+            txtSpecialization.Name = "txtSpecialization";
+            txtSpecialization.PasswordChar = '\0';
+            txtSpecialization.PlaceholderText = "";
+            txtSpecialization.SelectedText = "";
+            txtSpecialization.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtSpecialization.Size = new Size(200, 36);
+            txtSpecialization.TabIndex = 18;
             // 
             // ApplyForTrainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(581, 404);
+            ClientSize = new Size(660, 471);
+            Controls.Add(txtSpecialization);
+            Controls.Add(txtQualification);
+            Controls.Add(txtExp);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(Exp);
             Controls.Add(applyBtn);
             Controls.Add(addGym);
             Controls.Add(gymCombo);
             Controls.Add(label2);
             Controls.Add(mainPanel);
-            Controls.Add(panel1);
-            Controls.Add(label1);
             Name = "ApplyForTrainer";
             Text = "ApplyForTrainer";
             mainPanel.ResumeLayout(false);
@@ -205,10 +296,14 @@
         private Button exit;
         private Label txt;
         private Label label2;
-        private Panel panel1;
-        private Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox gymCombo;
         private Guna.UI2.WinForms.Guna2Button addGym;
         private Guna.UI2.WinForms.Guna2Button applyBtn;
+        private Label Exp;
+        private Label label3;
+        private Label label4;
+        private Guna.UI2.WinForms.Guna2TextBox txtExp;
+        private Guna.UI2.WinForms.Guna2TextBox txtQualification;
+        private Guna.UI2.WinForms.Guna2TextBox txtSpecialization;
     }
 }

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(giveFeedback));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(giveFeedback));
             panel1 = new Panel();
+            button1 = new Button();
+            comboTrainer = new Guna.UI2.WinForms.Guna2ComboBox();
             closeError = new Button();
             label1 = new Label();
-            comboTrainer = new Guna.UI2.WinForms.Guna2ComboBox();
             ratingCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            feedbackmsg = new TextBox();
             doneBtn = new Button();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,6 +58,36 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(491, 69);
             panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(454, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(37, 43);
+            button1.TabIndex = 4;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // comboTrainer
+            // 
+            comboTrainer.BackColor = Color.Transparent;
+            comboTrainer.CustomizableEdges = customizableEdges1;
+            comboTrainer.DrawMode = DrawMode.OwnerDrawFixed;
+            comboTrainer.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboTrainer.FocusedColor = Color.FromArgb(94, 148, 255);
+            comboTrainer.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            comboTrainer.Font = new Font("Segoe UI", 10F);
+            comboTrainer.ForeColor = Color.FromArgb(68, 88, 112);
+            comboTrainer.ItemHeight = 30;
+            comboTrainer.Location = new Point(139, 14);
+            comboTrainer.Name = "comboTrainer";
+            comboTrainer.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            comboTrainer.Size = new Size(245, 36);
+            comboTrainer.TabIndex = 3;
             // 
             // closeError
             // 
@@ -81,23 +111,6 @@
             label1.Size = new Size(121, 41);
             label1.TabIndex = 0;
             label1.Text = "Trainer:";
-            // 
-            // comboTrainer
-            // 
-            comboTrainer.BackColor = Color.Transparent;
-            comboTrainer.CustomizableEdges = customizableEdges1;
-            comboTrainer.DrawMode = DrawMode.OwnerDrawFixed;
-            comboTrainer.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboTrainer.FocusedColor = Color.FromArgb(94, 148, 255);
-            comboTrainer.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            comboTrainer.Font = new Font("Segoe UI", 10F);
-            comboTrainer.ForeColor = Color.FromArgb(68, 88, 112);
-            comboTrainer.ItemHeight = 30;
-            comboTrainer.Location = new Point(139, 14);
-            comboTrainer.Name = "comboTrainer";
-            comboTrainer.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            comboTrainer.Size = new Size(245, 36);
-            comboTrainer.TabIndex = 3;
             // 
             // ratingCombo
             // 
@@ -138,13 +151,14 @@
             label3.TabIndex = 5;
             label3.Text = "Feedback";
             // 
-            // textBox1
+            // feedbackmsg
             // 
-            textBox1.Location = new Point(21, 226);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(366, 125);
-            textBox1.TabIndex = 6;
+            feedbackmsg.Location = new Point(21, 226);
+            feedbackmsg.Multiline = true;
+            feedbackmsg.Name = "feedbackmsg";
+            feedbackmsg.Size = new Size(366, 125);
+            feedbackmsg.TabIndex = 6;
+            feedbackmsg.TextChanged += textBox1_TextChanged;
             // 
             // doneBtn
             // 
@@ -158,19 +172,7 @@
             doneBtn.Size = new Size(51, 45);
             doneBtn.TabIndex = 7;
             doneBtn.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(454, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(37, 43);
-            button1.TabIndex = 4;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            doneBtn.Click += doneBtn_Click;
             // 
             // giveFeedback
             // 
@@ -179,7 +181,7 @@
             BackColor = Color.Gainsboro;
             ClientSize = new Size(491, 431);
             Controls.Add(doneBtn);
-            Controls.Add(textBox1);
+            Controls.Add(feedbackmsg);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(ratingCombo);
@@ -204,5 +206,6 @@
         private TextBox textBox1;
         private Button doneBtn;
         private Button button1;
+        private TextBox feedbackmsg;
     }
 }
