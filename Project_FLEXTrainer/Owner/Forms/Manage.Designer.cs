@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             btnTrainer = new Button();
@@ -43,6 +43,7 @@
             btnRemoveTrainer = new Button();
             label2 = new Label();
             label3 = new Label();
+            btnRequests = new Button();
             navPanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -65,7 +66,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.CustomizableEdges = customizableEdges3;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -81,7 +82,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             searchBar.Size = new Size(222, 28);
             searchBar.TabIndex = 11;
             // 
@@ -216,12 +217,32 @@
             label3.TabIndex = 1;
             label3.Text = "Name";
             // 
+            // btnRequests
+            // 
+            btnRequests.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRequests.BackColor = Color.FromArgb(126, 46, 53);
+            btnRequests.FlatAppearance.BorderSize = 0;
+            btnRequests.FlatStyle = FlatStyle.Flat;
+            btnRequests.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRequests.ForeColor = Color.White;
+            btnRequests.Image = (Image)resources.GetObject("btnRequests.Image");
+            btnRequests.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRequests.Location = new Point(958, 78);
+            btnRequests.Name = "btnRequests";
+            btnRequests.Padding = new Padding(10, 0, 0, 0);
+            btnRequests.Size = new Size(288, 70);
+            btnRequests.TabIndex = 5;
+            btnRequests.Text = "   REQUESTS";
+            btnRequests.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRequests.UseVisualStyleBackColor = false;
+            // 
             // Manage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1270, 675);
+            Controls.Add(btnRequests);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(navPanel);
@@ -249,5 +270,6 @@
         private Button btnRemoveTrainer;
         private Label label2;
         private Label label3;
+        private Button btnRequests;
     }
 }

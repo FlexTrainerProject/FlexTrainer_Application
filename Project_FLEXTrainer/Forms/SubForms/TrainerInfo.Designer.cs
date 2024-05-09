@@ -29,30 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerInfo));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             closeError = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             panel2 = new Panel();
+            gymName = new Label();
             btnBook = new Guna.UI2.WinForms.Guna2Button();
             label5 = new Label();
             label4 = new Label();
-            gymCombo = new Guna.UI2.WinForms.Guna2ComboBox();
-            TimingCombo = new Guna.UI2.WinForms.Guna2ComboBox();
-            panelFeedback = new Panel();
-            panel3 = new Panel();
-            label6 = new Label();
+            txtTiming = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panelFeedback.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -63,7 +56,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(768, 69);
+            panel1.Size = new Size(366, 69);
             panel1.TabIndex = 0;
             // 
             // closeError
@@ -72,7 +65,7 @@
             closeError.FlatAppearance.BorderSize = 0;
             closeError.FlatStyle = FlatStyle.Flat;
             closeError.Image = (Image)resources.GetObject("closeError.Image");
-            closeError.Location = new Point(731, 0);
+            closeError.Location = new Point(329, 0);
             closeError.Name = "closeError";
             closeError.Size = new Size(37, 43);
             closeError.TabIndex = 2;
@@ -115,22 +108,33 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(76, 126, 122);
+            panel2.Controls.Add(txtTiming);
+            panel2.Controls.Add(gymName);
             panel2.Controls.Add(btnBook);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(gymCombo);
-            panel2.Controls.Add(TimingCombo);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 225);
             panel2.Name = "panel2";
-            panel2.Size = new Size(768, 216);
+            panel2.Size = new Size(366, 216);
             panel2.TabIndex = 3;
+            // 
+            // gymName
+            // 
+            gymName.AutoSize = true;
+            gymName.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            gymName.ForeColor = Color.White;
+            gymName.Location = new Point(122, 41);
+            gymName.Name = "gymName";
+            gymName.Size = new Size(126, 32);
+            gymName.TabIndex = 4;
+            gymName.Text = "gymName";
             // 
             // btnBook
             // 
             btnBook.BackColor = Color.FromArgb(76, 126, 122);
             btnBook.BorderRadius = 10;
-            btnBook.CustomizableEdges = customizableEdges1;
+            btnBook.CustomizableEdges = customizableEdges3;
             btnBook.DisabledState.BorderColor = Color.DarkGray;
             btnBook.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -140,10 +144,11 @@
             btnBook.ForeColor = Color.White;
             btnBook.Location = new Point(88, 159);
             btnBook.Name = "btnBook";
-            btnBook.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnBook.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBook.Size = new Size(180, 45);
             btnBook.TabIndex = 4;
             btnBook.Text = "BOOK APPOINTMENT";
+            btnBook.Click += btnBook_Click;
             // 
             // label5
             // 
@@ -163,83 +168,36 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(52, 41);
             label4.Name = "label4";
-            label4.Size = new Size(64, 32);
+            label4.Size = new Size(70, 32);
             label4.TabIndex = 2;
-            label4.Text = "Gym";
+            label4.Text = "Gym:";
             // 
-            // gymCombo
+            // txtTiming
             // 
-            gymCombo.BackColor = Color.Transparent;
-            gymCombo.CustomizableEdges = customizableEdges3;
-            gymCombo.DrawMode = DrawMode.OwnerDrawFixed;
-            gymCombo.DropDownStyle = ComboBoxStyle.DropDownList;
-            gymCombo.FocusedColor = Color.FromArgb(94, 148, 255);
-            gymCombo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            gymCombo.Font = new Font("Segoe UI", 10F);
-            gymCombo.ForeColor = Color.FromArgb(68, 88, 112);
-            gymCombo.ItemHeight = 30;
-            gymCombo.Location = new Point(122, 41);
-            gymCombo.Name = "gymCombo";
-            gymCombo.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            gymCombo.Size = new Size(186, 36);
-            gymCombo.TabIndex = 1;
-            // 
-            // TimingCombo
-            // 
-            TimingCombo.BackColor = Color.Transparent;
-            TimingCombo.CustomizableEdges = customizableEdges5;
-            TimingCombo.DrawMode = DrawMode.OwnerDrawFixed;
-            TimingCombo.DropDownStyle = ComboBoxStyle.DropDownList;
-            TimingCombo.FocusedColor = Color.FromArgb(94, 148, 255);
-            TimingCombo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TimingCombo.Font = new Font("Segoe UI", 10F);
-            TimingCombo.ForeColor = Color.FromArgb(68, 88, 112);
-            TimingCombo.ItemHeight = 30;
-            TimingCombo.Location = new Point(122, 94);
-            TimingCombo.Name = "TimingCombo";
-            TimingCombo.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TimingCombo.Size = new Size(186, 36);
-            TimingCombo.TabIndex = 0;
-            TimingCombo.SelectedIndexChanged += TimingCombo_SelectedIndexChanged;
-            // 
-            // panelFeedback
-            // 
-            panelFeedback.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panelFeedback.BackColor = Color.Gainsboro;
-            panelFeedback.Controls.Add(panel3);
-            panelFeedback.Location = new Point(348, 68);
-            panelFeedback.Name = "panelFeedback";
-            panelFeedback.Size = new Size(417, 370);
-            panelFeedback.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(label6);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(417, 53);
-            panel3.TabIndex = 0;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
-            label6.ForeColor = Color.DimGray;
-            label6.Location = new Point(3, 12);
-            label6.Name = "label6";
-            label6.Size = new Size(160, 41);
-            label6.TabIndex = 2;
-            label6.Text = "Feedbacks";
+            txtTiming.CustomizableEdges = customizableEdges1;
+            txtTiming.DefaultText = "";
+            txtTiming.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTiming.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTiming.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTiming.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTiming.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTiming.Font = new Font("Segoe UI", 9F);
+            txtTiming.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTiming.Location = new Point(122, 98);
+            txtTiming.Name = "txtTiming";
+            txtTiming.PasswordChar = '\0';
+            txtTiming.PlaceholderText = "";
+            txtTiming.SelectedText = "";
+            txtTiming.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtTiming.Size = new Size(172, 36);
+            txtTiming.TabIndex = 5;
             // 
             // TrainerInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(140, 147, 148);
-            ClientSize = new Size(768, 441);
-            Controls.Add(panelFeedback);
+            ClientSize = new Size(366, 441);
             Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -250,9 +208,6 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panelFeedback.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,14 +219,11 @@
         private Label label2;
         private Label label3;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2ComboBox gymCombo;
-        private Guna.UI2.WinForms.Guna2ComboBox TimingCombo;
         private Guna.UI2.WinForms.Guna2Button btnBook;
         private Label label5;
         private Label label4;
         private Button closeError;
-        private Panel panelFeedback;
-        private Panel panel3;
-        private Label label6;
+        public Label gymName;
+        private Guna.UI2.WinForms.Guna2TextBox txtTiming;
     }
 }

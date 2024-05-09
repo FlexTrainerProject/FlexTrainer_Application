@@ -51,7 +51,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
                 return;
             }
-            OpenChildForm(new Forms.SubForms.ApplyForTrainer(), sender);
+            OpenChildForm(new Forms.SubForms.ApplyForTrainer(currUser), sender);
         }
 
         private void btnApplyOwner_Click(object sender, EventArgs e)
