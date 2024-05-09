@@ -71,7 +71,7 @@ namespace Project_FLEXTrainer
         private void btnMembership_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Membership(), sender);
+                OpenChildForm(new Forms.Membership(currentuser), sender);
         }
 
         private void btnAppointments_Click(object sender, EventArgs e)

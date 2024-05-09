@@ -36,9 +36,11 @@
             label1 = new Label();
             applyMembership = new Panel();
             panel2 = new Panel();
+            lblPremium = new Label();
             button2 = new Button();
             label6 = new Label();
             panel1 = new Panel();
+            lblBasic = new Label();
             button1 = new Button();
             label5 = new Label();
             label4 = new Label();
@@ -108,12 +110,24 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(76, 126, 122);
+            panel2.Controls.Add(lblPremium);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label6);
             panel2.Location = new Point(382, 218);
             panel2.Name = "panel2";
             panel2.Size = new Size(294, 304);
             panel2.TabIndex = 6;
+            // 
+            // lblPremium
+            // 
+            lblPremium.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPremium.ForeColor = Color.White;
+            lblPremium.Location = new Point(3, 131);
+            lblPremium.Name = "lblPremium";
+            lblPremium.Padding = new Padding(5, 7, 0, 0);
+            lblPremium.Size = new Size(288, 55);
+            lblPremium.TabIndex = 7;
+            lblPremium.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -143,12 +157,24 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(76, 126, 122);
+            panel1.Controls.Add(lblBasic);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
             panel1.Location = new Point(72, 218);
             panel1.Name = "panel1";
             panel1.Size = new Size(294, 304);
             panel1.TabIndex = 5;
+            // 
+            // lblBasic
+            // 
+            lblBasic.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBasic.ForeColor = Color.White;
+            lblBasic.Location = new Point(3, 121);
+            lblBasic.Name = "lblBasic";
+            lblBasic.Padding = new Padding(5, 7, 0, 0);
+            lblBasic.Size = new Size(282, 55);
+            lblBasic.TabIndex = 6;
+            lblBasic.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -285,5 +311,7 @@
         private Panel panelActiveMS;
         private Label lblActiveMS;
         private Button closeError;
+        private Label lblBasic;
+        private Label lblPremium;
     }
 }

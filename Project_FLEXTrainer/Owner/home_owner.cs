@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Project_FLEXTrainer.Owner
         private Button activeButton;
         private Form activeForm;
         User currentuser;
+        string connectionString;
 
         public home_owner(User user)
         {
@@ -23,6 +25,38 @@ namespace Project_FLEXTrainer.Owner
             currentuser = user;
             label3.Text = user.Username;
             label2.Text = user.Type;
+            connectionString = Essentials.ConnectionString.GetConnectionString();
+
+            string query = "SELECT 1\r\nFROM gymMembership\r\nINNER JOIN gym on gymID = gym.id\r\nINNER JOIN owner on owner.id = gym.owner_id\r\nINNER JOIN userr on owner.id = userr.id\r\nWHERE username = @userName";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            SqlCommand command= new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@userName", currentuser.Username);
+
+            object result = command.ExecuteScalar();
+
+
+
+            if(result==null){
+                Form details = new Forms.SubForm.membershipDetails(currentuser);
+                
+                details.FormBorderStyle = FormBorderStyle.None;
+                details.StartPosition = FormStartPosition.CenterScreen;
+                details.Deactivate += (sender, e) =>
+                {
+                    details.TopMost = true;
+                };
+
+                // Show the form
+                details.Show();
+
+                // Bring the form to the front
+                details.BringToFront();
+                details.Show();
+
+                return;
+            }
         }
 
 
