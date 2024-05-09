@@ -86,6 +86,7 @@ namespace Project_FLEXTrainer.Forms
             return newControl;
         }
 
+
         private void LoadData()
         {
 

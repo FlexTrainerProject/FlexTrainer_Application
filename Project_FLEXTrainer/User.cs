@@ -38,7 +38,7 @@ namespace Project_FLEXTrainer
             string connect = ConnectionString.GetConnectionString();
             SqlConnection connection = new SqlConnection (connect);
             connection.Open();
-            string Query = "SELECT 1 FROM userr WHERE userr.username = '" + Username + "' ";
+            string Query = "SELECT 1 FROM userr WHERE userr.username = '" + Username + "' AND userr.firstname IS NOT NULL AND userr.lastname IS NOT NULL AND userr.gender IS NOT NULL";
             SqlCommand command = new SqlCommand(Query, connection);
             Object result = command.ExecuteScalar();
             int flag = Convert.ToInt32(result);
