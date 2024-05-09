@@ -15,6 +15,7 @@ namespace Project_FLEXTrainer
 
         public string Type { get; set; }
         public string Password { get; set; }
+        public int userId;
 
         public string firstName;
         public string gender;
@@ -23,11 +24,12 @@ namespace Project_FLEXTrainer
        // public bool appliedOwner;
 
         // Constructor
-        public User(string username, string type, string password)
+        public User(string username, string type, string password, int ID)
         {
             Username = username;
             Type = type;
             Password = password;
+            userId = ID;
             //appliedOwner = false;
 
 

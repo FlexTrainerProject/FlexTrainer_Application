@@ -49,9 +49,6 @@ namespace Project_FLEXTrainer.Forms
                     }
                 }
             }
-
-
-
         }
 
         private void closeError_Click(object sender, EventArgs e)
@@ -120,6 +117,30 @@ namespace Project_FLEXTrainer.Forms
                         {
                             MessageBox.Show("Error: " + ex.Message);
                         }
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(memberId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
+            string selectedGymName = gunaCombo.SelectedItem.ToString();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@username", currUser.Username);
+                        command.Parameters.AddWithValue("@gymName", selectedGymName);
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
                     }
                 }
             }

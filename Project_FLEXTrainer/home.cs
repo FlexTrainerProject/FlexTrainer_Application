@@ -59,7 +59,7 @@ namespace Project_FLEXTrainer
         private void btnBookSession_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.bookSession(), sender);
+                OpenChildForm(new Forms.bookSession(currentuser), sender);
         }
 
         private void btnMyPlans_Click(object sender, EventArgs e)

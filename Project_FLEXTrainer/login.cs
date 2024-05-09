@@ -133,7 +133,9 @@ namespace Project_FLEXTrainer
                         SqlCommand account_type = new SqlCommand("Select account_type from dbo.account where Username = '" + textBox1.Text + "'", Connection);
                         string acc_t = Convert.ToString(account_type.ExecuteScalar());
 
-                        User currentUser = new User(textBox1.Text, acc_t, passw);
+                        SqlCommand getUserID = new SqlCommand("Select id FROM userr where Username = '" + textBox1.Text + "'", Connection);
+                        int userID = Convert.ToInt32(getUserID.ExecuteScalar());
+                        User currentUser = new User(textBox1.Text, acc_t, passw, userID);
 
                         if (currentUser.Type == "member")
                         {

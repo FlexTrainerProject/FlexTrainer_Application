@@ -17,13 +17,15 @@ namespace Project_FLEXTrainer.Forms
 {
     public partial class bookSession : Form
     {
+        User currUser;
     string connectionString;
         public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating, string id);
-        public bookSession()
+        public bookSession(User user)
         {
             InitializeComponent();
             connectionString = Essentials.ConnectionString.GetConnectionString();
             
+            currUser = user;
             LoadData();
             //redPanel.Visible = false;
             panelTemplate.Visible = false;
@@ -86,28 +88,49 @@ namespace Project_FLEXTrainer.Forms
 
         private void LoadData()
         {
+
+            SqlConnection connection1 = new SqlConnection(connectionString);
+            connection1.Open();
+            string gymMembership;
+
+            string query = "SELECT name\r\nFrom gym\r\nINNER JOIN MemberMembership on MemberMembership.gymId=gym.id\r\nINNER JOIN userr on userr.id = MemberMembership.memberId\r\nWHERE userr.username = @userName";
+            SqlCommand command = new SqlCommand(query, connection1);
+            command.Parameters.AddWithValue("@userName", currUser.Username);
+
+            object result = command.ExecuteScalar();
+            gymMembership = result != null ? result.ToString() : string.Empty;
+
+            if (gymMembership=="" || gymMembership == null)
+            {
+                MessageBox.Show("No gym Membership Yet, Apply first to book appointment");
+                return;
+            }
+
+
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating, trainer.id from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
-
+            string queryMain = "EXEC GetTrainersByGymName @gymName;";
+            int count = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command1 = new SqlCommand(queryMain, connection);
+                command1.Parameters.AddWithValue("@gymName", gymMembership);
 
                 try
                 {
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
+                    SqlDataReader reader1 = command1.ExecuteReader();
 
                     DisplayEntryDelegate displayDelegate = DisplayEntry;
 
-                    while (reader.Read())
+                    while (reader1.Read())
                     {
-                        string name = reader["name"].ToString();
-                        string gender = reader["gender"].ToString();
-                        string experience = reader["experience"].ToString();
-                        string rating = reader["rating"].ToString();
-                        string id = reader["id"].ToString();
+                        count++;
+                        string name = reader1["name"].ToString();
+                        string gender = reader1["gender"].ToString();
+                        string experience = reader1["experience"].ToString();
+                        string rating = reader1["rating"].ToString();
+                        string id = reader1["id"].ToString();
                         //string username = "nigga";
 
                         //label2.Text = username;
@@ -115,7 +138,11 @@ namespace Project_FLEXTrainer.Forms
                         displayDelegate.Invoke(name, gender, experience, rating, id);
                     }
 
-                    reader.Close();
+                    if (count == 0)
+                    {
+                        MessageBox.Show("No trainers working at the Gym you've applied for");
+                    }
+                    reader1.Close();
                 }
                 catch (Exception ex)
                 {
@@ -153,7 +180,7 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id, name, gender, experience, rating);
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id, name, gender, experience, rating, currUser);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 
