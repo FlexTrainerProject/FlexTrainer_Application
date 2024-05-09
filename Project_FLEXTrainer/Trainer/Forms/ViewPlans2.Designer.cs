@@ -1,6 +1,6 @@
-﻿namespace Project_FLEXTrainer.Admin.Forms
+﻿namespace Project_FLEXTrainer.Trainer.Forms
 {
-    partial class Requests
+    partial class ViewPlans2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPlans2));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Requests));
             navPanel = new Panel();
-            btnPending = new Button();
-            pgTitle = new Label();
+            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
+            btnDP = new Button();
+            btnWP = new Button();
             panelContainer = new Panel();
             panelTemplate = new Panel();
             hiddenID = new Label();
-            btnReject = new Guna.UI2.WinForms.Guna2GradientButton();
-            btnAccept = new Guna.UI2.WinForms.Guna2GradientButton();
             panel1 = new Panel();
+            button2 = new Button();
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
@@ -55,40 +53,70 @@
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
-            navPanel.Controls.Add(btnPending);
-            navPanel.Controls.Add(pgTitle);
+            navPanel.Controls.Add(searchBar);
+            navPanel.Controls.Add(btnDP);
+            navPanel.Controls.Add(btnWP);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1159, 52);
-            navPanel.TabIndex = 3;
+            navPanel.Size = new Size(1156, 52);
+            navPanel.TabIndex = 5;
             // 
-            // btnPending
+            // searchBar
             // 
-            btnPending.BackColor = Color.FromArgb(76, 126, 122);
-            btnPending.Dock = DockStyle.Right;
-            btnPending.FlatAppearance.BorderSize = 0;
-            btnPending.FlatStyle = FlatStyle.Flat;
-            btnPending.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPending.ForeColor = Color.White;
-            btnPending.Location = new Point(875, 0);
-            btnPending.Name = "btnPending";
-            btnPending.Size = new Size(284, 52);
-            btnPending.TabIndex = 13;
-            btnPending.Text = "PENDING";
-            btnPending.UseVisualStyleBackColor = false;
-            btnPending.Click += btnPending_Click;
+            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchBar.BorderColor = Color.White;
+            searchBar.BorderRadius = 12;
+            searchBar.BorderThickness = 2;
+            searchBar.CustomizableEdges = customizableEdges3;
+            searchBar.DefaultText = "";
+            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.Font = new Font("Segoe UI", 9F);
+            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
+            searchBar.Location = new Point(1955, 12);
+            searchBar.Name = "searchBar";
+            searchBar.Padding = new Padding(0, 20, 0, 0);
+            searchBar.PasswordChar = '\0';
+            searchBar.PlaceholderText = "Search Member";
+            searchBar.SelectedText = "";
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            searchBar.Size = new Size(259, 28);
+            searchBar.TabIndex = 11;
             // 
-            // pgTitle
+            // btnDP
             // 
-            pgTitle.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            pgTitle.ForeColor = Color.White;
-            pgTitle.Location = new Point(0, -11);
-            pgTitle.Name = "pgTitle";
-            pgTitle.Padding = new Padding(10, 20, 0, 0);
-            pgTitle.Size = new Size(318, 63);
-            pgTitle.TabIndex = 12;
-            pgTitle.Text = "Registration Requests";
+            btnDP.Dock = DockStyle.Left;
+            btnDP.FlatAppearance.BorderSize = 0;
+            btnDP.FlatStyle = FlatStyle.Flat;
+            btnDP.Font = new Font("Segoe UI", 14.25F);
+            btnDP.ForeColor = Color.White;
+            btnDP.Location = new Point(284, 0);
+            btnDP.Name = "btnDP";
+            btnDP.Size = new Size(316, 52);
+            btnDP.TabIndex = 1;
+            btnDP.Text = "Diet Plans";
+            btnDP.UseVisualStyleBackColor = true;
+            // 
+            // btnWP
+            // 
+            btnWP.BackColor = Color.FromArgb(76, 126, 122);
+            btnWP.Dock = DockStyle.Left;
+            btnWP.FlatAppearance.BorderSize = 0;
+            btnWP.FlatStyle = FlatStyle.Flat;
+            btnWP.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnWP.ForeColor = Color.White;
+            btnWP.Location = new Point(0, 0);
+            btnWP.Name = "btnWP";
+            btnWP.Size = new Size(284, 52);
+            btnWP.TabIndex = 0;
+            btnWP.Text = "Workout Plans";
+            btnWP.UseVisualStyleBackColor = false;
+            btnWP.Click += btnWP_Click;
             // 
             // panelContainer
             // 
@@ -98,77 +126,32 @@
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1159, 574);
-            panelContainer.TabIndex = 5;
+            panelContainer.Size = new Size(1156, 514);
+            panelContainer.TabIndex = 8;
             // 
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
             panelTemplate.Controls.Add(hiddenID);
-            panelTemplate.Controls.Add(btnReject);
-            panelTemplate.Controls.Add(btnAccept);
             panelTemplate.Controls.Add(panel1);
+            panelTemplate.Controls.Add(button2);
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(149, 31);
+            panelTemplate.Location = new Point(188, 32);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(838, 78);
-            panelTemplate.TabIndex = 3;
+            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.TabIndex = 4;
             // 
             // hiddenID
             // 
             hiddenID.AutoSize = true;
-            hiddenID.Location = new Point(327, 54);
+            hiddenID.Location = new Point(384, 45);
             hiddenID.Name = "hiddenID";
             hiddenID.Size = new Size(55, 15);
-            hiddenID.TabIndex = 9;
+            hiddenID.TabIndex = 7;
             hiddenID.Text = "hiddenID";
-            hiddenID.Visible = false;
-            // 
-            // btnReject
-            // 
-            btnReject.CustomizableEdges = customizableEdges1;
-            btnReject.DisabledState.BorderColor = Color.DarkGray;
-            btnReject.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnReject.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnReject.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnReject.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnReject.Dock = DockStyle.Right;
-            btnReject.FillColor = Color.FromArgb(255, 128, 128);
-            btnReject.FillColor2 = Color.Salmon;
-            btnReject.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReject.ForeColor = Color.White;
-            btnReject.ImageAlign = HorizontalAlignment.Left;
-            btnReject.Location = new Point(632, 0);
-            btnReject.Name = "btnReject";
-            btnReject.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnReject.Size = new Size(103, 78);
-            btnReject.TabIndex = 8;
-            btnReject.Text = "Reject";
-            // 
-            // btnAccept
-            // 
-            btnAccept.CustomizableEdges = customizableEdges3;
-            btnAccept.DisabledState.BorderColor = Color.DarkGray;
-            btnAccept.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAccept.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAccept.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnAccept.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAccept.Dock = DockStyle.Right;
-            btnAccept.FillColor = Color.FromArgb(42, 101, 97);
-            btnAccept.FillColor2 = Color.Teal;
-            btnAccept.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAccept.ForeColor = Color.White;
-            btnAccept.ImageAlign = HorizontalAlignment.Left;
-            btnAccept.Location = new Point(735, 0);
-            btnAccept.Name = "btnAccept";
-            btnAccept.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAccept.Size = new Size(103, 78);
-            btnAccept.TabIndex = 7;
-            btnAccept.Text = "Accept";
-            btnAccept.Click += btnAccept_Click;
             // 
             // panel1
             // 
@@ -178,12 +161,25 @@
             panel1.Size = new Size(84, 81);
             panel1.TabIndex = 6;
             // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(757, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(64, 40);
+            button2.TabIndex = 5;
+            button2.UseVisualStyleBackColor = true;
+            // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(124, 11);
+            nameLabel.Location = new Point(164, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -194,7 +190,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(365, 11);
+            experienceLabel.Location = new Point(482, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -205,7 +201,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(124, 39);
+            genderLabel.Location = new Point(164, 39);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
@@ -216,18 +212,17 @@
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "openview.png");
+            imageList1.Images.SetKeyName(0, "close.png");
             // 
-            // Requests
+            // ViewPlans2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
-            ClientSize = new Size(1159, 626);
+            ClientSize = new Size(1156, 566);
             Controls.Add(panelContainer);
             Controls.Add(navPanel);
-            Name = "Requests";
-            Text = "Requests";
+            Name = "ViewPlans2";
+            Text = "ViewPlans2";
             navPanel.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
@@ -238,17 +233,17 @@
         #endregion
 
         private Panel navPanel;
-        private Label pgTitle;
-        private Button btnPending;
+        private Guna.UI2.WinForms.Guna2TextBox searchBar;
+        private Button btnDP;
+        private Button btnWP;
         private Panel panelContainer;
         private Panel panelTemplate;
+        private Label hiddenID;
         private Panel panel1;
+        private Button button2;
         private Label nameLabel;
         private Label experienceLabel;
         private Label genderLabel;
         private ImageList imageList1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnReject;
-        private Guna.UI2.WinForms.Guna2GradientButton btnAccept;
-        private Label hiddenID;
     }
 }

@@ -127,7 +127,7 @@ namespace Project_FLEXTrainer.Owner
         private void btnMemberReports_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.MemberReports(), sender);
+                OpenChildForm(new Forms.MemberReports(currentuser), sender);
         }
 
         private void btnTrainerReports_Click(object sender, EventArgs e)

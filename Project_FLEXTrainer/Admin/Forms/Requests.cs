@@ -255,7 +255,8 @@ namespace Project_FLEXTrainer.Admin.Forms
 
                             MessageBox.Show("Accepted");
 
-
+                            this.Close();
+                            OpenChildForm(new Forms.Requests(dpanel, user), sender);
 
 
                         };
@@ -268,7 +269,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                             //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
                             SqlConnection connection = new SqlConnection(connect);
                             connection.Open();
-                            SqlCommand comm = new SqlCommand("UPDATE REQUEST SET exist = 1 WHERE ID = '" + id + "';", connection);
+                            SqlCommand comm = new SqlCommand("delete request where memberID=" + userID + "", connection);
                             comm.ExecuteNonQuery();
                             this.Close();
                             connection.Close();
