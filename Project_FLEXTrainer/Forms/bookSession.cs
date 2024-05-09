@@ -1,4 +1,5 @@
 ﻿using Guna.Charts.WinForms;
+using Project_FLEXTrainer.Essentials;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,13 @@ namespace Project_FLEXTrainer.Forms
 {
     public partial class bookSession : Form
     {
+    string connectionString;
         public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating, string id);
         public bookSession()
         {
             InitializeComponent();
-
+            connectionString = Essentials.ConnectionString.GetConnectionString();
+            
             LoadData();
             //redPanel.Visible = false;
             panelTemplate.Visible = false;
@@ -34,24 +37,24 @@ namespace Project_FLEXTrainer.Forms
             newPanel.Width = templatePanel.Width;
             newPanel.Height = templatePanel.Height;
             newPanel.Padding = templatePanel.Padding;
-            newPanel.Dock = DockStyle.None; 
+            newPanel.Dock = DockStyle.None;
 
             foreach (Control control in templatePanel.Controls)
             {
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if(newControl is Button)
+                if (newControl is Button)
                 {
                     Button newButton = (Button)newControl;
                     newButton.Image = imageList1.Images[0];
-                    newButton.FlatStyle= FlatStyle.Flat;
+                    newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
                 }
 
                 if (newControl is Label)
                 {
-                    if(newControl.Name== "ID_hidden")
+                    if (newControl.Name == "ID_hidden")
                     {
                         newControl.Visible = false;
                     }
@@ -77,14 +80,14 @@ namespace Project_FLEXTrainer.Forms
             newControl.Dock = templateControl.Dock;
             newControl.Padding = templateControl.Padding;
             newControl.Location = templateControl.Location;
-            
+
             return newControl;
         }
 
         private void LoadData()
         {
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             string query = "select concat(firstname,' ',lastname) as name, gender, experience, rating, trainer.id from userr\r\njoin account on account.username=userr.username\r\njoin trainer on trainer.id=userr.id\r\nwhere account.account_type='trainer'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -104,7 +107,7 @@ namespace Project_FLEXTrainer.Forms
                         string gender = reader["gender"].ToString();
                         string experience = reader["experience"].ToString();
                         string rating = reader["rating"].ToString();
-                        string id = reader["id"].ToString();  
+                        string id = reader["id"].ToString();
                         //string username = "nigga";
 
                         //label2.Text = username;
@@ -150,7 +153,7 @@ namespace Project_FLEXTrainer.Forms
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
                     {
-                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id,name,gender,experience,rating);
+                        Forms.SubForms.TrainerInfo SubForm = new Forms.SubForms.TrainerInfo(id, name, gender, experience, rating);
                         SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
                         SubForm.StartPosition = FormStartPosition.CenterScreen;
 

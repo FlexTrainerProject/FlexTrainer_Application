@@ -11,16 +11,19 @@ using System.Windows.Forms;
 
 namespace Project_FLEXTrainer.Admin.Forms
 {
+    public delegate void DisplayEntryDelegate_r2(int id, string name, string gname, string location, string userID);
     public partial class Request2 : Form
     {
+        private User user;
         private Button activeButton;
         private Panel dpanel;
-        public Request2(Panel panel)
+        public Request2(Panel panel,User user)
         {
             InitializeComponent();
             panelTemplate.Visible = false;
             dpanel = panel;
             LoadData();
+            this.user = user;
         }
 
         private void activateBtn(object sender)
@@ -63,7 +66,7 @@ namespace Project_FLEXTrainer.Admin.Forms
         {
             activateBtn(sender);
             this.Close();
-            OpenChildForm(new Forms.Requests(dpanel), sender);
+            OpenChildForm(new Forms.Requests(dpanel,user), sender);
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -136,7 +139,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string connectionString = Essentials.ConnectionString.GetConnectionString();
             //string connectionString = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
             //string connectionString = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
-            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id where REQUEST.exist = 1";
+            string query = "Select REQUEST.ID, CONCAT(firstname,' ', lastname) as name,GYMname,location from REQUEST JOIN userr on REQUEST.memberID = userr.id";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -147,7 +150,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    DisplayEntryDelegate_r displayDelegate = DisplayEntry;
+                    DisplayEntryDelegate_r2 displayDelegate = DisplayEntry;
 
                     while (reader.Read())
                     {
@@ -155,8 +158,9 @@ namespace Project_FLEXTrainer.Admin.Forms
                         string name = reader["name"].ToString();
                         string gname = reader["GYMname"].ToString();
                         string location = reader["location"].ToString();
+                        string memid = reader["memberID"].ToString();
 
-                        displayDelegate.Invoke(id, name, gname, location);
+                        displayDelegate.Invoke(id, name, gname, location,memid);
                     }
 
                     reader.Close();
@@ -168,7 +172,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             }
         }
 
-        public void DisplayEntry(int id, string name, string gname, string location)
+        public void DisplayEntry(int id, string name, string gname, string location, string userID)
         {
             Panel templatePanel = panelTemplate; // Assuming panelTemplate is your template panel
 
@@ -202,7 +206,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                         connection.Close();
 
                         this.Close();
-                        OpenChildForm(new Forms.Request2(dpanel), sender);
+                        OpenChildForm(new Forms.Request2(dpanel,user), sender);
                     };
                 }
 

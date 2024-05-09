@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static Project_FLEXTrainer.Forms.bookSession;
 using Project_FLEXTrainer.Essentials.MessageBoxes;
 using Microsoft.VisualBasic.ApplicationServices;
+using Guna.Charts.WinForms;
 
 namespace Project_FLEXTrainer.Forms
 {
@@ -20,6 +21,7 @@ namespace Project_FLEXTrainer.Forms
     {
         User user;
         string stringConnection;
+
         public workoutPlans(User User)
         {
             InitializeComponent();
@@ -178,12 +180,12 @@ namespace Project_FLEXTrainer.Forms
 
         private void DisplayWorkoutPlan()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+           // string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select* from workout_plan";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -213,6 +215,8 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
+        
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -221,6 +225,8 @@ namespace Project_FLEXTrainer.Forms
         private void btnrefresh_Click(object sender, EventArgs e)
         {
            //work for YOU HAMDAN
+
+            //;-;
             
         }
     }

@@ -65,7 +65,7 @@ namespace Project_FLEXTrainer.Admin.Forms
         {
             activateBtn(sender);
             this.Close();
-            OpenChildForm(new Forms.Request2(dpanel), sender);
+            OpenChildForm(new Forms.Request2(dpanel,user), sender);
         }
 
         private void btnPending_Click(object sender, EventArgs e)

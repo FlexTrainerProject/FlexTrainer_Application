@@ -22,7 +22,6 @@ namespace Project_FLEXTrainer.Trainer
             InitializeComponent();
             currentuser = user;
 
-            currentuser = user;
             label3.Text = user.Username;
             label2.Text = user.Type;
         }
@@ -135,7 +134,7 @@ namespace Project_FLEXTrainer.Trainer
 
         private void btnViewPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ViewPlans(), sender);
+            OpenChildForm(new Forms.ViewPlans(currentuser), sender);
         }
 
         private void btnFeedbacks_Click(object sender, EventArgs e)

@@ -16,9 +16,11 @@ namespace Project_FLEXTrainer
     public partial class login : Form
     {
         string user;
+        string connectionString;
         public login()
         {
             InitializeComponent();
+            connectionString = Essentials.ConnectionString.GetConnectionString();
 
         }
 
@@ -98,7 +100,7 @@ namespace Project_FLEXTrainer
 
         private void button2_click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False");
+            SqlConnection connection = new SqlConnection(connectionString);
             //SqlConnection connection = new SqlConnection("Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False");
             connection.Open();
             SqlCommand checkifuser = new SqlCommand("SELECT 1 FROM dbo.account WHERE Username = '" + textBox1.Text + "'", connection);

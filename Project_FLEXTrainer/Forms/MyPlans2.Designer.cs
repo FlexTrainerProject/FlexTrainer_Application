@@ -1,6 +1,6 @@
 ﻿namespace Project_FLEXTrainer.Forms
 {
-    partial class MyPlans
+    partial class MyPlans2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPlans));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPlans2));
             navPanel = new Panel();
             createdbyme = new Button();
             allplans = new Button();
@@ -55,8 +55,8 @@
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1093, 52);
-            navPanel.TabIndex = 0;
+            navPanel.Size = new Size(1115, 52);
+            navPanel.TabIndex = 1;
             // 
             // createdbyme
             // 
@@ -71,7 +71,6 @@
             createdbyme.TabIndex = 1;
             createdbyme.Text = "Diet Plan";
             createdbyme.UseVisualStyleBackColor = true;
-            createdbyme.Click += createdbyme_Click;
             // 
             // allplans
             // 
@@ -87,7 +86,7 @@
             allplans.TabIndex = 0;
             allplans.Text = "Workout Plan";
             allplans.UseVisualStyleBackColor = false;
-            allplans.Click += allplans_Click;
+            allplans.Click += allplans_Click_1;
             // 
             // panelContainer
             // 
@@ -96,8 +95,8 @@
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1093, 571);
-            panelContainer.TabIndex = 6;
+            panelContainer.Size = new Size(1115, 493);
+            panelContainer.TabIndex = 7;
             // 
             // panelTemplate
             // 
@@ -108,7 +107,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(131, 52);
+            panelTemplate.Location = new Point(128, 12);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -117,7 +116,7 @@
             // hiddenID
             // 
             hiddenID.AutoSize = true;
-            hiddenID.Location = new Point(364, 45);
+            hiddenID.Location = new Point(384, 45);
             hiddenID.Name = "hiddenID";
             hiddenID.Size = new Size(55, 15);
             hiddenID.TabIndex = 7;
@@ -149,7 +148,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(144, 11);
+            nameLabel.Location = new Point(164, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -160,7 +159,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(462, 11);
+            experienceLabel.Location = new Point(482, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -171,7 +170,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(144, 39);
+            genderLabel.Location = new Point(164, 39);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
@@ -182,18 +181,17 @@
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "close.png");
+            imageList1.Images.SetKeyName(0, "add4.png");
             // 
-            // MyPlans
+            // MyPlans2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(1093, 623);
+            ClientSize = new Size(1115, 545);
             Controls.Add(panelContainer);
             Controls.Add(navPanel);
-            Name = "MyPlans";
-            Text = "MyPlans";
+            Name = "MyPlans2";
+            Text = "MyPlans2";
             navPanel.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
@@ -203,8 +201,8 @@
         #endregion
 
         private Panel navPanel;
-        private Button allplans;
         private Button createdbyme;
+        private Button allplans;
         private Panel panelContainer;
         private Panel panelTemplate;
         private Label hiddenID;
