@@ -84,12 +84,13 @@ namespace Project_FLEXTrainer.Trainer.Forms
 
         private void LoadData()
         {
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+           
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
             String query = "Select goal,experience_lvl,schedule,plan_id from workout_plan Join Plann on workout_plan.plan_id = Plann.id Join userr on userr.id = Plann.creator_id where userr.username = @currentuser";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@currentuser", currentuser.Username);

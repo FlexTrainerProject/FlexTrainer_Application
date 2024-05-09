@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gymPerformances));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             pgTitle = new Label();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             navPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,7 +37,6 @@
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
             navPanel.Controls.Add(pgTitle);
-            navPanel.Controls.Add(searchBar);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
@@ -60,32 +55,6 @@
             pgTitle.Text = "Gyms Performance Metrics";
             pgTitle.Click += pgTitle_Click;
             // 
-            // searchBar
-            // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(1072, 12);
-            searchBar.Name = "searchBar";
-            searchBar.Padding = new Padding(0, 20, 0, 0);
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search Gym";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(228, 28);
-            searchBar.TabIndex = 12;
-            // 
             // gymPerformances
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -102,7 +71,6 @@
         #endregion
 
         private Panel navPanel;
-        private Guna.UI2.WinForms.Guna2TextBox searchBar;
         private Label pgTitle;
     }
 }

@@ -135,10 +135,10 @@ namespace Project_FLEXTrainer.Forms
         {
 
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
-            string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            //string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             String query = "Select goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id from UserPlans JOIN diet_plan on PLanID = diet_plan.plan_id";
 
-            using (SqlConnection connection = new SqlConnection(connect))
+            using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
 
