@@ -94,8 +94,8 @@ namespace Project_FLEXTrainer.Trainer
                     SubForm.StartPosition = FormStartPosition.Manual;
 
                     // Calculate the position of the sub form relative to the button
-                    Point p = btnpfp.PointToScreen(Point.Empty);
-                    SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
+                    Point p = guna2Button1.PointToScreen(Point.Empty);
+                    SubForm.Location = new Point(p.X, p.Y + guna2Button1.Height);
                     //SubForm.Deactivate += SubForm_Deactivate;
                     /// SubForm.MouseDown.
                     SubForm.Show();
@@ -117,7 +117,7 @@ namespace Project_FLEXTrainer.Trainer
         private void bntAppointments_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.manageAppointments(), sender);
+                OpenChildForm(new Forms.manageAppointments(currentuser, this.desktopPanel), sender);
         }
 
         private void btnCreateWP_Click(object sender, EventArgs e)

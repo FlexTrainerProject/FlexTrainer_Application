@@ -31,9 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPlans2));
             navPanel = new Panel();
-            createdbyme = new Button();
-            allplans = new Button();
-            panelContainer = new Panel();
             panelTemplate = new Panel();
             hiddenID = new Label();
             panel1 = new Panel();
@@ -41,6 +38,9 @@
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
+            createdbyme = new Button();
+            allplans = new Button();
+            panelContainer = new Panel();
             imageList1 = new ImageList(components);
             navPanel.SuspendLayout();
             panelTemplate.SuspendLayout();
@@ -58,46 +58,6 @@
             navPanel.Size = new Size(1115, 52);
             navPanel.TabIndex = 1;
             // 
-            // createdbyme
-            // 
-            createdbyme.Dock = DockStyle.Left;
-            createdbyme.FlatAppearance.BorderSize = 0;
-            createdbyme.FlatStyle = FlatStyle.Flat;
-            createdbyme.Font = new Font("Segoe UI", 14.25F);
-            createdbyme.ForeColor = Color.White;
-            createdbyme.Location = new Point(217, 0);
-            createdbyme.Name = "createdbyme";
-            createdbyme.Size = new Size(217, 52);
-            createdbyme.TabIndex = 1;
-            createdbyme.Text = "Diet Plan";
-            createdbyme.UseVisualStyleBackColor = true;
-            // 
-            // allplans
-            // 
-            allplans.BackColor = Color.FromArgb(76, 126, 122);
-            allplans.Dock = DockStyle.Left;
-            allplans.FlatAppearance.BorderSize = 0;
-            allplans.FlatStyle = FlatStyle.Flat;
-            allplans.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            allplans.ForeColor = Color.White;
-            allplans.Location = new Point(0, 0);
-            allplans.Name = "allplans";
-            allplans.Size = new Size(217, 52);
-            allplans.TabIndex = 0;
-            allplans.Text = "Workout Plan";
-            allplans.UseVisualStyleBackColor = false;
-            allplans.Click += allplans_Click_1;
-            // 
-            // panelContainer
-            // 
-            panelContainer.AutoScroll = true;
-            panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Dock = DockStyle.Fill;
-            panelContainer.Location = new Point(0, 52);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1115, 493);
-            panelContainer.TabIndex = 7;
-            // 
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
@@ -107,7 +67,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(128, 12);
+            panelTemplate.Location = new Point(133, 12);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -175,6 +135,46 @@
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
+            // 
+            // createdbyme
+            // 
+            createdbyme.Dock = DockStyle.Left;
+            createdbyme.FlatAppearance.BorderSize = 0;
+            createdbyme.FlatStyle = FlatStyle.Flat;
+            createdbyme.Font = new Font("Segoe UI", 14.25F);
+            createdbyme.ForeColor = Color.White;
+            createdbyme.Location = new Point(217, 0);
+            createdbyme.Name = "createdbyme";
+            createdbyme.Size = new Size(217, 52);
+            createdbyme.TabIndex = 1;
+            createdbyme.Text = "Diet Plan";
+            createdbyme.UseVisualStyleBackColor = true;
+            // 
+            // allplans
+            // 
+            allplans.BackColor = Color.FromArgb(76, 126, 122);
+            allplans.Dock = DockStyle.Left;
+            allplans.FlatAppearance.BorderSize = 0;
+            allplans.FlatStyle = FlatStyle.Flat;
+            allplans.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            allplans.ForeColor = Color.White;
+            allplans.Location = new Point(0, 0);
+            allplans.Name = "allplans";
+            allplans.Size = new Size(217, 52);
+            allplans.TabIndex = 0;
+            allplans.Text = "Workout Plan";
+            allplans.UseVisualStyleBackColor = false;
+            allplans.Click += allplans_Click_1;
+            // 
+            // panelContainer
+            // 
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 52);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1115, 493);
+            panelContainer.TabIndex = 7;
             // 
             // imageList1
             // 
