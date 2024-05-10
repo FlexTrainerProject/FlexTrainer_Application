@@ -37,15 +37,6 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void guna2Button3_Click(object sender, EventArgs e) //btnCompleteProfile
         {
-            if (currUser.isProfileComplete == false)
-            {
-                Form messageBox = new customMessage_CompleteProfile();
-                messageBox.FormBorderStyle = FormBorderStyle.None;
-                messageBox.StartPosition = FormStartPosition.CenterScreen;
-                messageBox.Show();
-
-                return;
-            }
             OpenChildForm(new Forms.SubForms.completeProfile(currUser), sender);
         }
 

@@ -134,12 +134,14 @@ namespace Project_FLEXTrainer.Trainer
 
         private void btnViewPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ViewPlans(currentuser, this.desktopPanel), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.ViewPlans(currentuser, this.desktopPanel), sender);
         }
 
         private void btnFeedbacks_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Feedbacks(), sender);
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.Feedbacks(), sender);
         }
 
         private void btnhome_Click(object sender, EventArgs e)
@@ -154,6 +156,13 @@ namespace Project_FLEXTrainer.Trainer
             this.desktopPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void btnViewMem_Click(object sender, EventArgs e)
+        {
+            if ((Button)sender != (Button)activeButton)
+                OpenChildForm(new Forms.viewMembers(currentuser), sender);
+
         }
     }
 }
