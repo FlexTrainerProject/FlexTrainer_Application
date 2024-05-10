@@ -123,7 +123,7 @@ namespace Project_FLEXTrainer.Trainer
         private void btnCreateWP_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.createWorkoutPlan(), sender);
+                OpenChildForm(new Forms.createWorkoutPlan(currentuser), sender);
         }
 
         private void btnCreateDP_Click(object sender, EventArgs e)
