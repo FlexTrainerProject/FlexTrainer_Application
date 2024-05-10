@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_owner));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
             label2 = new Label();
@@ -96,7 +96,7 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges9;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -109,7 +109,7 @@
             guna2Button1.Location = new Point(3, -5);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.Padding = new Padding(5, 0, 5, 5);
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(76, 80);
             guna2Button1.TabIndex = 3;
             guna2Button1.Click += guna2Button1_Click;
@@ -156,7 +156,7 @@
             // btnpfp
             // 
             btnpfp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnpfp.CustomizableEdges = customizableEdges11;
+            btnpfp.CustomizableEdges = customizableEdges3;
             btnpfp.DisabledState.BorderColor = Color.DarkGray;
             btnpfp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnpfp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -169,7 +169,7 @@
             btnpfp.Location = new Point(79, 0);
             btnpfp.Name = "btnpfp";
             btnpfp.Padding = new Padding(5, 0, 5, 5);
-            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnpfp.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnpfp.Size = new Size(76, 80);
             btnpfp.TabIndex = 3;
             // 
@@ -351,6 +351,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
             ClientSize = new Size(1407, 775);
             Controls.Add(desktopPanel);
             Controls.Add(panelMenu);
