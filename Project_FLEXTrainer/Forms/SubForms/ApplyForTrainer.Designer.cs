@@ -67,7 +67,7 @@
             mainPanel.Dock = DockStyle.Top;
             mainPanel.Location = new Point(0, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(660, 61);
+            mainPanel.Size = new Size(548, 61);
             mainPanel.TabIndex = 2;
             // 
             // button1
@@ -76,7 +76,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(887, 0);
+            button1.Location = new Point(775, 0);
             button1.Name = "button1";
             button1.Size = new Size(37, 43);
             button1.TabIndex = 5;
@@ -88,7 +88,7 @@
             exit.FlatAppearance.BorderSize = 0;
             exit.FlatStyle = FlatStyle.Flat;
             exit.Image = (Image)resources.GetObject("exit.Image");
-            exit.Location = new Point(1184, 0);
+            exit.Location = new Point(1072, 0);
             exit.Name = "exit";
             exit.Size = new Size(38, 39);
             exit.TabIndex = 1;
@@ -112,7 +112,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(169, 120);
+            label2.Location = new Point(140, 119);
             label2.Name = "label2";
             label2.Size = new Size(81, 41);
             label2.TabIndex = 5;
@@ -129,7 +129,7 @@
             gymCombo.Font = new Font("Segoe UI", 10F);
             gymCombo.ForeColor = Color.FromArgb(68, 88, 112);
             gymCombo.ItemHeight = 30;
-            gymCombo.Location = new Point(285, 125);
+            gymCombo.Location = new Point(256, 124);
             gymCombo.Name = "gymCombo";
             gymCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             gymCombo.Size = new Size(179, 36);
@@ -147,7 +147,7 @@
             addGym.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addGym.ForeColor = Color.White;
             addGym.Image = (Image)resources.GetObject("addGym.Image");
-            addGym.Location = new Point(516, 126);
+            addGym.Location = new Point(441, 124);
             addGym.Name = "addGym";
             addGym.ShadowDecoration.CustomizableEdges = customizableEdges4;
             addGym.Size = new Size(43, 35);
@@ -164,7 +164,7 @@
             applyBtn.FillColor = Color.FromArgb(126, 46, 53);
             applyBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             applyBtn.ForeColor = Color.White;
-            applyBtn.Location = new Point(465, 411);
+            applyBtn.Location = new Point(161, 398);
             applyBtn.Name = "applyBtn";
             applyBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             applyBtn.Size = new Size(173, 48);
@@ -177,7 +177,7 @@
             Exp.AutoSize = true;
             Exp.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             Exp.ForeColor = Color.DimGray;
-            Exp.Location = new Point(84, 181);
+            Exp.Location = new Point(55, 180);
             Exp.Name = "Exp";
             Exp.Size = new Size(166, 41);
             Exp.TabIndex = 11;
@@ -188,7 +188,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(56, 246);
+            label3.Location = new Point(27, 245);
             label3.Name = "label3";
             label3.Size = new Size(194, 41);
             label3.TabIndex = 13;
@@ -199,7 +199,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             label4.ForeColor = Color.DimGray;
-            label4.Location = new Point(43, 303);
+            label4.Location = new Point(14, 302);
             label4.Name = "label4";
             label4.Size = new Size(207, 41);
             label4.TabIndex = 14;
@@ -216,7 +216,7 @@
             txtExp.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtExp.Font = new Font("Segoe UI", 9F);
             txtExp.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtExp.Location = new Point(285, 186);
+            txtExp.Location = new Point(256, 185);
             txtExp.Name = "txtExp";
             txtExp.PasswordChar = '\0';
             txtExp.PlaceholderText = "";
@@ -236,7 +236,7 @@
             txtQualification.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtQualification.Font = new Font("Segoe UI", 9F);
             txtQualification.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtQualification.Location = new Point(285, 246);
+            txtQualification.Location = new Point(256, 245);
             txtQualification.Name = "txtQualification";
             txtQualification.PasswordChar = '\0';
             txtQualification.PlaceholderText = "";
@@ -256,7 +256,7 @@
             txtSpecialization.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSpecialization.Font = new Font("Segoe UI", 9F);
             txtSpecialization.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSpecialization.Location = new Point(285, 303);
+            txtSpecialization.Location = new Point(256, 302);
             txtSpecialization.Name = "txtSpecialization";
             txtSpecialization.PasswordChar = '\0';
             txtSpecialization.PlaceholderText = "";
@@ -269,7 +269,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(660, 471);
+            ClientSize = new Size(548, 471);
             Controls.Add(txtSpecialization);
             Controls.Add(txtQualification);
             Controls.Add(txtExp);

@@ -69,7 +69,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1159, 78);
+            panel2.Size = new Size(1407, 78);
             panel2.TabIndex = 1;
             // 
             // panel1
@@ -79,7 +79,7 @@
             panel1.Controls.Add(guna2Button1);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(757, 0);
+            panel1.Location = new Point(1005, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(279, 78);
             panel1.TabIndex = 11;
@@ -133,7 +133,7 @@
             label4.Dock = DockStyle.Right;
             label4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(1036, 0);
+            label4.Location = new Point(1284, 0);
             label4.Name = "label4";
             label4.Padding = new Padding(10, 15, 10, 0);
             label4.Size = new Size(123, 90);
@@ -148,7 +148,7 @@
             UserNamePanel.Controls.Add(btnpfp);
             UserNamePanel.Controls.Add(usr_type);
             UserNamePanel.Controls.Add(lblUsername);
-            UserNamePanel.Location = new Point(1719, 0);
+            UserNamePanel.Location = new Point(1967, 0);
             UserNamePanel.Name = "UserNamePanel";
             UserNamePanel.Size = new Size(279, 67);
             UserNamePanel.TabIndex = 9;
@@ -216,7 +216,7 @@
             label1.BackColor = Color.FromArgb(50, 72, 76);
             label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1995, -16);
+            label1.Location = new Point(2243, -16);
             label1.Name = "label1";
             label1.Padding = new Padding(10, 30, 10, 0);
             label1.Size = new Size(123, 105);
@@ -235,7 +235,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 78);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(253, 548);
+            panelMenu.Size = new Size(253, 697);
             panelMenu.TabIndex = 2;
             // 
             // btnManage
@@ -344,20 +344,22 @@
             desktopPanel.Dock = DockStyle.Fill;
             desktopPanel.Location = new Point(253, 78);
             desktopPanel.Name = "desktopPanel";
-            desktopPanel.Size = new Size(906, 548);
+            desktopPanel.Size = new Size(1154, 697);
             desktopPanel.TabIndex = 3;
             // 
             // home_owner
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1159, 626);
+            AutoScroll = true;
+            AutoSize = true;
+            ClientSize = new Size(1407, 775);
             Controls.Add(desktopPanel);
             Controls.Add(panelMenu);
             Controls.Add(panel2);
             Name = "home_owner";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
-            WindowState = FormWindowState.Maximized;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);

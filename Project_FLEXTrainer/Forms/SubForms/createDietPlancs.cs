@@ -44,7 +44,6 @@ namespace Project_FLEXTrainer.Forms.SubForms
             ListNutrition.Items.Add("Fats");
             ListNutrition.Items.Add("Vitamins");
             ListNutrition.Items.Add("Minerals");
-            
         }
 
         private void label4_Click(object sender, EventArgs e)

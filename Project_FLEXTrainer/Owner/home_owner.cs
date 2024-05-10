@@ -139,14 +139,14 @@ namespace Project_FLEXTrainer.Owner
         private void btnManage_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Manage(), sender);
+                OpenChildForm(new Forms.Manage(currentuser), sender);
         }
 
 
         private void btnAddTrainer_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.addTrainer(), sender);
+                OpenChildForm(new Forms.addTrainer(currentuser), sender);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
