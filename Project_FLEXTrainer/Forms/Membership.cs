@@ -15,6 +15,7 @@ namespace Project_FLEXTrainer.Forms
     {
         string connectionString;
         User currUser;
+        bool alreadyMember;
         public Membership(User user)
         {
             InitializeComponent();
@@ -48,6 +49,44 @@ namespace Project_FLEXTrainer.Forms
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
+
+                string query = "SELECT 1 FROM MemberMembership WHERE memberId = @id";
+                SqlCommand command1 = new SqlCommand(query, connection);
+                command1.Parameters.AddWithValue("@id", currUser.userId);
+
+                object result = command1.ExecuteScalar();
+
+                if (result == null)
+                {
+                    noMemberPanel.Visible = true;
+                    alreadyMember = false;
+
+                    
+                    
+
+
+                }
+                else
+                {
+                    noMemberPanel.Visible = false;
+                    alreadyMember = true;
+
+                    string exec = "EXEC checkMembership @userID";
+                    SqlCommand execc = new SqlCommand(exec, connection);
+                    execc.Parameters.AddWithValue("@userID", currUser.userId);
+
+                    SqlDataReader reader = execc.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        txtGym.Text = "Gym" + reader["name"].ToString();
+                        txtPlan.Text ="Plan Type" + reader["type"].ToString();
+                    }
+
+                    // Close the SqlDataReader
+                    reader.Close();
+                }
+                connection.Close();
             }
         }
 
@@ -63,6 +102,15 @@ namespace Project_FLEXTrainer.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (alreadyMember)
+            {
+                Form messageBox = new Essentials.MessageBoxes.prompt("Can only have one Membership");
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+                messageBox.BringToFront();
+                return;
+            }
             string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(MembershipId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -130,6 +178,15 @@ namespace Project_FLEXTrainer.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (alreadyMember)
+            {
+                Form messageBox = new Essentials.MessageBoxes.prompt("Can only have one Membership");
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+                messageBox.BringToFront();
+                return;
+            }
             string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(memberId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
