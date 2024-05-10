@@ -141,7 +141,7 @@ namespace Project_FLEXTrainer.Trainer
         private void btnFeedbacks_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.Feedbacks(), sender);
+                OpenChildForm(new Forms.Feedbacks(currentuser), sender);
         }
 
         private void btnhome_Click(object sender, EventArgs e)

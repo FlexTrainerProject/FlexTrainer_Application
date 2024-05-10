@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using Project_FLEXTrainer.Essentials;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace Project_FLEXTrainer.Owner.Forms
 {
 
     public delegate void DisplayEntryDelegate(string name, string gname, string gender);
-    
+
     public partial class MemberReports : Form
     {
         private Button activeButton;
@@ -27,9 +28,43 @@ namespace Project_FLEXTrainer.Owner.Forms
             InitializeComponent();
             stringConnection = Essentials.ConnectionString.GetConnectionString();
             currentuser = user;
-            LoadData();
             this.panel = panel;
             panelTemplate.Visible = false;
+
+            trainerCombo.SelectedIndexChanged += trainerCombo_SelectedIndexChanged;
+
+            LoadData();
+
+            SqlConnection connection = new SqlConnection(stringConnection);
+            connection.Open();
+            string getTrainers = "EXEC getTrainersOfGym @id";
+            SqlCommand command = new SqlCommand(getTrainers, connection);
+            command.Parameters.AddWithValue("@id", currentuser.userId);
+
+            try
+            {
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                trainerCombo.Items.Clear();
+
+                while (reader.Read())
+                {
+                    string name = reader["name"].ToString();
+                    trainerCombo.Items.Add(name);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            connection.Close();
+
+
+
         }
 
         private void activateBtn(object sender)
@@ -103,8 +138,7 @@ namespace Project_FLEXTrainer.Owner.Forms
 
         private void LoadData()
         {
-
-            String query = "Select CONCAT(firstname, ' ', lastname) as name, gym.name as gname, gender from userr JOIN MemberMembership on MemberMembership.memberId = userr.id JOIN gym on MemberMembership.gymId = gym.id where gym.owner_id = (Select id from userr where userr.username = @currentuser)";
+            string query = "Select CONCAT(firstname, ' ', lastname) as name, gym.name as gname, gender from userr JOIN MemberMembership on MemberMembership.memberId = userr.id JOIN gym on MemberMembership.gymId = gym.id where gym.owner_id = (Select id from userr where userr.username = @currentuser)";
 
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -121,9 +155,9 @@ namespace Project_FLEXTrainer.Owner.Forms
                     {
                         string name = reader["name"].ToString();
                         string gname = reader["gname"].ToString();
-                        string gender = reader["gender"].ToString();    
+                        string gender = reader["gender"].ToString();
 
-                        displayDelegate.Invoke(name,gname,gender);
+                        displayDelegate.Invoke(name, gname, gender);
                     }
 
                     reader.Close();
@@ -132,6 +166,51 @@ namespace Project_FLEXTrainer.Owner.Forms
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+            }
+
+        }
+
+        private void LoadDataFromTrainer()
+        {
+            string selectedTrainer = trainerCombo.SelectedItem.ToString();
+            SqlConnection connection = new SqlConnection(stringConnection);
+            connection.Open();
+            string sqlQuery = "EXEC getMembersTrainedByTrainer @trainerName, @ownerID";
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            command.Parameters.AddWithValue("@trainerName", selectedTrainer);
+            command.Parameters.AddWithValue("@ownerID", currentuser.userId);
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+
+                DisplayEntryDelegate displayDelegate = DisplayEntry;
+
+                while (reader.Read())
+                {
+                    string name = reader["name"].ToString();
+                    string gname = reader["gname"].ToString();
+                    string gender = reader["gender"].ToString();
+
+                    displayDelegate.Invoke(name, gname, gender);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            connection.Close();
+        }
+
+        private void trainerCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (trainerCombo.SelectedIndex != -1)
+            {
+                panelContainer.Controls.Clear();
+                LoadDataFromTrainer();
+
             }
         }
 
@@ -150,7 +229,7 @@ namespace Project_FLEXTrainer.Owner.Forms
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                
+
 
                 if (newControl is Label)
                 {
@@ -205,7 +284,7 @@ namespace Project_FLEXTrainer.Owner.Forms
                         label.Text = "Gym Name: " + gname;
 
                 }
-               
+
 
             }
 
@@ -215,6 +294,12 @@ namespace Project_FLEXTrainer.Owner.Forms
             entryPanel.Location = new Point(0, yOffset);
 
             panelContainer.Controls.Add(entryPanel);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            LoadData();
         }
     }
 }

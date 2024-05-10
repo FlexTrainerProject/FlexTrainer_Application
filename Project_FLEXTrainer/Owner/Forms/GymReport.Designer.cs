@@ -147,13 +147,13 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI Semibold", 60.75F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(164, 59);
+            label8.Location = new Point(110, 99);
             label8.Name = "label8";
-            label8.Size = new Size(61, 30);
+            label8.Size = new Size(92, 108);
             label8.TabIndex = 8;
-            label8.Text = "nunu";
+            label8.Text = "n";
             // 
             // label
             // 
@@ -179,11 +179,11 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Segoe UI Semibold", 60.75F, FontStyle.Bold);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(173, 59);
+            label9.Location = new Point(58, 99);
             label9.Name = "label9";
-            label9.Size = new Size(61, 30);
+            label9.Size = new Size(233, 108);
             label9.TabIndex = 8;
             label9.Text = "nunu";
             // 
