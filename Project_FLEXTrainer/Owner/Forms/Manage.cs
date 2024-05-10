@@ -131,12 +131,36 @@ namespace Project_FLEXTrainer.Owner.Forms
                     {
                         SqlConnection connection = new SqlConnection(stringConnection);
                         connection.Open();
-                        
+
+                        if (str3 == "trainer") {
+                            string query = "DELETE FROM gym_assign_to_trainer WHERE gym_id = (SELECT TOP 1  gym.id from gym INNER JOIN owner on owner.id = gym.owner_id WHERE owner.id = @OwnerID) \r\nAND gym_assign_to_trainer.trainerid = (SELECT TOP 1  trainer.id FROM trainer INNER JOIN userr on userr.id = trainer.id WHERE @fullname = CONCAT(userr.firstname, ' ', userr.lastname))";
+                            SqlCommand command = new SqlCommand(query, connection);
+                            command.Parameters.AddWithValue("@OwnerID", currUser.userId);
+                            command.Parameters.AddWithValue("@fullname", str1);
+
+                            command.ExecuteNonQuery();
+                            Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Removed!");
+                            messageBox.FormBorderStyle = FormBorderStyle.None;
+                            messageBox.StartPosition = FormStartPosition.CenterScreen;
+                            messageBox.Show();
+
+                        }
+                        else
+                        {
+                            string query = "DELETE FROM MemberMembership WHERE gymId = (SELECT TOP 1 gym.id from gym INNER JOIN owner on owner.id = gym.owner_id WHERE owner.id = @OwnerID) \r\nAND memberId = (SELECT TOP 1 userr.id FROM member INNER JOIN userr on userr.id = member.id WHERE @fullname = CONCAT(userr.firstname, ' ', userr.lastname))";
+                            SqlCommand command = new SqlCommand(query, connection);
+                            command.Parameters.AddWithValue("@OwnerID", currUser.userId);
+                            command.Parameters.AddWithValue("@fullname", str1);
+
+                            command.ExecuteNonQuery();
+                            Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Removed!");
+                            messageBox.FormBorderStyle = FormBorderStyle.None;
+                            messageBox.StartPosition = FormStartPosition.CenterScreen;
+                            messageBox.Show();
+                        }
+
                         connection.Close();
-                        Essentials.MessageBoxes.prompt messageBox = new Essentials.MessageBoxes.prompt("Removed!");
-                        messageBox.FormBorderStyle = FormBorderStyle.None;
-                        messageBox.StartPosition = FormStartPosition.CenterScreen;
-                        messageBox.Show();
+                        
                     };
                 }
             }

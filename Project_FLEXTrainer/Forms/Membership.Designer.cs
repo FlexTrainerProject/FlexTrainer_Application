@@ -48,11 +48,14 @@
             label3 = new Label();
             label2 = new Label();
             panelActiveMS = new Panel();
+            txtPlan = new Label();
+            txtGym = new Label();
             lblActiveMS = new Label();
             noMemberPanel.SuspendLayout();
             applyMembership.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            panelActiveMS.SuspendLayout();
             SuspendLayout();
             // 
             // noMemberPanel
@@ -258,10 +261,34 @@
             // 
             panelActiveMS.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelActiveMS.BackColor = Color.FromArgb(76, 126, 122);
+            panelActiveMS.Controls.Add(txtPlan);
+            panelActiveMS.Controls.Add(txtGym);
             panelActiveMS.Location = new Point(721, 124);
             panelActiveMS.Name = "panelActiveMS";
             panelActiveMS.Size = new Size(422, 499);
             panelActiveMS.TabIndex = 2;
+            // 
+            // txtPlan
+            // 
+            txtPlan.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPlan.ForeColor = Color.White;
+            txtPlan.Location = new Point(22, 222);
+            txtPlan.Name = "txtPlan";
+            txtPlan.Padding = new Padding(5, 7, 0, 0);
+            txtPlan.Size = new Size(368, 55);
+            txtPlan.TabIndex = 4;
+            txtPlan.Text = "Plan:";
+            // 
+            // txtGym
+            // 
+            txtGym.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtGym.ForeColor = Color.White;
+            txtGym.Location = new Point(22, 139);
+            txtGym.Name = "txtGym";
+            txtGym.Padding = new Padding(5, 7, 0, 0);
+            txtGym.Size = new Size(368, 55);
+            txtGym.TabIndex = 3;
+            txtGym.Text = "Gym:";
             // 
             // lblActiveMS
             // 
@@ -291,6 +318,7 @@
             applyMembership.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            panelActiveMS.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -314,5 +342,7 @@
         private Button closeError;
         private Label lblBasic;
         private Label lblPremium;
+        private Label txtGym;
+        private Label txtPlan;
     }
 }
