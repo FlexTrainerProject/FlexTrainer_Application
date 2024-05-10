@@ -60,11 +60,6 @@ namespace Project_FLEXTrainer.Forms
                 {
                     noMemberPanel.Visible = true;
                     alreadyMember = false;
-
-                    
-                    
-
-
                 }
                 else
                 {
@@ -82,8 +77,6 @@ namespace Project_FLEXTrainer.Forms
                         txtGym.Text = "Gym: " + reader["name"].ToString();
                         txtPlan.Text ="Plan Type: " + reader["type"].ToString();
                     }
-
-                    // Close the SqlDataReader
                     reader.Close();
                 }
                 connection.Close();
@@ -111,6 +104,14 @@ namespace Project_FLEXTrainer.Forms
                 messageBox.BringToFront();
                 return;
             }
+
+            if(gunaCombo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Missing INFO");
+                return;
+            }
+
+            string sqlQuery = "INSERT INTO MemberMembership VALUES (@userId, (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
             string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -119,7 +120,7 @@ namespace Project_FLEXTrainer.Forms
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@username", currUser.Username);
+                        command.Parameters.AddWithValue("@userId", currUser.userId);
                         command.Parameters.AddWithValue("@gymName", selectedGymName);
                         connection.Open();
 
@@ -187,6 +188,7 @@ namespace Project_FLEXTrainer.Forms
                 messageBox.BringToFront();
                 return;
             }
+            string sqlQuery = "INSERT INTO MemberMembership VALUES (@userId, (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
             string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -195,7 +197,7 @@ namespace Project_FLEXTrainer.Forms
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@username", currUser.Username);
+                        command.Parameters.AddWithValue("@userId", currUser.userId);
                         command.Parameters.AddWithValue("@gymName", selectedGymName);
                         connection.Open();
 

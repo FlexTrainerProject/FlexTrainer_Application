@@ -49,6 +49,7 @@
             pgTitle = new Label();
             label1 = new Label();
             panelMenu = new Panel();
+            btnViewMem = new Button();
             btnFeedbacks = new Button();
             btnViewPlans = new Button();
             btnCreateDP = new Button();
@@ -252,6 +253,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(50, 72, 76);
+            panelMenu.Controls.Add(btnViewMem);
             panelMenu.Controls.Add(btnFeedbacks);
             panelMenu.Controls.Add(btnViewPlans);
             panelMenu.Controls.Add(btnCreateDP);
@@ -262,6 +264,26 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(253, 697);
             panelMenu.TabIndex = 3;
+            // 
+            // btnViewMem
+            // 
+            btnViewMem.BackColor = Color.FromArgb(50, 72, 76);
+            btnViewMem.Dock = DockStyle.Top;
+            btnViewMem.FlatAppearance.BorderSize = 0;
+            btnViewMem.FlatStyle = FlatStyle.Flat;
+            btnViewMem.Font = new Font("Ebrima", 12.25F);
+            btnViewMem.ForeColor = Color.Gainsboro;
+            btnViewMem.Image = (Image)resources.GetObject("btnViewMem.Image");
+            btnViewMem.ImageAlign = ContentAlignment.MiddleLeft;
+            btnViewMem.Location = new Point(0, 350);
+            btnViewMem.Name = "btnViewMem";
+            btnViewMem.Padding = new Padding(10, 0, 0, 0);
+            btnViewMem.Size = new Size(253, 70);
+            btnViewMem.TabIndex = 14;
+            btnViewMem.Text = "  View Members";
+            btnViewMem.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnViewMem.UseVisualStyleBackColor = false;
+            btnViewMem.Click += btnViewMem_Click;
             // 
             // btnFeedbacks
             // 
@@ -419,5 +441,6 @@
         private Panel desktopPanel;
         private Button btnFeedbacks;
         private Guna.UI2.WinForms.Guna2Button btnhome;
+        private Button btnViewMem;
     }
 }
