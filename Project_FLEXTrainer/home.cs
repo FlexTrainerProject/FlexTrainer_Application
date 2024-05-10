@@ -120,7 +120,7 @@ namespace Project_FLEXTrainer
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.desktopPanel.Controls.Add(childForm);
+            desktopPanel.Controls.Add(childForm);
             this.desktopPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();

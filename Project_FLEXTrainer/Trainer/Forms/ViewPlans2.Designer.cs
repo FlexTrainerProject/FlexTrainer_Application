@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPlans2));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            navPanel = new Panel();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            btnDP = new Button();
-            btnWP = new Button();
             panelContainer = new Panel();
             panelTemplate = new Panel();
             hiddenID = new Label();
@@ -45,78 +39,9 @@
             experienceLabel = new Label();
             genderLabel = new Label();
             imageList1 = new ImageList(components);
-            navPanel.SuspendLayout();
             panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
-            // 
-            // navPanel
-            // 
-            navPanel.BackColor = Color.FromArgb(25, 42, 40);
-            navPanel.Controls.Add(searchBar);
-            navPanel.Controls.Add(btnDP);
-            navPanel.Controls.Add(btnWP);
-            navPanel.Dock = DockStyle.Top;
-            navPanel.Location = new Point(0, 0);
-            navPanel.Name = "navPanel";
-            navPanel.Size = new Size(1156, 52);
-            navPanel.TabIndex = 5;
-            // 
-            // searchBar
-            // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges3;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(1955, 12);
-            searchBar.Name = "searchBar";
-            searchBar.Padding = new Padding(0, 20, 0, 0);
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search Member";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            searchBar.Size = new Size(259, 28);
-            searchBar.TabIndex = 11;
-            // 
-            // btnDP
-            // 
-            btnDP.Dock = DockStyle.Left;
-            btnDP.FlatAppearance.BorderSize = 0;
-            btnDP.FlatStyle = FlatStyle.Flat;
-            btnDP.Font = new Font("Segoe UI", 14.25F);
-            btnDP.ForeColor = Color.White;
-            btnDP.Location = new Point(284, 0);
-            btnDP.Name = "btnDP";
-            btnDP.Size = new Size(316, 52);
-            btnDP.TabIndex = 1;
-            btnDP.Text = "Diet Plans";
-            btnDP.UseVisualStyleBackColor = true;
-            // 
-            // btnWP
-            // 
-            btnWP.BackColor = Color.FromArgb(76, 126, 122);
-            btnWP.Dock = DockStyle.Left;
-            btnWP.FlatAppearance.BorderSize = 0;
-            btnWP.FlatStyle = FlatStyle.Flat;
-            btnWP.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnWP.ForeColor = Color.White;
-            btnWP.Location = new Point(0, 0);
-            btnWP.Name = "btnWP";
-            btnWP.Size = new Size(284, 52);
-            btnWP.TabIndex = 0;
-            btnWP.Text = "Workout Plans";
-            btnWP.UseVisualStyleBackColor = false;
-            btnWP.Click += btnWP_Click;
             // 
             // panelContainer
             // 
@@ -124,9 +49,9 @@
             panelContainer.BackColor = Color.WhiteSmoke;
             panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
-            panelContainer.Location = new Point(0, 52);
+            panelContainer.Location = new Point(0, 0);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1156, 514);
+            panelContainer.Size = new Size(1156, 566);
             panelContainer.TabIndex = 8;
             // 
             // panelTemplate
@@ -220,10 +145,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1156, 566);
             Controls.Add(panelContainer);
-            Controls.Add(navPanel);
             Name = "ViewPlans2";
             Text = "ViewPlans2";
-            navPanel.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
@@ -231,11 +154,6 @@
         }
 
         #endregion
-
-        private Panel navPanel;
-        private Guna.UI2.WinForms.Guna2TextBox searchBar;
-        private Button btnDP;
-        private Button btnWP;
         private Panel panelContainer;
         private Panel panelTemplate;
         private Label hiddenID;
