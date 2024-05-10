@@ -63,7 +63,7 @@ namespace Project_FLEXTrainer.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(memberId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
+            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(MembershipId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

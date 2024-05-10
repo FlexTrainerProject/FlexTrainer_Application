@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revokeGym));
             navPanel = new Panel();
-            btnRevoked = new Button();
             btnAllgyms = new Button();
             pgTitle = new Label();
             panelContainer = new Panel();
@@ -50,7 +49,6 @@
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
-            navPanel.Controls.Add(btnRevoked);
             navPanel.Controls.Add(btnAllgyms);
             navPanel.Controls.Add(pgTitle);
             navPanel.Dock = DockStyle.Top;
@@ -58,21 +56,6 @@
             navPanel.Name = "navPanel";
             navPanel.Size = new Size(1159, 52);
             navPanel.TabIndex = 4;
-            // 
-            // btnRevoked
-            // 
-            btnRevoked.Dock = DockStyle.Right;
-            btnRevoked.FlatAppearance.BorderSize = 0;
-            btnRevoked.FlatStyle = FlatStyle.Flat;
-            btnRevoked.Font = new Font("Segoe UI", 14.25F);
-            btnRevoked.ForeColor = Color.White;
-            btnRevoked.Location = new Point(559, 0);
-            btnRevoked.Name = "btnRevoked";
-            btnRevoked.Size = new Size(316, 52);
-            btnRevoked.TabIndex = 14;
-            btnRevoked.Text = "REVOKED GYMS";
-            btnRevoked.UseVisualStyleBackColor = true;
-            btnRevoked.Click += btnRevoked_Click;
             // 
             // btnAllgyms
             // 
@@ -207,7 +190,6 @@
         #endregion
 
         private Panel navPanel;
-        private Button btnRevoked;
         private Button btnAllgyms;
         private Label pgTitle;
         private Panel panelContainer;

@@ -265,7 +265,7 @@
             // 
             // lblActiveMS
             // 
-            lblActiveMS.Font = new Font("Couture", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblActiveMS.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblActiveMS.ForeColor = Color.FromArgb(126, 46, 53);
             lblActiveMS.Location = new Point(721, 66);
             lblActiveMS.Name = "lblActiveMS";

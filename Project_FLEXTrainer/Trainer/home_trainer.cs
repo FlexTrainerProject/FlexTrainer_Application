@@ -134,7 +134,7 @@ namespace Project_FLEXTrainer.Trainer
 
         private void btnViewPlans_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ViewPlans(currentuser), sender);
+            OpenChildForm(new Forms.ViewPlans(currentuser, this.desktopPanel), sender);
         }
 
         private void btnFeedbacks_Click(object sender, EventArgs e)
