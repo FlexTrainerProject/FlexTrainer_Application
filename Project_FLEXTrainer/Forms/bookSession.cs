@@ -12,19 +12,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Project_FLEXTrainer.Forms
 {
     public partial class bookSession : Form
     {
         User currUser;
-    string connectionString;
+        string connectionString;
         public delegate void DisplayEntryDelegate(string name, string gender, string experience, string rating, string id);
         public bookSession(User user)
         {
             InitializeComponent();
             connectionString = Essentials.ConnectionString.GetConnectionString();
-            
+
             currUser = user;
             LoadData();
             //redPanel.Visible = false;
@@ -101,10 +102,15 @@ namespace Project_FLEXTrainer.Forms
             object result = command.ExecuteScalar();
             gymMembership = result != null ? result.ToString() : string.Empty;
 
-            if (gymMembership=="" || gymMembership == null)
+            if (gymMembership == "" || gymMembership == null)
             {
-                MessageBox.Show("No gym Membership Yet, Apply first to book appointment");
+                panel2.Show();
+
                 return;
+            }
+            else
+            {
+                panel2.Hide();
             }
 
 
@@ -199,5 +205,9 @@ namespace Project_FLEXTrainer.Forms
             panelContainer.Controls.Add(entryPanel);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel2.Hide();
+        }
     }
 }

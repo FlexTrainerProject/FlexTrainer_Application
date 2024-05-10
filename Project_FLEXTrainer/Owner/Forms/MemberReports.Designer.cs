@@ -31,22 +31,28 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberReports));
             navPanel = new Panel();
-            btnActive = new Button();
+            button1 = new Button();
             panelTemplate = new Panel();
             panel1 = new Panel();
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
+            label1 = new Label();
+            trainerCombo = new ComboBox();
+            btnActive = new Button();
             panelContainer = new Panel();
             imageList1 = new ImageList(components);
             navPanel.SuspendLayout();
             panelTemplate.SuspendLayout();
-            panelContainer.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
+            navPanel.Controls.Add(button1);
+            navPanel.Controls.Add(panelTemplate);
+            navPanel.Controls.Add(label1);
+            navPanel.Controls.Add(trainerCombo);
             navPanel.Controls.Add(btnActive);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
@@ -54,20 +60,21 @@
             navPanel.Size = new Size(1144, 52);
             navPanel.TabIndex = 1;
             // 
-            // btnActive
+            // button1
             // 
-            btnActive.Dock = DockStyle.Left;
-            btnActive.FlatAppearance.BorderSize = 0;
-            btnActive.FlatStyle = FlatStyle.Flat;
-            btnActive.Font = new Font("Segoe UI", 14.25F);
-            btnActive.ForeColor = Color.White;
-            btnActive.Location = new Point(0, 0);
-            btnActive.Name = "btnActive";
-            btnActive.Size = new Size(130, 52);
-            btnActive.TabIndex = 1;
-            btnActive.Text = "ACTIVE";
-            btnActive.UseVisualStyleBackColor = true;
-            btnActive.Click += btnActive_Click;
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(125, 42, 40);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1032, 11);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 35);
+            button1.TabIndex = 8;
+            button1.Text = "CLEAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panelTemplate
             // 
@@ -76,7 +83,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(151, 6);
+            panelTemplate.Location = new Point(148, 12);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -123,11 +130,46 @@
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(705, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 28);
+            label1.TabIndex = 7;
+            label1.Text = "Trainer";
+            // 
+            // trainerCombo
+            // 
+            trainerCombo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            trainerCombo.Font = new Font("Segoe UI", 16F);
+            trainerCombo.FormattingEnabled = true;
+            trainerCombo.Location = new Point(784, 5);
+            trainerCombo.Name = "trainerCombo";
+            trainerCombo.Size = new Size(226, 38);
+            trainerCombo.TabIndex = 2;
+            // 
+            // btnActive
+            // 
+            btnActive.Dock = DockStyle.Left;
+            btnActive.FlatAppearance.BorderSize = 0;
+            btnActive.FlatStyle = FlatStyle.Flat;
+            btnActive.Font = new Font("Segoe UI", 14.25F);
+            btnActive.ForeColor = Color.White;
+            btnActive.Location = new Point(0, 0);
+            btnActive.Name = "btnActive";
+            btnActive.Size = new Size(130, 52);
+            btnActive.TabIndex = 1;
+            btnActive.Text = "ACTIVE";
+            btnActive.UseVisualStyleBackColor = true;
+            btnActive.Click += btnActive_Click;
+            // 
             // panelContainer
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
@@ -151,9 +193,9 @@
             Name = "MemberReports";
             Text = "Member Reports";
             navPanel.ResumeLayout(false);
+            navPanel.PerformLayout();
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
-            panelContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -173,5 +215,8 @@
         private Label experienceLabel;
         private Label genderLabel;
         private ImageList imageList1;
+        private Label label1;
+        private ComboBox trainerCombo;
+        private Button button1;
     }
 }

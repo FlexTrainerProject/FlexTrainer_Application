@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_FLEXTrainer.Essentials.MessageBoxes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,6 +106,16 @@ namespace Project_FLEXTrainer.Forms
                 return;
             }
 
+            if(currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
+                return;
+            }
+
             if(gunaCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Missing INFO");
@@ -185,6 +196,16 @@ namespace Project_FLEXTrainer.Forms
                 messageBox.StartPosition = FormStartPosition.CenterScreen;
                 messageBox.Show();
                 messageBox.BringToFront();
+                return;
+            }
+
+            if (currUser.isProfileComplete == false)
+            {
+                Form messageBox = new customMessage_CompleteProfile();
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
+
                 return;
             }
             string sqlQuery = "INSERT INTO MemberMembership VALUES (@userId, (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
