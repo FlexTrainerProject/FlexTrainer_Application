@@ -19,6 +19,8 @@ namespace Project_FLEXTrainer.Trainer.Forms
         User currentuser;
         string stringConnection;
         private Panel panel;
+        Form activeForm;
+
         public ViewPlans(User user, Panel panel)
         {
             InitializeComponent();
@@ -32,8 +34,10 @@ namespace Project_FLEXTrainer.Trainer.Forms
 
         private void btnDP_Click(object sender, EventArgs e)
         {
-            activateBtn(sender);
-            OpenChildForm(new Forms.ViewPlans2(currentuser, panel), sender);
+            if ((Button)sender != (Button)activeButton)
+            {
+                OpenChildForm(new Forms.ViewPlans2(currentuser, panel), sender);
+            }
         }
 
         private void activateBtn(object sender)
@@ -69,16 +73,23 @@ namespace Project_FLEXTrainer.Trainer.Forms
 
         private void btnWP_Click(object sender, EventArgs e)
         {
-            activateBtn(sender);
+            if ((Button)sender != (Button)activeButton)
+            {
+                //OpenChildForm(new Forms.ViewPlans(currentuser, panel), sender);
+                activeForm.Close();
+                activateBtn(sender);
+                activeForm = this;
+            }
         }
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            activateBtn(btnSender);
+            activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panel.Controls.Add(childForm);
-            panel.Tag = childForm;
+            panelContainer.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
             //tabPic.Image. = ;
