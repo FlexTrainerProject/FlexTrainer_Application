@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
             btnCreateDP = new Button();
             topPanel = new Panel();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            button1 = new Button();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
             panelTemplate = new Panel();
             panel1 = new Panel();
             button2 = new Button();
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
+            button1 = new Button();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             imageList1 = new ImageList(components);
             panelContainer = new Panel();
             topPanel.SuspendLayout();
@@ -71,7 +68,6 @@
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
             topPanel.Controls.Add(panelTemplate);
-            topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(button1);
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
@@ -82,74 +78,6 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(1137, 54);
             topPanel.TabIndex = 2;
-            // 
-            // searchBar
-            // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(12, 12);
-            searchBar.Name = "searchBar";
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(177, 28);
-            searchBar.TabIndex = 9;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(192, 0, 0);
-            button1.Dock = DockStyle.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(939, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(30, 54);
-            button1.TabIndex = 8;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Right;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(834, 17);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(99, 23);
-            comboBox3.TabIndex = 7;
-            comboBox3.Text = "Nutrition";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(725, 17);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(103, 23);
-            comboBox2.TabIndex = 6;
-            comboBox2.Text = "Purpose";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(618, 17);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(101, 23);
-            comboBox1.TabIndex = 5;
-            comboBox1.Text = "Type";
             // 
             // panelTemplate
             // 
@@ -216,6 +144,49 @@
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(939, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 54);
+            button1.TabIndex = 8;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Anchor = AnchorStyles.Right;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(834, 17);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(99, 23);
+            comboBox3.TabIndex = 7;
+            comboBox3.Text = "Nutrition";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Right;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(725, 17);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(103, 23);
+            comboBox2.TabIndex = 6;
+            comboBox2.Text = "Purpose";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(618, 17);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(101, 23);
+            comboBox1.TabIndex = 5;
+            comboBox1.Text = "Type";
             // 
             // imageList1
             // 

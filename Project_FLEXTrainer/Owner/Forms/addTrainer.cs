@@ -27,7 +27,7 @@ namespace Project_FLEXTrainer.Owner.Forms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if(txtAcc.Text=="" || txtPass.Text=="" || txtEmail.Text=="" ||  txtFname.Text=="" || txtLname.Text=="" || txtSpeciality.Text=="" || txtQualification.Text=="" || comboBox1.SelectedIndex==-1 || expTxt.Text == "")
+            if (txtAcc.Text == "" || txtPass.Text == "" || txtEmail.Text == "" || txtFname.Text == "" || txtLname.Text == "" || txtSpeciality.Text == "" || txtQualification.Text == "" || comboBox1.SelectedIndex == -1 || expTxt.Text == "")
             {
                 Form MessageBox = new Essentials.MessageBoxes.missingInfo();
                 MessageBox.FormBorderStyle = FormBorderStyle.None;
@@ -36,7 +36,7 @@ namespace Project_FLEXTrainer.Owner.Forms
                 return;
             }
 
-            
+
             SqlConnection connection = new SqlConnection(Essentials.ConnectionString.GetConnectionString());
             connection.Open();
 
@@ -109,6 +109,11 @@ namespace Project_FLEXTrainer.Owner.Forms
             comboBox1.SelectedIndex = -1;
             expTxt.Text = "";
 
+
+        }
+
+        private void txtAcc_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

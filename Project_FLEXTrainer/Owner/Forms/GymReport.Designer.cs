@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             GymInfoPanel = new Guna.UI2.WinForms.Guna2Panel();
+            label11 = new Label();
+            label10 = new Label();
+            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             label3 = new Label();
             label7 = new Label();
             label4 = new Label();
@@ -55,18 +60,60 @@
             GymInfoPanel.BackColor = Color.FromArgb(26, 46, 53);
             GymInfoPanel.BorderRadius = 148;
             GymInfoPanel.BorderThickness = 5;
+            GymInfoPanel.Controls.Add(label11);
+            GymInfoPanel.Controls.Add(label10);
+            GymInfoPanel.Controls.Add(guna2ComboBox1);
             GymInfoPanel.Controls.Add(label3);
             GymInfoPanel.Controls.Add(label7);
             GymInfoPanel.Controls.Add(label4);
             GymInfoPanel.Controls.Add(label5);
             GymInfoPanel.Controls.Add(label2);
             GymInfoPanel.Controls.Add(txtGymName);
-            GymInfoPanel.CustomizableEdges = customizableEdges1;
+            GymInfoPanel.CustomizableEdges = customizableEdges3;
             GymInfoPanel.Location = new Point(12, 12);
             GymInfoPanel.Name = "GymInfoPanel";
-            GymInfoPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            GymInfoPanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
             GymInfoPanel.Size = new Size(727, 299);
             GymInfoPanel.TabIndex = 0;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(495, 136);
+            label11.Name = "label11";
+            label11.Size = new Size(0, 30);
+            label11.TabIndex = 10;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(401, 136);
+            label10.Name = "label10";
+            label10.Size = new Size(88, 30);
+            label10.TabIndex = 9;
+            label10.Text = "Count : ";
+            // 
+            // guna2ComboBox1
+            // 
+            guna2ComboBox1.BackColor = Color.Transparent;
+            guna2ComboBox1.CustomizableEdges = customizableEdges1;
+            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
+            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox1.ItemHeight = 30;
+            guna2ComboBox1.Location = new Point(401, 186);
+            guna2ComboBox1.Name = "guna2ComboBox1";
+            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ComboBox1.Size = new Size(255, 36);
+            guna2ComboBox1.TabIndex = 8;
+            guna2ComboBox1.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -235,5 +282,8 @@
         private Label label5;
         private Label label8;
         private Label label9;
+        private Label label10;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Label label11;
     }
 }

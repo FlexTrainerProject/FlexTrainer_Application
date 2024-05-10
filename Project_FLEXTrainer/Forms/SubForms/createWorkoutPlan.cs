@@ -82,8 +82,8 @@ namespace Project_FLEXTrainer.Forms.SubForms
                 MessageBox.Show("Please added at least one Exercise.");
                 return;
             }
-            
-            if(txtPlanName.Text=="" ||  goalCombo.SelectedItem.ToString()=="" || ScheduleCombo.SelectedItem.ToString() == "" || ExpCombo.SelectedItem.ToString() == "")
+
+            if (txtPlanName.Text == "" || goalCombo.SelectedItem.ToString() == "" || ScheduleCombo.SelectedItem.ToString() == "" || ExpCombo.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Missing Info!");
                 return;
@@ -107,15 +107,15 @@ namespace Project_FLEXTrainer.Forms.SubForms
                     MessageBox.Show("problem inserting :: username");
                     return;
                 }
-                    string queryPlanInsert = "INSERT INTO Plann  VALUES ('" + txtPlanName.Text + "', '" + currUser.Type + "', "+userId+", '"+statusCombo.Text+ "');";
-                    SqlCommand command2 = new SqlCommand(queryPlanInsert, connection);
-                    int resultt = command2.ExecuteNonQuery();
+                string queryPlanInsert = "INSERT INTO Plann  VALUES ('" + txtPlanName.Text + "', '" + currUser.Type + "', " + userId + ", '" + statusCombo.Text + "');";
+                SqlCommand command2 = new SqlCommand(queryPlanInsert, connection);
+                int resultt = command2.ExecuteNonQuery();
                 string getPlanId = "SELECT SCOPE_IDENTITY();";
                 SqlCommand commandID = new SqlCommand(getPlanId, connection);
-                
-                    object idresult = commandID.ExecuteScalar();
-                    int insertedId = Convert.ToInt32(idresult);
-                    MessageBox.Show("" + insertedId + "");
+
+                object idresult = commandID.ExecuteScalar();
+                int insertedId = Convert.ToInt32(idresult);
+                MessageBox.Show("" + insertedId + "");
 
                 string queryWPInsert = "INSERT INTO workout_plan  VALUES ('" + goalCombo.SelectedItem.ToString() + "', '" + ExpCombo.SelectedItem.ToString() + "', '" + ScheduleCombo.SelectedItem.ToString() + "', " + insertedId + ");";
                 SqlCommand command3 = new SqlCommand(queryWPInsert, connection);
@@ -146,6 +146,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
             }
 
+
+        }
+
+        private void txtPlanName_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

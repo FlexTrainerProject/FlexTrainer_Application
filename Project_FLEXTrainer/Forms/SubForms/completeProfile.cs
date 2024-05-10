@@ -59,7 +59,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
             string query;
             if (currUser.isProfileComplete == false)
             {
-                 query = "INSERT INTO userr  VALUES ( @FirstName, @LastName, @Username, @Gender);";
+                 query = "UPDATE userr  VALUES ( @FirstName, @LastName, @Username, @Gender);";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FirstName", txtFname.Text);
                 command.Parameters.AddWithValue("@LastName", txtLname.Text);

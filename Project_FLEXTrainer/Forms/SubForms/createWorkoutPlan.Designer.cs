@@ -35,6 +35,8 @@
             btnCreate = new Button();
             label4 = new Label();
             devidePanel = new Panel();
+            statusCombo = new ComboBox();
+            txtPlanName = new TextBox();
             panel6 = new Panel();
             btnAddExercise = new Button();
             label5 = new Label();
@@ -51,8 +53,6 @@
             txtPanel = new Panel();
             btnClose = new Button();
             label1 = new Label();
-            txtPlanName = new TextBox();
-            statusCombo = new ComboBox();
             panel1.SuspendLayout();
             panelMain.SuspendLayout();
             devidePanel.SuspendLayout();
@@ -145,6 +145,23 @@
             devidePanel.Name = "devidePanel";
             devidePanel.Size = new Size(439, 378);
             devidePanel.TabIndex = 0;
+            // 
+            // statusCombo
+            // 
+            statusCombo.FormattingEnabled = true;
+            statusCombo.Location = new Point(23, 261);
+            statusCombo.Name = "statusCombo";
+            statusCombo.Size = new Size(107, 23);
+            statusCombo.TabIndex = 5;
+            statusCombo.Text = "Private";
+            // 
+            // txtPlanName
+            // 
+            txtPlanName.Location = new Point(23, 71);
+            txtPlanName.Name = "txtPlanName";
+            txtPlanName.Size = new Size(160, 23);
+            txtPlanName.TabIndex = 4;
+            txtPlanName.TextChanged += txtPlanName_TextChanged;
             // 
             // panel6
             // 
@@ -299,29 +316,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Couture", 20.2499981F, FontStyle.Bold);
+            label1.Font = new Font("Microsoft Sans Serif", 20.2499981F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(10, 16);
             label1.Name = "label1";
-            label1.Size = new Size(360, 27);
+            label1.Size = new Size(371, 31);
             label1.TabIndex = 0;
             label1.Text = "CREATE WORKOUT PLAN";
-            // 
-            // txtPlanName
-            // 
-            txtPlanName.Location = new Point(23, 71);
-            txtPlanName.Name = "txtPlanName";
-            txtPlanName.Size = new Size(160, 23);
-            txtPlanName.TabIndex = 4;
-            // 
-            // statusCombo
-            // 
-            statusCombo.FormattingEnabled = true;
-            statusCombo.Location = new Point(23, 261);
-            statusCombo.Name = "statusCombo";
-            statusCombo.Size = new Size(107, 23);
-            statusCombo.TabIndex = 5;
-            statusCombo.Text = "Private";
             // 
             // createWorkoutPlan
             // 

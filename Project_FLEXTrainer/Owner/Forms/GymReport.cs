@@ -14,6 +14,7 @@ namespace Project_FLEXTrainer.Owner.Forms
 {
     public partial class GymReport : Form
     {
+        User user;
         public GymReport(User current)
         {
 
@@ -46,11 +47,60 @@ namespace Project_FLEXTrainer.Owner.Forms
 
             connection.Close();
 
+            guna2ComboBox1.Items.Clear();
+
+            string[] machines = {
+            "Treadmill",
+            "Stationary bike",
+            "Elliptical trainer",
+            "Rowing machine",
+            "Smith machine",
+            "Cable machine",
+            "Leg press machine",
+            "Leg curl machine",
+            "Leg extension machine",
+            "Chest press machine",
+            "Lat pulldown machine",
+            "Shoulder press machine",
+            "Seated row machine",
+            "Bicep curl machine",
+            "Tricep extension machine",
+            "Abdominal crunch machine",
+            "Calf raise machine",
+            "Hack squat machine",
+            "Glute machine",
+            "Dip machine",
+            "dumbel curls"
+            };
+
+            guna2ComboBox1.Items.AddRange(machines);
+
+            user = current;
         }
-         
+
         private void txtGymLoc_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedMachine = guna2ComboBox1.SelectedItem.ToString();
+
+            // Example query based on selected machine
+            string query = "Select Count(machine) as count from exercise Join Plann on exercise.plan_id = Plann.id Join userr on Plann.creator_id = userr.id Join MemberMembership on userr.id = MemberMembership.memberId where MemberMembership.gymId = (Select id from gym where gym.owner_id = (Select id from userr where userr.username = @currentuser)) And machine = @machine";
+            
+            SqlConnection connection = new SqlConnection(Essentials.ConnectionString.GetConnectionString());
+            connection.Open();
+            
+            SqlCommand cmd = new SqlCommand(query,connection);
+            cmd.Parameters.AddWithValue("@currentuser", user.Username);
+            cmd.Parameters.AddWithValue("@machine", selectedMachine);
+            label11.Text = Convert.ToString(cmd.ExecuteScalar());
+
+
+
+        }
+
     }
 }
