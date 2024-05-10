@@ -133,7 +133,7 @@ namespace Project_FLEXTrainer.Owner
         private void btnTrainerReports_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.TrainerReports(), sender);
+                OpenChildForm(new Forms.TrainerReports(currentuser), sender);
         }
 
         private void btnManage_Click(object sender, EventArgs e)
@@ -155,13 +155,13 @@ namespace Project_FLEXTrainer.Owner
             {
                 if (SubForm == null || SubForm.IsDisposed)
                 {
-                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(this.activeForm,currentuser,this.desktopPanel);
+                    SubForm = new Project_FLEXTrainer.Forms.SubForms.Profile(this,currentuser,this.desktopPanel);
                     SubForm.FormBorderStyle = FormBorderStyle.None;
                     SubForm.StartPosition = FormStartPosition.Manual;
 
                     // Calculate the position of the sub form relative to the button
-                    Point p = btnpfp.PointToScreen(Point.Empty);
-                    SubForm.Location = new Point(p.X, p.Y + btnpfp.Height);
+                    Point p = guna2Button1.PointToScreen(Point.Empty);
+                    SubForm.Location = new Point(p.X, p.Y + guna2Button1.Height);
                     //SubForm.Deactivate += SubForm_Deactivate;
                     /// SubForm.MouseDown.
                     SubForm.Show();

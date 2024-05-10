@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerReports));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             rating = new Guna.UI2.WinForms.Guna2ComboBox();
             experience = new Guna.UI2.WinForms.Guna2ComboBox();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            panel1 = new Panel();
-            lblExperience = new Label();
-            lblClientsManaged = new Label();
-            lblrating = new Label();
-            panel2 = new Panel();
-            Gender = new Label();
-            name = new Label();
+            panelContainer = new Panel();
+            panelTemplate = new Panel();
+            panel3 = new Panel();
+            nameLabel = new Label();
+            experienceLabel = new Label();
+            genderLabel = new Label();
             navPanel.SuspendLayout();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            panelContainer.SuspendLayout();
+            panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
-            navPanel.BackColor = Color.FromArgb(126, 46, 53);
+            navPanel.BackColor = Color.FromArgb(25, 42, 40);
             navPanel.Controls.Add(rating);
             navPanel.Controls.Add(experience);
             navPanel.Controls.Add(searchBar);
@@ -67,7 +66,7 @@
             // 
             rating.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             rating.BackColor = Color.Transparent;
-            rating.CustomizableEdges = customizableEdges1;
+            rating.CustomizableEdges = customizableEdges13;
             rating.DrawMode = DrawMode.OwnerDrawFixed;
             rating.DropDownStyle = ComboBoxStyle.DropDownList;
             rating.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -77,7 +76,7 @@
             rating.ItemHeight = 30;
             rating.Location = new Point(738, 12);
             rating.Name = "rating";
-            rating.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            rating.ShadowDecoration.CustomizableEdges = customizableEdges14;
             rating.Size = new Size(164, 36);
             rating.TabIndex = 12;
             // 
@@ -85,7 +84,7 @@
             // 
             experience.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             experience.BackColor = Color.Transparent;
-            experience.CustomizableEdges = customizableEdges3;
+            experience.CustomizableEdges = customizableEdges15;
             experience.DrawMode = DrawMode.OwnerDrawFixed;
             experience.DropDownStyle = ComboBoxStyle.DropDownList;
             experience.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -95,7 +94,7 @@
             experience.ItemHeight = 30;
             experience.Location = new Point(917, 12);
             experience.Name = "experience";
-            experience.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            experience.ShadowDecoration.CustomizableEdges = customizableEdges16;
             experience.Size = new Size(164, 36);
             experience.TabIndex = 11;
             // 
@@ -104,7 +103,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges5;
+            searchBar.CustomizableEdges = customizableEdges17;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -120,102 +119,89 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             searchBar.Size = new Size(177, 28);
             searchBar.TabIndex = 10;
             // 
-            // panel1
+            // panelContainer
             // 
-            panel1.BackColor = Color.FromArgb(26, 46, 53);
-            panel1.Controls.Add(lblExperience);
-            panel1.Controls.Add(lblClientsManaged);
-            panel1.Controls.Add(lblrating);
-            panel1.Controls.Add(panel2);
-            panel1.Location = new Point(14, 72);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1067, 134);
-            panel1.TabIndex = 3;
+            panelContainer.AutoScroll = true;
+            panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Controls.Add(panelTemplate);
+            panelContainer.Dock = DockStyle.Fill;
+            panelContainer.Location = new Point(0, 57);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1093, 566);
+            panelContainer.TabIndex = 11;
             // 
-            // lblExperience
+            // panelTemplate
             // 
-            lblExperience.AutoSize = true;
-            lblExperience.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            lblExperience.ForeColor = Color.White;
-            lblExperience.Location = new Point(283, 73);
-            lblExperience.Name = "lblExperience";
-            lblExperience.Size = new Size(105, 25);
-            lblExperience.TabIndex = 4;
-            lblExperience.Text = "Experience";
+            panelTemplate.BackColor = Color.FromArgb(42, 101, 97);
+            panelTemplate.Controls.Add(panel3);
+            panelTemplate.Controls.Add(nameLabel);
+            panelTemplate.Controls.Add(experienceLabel);
+            panelTemplate.Controls.Add(genderLabel);
+            panelTemplate.Location = new Point(126, 41);
+            panelTemplate.Name = "panelTemplate";
+            panelTemplate.Padding = new Padding(20, 0, 0, 0);
+            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.TabIndex = 6;
             // 
-            // lblClientsManaged
+            // panel3
             // 
-            lblClientsManaged.AutoSize = true;
-            lblClientsManaged.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            lblClientsManaged.ForeColor = Color.White;
-            lblClientsManaged.Location = new Point(522, 36);
-            lblClientsManaged.Name = "lblClientsManaged";
-            lblClientsManaged.Size = new Size(218, 25);
-            lblClientsManaged.TabIndex = 3;
-            lblClientsManaged.Text = "No. Of Clients Managed";
+            panel3.BackColor = Color.FromArgb(25, 42, 40);
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(96, 78);
+            panel3.TabIndex = 6;
             // 
-            // lblrating
+            // nameLabel
             // 
-            lblrating.AutoSize = true;
-            lblrating.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            lblrating.ForeColor = Color.White;
-            lblrating.Location = new Point(283, 36);
-            lblrating.Name = "lblrating";
-            lblrating.Size = new Size(68, 25);
-            lblrating.TabIndex = 2;
-            lblrating.Text = "Rating";
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            nameLabel.ForeColor = Color.White;
+            nameLabel.Location = new Point(244, 11);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(53, 21);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Name";
             // 
-            // panel2
+            // experienceLabel
             // 
-            panel2.BackColor = Color.FromArgb(42, 101, 97);
-            panel2.Controls.Add(Gender);
-            panel2.Controls.Add(name);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(247, 134);
-            panel2.TabIndex = 1;
+            experienceLabel.AutoSize = true;
+            experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            experienceLabel.ForeColor = Color.White;
+            experienceLabel.Location = new Point(562, 11);
+            experienceLabel.Name = "experienceLabel";
+            experienceLabel.Size = new Size(90, 21);
+            experienceLabel.TabIndex = 3;
+            experienceLabel.Text = "Experience";
             // 
-            // Gender
+            // genderLabel
             // 
-            Gender.AutoSize = true;
-            Gender.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            Gender.ForeColor = Color.White;
-            Gender.Location = new Point(19, 73);
-            Gender.Name = "Gender";
-            Gender.Size = new Size(74, 25);
-            Gender.TabIndex = 1;
-            Gender.Text = "Gender";
-            // 
-            // name
-            // 
-            name.AutoSize = true;
-            name.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            name.ForeColor = Color.White;
-            name.Location = new Point(19, 36);
-            name.Name = "name";
-            name.Size = new Size(64, 25);
-            name.TabIndex = 0;
-            name.Text = "Name";
+            genderLabel.AutoSize = true;
+            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            genderLabel.ForeColor = Color.White;
+            genderLabel.Location = new Point(244, 39);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(64, 21);
+            genderLabel.TabIndex = 2;
+            genderLabel.Text = "Gender";
             // 
             // TrainerReports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1093, 623);
-            Controls.Add(panel1);
+            Controls.Add(panelContainer);
             Controls.Add(navPanel);
             Name = "TrainerReports";
             Text = "Trainer Reports";
+            Load += TrainerReports_Load;
             navPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelContainer.ResumeLayout(false);
+            panelTemplate.ResumeLayout(false);
+            panelTemplate.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -233,5 +219,15 @@
         private Label lblrating;
         private Panel panel2;
         private Label Gender;
+        private Panel panelContainer;
+        private Panel panelTemplate;
+        private Label nameLabel;
+        private Label experienceLabel;
+        private Label genderLabel;
+        private Panel panel3;
+        private Button button2;
+        private ImageList imageList1;
+        private Panel panel4;
+        private Panel panel5;
     }
 }

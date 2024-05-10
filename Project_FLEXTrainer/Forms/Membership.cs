@@ -79,8 +79,8 @@ namespace Project_FLEXTrainer.Forms
 
                     if (reader.Read())
                     {
-                        txtGym.Text = "Gym" + reader["name"].ToString();
-                        txtPlan.Text ="Plan Type" + reader["type"].ToString();
+                        txtGym.Text = "Gym: " + reader["name"].ToString();
+                        txtPlan.Text ="Plan Type: " + reader["type"].ToString();
                     }
 
                     // Close the SqlDataReader
@@ -111,7 +111,7 @@ namespace Project_FLEXTrainer.Forms
                 messageBox.BringToFront();
                 return;
             }
-            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(MembershipId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
+            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Basic','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -187,7 +187,7 @@ namespace Project_FLEXTrainer.Forms
                 messageBox.BringToFront();
                 return;
             }
-            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT COUNT(memberId)+1 FROM MemberMembership), (SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
+            string sqlQuery = "INSERT INTO MemberMembership VALUES ((SELECT id\r\nFROM userr\r\nWHERE username = @username), (SELECT id\r\nFrom gym\r\nWHERE gym.name=@gymName), 'Premium','2024-06-14');";
             string selectedGymName = gunaCombo.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

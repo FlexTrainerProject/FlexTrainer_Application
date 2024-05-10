@@ -32,17 +32,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             GymInfoPanel = new Guna.UI2.WinForms.Guna2Panel();
             label3 = new Label();
-            label2 = new Label();
-            txtGymLoc = new Label();
-            txtGymName = new Label();
-            totalMembers = new Panel();
-            label = new Label();
-            totalTrainers = new Panel();
-            label1 = new Label();
+            label7 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            label2 = new Label();
+            txtGymName = new Label();
+            totalMembers = new Panel();
+            label8 = new Label();
+            label = new Label();
+            totalTrainers = new Panel();
+            label9 = new Label();
+            label1 = new Label();
             GymInfoPanel.SuspendLayout();
             totalMembers.SuspendLayout();
             totalTrainers.SuspendLayout();
@@ -55,13 +55,11 @@
             GymInfoPanel.BackColor = Color.FromArgb(26, 46, 53);
             GymInfoPanel.BorderRadius = 148;
             GymInfoPanel.BorderThickness = 5;
-            GymInfoPanel.Controls.Add(label6);
+            GymInfoPanel.Controls.Add(label3);
             GymInfoPanel.Controls.Add(label7);
             GymInfoPanel.Controls.Add(label4);
             GymInfoPanel.Controls.Add(label5);
-            GymInfoPanel.Controls.Add(label3);
             GymInfoPanel.Controls.Add(label2);
-            GymInfoPanel.Controls.Add(txtGymLoc);
             GymInfoPanel.Controls.Add(txtGymName);
             GymInfoPanel.CustomizableEdges = customizableEdges1;
             GymInfoPanel.Location = new Point(12, 12);
@@ -75,11 +73,44 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(230, 124);
+            label3.Location = new Point(230, 192);
             label3.Name = "label3";
             label3.Size = new Size(61, 30);
-            label3.TabIndex = 3;
+            label3.TabIndex = 7;
             label3.Text = "nunu";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(51, 124);
+            label7.Name = "label7";
+            label7.Size = new Size(151, 30);
+            label7.TabIndex = 6;
+            label7.Text = "Gym Location:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(230, 124);
+            label4.Name = "label4";
+            label4.Size = new Size(61, 30);
+            label4.TabIndex = 5;
+            label4.Text = "nunu";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(51, 192);
+            label5.Name = "label5";
+            label5.Size = new Size(131, 30);
+            label5.TabIndex = 4;
+            label5.Text = "Gym Rating:";
             // 
             // label2
             // 
@@ -91,17 +122,6 @@
             label2.Size = new Size(68, 30);
             label2.TabIndex = 2;
             label2.Text = "yayay";
-            // 
-            // txtGymLoc
-            // 
-            txtGymLoc.AutoSize = true;
-            txtGymLoc.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtGymLoc.ForeColor = Color.White;
-            txtGymLoc.Location = new Point(51, 124);
-            txtGymLoc.Name = "txtGymLoc";
-            txtGymLoc.Size = new Size(126, 30);
-            txtGymLoc.TabIndex = 1;
-            txtGymLoc.Text = "Gym Rating";
             // 
             // txtGymName
             // 
@@ -117,11 +137,23 @@
             // totalMembers
             // 
             totalMembers.BackColor = Color.FromArgb(26, 46, 53);
+            totalMembers.Controls.Add(label8);
             totalMembers.Controls.Add(label);
             totalMembers.Location = new Point(12, 338);
             totalMembers.Name = "totalMembers";
             totalMembers.Size = new Size(334, 273);
             totalMembers.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(164, 59);
+            label8.Name = "label8";
+            label8.Size = new Size(61, 30);
+            label8.TabIndex = 8;
+            label8.Text = "nunu";
             // 
             // label
             // 
@@ -137,11 +169,23 @@
             // totalTrainers
             // 
             totalTrainers.BackColor = Color.FromArgb(26, 46, 53);
+            totalTrainers.Controls.Add(label9);
             totalTrainers.Controls.Add(label1);
             totalTrainers.Location = new Point(378, 338);
             totalTrainers.Name = "totalTrainers";
             totalTrainers.Size = new Size(361, 273);
             totalTrainers.TabIndex = 2;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(173, 59);
+            label9.Name = "label9";
+            label9.Size = new Size(61, 30);
+            label9.TabIndex = 8;
+            label9.Text = "nunu";
             // 
             // label1
             // 
@@ -153,50 +197,6 @@
             label1.Size = new Size(114, 60);
             label1.TabIndex = 2;
             label1.Text = "TOTAL \r\nTRAINERS:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(230, 181);
-            label4.Name = "label4";
-            label4.Size = new Size(61, 30);
-            label4.TabIndex = 5;
-            label4.Text = "nunu";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(51, 181);
-            label5.Name = "label5";
-            label5.Size = new Size(151, 30);
-            label5.TabIndex = 4;
-            label5.Text = "Gym Location:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(580, 124);
-            label6.Name = "label6";
-            label6.Size = new Size(61, 30);
-            label6.TabIndex = 7;
-            label6.Text = "nunu";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(401, 124);
-            label7.Name = "label7";
-            label7.Size = new Size(151, 30);
-            label7.TabIndex = 6;
-            label7.Text = "Gym Location:";
             // 
             // GymReport
             // 
@@ -233,5 +233,7 @@
         private Label label7;
         private Label label4;
         private Label label5;
+        private Label label8;
+        private Label label9;
     }
 }
