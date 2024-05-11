@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project_FLEXTrainer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21852c2fde09c45ec3eb253dd8db840f26d33521")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98fee34ba4761b89851b5203e3b0538c9357d156")]
 [assembly: System.Reflection.AssemblyProductAttribute("Project_FLEXTrainer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Project_FLEXTrainer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

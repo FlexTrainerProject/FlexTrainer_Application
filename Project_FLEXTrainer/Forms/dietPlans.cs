@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using Guna.Charts.WinForms;
+using Guna.UI2.WinForms;
 using Microsoft.VisualBasic.ApplicationServices;
 using Project_FLEXTrainer.Essentials.MessageBoxes;
 using System;
@@ -13,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 
@@ -28,10 +30,10 @@ namespace Project_FLEXTrainer.Forms
         {
             InitializeComponent();
             stringConnection = Essentials.ConnectionString.GetConnectionString();
-            DisplayDietPlans();
 
             user = userr;
             panelTemplate.Visible = false;
+            DisplayDietPlans();
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -51,10 +53,19 @@ namespace Project_FLEXTrainer.Forms
 
                 if (newControl is Button)
                 {
-                    Button newButton = (Button)newControl;
-                    newButton.Image = imageList1.Images[0];
-                    newButton.FlatStyle = FlatStyle.Flat;
-                    newButton.FlatAppearance.BorderSize = 0;
+                    if (newControl.Name == "button2")
+                    {
+                        Button newButton = (Button)newControl;
+                        newButton.Image = imageList1.Images[0];
+                        newButton.FlatStyle = FlatStyle.Flat;
+                        newButton.FlatAppearance.BorderSize = 0;
+                    }else
+                    {
+                        Button newButton = (Button)newControl;
+                        newButton.Image = imageList1.Images[1];
+                        newButton.FlatStyle = FlatStyle.Flat;
+                        newButton.FlatAppearance.BorderSize = 0;
+                    }
                 }
 
                 if (newControl is Label)
@@ -110,7 +121,7 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "Experience: " + type;
 
                 }
-                else if (control is Button)
+                else if (control is Button && control.Name == "button2")
                 {
                     Button button = (Button)control;
                     button.Click += (sender, e) =>
@@ -143,6 +154,18 @@ namespace Project_FLEXTrainer.Forms
                         messageBox.FormBorderStyle = FormBorderStyle.None;
                         messageBox.StartPosition = FormStartPosition.CenterScreen;
                         messageBox.Show();
+                    };
+                }
+                else if (control is Button && control.Name == "button3")
+                {
+                    Button button = (Button)control;
+                    button.Click += (sender, e) =>
+                    {
+                        Forms.SubForms.showSelected SubForm = new Forms.SubForms.showSelected(user, planID);
+                        SubForm.FormBorderStyle = FormBorderStyle.None; // Remove title bar
+                        SubForm.StartPosition = FormStartPosition.CenterScreen;
+
+                        SubForm.Show(); // Show the form as a separate window
                     };
                 }
 

@@ -44,12 +44,20 @@
             experienceLabel = new Label();
             genderLabel = new Label();
             panelContainer = new Panel();
+            panel2 = new Panel();
+            button2 = new Button();
+            label2 = new Label();
+            noMemberPanel = new Panel();
+            closeError = new Button();
+            label1 = new Label();
             imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
             filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)filterPic).BeginInit();
             panelTemplate.SuspendLayout();
             panelContainer.SuspendLayout();
+            panel2.SuspendLayout();
+            noMemberPanel.SuspendLayout();
             SuspendLayout();
             // 
             // topPanel
@@ -57,6 +65,7 @@
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
             topPanel.Controls.Add(filterPanel);
             topPanel.Controls.Add(panelTxt);
+            topPanel.Controls.Add(panelTemplate);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
@@ -117,7 +126,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(166, 72);
+            panelTemplate.Location = new Point(175, 12);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(736, 78);
@@ -199,12 +208,86 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
+            panelContainer.Controls.Add(panel2);
+            panelContainer.Controls.Add(noMemberPanel);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 0);
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(1093, 623);
             panelContainer.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(126, 46, 53);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(label2);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 43);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1093, 43);
+            panel2.TabIndex = 5;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Right;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(1056, 0);
+            button2.Name = "button2";
+            button2.Padding = new Padding(0, 10, 0, 0);
+            button2.Size = new Size(37, 43);
+            button2.TabIndex = 1;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label2
+            // 
+            label2.Dock = DockStyle.Left;
+            label2.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Padding = new Padding(5, 14, 0, 0);
+            label2.Size = new Size(1038, 43);
+            label2.TabIndex = 0;
+            label2.Text = "No gym Membership Yet, Apply first to book appointment";
+            // 
+            // noMemberPanel
+            // 
+            noMemberPanel.BackColor = Color.FromArgb(126, 46, 53);
+            noMemberPanel.Controls.Add(closeError);
+            noMemberPanel.Controls.Add(label1);
+            noMemberPanel.Dock = DockStyle.Top;
+            noMemberPanel.Location = new Point(0, 0);
+            noMemberPanel.Name = "noMemberPanel";
+            noMemberPanel.Size = new Size(1093, 43);
+            noMemberPanel.TabIndex = 4;
+            // 
+            // closeError
+            // 
+            closeError.Dock = DockStyle.Right;
+            closeError.FlatAppearance.BorderSize = 0;
+            closeError.FlatStyle = FlatStyle.Flat;
+            closeError.Image = (Image)resources.GetObject("closeError.Image");
+            closeError.Location = new Point(1056, 0);
+            closeError.Name = "closeError";
+            closeError.Size = new Size(37, 43);
+            closeError.TabIndex = 1;
+            closeError.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Left;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Padding = new Padding(5, 7, 0, 0);
+            label1.Size = new Size(425, 132);
+            label1.TabIndex = 0;
+            label1.Text = "Currently, you do not have a gym membership. \r\n\r\n\r\n\r\n\r\n";
             // 
             // imageList1
             // 
@@ -229,6 +312,9 @@
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             panelContainer.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            noMemberPanel.ResumeLayout(false);
+            noMemberPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -249,5 +335,11 @@
         private Panel panel1;
         private ImageList imageList1;
         private Label ID_hidden;
+        private Panel panel2;
+        private Button button2;
+        private Label label2;
+        private Panel noMemberPanel;
+        private Button closeError;
+        private Label label1;
     }
 }
