@@ -32,8 +32,27 @@ namespace Project_FLEXTrainer.Forms
             stringConnection = Essentials.ConnectionString.GetConnectionString();
 
             user = userr;
+            string temp = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
             panelTemplate.Visible = false;
-            DisplayDietPlans();
+
+            comboBox4.Items.Add("None");
+            comboBox4.Items.Add("Peanuts");
+            comboBox4.Items.Add("Allergens");
+            
+
+            comboBox4.SelectedIndexChanged += new EventHandler(comboBox4_SelectedIndexChanged);
+            DisplayDietPlans(temp);
+        }
+
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                string rr;
+                rr = "Select * from diet_plan Join meals on diet_plan.plan_id = meals.plan_id where allergents != '" + comboBox4.SelectedItem.ToString() + "'";
+                panelContainer.Controls.Clear();
+                DisplayDietPlans(rr);
+
+            
         }
 
         private Panel CreatePanelFromTemplate(Panel templatePanel)
@@ -59,7 +78,8 @@ namespace Project_FLEXTrainer.Forms
                         newButton.Image = imageList1.Images[0];
                         newButton.FlatStyle = FlatStyle.Flat;
                         newButton.FlatAppearance.BorderSize = 0;
-                    }else
+                    }
+                    else
                     {
                         Button newButton = (Button)newControl;
                         newButton.Image = imageList1.Images[1];
@@ -76,7 +96,7 @@ namespace Project_FLEXTrainer.Forms
                     {
                         newLabel.Visible = false;
                     }
-                    newLabel.AutoSize = true; 
+                    newLabel.AutoSize = true;
                 }
             }
 
@@ -102,7 +122,7 @@ namespace Project_FLEXTrainer.Forms
         }
         public void DisplayEntry(string goal, string nutrition, string type, string planID)
         {
-            Panel templatePanel = panelTemplate; 
+            Panel templatePanel = panelTemplate;
 
             Panel entryPanel = CreatePanelFromTemplate(templatePanel);
 
@@ -179,10 +199,10 @@ namespace Project_FLEXTrainer.Forms
             panelContainer.Controls.Add(entryPanel);
         }
 
-        private void DisplayDietPlans()
+        private void DisplayDietPlans(string temp)
         {
 
-             String query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
+            String query = temp;
 
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -230,6 +250,18 @@ namespace Project_FLEXTrainer.Forms
             SubForm.StartPosition = FormStartPosition.CenterScreen;
 
             SubForm.Show(); // Show the form as a separate window
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            string rr;
+            rr = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
+
+
+
+
+            panelContainer.Controls.Clear();
+            DisplayDietPlans(rr);
         }
     }
 }

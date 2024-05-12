@@ -32,6 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
             btnCreateWP = new Button();
             topPanel = new Panel();
+            comboBox5 = new ComboBox();
+            comboBox4 = new ComboBox();
+            btnrefresh = new Button();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
+            button1 = new Button();
             panelTemplate = new Panel();
             hiddenID = new Label();
             panel1 = new Panel();
@@ -39,11 +46,6 @@
             nameLabel = new Label();
             experienceLabel = new Label();
             genderLabel = new Label();
-            btnrefresh = new Button();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
             panelContainer = new Panel();
             imageList1 = new ImageList(components);
             topPanel.SuspendLayout();
@@ -70,6 +72,8 @@
             // 
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
             topPanel.Controls.Add(panelTemplate);
+            topPanel.Controls.Add(comboBox5);
+            topPanel.Controls.Add(comboBox4);
             topPanel.Controls.Add(btnrefresh);
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
@@ -82,6 +86,83 @@
             topPanel.Size = new Size(1218, 58);
             topPanel.TabIndex = 0;
             // 
+            // comboBox5
+            // 
+            comboBox5.Anchor = AnchorStyles.Right;
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(375, 18);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(121, 23);
+            comboBox5.TabIndex = 18;
+            comboBox5.Text = "Not Machine";
+            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Anchor = AnchorStyles.Right;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(502, 18);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(121, 23);
+            comboBox4.TabIndex = 17;
+            comboBox4.Text = "Machine";
+            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
+            // 
+            // btnrefresh
+            // 
+            btnrefresh.FlatAppearance.BorderSize = 0;
+            btnrefresh.FlatStyle = FlatStyle.Flat;
+            btnrefresh.Image = (Image)resources.GetObject("btnrefresh.Image");
+            btnrefresh.Location = new Point(3, 3);
+            btnrefresh.Name = "btnrefresh";
+            btnrefresh.Size = new Size(53, 46);
+            btnrefresh.TabIndex = 16;
+            btnrefresh.UseVisualStyleBackColor = true;
+            btnrefresh.Click += btnrefresh_Click;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Anchor = AnchorStyles.Right;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(631, 18);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(121, 23);
+            comboBox3.TabIndex = 14;
+            comboBox3.Text = "Goal";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Right;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(758, 18);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 13;
+            comboBox2.Text = "Schedule";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(884, 19);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 12;
+            comboBox1.Text = "Experience Level";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1020, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 58);
+            button1.TabIndex = 11;
+            button1.UseVisualStyleBackColor = false;
+            // 
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
@@ -91,7 +172,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(165, 31);
+            panelTemplate.Location = new Point(131, 19);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -161,61 +242,6 @@
             genderLabel.TabIndex = 2;
             genderLabel.Text = "Gender";
             // 
-            // btnrefresh
-            // 
-            btnrefresh.FlatAppearance.BorderSize = 0;
-            btnrefresh.FlatStyle = FlatStyle.Flat;
-            btnrefresh.Image = (Image)resources.GetObject("btnrefresh.Image");
-            btnrefresh.Location = new Point(3, 3);
-            btnrefresh.Name = "btnrefresh";
-            btnrefresh.Size = new Size(53, 46);
-            btnrefresh.TabIndex = 16;
-            btnrefresh.UseVisualStyleBackColor = true;
-            btnrefresh.Click += btnrefresh_Click;
-            // 
-            // comboBox3
-            // 
-            comboBox3.Anchor = AnchorStyles.Right;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(631, 18);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 14;
-            comboBox3.Text = "Goal";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Right;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(758, 18);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 13;
-            comboBox2.Text = "Schedule";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Right;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(884, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 12;
-            comboBox1.Text = "Experience Level";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(192, 0, 0);
-            button1.Dock = DockStyle.Right;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1020, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(30, 58);
-            button1.TabIndex = 11;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // panelContainer
             // 
             panelContainer.AutoScroll = true;
@@ -267,5 +293,7 @@
         private ImageList imageList1;
         private Button btnrefresh;
         private Label hiddenID;
+        private ComboBox comboBox4;
+        private ComboBox comboBox5;
     }
 }

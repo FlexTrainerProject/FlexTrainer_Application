@@ -12,6 +12,8 @@ using static Project_FLEXTrainer.Forms.bookSession;
 using Project_FLEXTrainer.Essentials.MessageBoxes;
 using Microsoft.VisualBasic.ApplicationServices;
 using Guna.Charts.WinForms;
+using System.Reflection.Emit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_FLEXTrainer.Forms
 {
@@ -22,27 +24,93 @@ namespace Project_FLEXTrainer.Forms
         User user;
         string stringConnection;
 
-        public workoutPlans(User User)
+        Panel panel;
+
+        public workoutPlans(Panel panel, User User)
         {
             InitializeComponent();
             stringConnection = Essentials.ConnectionString.GetConnectionString();
 
-            DisplayWorkoutPlan();
+            string temp = "Select * from workout_plan";
+
+            DisplayWorkoutPlan(temp);
 
             panelTemplate.Visible = false;
             user = User;
+
+            this.panel = panel;
+            
+
+            
+
+            //MessageBox.Show(query);
+            comboBox4.Items.Add("None");
+            comboBox4.Items.Add("Chest Press");
+            comboBox4.Items.Add("Lat Pulldown");
+            comboBox4.Items.Add("Barbell");
+
+            comboBox5.Items.Add("None");
+            comboBox5.Items.Add("Chest Press");
+            comboBox5.Items.Add("Lat Pulldown");
+            comboBox5.Items.Add("Barbell");
+
+
+
+            comboBox4.SelectedIndexChanged += new EventHandler(comboBox4_SelectedIndexChanged);
+            comboBox5.SelectedIndexChanged += new EventHandler(comboBox5_SelectedIndexChanged);
+
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                string rr;
+                rr = "Select * from workout_plan Join exercise on workout_plan.plan_id = exercise.plan_id where machine = '" + comboBox4.SelectedItem.ToString() + "'";
+
+               
+
+                
+                panelContainer.Controls.Clear();
+                DisplayWorkoutPlan(rr);
+
+            
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                
+                string rr;
+                rr = "Select * from workout_plan Join exercise on workout_plan.plan_id = exercise.plan_id where machine != '" + comboBox5.SelectedItem.ToString() + "'";
+
+
+                panelContainer.Controls.Clear();
+                DisplayWorkoutPlan(rr);
+            
         }
 
 
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            //tabPic.Image. = ;
+        }
         private void btnCreateWP_Click(object sender, EventArgs e)
         {
             if (user.isProfileComplete == false)
             {
                 Form messageBox = new customMessage_CompleteProfile();
                 messageBox.FormBorderStyle = FormBorderStyle.None;
-                messageBox.StartPosition= FormStartPosition.CenterScreen;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
                 messageBox.Show();
-                
+
                 return;
             }
             Forms.SubForms.createWorkoutPlan SubForm = new Forms.SubForms.createWorkoutPlan(user);
@@ -67,9 +135,9 @@ namespace Project_FLEXTrainer.Forms
                 Control newControl = CreateControlFromTemplate(control);
                 newPanel.Controls.Add(newControl);
 
-                if (newControl is Button)
+                if (newControl is System.Windows.Forms.Button)
                 {
-                    Button newButton = (Button)newControl;
+                    System.Windows.Forms.Button newButton = (System.Windows.Forms.Button)newControl;
                     newButton.Image = imageList1.Images[0];
                     newButton.FlatStyle = FlatStyle.Flat;
                     newButton.FlatAppearance.BorderSize = 0;
@@ -77,11 +145,11 @@ namespace Project_FLEXTrainer.Forms
                     newButton.ImageAlign = ContentAlignment.MiddleLeft;
                 }
 
-                if (newControl is Label)
+                if (newControl is System.Windows.Forms.Label)
                 {
 
-                    Label newLabel = (Label)newControl;
-                    if(newLabel.Name == "hiddenID")
+                    System.Windows.Forms.Label newLabel = (System.Windows.Forms.Label)newControl;
+                    if (newLabel.Name == "hiddenID")
                     {
                         newLabel.Visible = false;
                     }
@@ -118,9 +186,9 @@ namespace Project_FLEXTrainer.Forms
 
             foreach (Control control in entryPanel.Controls)
             {
-                if (control is Label)
+                if (control is System.Windows.Forms.Label)
                 {
-                    Label label = (Label)control;
+                    System.Windows.Forms.Label label = (System.Windows.Forms.Label)control;
 
                     if (label.Name == "nameLabel")
                         label.Text = "Goal: " + goal;
@@ -132,9 +200,9 @@ namespace Project_FLEXTrainer.Forms
                         label.Text = "planID";
 
                 }
-                else if (control is Button)
+                else if (control is System.Windows.Forms.Button)
                 {
-                    Button button = (Button)control;
+                    System.Windows.Forms.Button button = (System.Windows.Forms.Button)control;
                     button.Click += (sender, e) =>
                     {
                         SqlConnection connection = new SqlConnection(stringConnection);
@@ -178,12 +246,12 @@ namespace Project_FLEXTrainer.Forms
             panelContainer.Controls.Add(entryPanel);
         }
 
-        private void DisplayWorkoutPlan()
+        private void DisplayWorkoutPlan(string temp)
         {
-           // string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
+            // string connect = "Data Source=DESKTOP-OLHUDAG;Initial Catalog=Flex_trainer;Integrated Security=True;Encrypt=False";
             //string connect = "Data Source=MNK\\SQLEXPRESS;Initial Catalog=Project;Integrated Security=True;Encrypt=False";
 
-            String query = "Select* from workout_plan";
+            string query = temp;
 
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -215,7 +283,7 @@ namespace Project_FLEXTrainer.Forms
             }
         }
 
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -224,10 +292,13 @@ namespace Project_FLEXTrainer.Forms
 
         private void btnrefresh_Click(object sender, EventArgs e)
         {
-           //work for YOU HAMDAN
 
-            //;-;
-            
+            string rr = "Select * from workout_plan";
+            panelContainer.Controls.Clear();
+            DisplayWorkoutPlan(rr);
+
         }
+
+        
     }
 }

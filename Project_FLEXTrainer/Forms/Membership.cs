@@ -76,7 +76,7 @@ namespace Project_FLEXTrainer.Forms
                     if (reader.Read())
                     {
                         txtGym.Text = "Gym: " + reader["name"].ToString();
-                        txtPlan.Text ="Plan Type: " + reader["type"].ToString();
+                        txtPlan.Text = "Plan Type: " + reader["type"].ToString();
                     }
                     reader.Close();
                 }
@@ -106,7 +106,7 @@ namespace Project_FLEXTrainer.Forms
                 return;
             }
 
-            if(currUser.isProfileComplete == false)
+            if (currUser.isProfileComplete == false)
             {
                 Form messageBox = new customMessage_CompleteProfile();
                 messageBox.FormBorderStyle = FormBorderStyle.None;
@@ -116,7 +116,7 @@ namespace Project_FLEXTrainer.Forms
                 return;
             }
 
-            if(gunaCombo.SelectedIndex == -1)
+            if (gunaCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Missing INFO");
                 return;
@@ -234,6 +234,11 @@ namespace Project_FLEXTrainer.Forms
                     }
                 }
             }
+        }
+
+        private void gunaCombo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

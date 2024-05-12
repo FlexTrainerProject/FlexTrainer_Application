@@ -233,6 +233,7 @@
             gunaCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             gunaCombo.Size = new Size(285, 36);
             gunaCombo.TabIndex = 3;
+            gunaCombo.SelectedIndexChanged += gunaCombo_SelectedIndexChanged_1;
             // 
             // label3
             // 
