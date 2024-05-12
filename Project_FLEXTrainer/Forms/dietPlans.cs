@@ -50,7 +50,7 @@ namespace Project_FLEXTrainer.Forms
             
 
             comboBox4.SelectedIndexChanged += new EventHandler(comboBox4_SelectedIndexChanged);
-            DisplayDietPlans(temp);
+            DisplayDietPlans(false, false,temp);
         }
 
 
@@ -59,7 +59,7 @@ namespace Project_FLEXTrainer.Forms
                 string rr;
                 rr = "Select * from diet_plan Join meals on diet_plan.plan_id = meals.plan_id where allergents != '" + comboBox4.SelectedItem.ToString() + "'";
                 panelContainer.Controls.Clear();
-                DisplayDietPlans(rr);
+                DisplayDietPlans(false, false,rr);
 
             
         }
@@ -294,10 +294,11 @@ namespace Project_FLEXTrainer.Forms
         private void calorieFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             carbCombo.SelectedIndex = -1;
+            string temp = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
             if (calorieFilter.SelectedIndex != -1)
             {
                 panelContainer.Controls.Clear();
-                DisplayDietPlans(true, false);
+                DisplayDietPlans(true, false,temp);
 
             }
         }
@@ -305,16 +306,17 @@ namespace Project_FLEXTrainer.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
-            DisplayDietPlans(false, false);
+            DisplayDietPlans(false, false,"false");
         }
 
         private void carbCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             calorieFilter.SelectedIndex = -1;
+            string temp = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
             if (carbCombo.SelectedIndex != -1)
             {
                 panelContainer.Controls.Clear();
-                DisplayDietPlans(false,true);
+                DisplayDietPlans(false,true,temp);
 
             }
         }
@@ -324,11 +326,8 @@ namespace Project_FLEXTrainer.Forms
             string rr;
             rr = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
 
-
-
-
             panelContainer.Controls.Clear();
-            DisplayDietPlans(rr);
+            DisplayDietPlans(false, false,rr);
         }
     }
 }

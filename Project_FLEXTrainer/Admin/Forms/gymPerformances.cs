@@ -50,7 +50,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             }
 
             gunaCombo.SelectedIndexChanged += new EventHandler(gunaCombo_SelectedIndexChanged);
-            
+
         }
 
         private void btnCancelled_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace Project_FLEXTrainer.Admin.Forms
         {
 
             string query;
-             query = "EXEC displayGymMetrics1";
+            query = "EXEC displayGymMetrics1";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -171,11 +171,6 @@ namespace Project_FLEXTrainer.Admin.Forms
 
             panelContainer.Controls.Add(entryPanel);
         }
-
-    }
-
-        }
-
         private void gunaCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (SqlConnection connect = new SqlConnection(Essentials.ConnectionString.GetConnectionString()))
@@ -189,9 +184,6 @@ namespace Project_FLEXTrainer.Admin.Forms
                 }
             }
         }
-
-        // Add this line in your form constructor or wherever you're setting up your form
-        
 
     }
 }

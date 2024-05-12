@@ -33,13 +33,12 @@
             navPanel = new Panel();
             pgTitle = new Label();
             panel1 = new Panel();
+            gunaCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             label2 = new Label();
             label1 = new Label();
-            gunaCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             panelContainer = new Panel();
             panelTemplate = new Panel();
             txtLoc = new Label();
-            panel1 = new Panel();
             name = new Label();
             totalMember = new Label();
             navPanel.SuspendLayout();
@@ -72,14 +71,32 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(25, 42, 40);
+            panel1.BackColor = Color.FromArgb(42, 101, 97);
             panel1.Controls.Add(gunaCombo);
+            panel1.Controls.Add(panelTemplate);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(837, 85);
+            panel1.Location = new Point(3, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(366, 141);
-            panel1.TabIndex = 3;
+            panel1.Size = new Size(317, 126);
+            panel1.TabIndex = 6;
+            // 
+            // gunaCombo
+            // 
+            gunaCombo.BackColor = Color.Transparent;
+            gunaCombo.CustomizableEdges = customizableEdges1;
+            gunaCombo.DrawMode = DrawMode.OwnerDrawFixed;
+            gunaCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            gunaCombo.FocusedColor = Color.FromArgb(94, 148, 255);
+            gunaCombo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            gunaCombo.Font = new Font("Segoe UI", 10F);
+            gunaCombo.ForeColor = Color.FromArgb(68, 88, 112);
+            gunaCombo.ItemHeight = 30;
+            gunaCombo.Location = new Point(13, 20);
+            gunaCombo.Name = "gunaCombo";
+            gunaCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            gunaCombo.Size = new Size(285, 36);
+            gunaCombo.TabIndex = 16;
             // 
             // label2
             // 
@@ -102,26 +119,9 @@
             label1.TabIndex = 14;
             label1.Text = "Total Count: ";
             // 
-            // gunaCombo
-            // 
-            gunaCombo.BackColor = Color.Transparent;
-            gunaCombo.CustomizableEdges = customizableEdges1;
-            gunaCombo.DrawMode = DrawMode.OwnerDrawFixed;
-            gunaCombo.DropDownStyle = ComboBoxStyle.DropDownList;
-            gunaCombo.FocusedColor = Color.FromArgb(94, 148, 255);
-            gunaCombo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            gunaCombo.Font = new Font("Segoe UI", 10F);
-            gunaCombo.ForeColor = Color.FromArgb(68, 88, 112);
-            gunaCombo.ItemHeight = 30;
-            gunaCombo.Location = new Point(13, 20);
-            gunaCombo.Name = "gunaCombo";
-            gunaCombo.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            gunaCombo.Size = new Size(285, 36);
-            gunaCombo.TabIndex = 16;
-            // 
             // panelContainer
             // 
-            panelContainer.Controls.Add(panelTemplate);
+            panelContainer.Controls.Add(panel1);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
@@ -132,10 +132,9 @@
             // 
             panelTemplate.BackColor = Color.FromArgb(25, 42, 40);
             panelTemplate.Controls.Add(txtLoc);
-            panelTemplate.Controls.Add(panel1);
             panelTemplate.Controls.Add(name);
             panelTemplate.Controls.Add(totalMember);
-            panelTemplate.Location = new Point(72, 24);
+            panelTemplate.Location = new Point(67, 114);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(1106, 126);
@@ -151,14 +150,6 @@
             txtLoc.Size = new Size(107, 32);
             txtLoc.TabIndex = 7;
             txtLoc.Text = "Location";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(42, 101, 97);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(84, 126);
-            panel1.TabIndex = 6;
             // 
             // name
             // 
@@ -188,7 +179,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1312, 661);
-            Controls.Add(panel1);
             Controls.Add(panelContainer);
             Controls.Add(navPanel);
             Name = "gymPerformances";
@@ -211,10 +201,10 @@
         private Guna.UI2.WinForms.Guna2ComboBox gunaCombo;
         private Panel panelContainer;
         private Panel panelTemplate;
-        private Label label1;
+       // private Label label1;
         private Label totalTrainers;
         private Label txtLoc;
-        private Panel panel1;
+       // private Panel panel1;
         private Label name;
         private Label totalMember;
     }

@@ -48,9 +48,9 @@
             comboBox4 = new ComboBox();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             button1 = new Button();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            //comboBox3 = new ComboBox();
+            //comboBox2 = new ComboBox();
+            //comboBox1 = new ComboBox();
             panelTemplate = new Panel();
             button3 = new Button();
             button2 = new Button();
@@ -256,33 +256,33 @@
             // 
             // comboBox3
             // 
-            comboBox3.Anchor = AnchorStyles.Right;
+            /*comboBox3.Anchor = AnchorStyles.Right;
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(834, 17);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(99, 23);
             comboBox3.TabIndex = 7;
-            comboBox3.Text = "Nutrition";
+            comboBox3.Text = "Nutrition";*/
             // 
             // comboBox2
             // 
-            comboBox2.Anchor = AnchorStyles.Right;
+           /* comboBox2.Anchor = AnchorStyles.Right;
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(725, 17);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(103, 23);
             comboBox2.TabIndex = 6;
-            comboBox2.Text = "Purpose";
+            comboBox2.Text = "Purpose";*/
             // 
             // comboBox1
             // 
-            comboBox1.Anchor = AnchorStyles.Right;
+            /*comboBox1.Anchor = AnchorStyles.Right;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(618, 17);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(101, 23);
             comboBox1.TabIndex = 5;
-            comboBox1.Text = "Type";
+            comboBox1.Text = "Type";*/
             // 
             // panelTemplate
             // 
