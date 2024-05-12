@@ -132,8 +132,8 @@
             btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnLogout.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnLogout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLogout.FillColor = Color.FromArgb(42, 101, 97);
-            btnLogout.FillColor2 = Color.Teal;
+            btnLogout.FillColor = Color.FromArgb(192, 0, 0);
+            btnLogout.FillColor2 = Color.FromArgb(142, 101, 97);
             btnLogout.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.White;
             btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
@@ -143,7 +143,7 @@
             btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnLogout.Size = new Size(223, 43);
             btnLogout.TabIndex = 6;
-            btnLogout.Text = "i hate mujtabva";
+            btnLogout.Text = "LOG OUT";
             btnLogout.Click += btnLogout_Click;
             // 
             // Profile
