@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Feedbacks));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             panel1 = new Panel();
             label3 = new Label();
@@ -45,13 +45,13 @@
             genderLabel = new Label();
             navPanel.SuspendLayout();
             panel1.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
+            navPanel.Controls.Add(panelTemplate);
             navPanel.Controls.Add(panel1);
             navPanel.Controls.Add(label1);
             navPanel.Controls.Add(searchBar);
@@ -115,7 +115,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.CustomizableEdges = customizableEdges3;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -131,7 +131,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search Member";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             searchBar.Size = new Size(259, 28);
             searchBar.TabIndex = 11;
             // 
@@ -139,7 +139,6 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
@@ -153,7 +152,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(227, 29);
+            panelTemplate.Location = new Point(140, 9);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 117);
@@ -214,7 +213,6 @@
             navPanel.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);
