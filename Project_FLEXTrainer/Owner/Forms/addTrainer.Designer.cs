@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            txtPass = new Guna.UI2.WinForms.Guna2TextBox();
+            label9 = new Label();
+            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            txtAcc = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
             comboBox1 = new ComboBox();
             label3 = new Label();
@@ -61,10 +65,6 @@
             label6 = new Label();
             txtQualification = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
-            label9 = new Label();
-            txtPass = new Guna.UI2.WinForms.Guna2TextBox();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            txtAcc = new Guna.UI2.WinForms.Guna2TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -89,6 +89,84 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1069, 599);
             panel1.TabIndex = 0;
+            // 
+            // txtPass
+            // 
+            txtPass.BorderRadius = 8;
+            txtPass.CustomizableEdges = customizableEdges1;
+            txtPass.DefaultText = "";
+            txtPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPass.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPass.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPass.Font = new Font("Segoe UI", 11F);
+            txtPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPass.Location = new Point(42, 539);
+            txtPass.Margin = new Padding(3, 4, 3, 4);
+            txtPass.Name = "txtPass";
+            txtPass.PasswordChar = '\0';
+            txtPass.PlaceholderText = "PASSWORD";
+            txtPass.SelectedText = "";
+            txtPass.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtPass.Size = new Size(329, 35);
+            txtPass.TabIndex = 17;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(42, 361);
+            label9.Name = "label9";
+            label9.Size = new Size(284, 37);
+            label9.TabIndex = 8;
+            label9.Text = "Account Information";
+            // 
+            // txtEmail
+            // 
+            txtEmail.BorderRadius = 8;
+            txtEmail.CustomizableEdges = customizableEdges3;
+            txtEmail.DefaultText = "";
+            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Font = new Font("Segoe UI", 11F);
+            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEmail.Location = new Point(42, 485);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PasswordChar = '\0';
+            txtEmail.PlaceholderText = "EMAIL";
+            txtEmail.SelectedText = "";
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtEmail.Size = new Size(329, 35);
+            txtEmail.TabIndex = 16;
+            // 
+            // txtAcc
+            // 
+            txtAcc.BorderRadius = 8;
+            txtAcc.CustomizableEdges = customizableEdges5;
+            txtAcc.DefaultText = "";
+            txtAcc.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAcc.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAcc.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAcc.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAcc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAcc.Font = new Font("Segoe UI", 11F);
+            txtAcc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAcc.Location = new Point(42, 425);
+            txtAcc.Margin = new Padding(4);
+            txtAcc.Name = "txtAcc";
+            txtAcc.PasswordChar = '\0';
+            txtAcc.PlaceholderText = "USERNAME";
+            txtAcc.SelectedText = "";
+            txtAcc.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtAcc.Size = new Size(329, 34);
+            txtAcc.TabIndex = 15;
+            txtAcc.TextChanged += txtAcc_TextChanged;
             // 
             // label4
             // 
@@ -124,7 +202,7 @@
             // txtLname
             // 
             txtLname.BorderRadius = 8;
-            txtLname.CustomizableEdges = customizableEdges23;
+            txtLname.CustomizableEdges = customizableEdges7;
             txtLname.DefaultText = "";
             txtLname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtLname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -139,14 +217,14 @@
             txtLname.PasswordChar = '\0';
             txtLname.PlaceholderText = "";
             txtLname.SelectedText = "";
-            txtLname.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            txtLname.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtLname.Size = new Size(210, 35);
             txtLname.TabIndex = 4;
             // 
             // txtFname
             // 
             txtFname.BorderRadius = 8;
-            txtFname.CustomizableEdges = customizableEdges25;
+            txtFname.CustomizableEdges = customizableEdges9;
             txtFname.DefaultText = "";
             txtFname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtFname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -161,7 +239,7 @@
             txtFname.PasswordChar = '\0';
             txtFname.PlaceholderText = "";
             txtFname.SelectedText = "";
-            txtFname.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtFname.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtFname.Size = new Size(210, 35);
             txtFname.TabIndex = 3;
             // 
@@ -207,7 +285,7 @@
             // expTxt
             // 
             expTxt.BorderRadius = 8;
-            expTxt.CustomizableEdges = customizableEdges27;
+            expTxt.CustomizableEdges = customizableEdges11;
             expTxt.DefaultText = "";
             expTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             expTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -222,7 +300,7 @@
             expTxt.PasswordChar = '\0';
             expTxt.PlaceholderText = "";
             expTxt.SelectedText = "";
-            expTxt.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            expTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
             expTxt.Size = new Size(329, 35);
             expTxt.TabIndex = 14;
             // 
@@ -267,7 +345,7 @@
             // txtSpeciality
             // 
             txtSpeciality.BorderRadius = 8;
-            txtSpeciality.CustomizableEdges = customizableEdges29;
+            txtSpeciality.CustomizableEdges = customizableEdges13;
             txtSpeciality.DefaultText = "";
             txtSpeciality.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSpeciality.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -282,7 +360,7 @@
             txtSpeciality.PasswordChar = '\0';
             txtSpeciality.PlaceholderText = "";
             txtSpeciality.SelectedText = "";
-            txtSpeciality.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtSpeciality.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtSpeciality.Size = new Size(329, 35);
             txtSpeciality.TabIndex = 10;
             // 
@@ -300,7 +378,7 @@
             // txtQualification
             // 
             txtQualification.BorderRadius = 8;
-            txtQualification.CustomizableEdges = customizableEdges31;
+            txtQualification.CustomizableEdges = customizableEdges15;
             txtQualification.DefaultText = "";
             txtQualification.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtQualification.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -315,7 +393,7 @@
             txtQualification.PasswordChar = '\0';
             txtQualification.PlaceholderText = "";
             txtQualification.SelectedText = "";
-            txtQualification.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            txtQualification.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtQualification.Size = new Size(329, 34);
             txtQualification.TabIndex = 8;
             // 
@@ -329,83 +407,6 @@
             label5.Size = new Size(102, 21);
             label5.TabIndex = 8;
             label5.Text = "Qualification";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(42, 361);
-            label9.Name = "label9";
-            label9.Size = new Size(284, 37);
-            label9.TabIndex = 8;
-            label9.Text = "Account Information";
-            // 
-            // txtPass
-            // 
-            txtPass.BorderRadius = 8;
-            txtPass.CustomizableEdges = customizableEdges17;
-            txtPass.DefaultText = "";
-            txtPass.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtPass.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtPass.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtPass.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtPass.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPass.Font = new Font("Segoe UI", 11F);
-            txtPass.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPass.Location = new Point(42, 539);
-            txtPass.Margin = new Padding(3, 4, 3, 4);
-            txtPass.Name = "txtPass";
-            txtPass.PasswordChar = '\0';
-            txtPass.PlaceholderText = "PASSWORD";
-            txtPass.SelectedText = "";
-            txtPass.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtPass.Size = new Size(329, 35);
-            txtPass.TabIndex = 17;
-            // 
-            // txtEmail
-            // 
-            txtEmail.BorderRadius = 8;
-            txtEmail.CustomizableEdges = customizableEdges19;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 11F);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(42, 485);
-            txtEmail.Margin = new Padding(3, 4, 3, 4);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
-            txtEmail.PlaceholderText = "EMAIL";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtEmail.Size = new Size(329, 35);
-            txtEmail.TabIndex = 16;
-            // 
-            // txtAcc
-            // 
-            txtAcc.BorderRadius = 8;
-            txtAcc.CustomizableEdges = customizableEdges21;
-            txtAcc.DefaultText = "";
-            txtAcc.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtAcc.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtAcc.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtAcc.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtAcc.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAcc.Font = new Font("Segoe UI", 11F);
-            txtAcc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAcc.Location = new Point(42, 425);
-            txtAcc.Margin = new Padding(4);
-            txtAcc.Name = "txtAcc";
-            txtAcc.PasswordChar = '\0';
-            txtAcc.PlaceholderText = "USERNAME";
-            txtAcc.SelectedText = "";
-            txtAcc.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            txtAcc.Size = new Size(329, 34);
-            txtAcc.TabIndex = 15;
             // 
             // addTrainer
             // 

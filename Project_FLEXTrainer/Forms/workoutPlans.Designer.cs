@@ -30,8 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(workoutPlans));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateWP = new Button();
             topPanel = new Panel();
             panelTemplate = new Panel();
@@ -42,7 +40,6 @@
             experienceLabel = new Label();
             genderLabel = new Label();
             btnrefresh = new Button();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             comboBox3 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
@@ -74,7 +71,6 @@
             topPanel.BackColor = Color.FromArgb(26, 46, 53);
             topPanel.Controls.Add(panelTemplate);
             topPanel.Controls.Add(btnrefresh);
-            topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(comboBox3);
             topPanel.Controls.Add(comboBox2);
             topPanel.Controls.Add(comboBox1);
@@ -170,37 +166,12 @@
             btnrefresh.FlatAppearance.BorderSize = 0;
             btnrefresh.FlatStyle = FlatStyle.Flat;
             btnrefresh.Image = (Image)resources.GetObject("btnrefresh.Image");
-            btnrefresh.Location = new Point(195, 6);
+            btnrefresh.Location = new Point(3, 3);
             btnrefresh.Name = "btnrefresh";
             btnrefresh.Size = new Size(53, 46);
             btnrefresh.TabIndex = 16;
             btnrefresh.UseVisualStyleBackColor = true;
             btnrefresh.Click += btnrefresh_Click;
-            // 
-            // searchBar
-            // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges3;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(12, 12);
-            searchBar.Name = "searchBar";
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            searchBar.Size = new Size(177, 32);
-            searchBar.TabIndex = 15;
             // 
             // comboBox3
             // 
