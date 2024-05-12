@@ -19,6 +19,8 @@ namespace Project_FLEXTrainer.Admin.Forms
         {
             InitializeComponent();
 
+            panelTemplate.Visible = false;
+
             using (SqlConnection connection = new SqlConnection(Essentials.ConnectionString.GetConnectionString()))
             {
                 string sqlQuery = "SELECT name FROM gym";

@@ -198,7 +198,7 @@ namespace Project_FLEXTrainer.Admin.Forms
                         string connect = Essentials.ConnectionString.GetConnectionString();
                         SqlConnection connection = new SqlConnection(connect);
                         connection.Open();
-                        SqlCommand comm = new SqlCommand("Delete from gym WHERE name = '" + name + "';", connection);
+                        SqlCommand comm = new SqlCommand("DECLARE @gym_id INT; SELECT @gym_id = id FROM gym WHERE name = '" + name + "' EXEC sp_DeleteGym @gym_id    ", connection);
                         comm.ExecuteNonQuery();
                         connection.Close();
 
