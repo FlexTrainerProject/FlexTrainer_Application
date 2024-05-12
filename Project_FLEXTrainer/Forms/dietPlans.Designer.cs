@@ -30,10 +30,20 @@
         {
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dietPlans));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCreateDP = new Button();
             topPanel = new Panel();
+            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
+            button1 = new Button();
+            carbCombo = new ComboBox();
+            calorieFilter = new ComboBox();
+            panelTemplate = new Panel();
+            button3 = new Button();
+            button2 = new Button();
+            nameLabel = new Label();
+            experienceLabel = new Label();
+            genderLabel = new Label();
             btnrefresh = new Button();
             comboBox4 = new ComboBox();
             searchBar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,6 +61,7 @@
             panelContainer = new Panel();
             topPanel.SuspendLayout();
             panelTemplate.SuspendLayout();
+            panelContainer.SuspendLayout();
             SuspendLayout();
             // 
             // btnCreateDP
@@ -77,9 +88,8 @@
             topPanel.Controls.Add(comboBox4);
             topPanel.Controls.Add(searchBar);
             topPanel.Controls.Add(button1);
-            topPanel.Controls.Add(comboBox3);
-            topPanel.Controls.Add(comboBox2);
-            topPanel.Controls.Add(comboBox1);
+            topPanel.Controls.Add(carbCombo);
+            topPanel.Controls.Add(calorieFilter);
             topPanel.Controls.Add(btnCreateDP);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
@@ -87,8 +97,81 @@
             topPanel.Size = new Size(1137, 54);
             topPanel.TabIndex = 2;
             // 
+            // searchBar
+            // 
+            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            searchBar.BorderColor = Color.White;
+            searchBar.BorderRadius = 12;
+            searchBar.BorderThickness = 2;
+            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.DefaultText = "";
+            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.Font = new Font("Segoe UI", 9F);
+            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
+            searchBar.Location = new Point(12, 12);
+            searchBar.Name = "searchBar";
+            searchBar.PasswordChar = '\0';
+            searchBar.PlaceholderText = "Search";
+            searchBar.SelectedText = "";
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.Size = new Size(177, 28);
+            searchBar.TabIndex = 9;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.Dock = DockStyle.Right;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(921, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(48, 54);
+            button1.TabIndex = 8;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // carbCombo
+            // 
+            carbCombo.Anchor = AnchorStyles.Right;
+            carbCombo.FormattingEnabled = true;
+            carbCombo.Location = new Point(799, 20);
+            carbCombo.Name = "carbCombo";
+            carbCombo.Size = new Size(99, 23);
+            carbCombo.TabIndex = 7;
+            carbCombo.Text = "Carbohydrate";
+            carbCombo.SelectedIndexChanged += carbCombo_SelectedIndexChanged;
+            // 
+            // calorieFilter
+            // 
+            calorieFilter.Anchor = AnchorStyles.Right;
+            calorieFilter.FormattingEnabled = true;
+            calorieFilter.Location = new Point(681, 20);
+            calorieFilter.Name = "calorieFilter";
+            calorieFilter.Size = new Size(101, 23);
+            calorieFilter.TabIndex = 5;
+            calorieFilter.Text = "Calorie";
+            calorieFilter.SelectedIndexChanged += calorieFilter_SelectedIndexChanged;
+            // 
+            // panelTemplate
             // btnrefresh
             // 
+            panelTemplate.BackColor = Color.FromArgb(170, 52, 60);
+            panelTemplate.Controls.Add(button3);
+            panelTemplate.Controls.Add(button2);
+            panelTemplate.Controls.Add(nameLabel);
+            panelTemplate.Controls.Add(experienceLabel);
+            panelTemplate.Controls.Add(genderLabel);
+            panelTemplate.Location = new Point(148, 21);
+            panelTemplate.Name = "panelTemplate";
+            panelTemplate.Padding = new Padding(20, 0, 0, 0);
+            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.TabIndex = 3;
             btnrefresh.FlatAppearance.BorderSize = 0;
             btnrefresh.FlatStyle = FlatStyle.Flat;
             btnrefresh.Image = (Image)resources.GetObject("btnrefresh.Image");
@@ -99,6 +182,20 @@
             btnrefresh.UseVisualStyleBackColor = true;
             btnrefresh.Click += btnrefresh_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(42, 101, 97);
+            button3.Dock = DockStyle.Left;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(20, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(42, 78);
+            button3.TabIndex = 6;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
             // comboBox4
             // 
             comboBox4.Anchor = AnchorStyles.Right;
@@ -109,6 +206,15 @@
             comboBox4.TabIndex = 18;
             comboBox4.Text = "No allergens";
             comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
+            // 
+            genderLabel.AutoSize = true;
+            genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            genderLabel.ForeColor = Color.White;
+            genderLabel.Location = new Point(124, 39);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new Size(64, 21);
+            genderLabel.TabIndex = 2;
+            genderLabel.Text = "Gender";
             // 
             // searchBar
             // 
@@ -261,6 +367,7 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
+            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 54);
             panelContainer.Name = "panelContainer";
@@ -280,6 +387,7 @@
             topPanel.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
+            panelContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -288,9 +396,8 @@
         private Button btnCreateDP;
         private Panel topPanel;
         private Button button1;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox carbCombo;
+        private ComboBox calorieFilter;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private ImageList imageList1;
         private Guna.UI2.WinForms.Guna2TextBox searchBar;

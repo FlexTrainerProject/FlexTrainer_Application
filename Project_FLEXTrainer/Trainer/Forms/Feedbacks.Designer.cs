@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Feedbacks));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             panel1 = new Panel();
             label3 = new Label();
@@ -45,13 +45,13 @@
             genderLabel = new Label();
             navPanel.SuspendLayout();
             panel1.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
+            navPanel.Controls.Add(panelTemplate);
             navPanel.Controls.Add(panel1);
             navPanel.Controls.Add(label1);
             navPanel.Controls.Add(searchBar);
@@ -115,7 +115,7 @@
             searchBar.BorderColor = Color.White;
             searchBar.BorderRadius = 12;
             searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
+            searchBar.CustomizableEdges = customizableEdges3;
             searchBar.DefaultText = "";
             searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -131,7 +131,7 @@
             searchBar.PasswordChar = '\0';
             searchBar.PlaceholderText = "Search Member";
             searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             searchBar.Size = new Size(259, 28);
             searchBar.TabIndex = 11;
             // 
@@ -139,7 +139,6 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
@@ -153,10 +152,10 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(227, 29);
+            panelTemplate.Location = new Point(140, 9);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.Size = new Size(821, 117);
             panelTemplate.TabIndex = 6;
             // 
             // panel3
@@ -164,7 +163,7 @@
             panel3.BackColor = Color.FromArgb(25, 42, 40);
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(96, 78);
+            panel3.Size = new Size(96, 117);
             panel3.TabIndex = 6;
             // 
             // nameLabel
@@ -172,7 +171,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(264, 11);
+            nameLabel.Location = new Point(116, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -183,7 +182,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(582, 11);
+            experienceLabel.Location = new Point(474, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -194,7 +193,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(264, 39);
+            genderLabel.Location = new Point(116, 60);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;
@@ -214,7 +213,6 @@
             navPanel.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);
