@@ -30,8 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
             label4 = new Label();
             panel1 = new Panel();
@@ -39,7 +37,6 @@
             btnRemove = new Button();
             label1 = new Label();
             name = new Label();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             panelContainer = new Panel();
             btnRequests = new Button();
             imageList1 = new ImageList(components);
@@ -53,7 +50,6 @@
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
             navPanel.Controls.Add(label4);
             navPanel.Controls.Add(panel1);
-            navPanel.Controls.Add(searchBar);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
@@ -133,31 +129,6 @@
             name.TabIndex = 1;
             name.Text = "Name";
             // 
-            // searchBar
-            // 
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(1036, 12);
-            searchBar.Name = "searchBar";
-            searchBar.Padding = new Padding(0, 20, 0, 0);
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(222, 28);
-            searchBar.TabIndex = 11;
-            // 
             // panelContainer
             // 
             panelContainer.AutoScroll = true;
@@ -216,7 +187,6 @@
         #endregion
 
         private Panel navPanel;
-        private Guna.UI2.WinForms.Guna2TextBox searchBar;
         private Panel panelContainer;
         private Button btnRequests;
         private Panel panel1;

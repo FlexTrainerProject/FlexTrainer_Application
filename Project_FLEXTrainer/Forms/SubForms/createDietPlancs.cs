@@ -125,11 +125,15 @@ namespace Project_FLEXTrainer.Forms.SubForms
                 for (int i = 0; i < MealsAdded.Count; i++)
                 {
 
-                    string queryMealAdd = "INSERT INTO meals (allergents,nutrional_val, plan_id) " +
-                                          "VALUES (@Allergens, @NutritionalVal, @PlanID)";
+                    string queryMealAdd = "INSERT INTO meals (meal_name,allergents,proteins, carbs, fats, calories, plan_id) " +
+                                          "VALUES (@mn,@Allergens, @prots, @carbs, @fats, @cals, @PlanID)";
                     SqlCommand command4 = new SqlCommand(queryMealAdd, connection);
+                    command4.Parameters.AddWithValue("@mn", MealsAdded[i].Name); 
                     command4.Parameters.AddWithValue("@Allergens", MealsAdded[i].Allergens); 
-                    command4.Parameters.AddWithValue("@NutritionalVal", MealsAdded[i].Nutrition);
+                    command4.Parameters.AddWithValue("@prots", Convert.ToInt32(MealsAdded[i].Proteins));
+                    command4.Parameters.AddWithValue("@carbs", Convert.ToInt32(MealsAdded[i].Carbs));
+                    command4.Parameters.AddWithValue("@fats", Convert.ToInt32(MealsAdded[i].Fats));
+                    command4.Parameters.AddWithValue("@cals", Convert.ToInt32(MealsAdded[i].Calories));
                     command4.Parameters.AddWithValue("@PlanID", insertedId);
                                                                              
                     command4.ExecuteNonQuery();
@@ -138,6 +142,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
                 string queryUserPlan = "INSERT into UserPlans VALUES ("+userId+","+insertedId+");";
                 SqlCommand command5 = new SqlCommand(queryUserPlan, connection);
                 command5.ExecuteNonQuery();
+
+                Form messageBox = new Essentials.MessageBoxes.prompt("Plan Created!");
+                messageBox.FormBorderStyle = FormBorderStyle.None;
+                messageBox.StartPosition = FormStartPosition.CenterScreen;
+                messageBox.Show();
                 connection.Close();
 
 

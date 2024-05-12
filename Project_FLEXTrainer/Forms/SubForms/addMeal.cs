@@ -20,6 +20,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
         {
             InitializeComponent();
             this.mainForm = mainForm;
+
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text=="" || txtAllergens.Text=="" || txtNutritionalvAl.Text=="")
+            if (txtName.Text=="" || txtAllergens.Text=="" || txtProts.Text=="" || txtCals.Text =="" || txtCarbs.Text=="" || txtFats.Text == "")
             {
                 Form MessageBox = new Essentials.MessageBoxes.missingInfo();
                 MessageBox.FormBorderStyle = FormBorderStyle.None;
@@ -41,7 +42,10 @@ namespace Project_FLEXTrainer.Forms.SubForms
             Meal meal = new Meal();
             meal.Name=txtName.Text;
             meal.Allergens = txtAllergens.Text;
-            meal.Nutrition = txtNutritionalvAl.Text;
+            meal.Proteins = txtProts.Text;
+            meal.Carbs = txtCarbs.Text;
+            meal.Fats= txtFats.Text;
+            meal.Calories=txtCals.Text;
 
             mainForm.AddMeal(meal);
 
@@ -49,11 +53,14 @@ namespace Project_FLEXTrainer.Forms.SubForms
             messageBox.FormBorderStyle = FormBorderStyle.None;
             messageBox.StartPosition = FormStartPosition.CenterScreen;
             messageBox.Show();
-
-            return;
             txtName.Text = "";
             txtAllergens.Text = "";
-            txtNutritionalvAl.Text = "";
+            txtProts.Text = "";
+            txtFats.Text = "";
+            txtCals.Text = "";
+            txtCarbs.Text = "";
+            return;
+            
 
         }
     }

@@ -21,8 +21,8 @@ namespace Project_FLEXTrainer.Forms
         {
             InitializeComponent();
             currUser = user;
-            gunaCombo.SelectedIndexChanged += gunaCombo_SelectedIndexChanged;
             connectionString = Essentials.ConnectionString.GetConnectionString();
+            gunaCombo.SelectedIndexChanged += gunaCombo_SelectedIndexChanged;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sqlQuery = "SELECT name FROM gym";

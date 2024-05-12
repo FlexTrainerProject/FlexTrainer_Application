@@ -100,6 +100,53 @@ namespace Project_FLEXTrainer.Forms.SubForms
 
             command.ExecuteNonQuery();
 
+            string getRating = "SELECT rating\r\nFROM trainer\r\nINNER JOIN userr on userr.id = trainer.id\r\nWHERE CONCAT(userr.firstname, ' ', userr.lastname) = @trainerFullName";
+            SqlCommand command1 = new SqlCommand(getRating, connection);
+            command1.Parameters.AddWithValue("@trainerFullName", comboTrainer.SelectedItem.ToString());
+
+            object resultObj = command1.ExecuteScalar();
+            int result;
+            if (resultObj != null)
+            {
+                result = Convert.ToInt32(resultObj);
+                MessageBox.Show("current rating : " + result + "");
+
+            }
+            else
+            {
+                MessageBox.Show("Rating Not Found");
+                return;
+            }
+            int countf;
+            string countFeedbacks = "SELECT COUNT (*)\r\nFROM feedback\r\nINNER JOIN trainer on trainer.id = feedback.trainer_id\r\nINNER JOIN userr on userr.id = trainer.id\r\nWHERE CONCAT(userr.firstname, ' ', userr.lastname) = @trainerFullName";
+            SqlCommand command2 = new SqlCommand(countFeedbacks, connection);
+            command2.Parameters.AddWithValue("@trainerFullName", comboTrainer.SelectedItem.ToString());
+
+            object resultObj1 = command2.ExecuteScalar();
+
+            if (resultObj1 != null)
+            {
+                countf = Convert.ToInt32(resultObj1);
+                MessageBox.Show("numFeedbacks (including this) : " + countf + "");
+
+            }
+            else
+            {
+                MessageBox.Show("count");
+                return;
+            }
+            int newRating;
+            newRating = (result + Convert.ToInt32(ratingCombo.SelectedItem))/countf;
+
+            MessageBox.Show("new rating : " + newRating + "");
+
+            string updateRating = "EXEC updateTrainerRating @name, @newRating";
+            SqlCommand command3 = new SqlCommand(updateRating, connection);
+            command3.Parameters.AddWithValue("@name", comboTrainer.SelectedItem.ToString());
+            command3.Parameters.AddWithValue("@newRating", newRating.ToString());
+
+            command3.ExecuteNonQuery();
+
             Form messageBox = new Essentials.MessageBoxes.prompt("Feedback Sent");
             messageBox.FormBorderStyle = FormBorderStyle.None;
             messageBox.StartPosition = FormStartPosition.CenterScreen;

@@ -29,6 +29,15 @@ namespace Project_FLEXTrainer.Forms
         public dietPlans(User userr)
         {
             InitializeComponent();
+
+            calorieFilter.Items.Add("Less than 200");
+            calorieFilter.Items.Add("Less than 500");
+            calorieFilter.Items.Add("Less than 1000");
+
+            carbCombo.Items.Add("Less than 100");
+            carbCombo.Items.Add("Less than 300");
+            carbCombo.Items.Add("Less than 500");
+
             stringConnection = Essentials.ConnectionString.GetConnectionString();
 
             user = userr;
@@ -41,7 +50,7 @@ namespace Project_FLEXTrainer.Forms
             
 
             comboBox4.SelectedIndexChanged += new EventHandler(comboBox4_SelectedIndexChanged);
-            DisplayDietPlans(temp);
+            DisplayDietPlans(false, false,temp);
         }
 
 
@@ -50,7 +59,7 @@ namespace Project_FLEXTrainer.Forms
                 string rr;
                 rr = "Select * from diet_plan Join meals on diet_plan.plan_id = meals.plan_id where allergents != '" + comboBox4.SelectedItem.ToString() + "'";
                 panelContainer.Controls.Clear();
-                DisplayDietPlans(rr);
+                DisplayDietPlans(false, false,rr);
 
             
         }
@@ -199,15 +208,45 @@ namespace Project_FLEXTrainer.Forms
             panelContainer.Controls.Add(entryPanel);
         }
 
-        private void DisplayDietPlans(string temp)
+        private void DisplayDietPlans(bool calFilter, bool carbFilter, string temp)
         {
-
-            String query = temp;
-
+            String query;
+            if (calFilter == false && carbFilter == false)
+            {
+                query = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
+            }
+            else if (calFilter == true)
+            {
+                query = "EXEC getPlansWithCalorie @calorieFilter";
+            }
+            else
+            {
+                query = "EXEC getPlansWithCarb @carbFilter";
+            }
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-
+                if (calFilter == true)
+                {
+                    int num;
+                    if (calorieFilter.SelectedIndex == 0)
+                        num = 200;
+                    else if (calorieFilter.SelectedIndex == 1)
+                        num = 500;
+                    else
+                        num = 1000;
+                    command.Parameters.AddWithValue("@calorieFilter", num);
+                }else if (carbFilter == true)
+                {
+                    int num;
+                    if (carbCombo.SelectedIndex == 0)
+                        num = 100;
+                    else if (carbCombo.SelectedIndex == 1)
+                        num = 300;
+                    else
+                        num = 500;
+                    command.Parameters.AddWithValue("@carbFilter", num);
+                }
                 try
                 {
                     connection.Open();
@@ -252,16 +291,43 @@ namespace Project_FLEXTrainer.Forms
             SubForm.Show(); // Show the form as a separate window
         }
 
+        private void calorieFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            carbCombo.SelectedIndex = -1;
+            string temp = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
+            if (calorieFilter.SelectedIndex != -1)
+            {
+                panelContainer.Controls.Clear();
+                DisplayDietPlans(true, false,temp);
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            DisplayDietPlans(false, false,"false");
+        }
+
+        private void carbCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            calorieFilter.SelectedIndex = -1;
+            string temp = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
+            if (carbCombo.SelectedIndex != -1)
+            {
+                panelContainer.Controls.Clear();
+                DisplayDietPlans(false,true,temp);
+
+            }
+        }
+
         private void btnrefresh_Click(object sender, EventArgs e)
         {
             string rr;
             rr = "SELECT goal AS 'Goal', nutrition AS 'Nutrition', type AS 'Type', plan_id FROM diet_plan";
 
-
-
-
             panelContainer.Controls.Clear();
-            DisplayDietPlans(rr);
+            DisplayDietPlans(false, false,rr);
         }
     }
 }

@@ -23,20 +23,55 @@ namespace Project_FLEXTrainer.Trainer.Forms
             connectionString = Essentials.ConnectionString.GetConnectionString();
             panelTemplate.Visible = false;
 
-            LoadData();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sqlQuery = "SELECT name\r\nFROM plann\r\nINNER JOIN trainer on trainer.id = plann.creator_id\r\nwhere trainer.id = @trainerID";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@trainerID", currUser.userId);
+                        connection.Open();
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        planCombo.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            string plan = reader["name"].ToString();
+                            planCombo.Items.Add(plan);
+                        }
+
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+
+            LoadData(false);
 
         }
 
-        private void LoadData()
+        private void LoadData(bool view)
         {
 
-
-            string query = "EXEC ViewMembersForTrainer @userID";
+            string query;
+            if (view == false)
+                query = "EXEC ViewMembersForTrainer @userID";
+            else
+                query = "EXEC ViewMembersForTrainerFollowingDiet @userID, @PlanName";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userID", currUser.userId);
+                if (view == true)
+                    command.Parameters.AddWithValue("@PlanName", planCombo.SelectedItem.ToString()) ;
                 try
                 {
                     connection.Open();
@@ -49,7 +84,7 @@ namespace Project_FLEXTrainer.Trainer.Forms
                         string str1 = reader["name"].ToString();
                         string str2 = reader["gender"].ToString();
 
-                        displayDelegate.Invoke(str1 ,str2);
+                        displayDelegate.Invoke(str1, str2);
                     }
 
                     reader.Close();
@@ -130,6 +165,15 @@ namespace Project_FLEXTrainer.Trainer.Forms
             entryPanel.Location = new Point(0, yOffset);
 
             panelContainer.Controls.Add(entryPanel);
+        }
+
+        private void planCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (planCombo.SelectedIndex != -1)
+            {
+                panelContainer.Controls.Clear();
+                LoadData(true);
+            }
         }
     }
 }
