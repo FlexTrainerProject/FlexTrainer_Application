@@ -59,7 +59,7 @@ namespace Project_FLEXTrainer.Forms
                 string rr;
                 rr = "Select * from diet_plan Join meals on diet_plan.plan_id = meals.plan_id where allergents != '" + comboBox4.SelectedItem.ToString() + "'";
                 panelContainer.Controls.Clear();
-                DisplayDietPlans(false, false,rr);
+                DisplayDietPlans(true, true,"aaaa");
 
             
         }
@@ -218,6 +218,10 @@ namespace Project_FLEXTrainer.Forms
             else if (calFilter == true)
             {
                 query = "EXEC getPlansWithCalorie @calorieFilter";
+            }
+            else if(temp == "aaaa")
+            {
+                query = "Select * from diet_plan Join meals on diet_plan.plan_id = meals.plan_id where allergents != 'None'";
             }
             else
             {

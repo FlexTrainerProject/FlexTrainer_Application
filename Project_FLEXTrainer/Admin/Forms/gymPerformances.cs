@@ -14,7 +14,6 @@ namespace Project_FLEXTrainer.Admin.Forms
     public partial class gymPerformances : Form
     {
         public delegate void DisplayEntryDelegate(string name, string location, string totalMembers);
-        string connectionString;
         User currUser;
         public gymPerformances(User user)
         {
@@ -51,6 +50,8 @@ namespace Project_FLEXTrainer.Admin.Forms
 
             gunaCombo.SelectedIndexChanged += new EventHandler(gunaCombo_SelectedIndexChanged);
 
+
+            LoadData();
         }
 
         private void btnCancelled_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace Project_FLEXTrainer.Admin.Forms
             string query;
             query = "EXEC displayGymMetrics1";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Essentials.ConnectionString.GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 try
