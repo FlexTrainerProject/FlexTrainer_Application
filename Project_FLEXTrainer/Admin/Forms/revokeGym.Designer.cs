@@ -42,13 +42,13 @@
             genderLabel = new Label();
             imageList1 = new ImageList(components);
             navPanel.SuspendLayout();
-            panelContainer.SuspendLayout();
             panelTemplate.SuspendLayout();
             SuspendLayout();
             // 
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
+            navPanel.Controls.Add(panelTemplate);
             navPanel.Controls.Add(btnAllgyms);
             navPanel.Controls.Add(pgTitle);
             navPanel.Dock = DockStyle.Top;
@@ -88,7 +88,6 @@
             // 
             panelContainer.AutoScroll = true;
             panelContainer.BackColor = Color.WhiteSmoke;
-            panelContainer.Controls.Add(panelTemplate);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 52);
             panelContainer.Name = "panelContainer";
@@ -103,7 +102,7 @@
             panelTemplate.Controls.Add(nameLabel);
             panelTemplate.Controls.Add(experienceLabel);
             panelTemplate.Controls.Add(genderLabel);
-            panelTemplate.Location = new Point(161, 20);
+            panelTemplate.Location = new Point(148, 12);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(821, 78);
@@ -181,7 +180,6 @@
             Name = "revokeGym";
             Text = "Revoke Gym";
             navPanel.ResumeLayout(false);
-            panelContainer.ResumeLayout(false);
             panelTemplate.ResumeLayout(false);
             panelTemplate.PerformLayout();
             ResumeLayout(false);

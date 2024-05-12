@@ -34,12 +34,12 @@
             pgTitle = new Label();
             panel1 = new Panel();
             gunaCombo = new Guna.UI2.WinForms.Guna2ComboBox();
-            label2 = new Label();
-            label1 = new Label();
             panelTemplate = new Panel();
             txtLoc = new Label();
             name = new Label();
             totalMember = new Label();
+            label2 = new Label();
+            label1 = new Label();
             panelContainer = new Panel();
             navPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -98,34 +98,13 @@
             gunaCombo.Size = new Size(285, 36);
             gunaCombo.TabIndex = 16;
             // 
-            // label2
-            // 
-            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(146, 57);
-            label2.Name = "label2";
-            label2.Padding = new Padding(10, 20, 0, 0);
-            label2.Size = new Size(53, 43);
-            label2.TabIndex = 15;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 59);
-            label1.Name = "label1";
-            label1.Padding = new Padding(10, 20, 0, 0);
-            label1.Size = new Size(143, 61);
-            label1.TabIndex = 14;
-            label1.Text = "Total Count: ";
-            // 
             // panelTemplate
             // 
             panelTemplate.BackColor = Color.FromArgb(25, 42, 40);
             panelTemplate.Controls.Add(txtLoc);
             panelTemplate.Controls.Add(name);
             panelTemplate.Controls.Add(totalMember);
-            panelTemplate.Location = new Point(3, 47);
+            panelTemplate.Location = new Point(73, 132);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
             panelTemplate.Size = new Size(1106, 126);
@@ -163,6 +142,27 @@
             totalMember.Size = new Size(176, 32);
             totalMember.TabIndex = 2;
             totalMember.Text = "Total Members";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(152, 77);
+            label2.Name = "label2";
+            label2.Padding = new Padding(10, 20, 0, 0);
+            label2.Size = new Size(53, 43);
+            label2.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(3, 59);
+            label1.Name = "label1";
+            label1.Padding = new Padding(10, 20, 0, 0);
+            label1.Size = new Size(143, 61);
+            label1.TabIndex = 14;
+            label1.Text = "Total Count: ";
             // 
             // panelContainer
             // 

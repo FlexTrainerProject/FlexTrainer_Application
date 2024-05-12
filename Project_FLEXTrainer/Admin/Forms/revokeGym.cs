@@ -206,7 +206,6 @@ namespace Project_FLEXTrainer.Admin.Forms
                         OpenChildForm(new Forms.revokeGym(dpanel), sender);
                     };
                 }
-
             }
 
 
