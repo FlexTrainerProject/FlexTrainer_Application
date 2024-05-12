@@ -118,8 +118,10 @@ namespace Project_FLEXTrainer.Owner.Forms
                     {
                         label.Text = "Name: " + str1;
                     }
-                    else if (label.Name == "label1")
+                    else if (label.Name == "label1" && str3 == "member")
                         label.Text = "Membership Type: " + str2;
+                    else if (label.Name == "label1" && str3 == "trainer")
+                        label.Text = "Rating: " + str2;
                     else if (label.Name == "label2")
                         label.Text = str3;
 

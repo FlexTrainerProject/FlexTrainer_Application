@@ -127,7 +127,7 @@ namespace Project_FLEXTrainer.Admin
         private void btnGymPerf_Click(object sender, EventArgs e)
         {
             if ((Button)sender != (Button)activeButton)
-                OpenChildForm(new Forms.gymPerformances(), sender);
+                OpenChildForm(new Forms.gymPerformances(currentuser), sender);
         }
 
         private void btnReq_Click(object sender, EventArgs e)

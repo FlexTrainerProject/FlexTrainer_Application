@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(showSelected));
             panel1 = new Panel();
+            gunaCombo = new ComboBox();
             closeError = new Button();
             panelTxt = new Label();
             panelTemplate = new Panel();
@@ -45,6 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(26, 46, 53);
+            panel1.Controls.Add(gunaCombo);
             panel1.Controls.Add(closeError);
             panel1.Controls.Add(panelTxt);
             panel1.Dock = DockStyle.Top;
@@ -52,6 +54,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(550, 44);
             panel1.TabIndex = 0;
+            // 
+            // gunaCombo
+            // 
+            gunaCombo.FormattingEnabled = true;
+            gunaCombo.Location = new Point(375, 12);
+            gunaCombo.Name = "gunaCombo";
+            gunaCombo.Size = new Size(121, 23);
+            gunaCombo.TabIndex = 4;
+            gunaCombo.Text = "Gym";
             // 
             // closeError
             // 
@@ -161,5 +172,6 @@
         private Label label3;
         private Panel panelContainer;
         private Button closeError;
+        private ComboBox gunaCombo;
     }
 }

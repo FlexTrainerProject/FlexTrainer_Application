@@ -71,7 +71,7 @@ namespace Project_FLEXTrainer.Trainer.Forms
 
         private void btnAddMeal_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || AllergensTxt.Text == "" || NutritionValTxt.Text == "")
+            if (txtName.Text == "" ||AllergensTxt.Text == "" || txtProts.Text == "" || txtCals.Text == "" || txtCarbs.Text == "" || txtFats.Text == "")
             {
                 Form MessageBox = new Essentials.MessageBoxes.missingInfo();
                 MessageBox.FormBorderStyle = FormBorderStyle.None;
@@ -83,7 +83,10 @@ namespace Project_FLEXTrainer.Trainer.Forms
             Meal meal = new Meal();
             meal.Name = txtName.Text;
             meal.Allergens = AllergensTxt.Text;
-            meal.Nutrition = NutritionValTxt.Text;
+            meal.Proteins = txtProts.Text;
+            meal.Carbs = txtCarbs.Text;
+            meal.Fats = txtFats.Text;
+            meal.Calories = txtCals.Text;
 
             MealsAdded.Add(meal);
             comboAddedMeals.Items.Add(txtName.Text);
@@ -95,7 +98,10 @@ namespace Project_FLEXTrainer.Trainer.Forms
             messageBox.Show();
             txtName.Text = "";
             AllergensTxt.Text = "";
-            NutritionValTxt.Text = "";
+            txtProts.Text = "";
+            txtFats.Text = "";
+            txtCals.Text = "";
+            txtCarbs.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -131,11 +137,15 @@ namespace Project_FLEXTrainer.Trainer.Forms
                 for (int i = 0; i < MealsAdded.Count; i++)
                 {
 
-                    string queryMealAdd = "INSERT INTO meals (allergents,nutrional_val, plan_id) " +
-                                          "VALUES (@Allergens, @NutritionalVal, @PlanID)";
+                    string queryMealAdd = "INSERT INTO meals (meal_name,allergents,proteins, carbs, fats, calories, plan_id) " +
+                                          "VALUES (@mn,@Allergens, @prots, @carbs, @fats, @cals, @PlanID)";
                     SqlCommand command4 = new SqlCommand(queryMealAdd, connection);
+                    command4.Parameters.AddWithValue("@mn", MealsAdded[i].Name);
                     command4.Parameters.AddWithValue("@Allergens", MealsAdded[i].Allergens);
-                    command4.Parameters.AddWithValue("@NutritionalVal", MealsAdded[i].Nutrition);
+                    command4.Parameters.AddWithValue("@prots", Convert.ToInt32(MealsAdded[i].Proteins));
+                    command4.Parameters.AddWithValue("@carbs", Convert.ToInt32(MealsAdded[i].Carbs));
+                    command4.Parameters.AddWithValue("@fats", Convert.ToInt32(MealsAdded[i].Fats));
+                    command4.Parameters.AddWithValue("@cals", Convert.ToInt32(MealsAdded[i].Calories));
                     command4.Parameters.AddWithValue("@PlanID", insertedId);
 
                     command4.ExecuteNonQuery();

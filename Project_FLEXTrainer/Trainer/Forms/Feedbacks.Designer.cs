@@ -156,7 +156,7 @@
             panelTemplate.Location = new Point(227, 29);
             panelTemplate.Name = "panelTemplate";
             panelTemplate.Padding = new Padding(20, 0, 0, 0);
-            panelTemplate.Size = new Size(821, 78);
+            panelTemplate.Size = new Size(821, 117);
             panelTemplate.TabIndex = 6;
             // 
             // panel3
@@ -164,7 +164,7 @@
             panel3.BackColor = Color.FromArgb(25, 42, 40);
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(96, 78);
+            panel3.Size = new Size(96, 117);
             panel3.TabIndex = 6;
             // 
             // nameLabel
@@ -172,7 +172,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(264, 11);
+            nameLabel.Location = new Point(116, 11);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(53, 21);
             nameLabel.TabIndex = 1;
@@ -183,7 +183,7 @@
             experienceLabel.AutoSize = true;
             experienceLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             experienceLabel.ForeColor = Color.White;
-            experienceLabel.Location = new Point(582, 11);
+            experienceLabel.Location = new Point(474, 11);
             experienceLabel.Name = "experienceLabel";
             experienceLabel.Size = new Size(90, 21);
             experienceLabel.TabIndex = 3;
@@ -194,7 +194,7 @@
             genderLabel.AutoSize = true;
             genderLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             genderLabel.ForeColor = Color.White;
-            genderLabel.Location = new Point(264, 39);
+            genderLabel.Location = new Point(116, 60);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new Size(64, 21);
             genderLabel.TabIndex = 2;

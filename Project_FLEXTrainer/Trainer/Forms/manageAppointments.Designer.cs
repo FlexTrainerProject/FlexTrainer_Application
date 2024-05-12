@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(manageAppointments));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             navPanel = new Panel();
-            searchBar = new Guna.UI2.WinForms.Guna2TextBox();
             btnAll = new Button();
             panelContainer = new Panel();
             panelTemplate = new Panel();
@@ -51,39 +48,12 @@
             // navPanel
             // 
             navPanel.BackColor = Color.FromArgb(25, 42, 40);
-            navPanel.Controls.Add(searchBar);
             navPanel.Controls.Add(btnAll);
             navPanel.Dock = DockStyle.Top;
             navPanel.Location = new Point(0, 0);
             navPanel.Name = "navPanel";
             navPanel.Size = new Size(1284, 52);
             navPanel.TabIndex = 3;
-            // 
-            // searchBar
-            // 
-            searchBar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchBar.BorderColor = Color.White;
-            searchBar.BorderRadius = 12;
-            searchBar.BorderThickness = 2;
-            searchBar.CustomizableEdges = customizableEdges1;
-            searchBar.DefaultText = "";
-            searchBar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchBar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchBar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchBar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.Font = new Font("Segoe UI", 9F);
-            searchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchBar.IconRight = (Image)resources.GetObject("searchBar.IconRight");
-            searchBar.Location = new Point(999, 12);
-            searchBar.Name = "searchBar";
-            searchBar.Padding = new Padding(0, 20, 0, 0);
-            searchBar.PasswordChar = '\0';
-            searchBar.PlaceholderText = "Search Member";
-            searchBar.SelectedText = "";
-            searchBar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            searchBar.Size = new Size(259, 28);
-            searchBar.TabIndex = 11;
             // 
             // btnAll
             // 

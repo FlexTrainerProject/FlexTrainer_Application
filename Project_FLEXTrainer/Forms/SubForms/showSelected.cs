@@ -27,7 +27,38 @@ namespace Project_FLEXTrainer.Forms.SubForms
             connectionString = Essentials.ConnectionString.GetConnectionString();
             this.planID = planID;
 
-            LoadData();
+            gunaCombo.SelectedIndexChanged += gunaCombo_SelectedIndexChanged;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sqlQuery = "SELECT name FROM gym";
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        gunaCombo.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            string gymName = reader["name"].ToString();
+                            gunaCombo.Items.Add(gymName);
+                        }
+
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+
+
+                LoadData(false);
         }
         private Panel CreatePanelFromTemplate(Panel templatePanel)
         {
@@ -104,11 +135,18 @@ namespace Project_FLEXTrainer.Forms.SubForms
             panelContainer.Controls.Add(entryPanel);
         }
 
-        private void LoadData()
+        private void LoadData(bool gymFilter)
         {
 
-            String query = "EXEC getSubscribedMembers @planID";
-
+            String query;
+            if(gymFilter == false)
+            {
+                query = "EXEC getSubscribedMembers @planID";
+            }
+            else
+            {
+                query = "EXEC getSubscribedMembersFromGym @planID ,@gymName";
+            }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
@@ -117,6 +155,11 @@ namespace Project_FLEXTrainer.Forms.SubForms
                 {
                     connection.Open();
                     command.Parameters.AddWithValue("@planID", planID);
+                    if (gymFilter == true)
+                    {
+                        command.Parameters.AddWithValue("@gymName", gunaCombo.SelectedItem.ToString());
+                    }
+                    
                     SqlDataReader reader = command.ExecuteReader();
 
                     DisplayEntryDelegate_d displayDelegate = DisplayEntry;
@@ -142,6 +185,16 @@ namespace Project_FLEXTrainer.Forms.SubForms
         private void closeError_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void gunaCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (gunaCombo.SelectedIndex != -1)
+            {
+                panelContainer.Controls.Clear();
+                LoadData(true);
+            }
         }
     }
 

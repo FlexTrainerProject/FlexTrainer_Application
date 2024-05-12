@@ -187,7 +187,7 @@ namespace Project_FLEXTrainer.Trainer.Forms
                     if (label.Name == "nameLabel")
                         label.Text = "Name: " + name;
                     else if (label.Name == "genderLabel")
-                        label.Text = "Gymname: " + gname;
+                        label.Text = "Gym Name: " + gname;
                     else if (label.Name == "experienceLabel")
                         label.Text = "Timing: " + gender;
 

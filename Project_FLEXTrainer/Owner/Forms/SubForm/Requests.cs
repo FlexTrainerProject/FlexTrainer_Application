@@ -169,16 +169,36 @@ namespace Project_FLEXTrainer.Owner.Forms.SubForm
 
                              SubForm.Show(); // Show the form as a separate window*/
                             SqlConnection connection = new SqlConnection(Essentials.ConnectionString.GetConnectionString());
-                            string query1 = "INSERT INTO trainer VALUES (@userid, @specialization, @qualification, 0, @experience)";
                             connection.Open();
-                            SqlCommand command1 = new SqlCommand(query1, connection);
-                            command1.Parameters.AddWithValue("@userid", userID);
-                            command1.Parameters.AddWithValue("@specialization", specs);
-                            command1.Parameters.AddWithValue("@qualification", qual);
-                            command1.Parameters.AddWithValue("@rating", 0);
-                            command1.Parameters.AddWithValue("@experience", exp);
 
-                            command1.ExecuteNonQuery();
+
+                            string checktrainer = "SELECT 1\r\n\tFROM trainer\r\n\tWHERE trainer.id = @id";
+                            SqlCommand cm = new SqlCommand(checktrainer, connection);
+                            cm.Parameters.AddWithValue("@id", userID);
+                            int result = Convert.ToInt32(cm.ExecuteScalar());
+                            if (result == 0 || result == null) {
+
+
+                                string query1 = "INSERT INTO trainer VALUES (@userid, @specialization, @qualification, 0, @experience)";
+                                SqlCommand command1 = new SqlCommand(query1, connection);
+                                command1.Parameters.AddWithValue("@userid", userID);
+                                command1.Parameters.AddWithValue("@specialization", specs);
+                                command1.Parameters.AddWithValue("@qualification", qual);
+                                command1.Parameters.AddWithValue("@rating", 0);
+                                command1.Parameters.AddWithValue("@experience", exp);
+
+                                command1.ExecuteNonQuery();
+
+                                string query3 = "update account set account_type='trainer' where username =(SELECT username FROM userr WHERE id = @useridd)";
+                                SqlCommand command3 = new SqlCommand(query3, connection);
+                                command3.Parameters.AddWithValue("@useridd", userID);
+                                command3.ExecuteNonQuery();
+
+                                string query4 = "delete from member where id = @userID";
+                                SqlCommand command4 = new SqlCommand(query4, connection);
+                                command4.Parameters.AddWithValue("@userID", userID);
+                                command4.ExecuteNonQuery();
+                            }
 
                             string query2 = "INSERT INTO gym_assign_to_trainer VALUES (@userID, (select id \r\n\tFROM gym\r\n\twhere owner_id = @ownerID))";
                             SqlCommand command = new SqlCommand(query2, connection);
@@ -187,18 +207,9 @@ namespace Project_FLEXTrainer.Owner.Forms.SubForm
                             command.ExecuteNonQuery();
                           
 
-                            string query3 = "update account set account_type='trainer' where username =(SELECT username FROM userr WHERE id = @useridd)";
-                            SqlCommand command3 = new SqlCommand(query3, connection);
-                            command3.Parameters.AddWithValue("@useridd", userID);
-                            command3.ExecuteNonQuery();
-
-                            string query4 = "delete from member where id = @userID";
-                            SqlCommand command4 = new SqlCommand(query4, connection);
-                            command4.Parameters.AddWithValue("@userID", userID);
-                            command4.ExecuteNonQuery();
-
-                            string query5 = "delete from TRAINER_REQUEST where memberID = @userID";
+                            string query5 = "DELETE TR FROM TRAINER_REQUEST TR INNER JOIN gym G ON G.ID = TR.gymID WHERE G.owner_id = @ownID AND memberID = @userID";
                             SqlCommand command5 = new SqlCommand(query5, connection);
+                            command5.Parameters.AddWithValue("@ownID", currUser.userId);
                             command5.Parameters.AddWithValue("@userID", userID);
                             command5.ExecuteNonQuery();
 
